@@ -6,7 +6,6 @@ public class Driver {
          Board myBoard = new Board();
          myBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          myBoard.setSize(800,800);
-         myBoard.setResizable(false);
          myBoard.setVisible(true);
     }
 }

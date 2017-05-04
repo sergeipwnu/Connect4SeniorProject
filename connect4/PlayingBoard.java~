@@ -25,7 +25,7 @@ public class PlayingBoard
      */
     public boolean areFourConnected()
     {
-        return true;
+        return null;
     }
     
     /**
@@ -33,7 +33,7 @@ public class PlayingBoard
      */
     public boolean makeMove(Piece p)
     {
-        return true;
+        
     }
     
 }

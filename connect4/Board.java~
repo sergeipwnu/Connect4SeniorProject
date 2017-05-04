@@ -13,7 +13,9 @@ public class Board extends JFrame{
         add(label);
         label.setBounds(0,0,800,800);
         generateButtons(50,50,insets,label);
-
+        //button.setOpaque(false);
+        //button.setContentAreaFilled(false);
+        //button.setBorderPainted(false);
     }
     private void generateButtons(int dim1, int dim2, Insets insets, JLabel label)
     {
@@ -32,9 +34,6 @@ public class Board extends JFrame{
         addListener(b);
         b.setBounds(LeftInset + insets.left, TopInset + insets.top,
              70,70);
-        b.setOpaque(false);
-        b.setContentAreaFilled(false);
-        b.setBorderPainted(false);
         LeftInset += 100;
         if(count == 7)
         {
