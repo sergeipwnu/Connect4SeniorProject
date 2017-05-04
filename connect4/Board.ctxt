@@ -1,10 +1,22 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Board()
-comment1.params=dim1\ dim2\ insets\ label
-comment1.target=void\ generateButtons(int,\ int,\ java.awt.Insets,\ javax.swing.JLabel)
+comment1.params=dim1\ dim2\ insets
+comment1.target=void\ generateButtons(int,\ int,\ java.awt.Insets)
 comment2.params=b
 comment2.target=void\ addListener(javax.swing.JButton)
 comment3.params=e
 comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=4
+comment4.params=b\ s
+comment4.target=void\ addVoiceBoxListener(javax.swing.JButton,\ java.lang.String)
+comment5.params=e
+comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment6.params=e
+comment6.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment7.params=b
+comment7.target=void\ backButtonListener(javax.swing.JButton)
+comment8.params=e
+comment8.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment9.params=b
+comment9.target=void\ makeButtonInvisible(javax.swing.JButton)
+numComments=10
