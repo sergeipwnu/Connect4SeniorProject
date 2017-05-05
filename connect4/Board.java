@@ -4,22 +4,24 @@ import javax.swing.*;
 import java.util.*;
 
 public class Board extends JFrame{
+    private PlayingBoard Brain;
+    private JLabel label;
     /**
      * Board constructor, initializes the JFframe
      * Author: Sergei Levashov
      */
     public Board(){
         super("Connect 4");
-        
-        PlayingBoard Brain = new PlayingBoard();
+        Brain = new PlayingBoard();
         setLayout(null);
-        JLabel label = new JLabel();
+    }
+    public void addBoard()
+    {
         label.setIcon(new ImageIcon("images/connect4board2.png"));
         Insets insets = getInsets();
         add(label);
         label.setBounds(0,0,1000,800);
         generateButtons(insets,Brain);
-        
     }
     /**
      * generates the 6X7 grid of buttons and makes them invisible
@@ -100,5 +102,12 @@ public class Board extends JFrame{
         b.setOpaque(false);
         b.setContentAreaFilled(false);
         b.setBorderPainted(false);
+    }
+    public void addMenu(JLabel l)
+    {
+        label = l;
+        add(l);
+        l.setIcon(new ImageIcon("images/Connect4Menu.png"));
+        l.setBounds(0,0,1000,800);
     }
 }
