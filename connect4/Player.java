@@ -1,5 +1,6 @@
 import javax.swing.ImageIcon; 
 import java.awt.Color;
+import java.awt.event.*; 
 /**
  * Write a description of class Player here.
  * 
@@ -36,5 +37,30 @@ public class Player
 
     public void play(PlayingBoard pB)
     {
+    }
+    public void addVoiceBoxListener(Piece b,String s)
+    {
+        if(s.equals("left"))
+        {
+        b.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                    //then play the voice line of the left player
+                    System.out.println("left player voice line");
+            }
+        });
+        }
+        else
+        {
+        b.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                //play voice of right player;
+                System.out.println("right player voice line");
+            }
+        });
+        }
     }
 }
