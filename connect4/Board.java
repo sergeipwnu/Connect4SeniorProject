@@ -110,4 +110,8 @@ public class Board extends JFrame{
         l.setIcon(new ImageIcon("images/Connect4Menu.png"));
         l.setBounds(0,0,1000,800);
     }
+    public void addMenuButtons()
+    {
+        
+    }
 }

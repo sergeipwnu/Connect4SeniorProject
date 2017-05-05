@@ -15,7 +15,7 @@ public class Board extends JFrame{
         Brain = new PlayingBoard();
         setLayout(null);
     }
-    private void addBoard()
+    public void addBoard()
     {
         label.setIcon(new ImageIcon("images/connect4board2.png"));
         Insets insets = getInsets();
