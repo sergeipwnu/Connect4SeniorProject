@@ -21,9 +21,12 @@ public class Board extends JFrame{
         int LeftInset = 65;
         int count = 1;
         int TopInset = 145;
-        for(int x = 0; x < 7*6; x++)
+        for(int y = 0; y < 6; y++)
         {
-            buttons.add(new Piece(0,0)); //MAKE THIS ACTUALLY ADD THE RIGHT POSITION
+            for(int x = 0; x < 7; x++)
+            {
+                buttons.add(new Piece(y,x));
+            }
         }
         
         for(Piece b : buttons)
@@ -67,7 +70,8 @@ public class Board extends JFrame{
         {
             public void actionPerformed(ActionEvent e)
             {
-                System.out.println("pressed button"); //the button should have a row and colomb
+                System.out.println("pressed button");
+                //the button should have a row and colomb
                 //use the dimension property to add it the matching spot in array in PlayingBoard
             }
         });

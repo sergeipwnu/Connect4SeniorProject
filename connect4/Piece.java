@@ -21,4 +21,12 @@ public class Piece extends JButton
     {
         return new Position(myY,myX);
     }
+    public String toString()
+    {
+        return myY + " " + myX;
+    }
+    public void testPrint()
+    {
+        System.out.println("test");
+    }
 }
