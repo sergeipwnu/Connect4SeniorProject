@@ -17,6 +17,7 @@ public class Board extends JFrame{
     }
     public void addBoard()
     {
+        label = new JLabel();
         label.setIcon(new ImageIcon("images/connect4board2.png"));
         Insets insets = getInsets();
         add(label);
@@ -102,13 +103,6 @@ public class Board extends JFrame{
         b.setOpaque(false);
         b.setContentAreaFilled(false);
         b.setBorderPainted(false);
-    }
-    public void addMenu(JLabel l)
-    {
-        label = l;
-        add(l);
-        l.setIcon(new ImageIcon("images/Connect4Menu.png"));
-        l.setBounds(0,0,1000,800);
     }
     public void addMenuButtons()
     {

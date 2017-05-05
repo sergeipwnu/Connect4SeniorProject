@@ -5,7 +5,7 @@ import javax.swing.*;
  * 
  * Zachary
  */
-public class Menu
+public class Menu extends JFrame
 {
     private Player player1 = null;
     private Player player2 = null;
@@ -16,20 +16,19 @@ public class Menu
      */
     Menu()
     {
-        
+        JLabel menu = new JLabel(new ImageIcon("images/Connect4Menu.png"));
+        add(menu);
     }
-    public void start()
+    public void initBoard()
     {
-        label = new JLabel();
         myBoard = new Board();
-        myBoard.addMenu(label);
         myBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myBoard.setSize(1000,800);
         myBoard.setResizable(false);
         myBoard.setVisible(true);
         if(charactersSelected())
         {
-            startGame();
+            //startGame(); //to add the board just uncomment startGame
         }
         else
         {
