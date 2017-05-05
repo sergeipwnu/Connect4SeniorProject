@@ -25,7 +25,9 @@ public class Board extends JFrame{
         {
             for(int x = 0; x < 7; x++)
             {
-                buttons.add(new Piece(y,x));
+                Piece p = new Piece(y,x);
+                buttons.add(p);
+                p.addListener();
             }
         }
         
@@ -64,6 +66,9 @@ public class Board extends JFrame{
         backButtonListener(backButton);
         makeButtonInvisible(backButton);
     }
+    
+    /*
+     
     private void addListener(Piece b)
     {
         b.addActionListener(new ActionListener()
@@ -71,12 +76,13 @@ public class Board extends JFrame{
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println("pressed button");
-                testPrint();
+                
                 //the button should have a row and colomb
                 //use the dimension property to add it the matching spot in array in PlayingBoard
             }
         });
     }
+    */
     private void addVoiceBoxListener(Piece b, String s)
     {
         if(s.equals("left"))

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.*;
 /**
  * Write a description of class Peice here.
  * 
@@ -29,4 +30,18 @@ public class Piece extends JButton
     {
         System.out.println("test");
     }
-}
+    public void addListener()
+    {
+        this.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println("pressed button  " + myY + " " + myX);
+                
+                //the button should have a row and colomb
+                //use the dimension property to add it the matching spot in array in PlayingBoard
+            }
+        });
+    }
+    }
+
