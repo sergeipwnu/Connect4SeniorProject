@@ -6,6 +6,6 @@ comment1.params=
 comment1.target=boolean\ areFourConnected()
 comment1.text=\r\n\ \r\n
 comment2.params=p
-comment2.target=boolean\ makeMove(Piece)
+comment2.target=boolean\ makeMove(Position)
 comment2.text=\r\n\ \r\n
 numComments=3

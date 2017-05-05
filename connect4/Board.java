@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.util.*;
 
 public class Board extends JFrame{
+    /**
+     * Board constructor, initializes the JFframe
+     * Author: Sergei Levashov
+     */
     public Board(){
         super("Connect 4");
         PlayingBoard Brain = new PlayingBoard();
@@ -12,13 +16,17 @@ public class Board extends JFrame{
         label.setIcon(new ImageIcon("images/connect4board2.png"));
         Insets insets = getInsets();
         add(label);
-        label.setBounds(0,0,800,800);
-        generateButtons(50,50,insets);
+        label.setBounds(0,0,1000,800);
+        generateButtons(insets);
     }
-    private void generateButtons(int dim1, int dim2, Insets insets)
+    /**
+     * generates the 6X7 grid of buttons and makes them invisible
+     * Author: Sergei Levashov
+     */
+    private void generateButtons(Insets insets)
     {
         ArrayList<Piece> buttons = new ArrayList<Piece>();
-        int LeftInset = 65;
+        int LeftInset = 170;
         int count = 1;
         int TopInset = 145;
         for(int y = 0; y < 6; y++)
@@ -39,8 +47,8 @@ public class Board extends JFrame{
             LeftInset += 100;
                 if(count == 7)
                 {
-                    LeftInset = 65;
-                    TopInset += 102;
+                    LeftInset = 170;
+                    TopInset += 105;
                     count = 0;
                 }
             count++;
@@ -49,8 +57,8 @@ public class Board extends JFrame{
         //here we add the buttons for the vs boxes on the top right of the board
         Piece p1 = new Piece();
         Piece p2 = new Piece();
-        p2.setBounds(671,27,70,70);
-        p1.setBounds(380,27,70,70);
+        p2.setBounds(615,34,70,70);
+        p1.setBounds(317,34,70,70);
         add(p1);
         add(p2);
         makeButtonInvisible(p2);
@@ -62,12 +70,15 @@ public class Board extends JFrame{
         
         //back button
         Piece backButton = new Piece();
-        backButton.setBounds(50, 25,70,70);
+        backButton.setBounds(30, 32,70,70);
         add(backButton);
         backButtonListener(backButton);
         makeButtonInvisible(backButton);
     }
-    
+    /**
+     * creates listener at back button
+     * Author: Sergei Levashov
+     */
     private void backButtonListener(Piece b) //implement change to new JFrame here
     {
         b.addActionListener(new ActionListener()
@@ -78,6 +89,10 @@ public class Board extends JFrame{
             }
         });
     }
+    /**
+     * makes the JButton passed invisible
+     * Author: Sergei Levashov
+     */
     private void makeButtonInvisible(Piece b) //makes an individual button invisible
     {
         b.setOpaque(false);

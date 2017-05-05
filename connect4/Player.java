@@ -11,7 +11,7 @@ public class Player
 {
     private String myName;
     private ImageIcon myFace;
-    private Piece[] myPieces;
+    private Color myBorderColor; //this will be the border of each piece
 
     /**
      * Constructor for objects of class Player
@@ -19,25 +19,17 @@ public class Player
     public Player(String name, int playerNum)
     {
         myName = name;
-        myFace = new ImageIcon(name+"Face.png");
-        myPieces = new Piece[21];
+        myFace = new ImageIcon(name+"_face.png");
         
-        for (int i =0; i< myPieces.length; i++)
-        {
-            if(playerNum == 1)
-            {
-                myPieces[i] = new Piece();
-            }
-            else
-            {
-                myPieces[i] = new Piece();
-            }
-        }
     }
 
     public void play(PlayingBoard pB)
     {
     }
+    /*
+     * Adds a listener to a specefied JButton, plays an audio file onclick
+     * Author: Sergei Levashov
+     */
     public void addVoiceBoxListener(Piece b,String s)
     {
         if(s.equals("left"))

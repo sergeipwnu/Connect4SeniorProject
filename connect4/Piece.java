@@ -1,15 +1,14 @@
 import javax.swing.*;
 import java.awt.event.*;
 /**
- * Write a description of class Peice here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+     * Modified JButton with X and Y coordinates added
+     * Author: Sergei Levashov
+     */
 public class Piece extends JButton
 {
     private int myY;
     private int myX;
+    
     public Piece(int y, int x)
     {
         myX = x;
@@ -30,6 +29,10 @@ public class Piece extends JButton
     {
         System.out.println("test");
     }
+    /**
+     * Listener that changes boolean @ position y,x in PlayingBoard onclick
+     * Author: Sergei Levashov
+     */
     public void addListener()
     {
         this.addActionListener(new ActionListener()

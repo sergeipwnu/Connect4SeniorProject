@@ -7,17 +7,17 @@ import javax.swing.*;
  */
 public class PlayingBoard 
 {
-    // instance variables - replace the example below with your own
     private final int ROW = 6;
     private final int COL = 7;
-    private Piece[][] matrix;
+    private boolean connect4 = false;
+    private boolean[][] moves;
 
     /**
      * Constructor for objects of class PlayingBoard
      */
     public PlayingBoard()
     {
-        matrix = new Piece[ROW][COL];
+        moves = new boolean[ROW][COL];
     }
     
     /**
@@ -25,15 +25,19 @@ public class PlayingBoard
      */
     public boolean areFourConnected()
     {
+        //this will be checked and update the variable connect4 after every time makemove is successful
         return true;
     }
     
     /**
      * 
      */
-    public boolean makeMove(Piece p)
+    public boolean makeMove(Position p) 
     {
-        return true;
+        //Position is an object with a y and x value. change the value at y,x in the moves array
+        //to true if the move is avaliable and if there is a Piece directly below
+        
+        return true;//return true if the move is possible, false if not
     }
     
 }

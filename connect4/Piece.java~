@@ -37,9 +37,7 @@ public class Piece extends JButton
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println(myY + " " + myX);
-                
-                //the button should have a row and colomb
-                //use the dimension property to add it the matching spot in array in PlayingBoard
+                //this is where you change the boolean of the array in PlayerBoard
             }
         });
     }

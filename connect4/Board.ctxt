@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Board()
-comment1.params=dim1\ dim2\ insets
-comment1.target=void\ generateButtons(int,\ int,\ java.awt.Insets)
+comment0.text=\r\n\ Board\ constructor,\ initializes\ the\ JFframe\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment1.params=insets
+comment1.target=void\ generateButtons(java.awt.Insets)
+comment1.text=\r\n\ generates\ the\ 6X7\ grid\ of\ buttons\ and\ makes\ them\ invisible\r\n\ Author\:\ Sergei\ Levashov\r\n
 comment2.params=b
 comment2.target=void\ backButtonListener(Piece)
+comment2.text=\r\n\ creates\ listener\ at\ back\ button\r\n\ Author\:\ Sergei\ Levashov\r\n
 comment3.params=e
 comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment4.params=b
 comment4.target=void\ makeButtonInvisible(Piece)
+comment4.text=\r\n\ makes\ the\ JButton\ passed\ invisible\r\n\ Author\:\ Sergei\ Levashov\r\n
 numComments=5

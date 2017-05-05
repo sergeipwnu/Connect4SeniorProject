@@ -6,6 +6,7 @@ comment1.params=pB
 comment1.target=void\ play(PlayingBoard)
 comment2.params=b\ s
 comment2.target=void\ addVoiceBoxListener(Piece,\ java.lang.String)
+comment2.text=\r\n\ Adds\ a\ listener\ to\ a\ specefied\ JButton,\ plays\ an\ audio\ file\ onclick\r\n\ Author\:\ Sergei\ Levashov\r\n
 comment3.params=e
 comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment4.params=e
