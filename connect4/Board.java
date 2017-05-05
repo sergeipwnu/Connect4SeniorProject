@@ -17,16 +17,16 @@ public class Board extends JFrame{
     }
     private void generateButtons(int dim1, int dim2, Insets insets)
     {
-        ArrayList<JButton> buttons = new ArrayList<JButton>();
+        ArrayList<Piece> buttons = new ArrayList<Piece>();
         int LeftInset = 65;
         int count = 1;
         int TopInset = 145;
         for(int x = 0; x < 7*6; x++)
         {
-            buttons.add(new JButton());
+            buttons.add(new Piece(0,0)); //MAKE THIS ACTUALLY ADD THE RIGHT POSITION
         }
         
-        for(JButton b : buttons)
+        for(Piece b : buttons)
         {
             add(b);
             addListener(b);
@@ -43,8 +43,8 @@ public class Board extends JFrame{
         }
         
         //here we add the buttons for the vs boxes on the top right of the board
-        JButton p1 = new JButton();
-        JButton p2 = new JButton();
+        Piece p1 = new Piece();
+        Piece p2 = new Piece();
         p2.setBounds(671,27,70,70);
         p1.setBounds(380,27,70,70);
         add(p1);
@@ -55,13 +55,13 @@ public class Board extends JFrame{
         addVoiceBoxListener(p2,"right");
         
         //back button
-        JButton backButton = new JButton();
+        Piece backButton = new Piece();
         backButton.setBounds(50, 25,70,70);
         add(backButton);
         backButtonListener(backButton);
         makeButtonInvisible(backButton);
     }
-    private void addListener(JButton b)
+    private void addListener(Piece b)
     {
         b.addActionListener(new ActionListener()
         {
@@ -72,7 +72,7 @@ public class Board extends JFrame{
             }
         });
     }
-    private void addVoiceBoxListener(JButton b, String s)
+    private void addVoiceBoxListener(Piece b, String s)
     {
         if(s.equals("left"))
         {
@@ -97,7 +97,7 @@ public class Board extends JFrame{
         });
         }
     }
-    private void backButtonListener(JButton b) //implement change to new JFrame here
+    private void backButtonListener(Piece b) //implement change to new JFrame here
     {
         b.addActionListener(new ActionListener()
         {
@@ -107,7 +107,7 @@ public class Board extends JFrame{
             }
         });
     }
-    private void makeButtonInvisible(JButton b)
+    private void makeButtonInvisible(Piece b)
     {
         b.setOpaque(false);
         b.setContentAreaFilled(false);

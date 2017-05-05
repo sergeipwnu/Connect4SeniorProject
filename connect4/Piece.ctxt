@@ -1,4 +1,8 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Piece()
-numComments=1
+comment0.params=y\ x
+comment0.target=Piece(int,\ int)
+comment1.params=
+comment1.target=Piece()
+comment2.params=
+comment2.target=Position\ getPosition()
+numComments=3

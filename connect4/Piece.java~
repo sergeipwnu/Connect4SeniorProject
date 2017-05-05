@@ -1,28 +1,24 @@
-
+import javax.swing.*;
 /**
  * Write a description of class Peice here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Piece
+public class Piece extends JButton
 {
-    
-    /**
-     * Constructor for objects of class Peice
-     */
+    private int myY;
+    private int myX;
+    public Piece(int y, int x)
+    {
+        myX = x;
+        myY = y;
+    }
     public Piece()
     {
-        
     }
-
-    /**
-     * Here is the main() method
-     * 
-     */
-    public static void main(String[] args)
+    public Position getPosition()
     {
-        // put your code here
-
+        return new Position(y,x);
     }
 }
