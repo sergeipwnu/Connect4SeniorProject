@@ -10,14 +10,15 @@ public class PlayingBoard
     private final int ROW = 6;
     private final int COL = 7;
     private boolean connect4 = false;
-    private boolean[][] moves;
+    private int playerNum = 1;
+    private int[][] moves;
 
     /**
      * Constructor for objects of class PlayingBoard
      */
     public PlayingBoard()
     {
-        moves = new boolean[ROW][COL];
+        moves = new int[ROW][COL];
     }
     
     /**
@@ -25,7 +26,7 @@ public class PlayingBoard
      */
     public boolean areFourConnected()
     {
-        //this will be checked and update the variable connect4 after every time makemove is successful
+        //this will be checked and update the variable connect4 after every time makeMove is successful
         return true;
     }
     
@@ -34,10 +35,30 @@ public class PlayingBoard
      */
     public boolean makeMove(Position p) 
     {
-        //Position is an object with a y and x value. change the value at y,x in the moves array
-        //to true if the move is avaliable and if there is a Piece directly below
-        
-        return true;//return true if the move is possible, false if not
+        if(moves[p.y][p.x] > 0)
+        {
+            return false;
+        }
+        else
+        {
+            int below = p.y;
+            
+            while(below+1 <= ROW && moves[below][p.x] == 0)
+                below++;
+            
+            moves[below][p.x] = playerNum;
+            changePlayer();
+            
+            return true;
+        }
+    }
+    
+    /**
+     * 
+     */
+    private void changePlayer()
+    {
+        playerNum = (playerNum % 2) +1;
     }
     
 }
