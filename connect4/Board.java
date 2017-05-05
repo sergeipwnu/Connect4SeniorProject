@@ -23,11 +23,11 @@ public class Board extends JFrame{
         int TopInset = 145;
         for(int y = 0; y < 6; y++)
         {
-            for(int x = 0; x < 7; x++)
+            for(int x = 0; x < 7; x++) //adds in all buttons
             {
                 Piece p = new Piece(y,x);
                 buttons.add(p);
-                p.addListener();
+                p.addListener(); //this adds a listener in the instance of the button
             }
         }
         
@@ -78,7 +78,7 @@ public class Board extends JFrame{
             }
         });
     }
-    private void makeButtonInvisible(Piece b)
+    private void makeButtonInvisible(Piece b) //makes an individual button invisible
     {
         b.setOpaque(false);
         b.setContentAreaFilled(false);

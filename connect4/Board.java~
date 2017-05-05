@@ -58,7 +58,7 @@ public class Board extends JFrame{
         Player Player1 = new Player("testname",0);
         Player Player2 = new Player("testname",0);
         Player1.addVoiceBoxListener(p1,"left");
-        Player2.addVoiceBoxListener(p1,"right");
+        Player2.addVoiceBoxListener(p2,"right");
         
         //back button
         Piece backButton = new Piece();
