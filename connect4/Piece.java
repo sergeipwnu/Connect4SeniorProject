@@ -8,11 +8,12 @@ public class Piece extends JButton
 {
     private int myY;
     private int myX;
-    
-    public Piece(int y, int x)
+    private PlayingBoard myBrain;
+    public Piece(int y, int x, PlayingBoard Brain)
     {
         myX = x;
         myY = y;
+        myBrain = Brain;
     }
     public Piece()
     {
@@ -40,6 +41,7 @@ public class Piece extends JButton
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println(myY + " " + myX);
+                
                 //this is where you change the boolean of the array in PlayerBoard
             }
         });

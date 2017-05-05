@@ -10,6 +10,7 @@ public class Board extends JFrame{
      */
     public Board(){
         super("Connect 4");
+        
         PlayingBoard Brain = new PlayingBoard();
         setLayout(null);
         JLabel label = new JLabel();
@@ -17,13 +18,14 @@ public class Board extends JFrame{
         Insets insets = getInsets();
         add(label);
         label.setBounds(0,0,1000,800);
-        generateButtons(insets);
+        generateButtons(insets,Brain);
+        
     }
     /**
      * generates the 6X7 grid of buttons and makes them invisible
      * Author: Sergei Levashov
      */
-    private void generateButtons(Insets insets)
+    private void generateButtons(Insets insets,PlayingBoard Brain)
     {
         ArrayList<Piece> buttons = new ArrayList<Piece>();
         int LeftInset = 170;
@@ -33,7 +35,7 @@ public class Board extends JFrame{
         {
             for(int x = 0; x < 7; x++) //adds in all buttons
             {
-                Piece p = new Piece(y,x);
+                Piece p = new Piece(y,x,Brain);
                 buttons.add(p);
                 p.addListener(); //this adds a listener in the instance of the button
             }
