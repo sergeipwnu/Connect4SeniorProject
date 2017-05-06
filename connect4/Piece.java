@@ -26,10 +26,6 @@ public class Piece extends JButton
     {
         return myY + " " + myX;
     }
-    public void testPrint()
-    {
-        System.out.println("test");
-    }
     /**
      * Listener that changes boolean @ position y,x in PlayingBoard onclick
      * Author: Sergei Levashov
@@ -40,8 +36,12 @@ public class Piece extends JButton
         {
             public void actionPerformed(ActionEvent e)
             {
+<<<<<<< HEAD
                 //System.out.println(myY + " " + myX);
                 myBrain.makeMove(getPosition());
+=======
+                System.out.println(myY + " " + myX);
+>>>>>>> origin/master
                 //this is where you change the boolean of the array in PlayerBoard
             }
         });

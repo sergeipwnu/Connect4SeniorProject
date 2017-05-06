@@ -10,7 +10,10 @@ public class PlayingBoard
     private final int ROW = 6;
     private final int COL = 7;
     private boolean connect4 = false;
+<<<<<<< HEAD
     private int playerNum = 1;
+=======
+>>>>>>> origin/master
     private int[][] moves;
 
     /**
@@ -18,7 +21,11 @@ public class PlayingBoard
      */
     public PlayingBoard()
     {
+<<<<<<< HEAD
         moves = new int[ROW][COL];
+=======
+        moves = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
+>>>>>>> origin/master
     }
     
     /**
@@ -74,5 +81,6 @@ public class PlayingBoard
     {
         playerNum = (playerNum % 2) +1;
     }
+
     
 }
