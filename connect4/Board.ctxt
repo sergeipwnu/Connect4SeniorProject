@@ -2,8 +2,8 @@
 comment0.params=
 comment0.target=Board()
 comment0.text=\r\n\ Board\ constructor,\ initializes\ the\ JFframe\r\n\ Author\:\ Sergei\ Levashov\r\n
-comment1.params=
-comment1.target=void\ addBoard()
+comment1.params=player1\ player2
+comment1.target=void\ addBoard(Player,\ Player)
 comment2.params=insets\ Brain
 comment2.target=void\ generateButtons(java.awt.Insets,\ PlayingBoard)
 comment2.text=\r\n\ generates\ the\ 6X7\ grid\ of\ buttons\ and\ makes\ them\ invisible\r\n\ Author\:\ Sergei\ Levashov\r\n

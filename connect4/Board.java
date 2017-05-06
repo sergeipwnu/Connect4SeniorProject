@@ -6,6 +6,8 @@ import java.util.*;
 public class Board extends JFrame{
     private PlayingBoard Brain;
     private JLabel label;
+    private Player p1;
+    private Player p2;
     /**
      * Board constructor, initializes the JFframe
      * Author: Sergei Levashov
@@ -15,8 +17,10 @@ public class Board extends JFrame{
         Brain = new PlayingBoard();
         setLayout(null);
     }
-    public void addBoard()
+    public void addBoard(Player player1, Player player2)
     {
+        p1 = player1;
+        p2 = player2;
         label = new JLabel();
         label.setIcon(new ImageIcon("images/connect4board2.png"));
         add(label);

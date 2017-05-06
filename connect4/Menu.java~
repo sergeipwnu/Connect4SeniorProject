@@ -59,9 +59,9 @@ public class Menu extends JFrame
     private void createButtons()
     {
         add(makeButtonInvisible(new playerButton(135,200,"Omid","omid_face.png")));
-        add(new playerButton(345,200,"Sergei","sergei_face.png"));
-        add(new playerButton(555,200,"Omer","omer_face.png"));
-        add(new playerButton(770,200,"Zachary","zach_face.png"));
+        add(makeButtonInvisible(new playerButton(345,200,"Sergei","sergei_face.png")));
+        add(makeButtonInvisible(new playerButton(555,200,"Omer","omer_face.png")));
+        add(makeButtonInvisible(new playerButton(770,200,"Zachary","zach_face.png")));
     }
     private playerButton makeButtonInvisible(playerButton b)
     {
