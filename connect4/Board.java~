@@ -2,10 +2,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
+import java.awt.image.BufferedImage;
 
 public class Board extends JFrame{
     private PlayingBoard Brain;
     private JLabel label;
+    private Player p1;
+    private Player p2;
+    private JPanel tokens;
     /**
      * Board constructor, initializes the JFframe
      * Author: Sergei Levashov
@@ -15,13 +19,37 @@ public class Board extends JFrame{
         Brain = new PlayingBoard();
         setLayout(null);
     }
+    /**
+     * generates a new board and buttons
+     * Author: Sergei Levashov
+     */
     public void addBoard(Player player1, Player player2)
     {
+        p1 = player1;
+        p2 = player2;
         label = new JLabel();
+        tokens = new JPanel();
         label.setIcon(new ImageIcon("images/connect4board2.png"));
+        tokens.setLayout(null);
+        tokens.setOpaque(true);
+        addToken(0,0); //this should be moved to the Peices Listener later
+        tokens.setBackground(new Color(0,0,0,0));
+        add(tokens);
         add(label);
+        tokens.setBounds(0,0,1000,800);
         label.setBounds(0,0,1000,800);
         generateButtons(getInsets(),Brain);
+    }
+    /**
+     * adds a single token,
+     * Author: Sergei Levashov
+     */
+    public void addToken(int y, int x)
+    {
+        JLabel test = new JLabel();
+        test.setIcon(new ImageIcon("images/greentest.png"));
+        test.setBounds(173,160,60,60);
+        tokens.add(test);
     }
     /**
      * generates the 6X7 grid of buttons and makes them invisible
@@ -30,9 +58,9 @@ public class Board extends JFrame{
     private void generateButtons(Insets insets,PlayingBoard Brain)
     {
         ArrayList<Piece> buttons = new ArrayList<Piece>();
-        int LeftInset = 170;
+        int LeftInset = 165;
         int count = 1;
-        int TopInset = 145;
+        int TopInset = 129;
         for(int y = 0; y < 6; y++)
         {
             for(int x = 0; x < 7; x++) //adds in all buttons
@@ -51,8 +79,8 @@ public class Board extends JFrame{
             LeftInset += 100;
                 if(count == 7)
                 {
-                    LeftInset = 170;
-                    TopInset += 105;
+                    LeftInset = 165;
+                    TopInset += 103;
                     count = 0;
                 }
             count++;
