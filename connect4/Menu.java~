@@ -16,8 +16,13 @@ public class Menu extends JFrame
      */
     Menu()
     {
-        JLabel menu = new JLabel(new ImageIcon("images/Connect4Menu.png"));
+        super("Connect4 Menu");
+        setLayout(null);
+        JLabel menu = new JLabel();
+        menu.setIcon(new ImageIcon("images/Connect4Menu.png"));
+        menu.setBounds(0,0,1000,800);
         add(menu);
+        createButtons();
     }
     public void initBoard()
     {
@@ -28,7 +33,7 @@ public class Menu extends JFrame
         myBoard.setVisible(true);
         if(charactersSelected())
         {
-            //startGame(); //to add the board just uncomment startGame
+            startGame();
         }
         else
         {
@@ -51,4 +56,19 @@ public class Menu extends JFrame
             return true;
         //return false;
     }
+    private void createButtons()
+    {
+        add(makeButtonInvisible(new playerButton(135,200,"Omid","omid_face.png")));
+        add(new playerButton(345,200,"Sergei","sergei_face.png"));
+        add(new playerButton(555,200,"Omer","omer_face.png"));
+        add(new playerButton(770,200,"Zachary","zach_face.png"));
+    }
+    private playerButton makeButtonInvisible(playerButton b)
+    {
+        b.setOpaque(false);
+        b.setContentAreaFilled(false);
+        b.setBorderPainted(false);
+        return b;
+    }
+    
 }

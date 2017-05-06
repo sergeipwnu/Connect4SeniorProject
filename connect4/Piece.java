@@ -26,10 +26,6 @@ public class Piece extends JButton
     {
         return myY + " " + myX;
     }
-    public void testPrint()
-    {
-        System.out.println("test");
-    }
     /**
      * Listener that changes boolean @ position y,x in PlayingBoard onclick
      * Author: Sergei Levashov

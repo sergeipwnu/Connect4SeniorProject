@@ -19,10 +19,9 @@ public class Board extends JFrame{
     {
         label = new JLabel();
         label.setIcon(new ImageIcon("images/connect4board2.png"));
-        Insets insets = getInsets();
         add(label);
         label.setBounds(0,0,1000,800);
-        generateButtons(insets,Brain);
+        generateButtons(getInsets(),Brain);
     }
     /**
      * generates the 6X7 grid of buttons and makes them invisible

@@ -1,6 +1,12 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ addListener()
-comment1.params=e
-comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=2
+comment0.params=left\ top\ name\ imagepath
+comment0.target=playerButton(int,\ int,\ java.lang.String,\ java.lang.String)
+comment1.params=
+comment1.target=void\ addListener()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=java.lang.String\ getPName()
+comment4.params=
+comment4.target=java.lang.String\ getImagePath()
+numComments=5
