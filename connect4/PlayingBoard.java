@@ -31,13 +31,16 @@ public class PlayingBoard
     }
     
     /**
-     * 
+     * TO BE TESTED WHEN GAMEPLAY IMPLEMENTED
      */
     public boolean makeMove(Position p) 
     {
+        System.out.println(p);
+        boolean b;
         if(moves[p.y][p.x] > 0)
         {
-            return false;
+            b = false;
+            System.out.println("hit nest");
         }
         else
         {
@@ -48,9 +51,20 @@ public class PlayingBoard
             
             moves[below][p.x] = playerNum;
             changePlayer();
-            
-            return true;
+            System.out.println("hit nest");
+            b = true;
         }
+        System.out.println("hit nest");
+        for(int i =0; i < ROW; i++)
+        {
+             for(int j = 0; j<COL; j++)
+            {
+                System.out.print(moves[i][j]);
+            }
+            System.out.println();
+        } 
+        
+        return b;
     }
     
     /**

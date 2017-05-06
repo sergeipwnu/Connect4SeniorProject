@@ -40,8 +40,8 @@ public class Piece extends JButton
         {
             public void actionPerformed(ActionEvent e)
             {
-                System.out.println(myY + " " + myX);
-                
+                //System.out.println(myY + " " + myX);
+                myBrain.makeMove(getPosition());
                 //this is where you change the boolean of the array in PlayerBoard
             }
         });

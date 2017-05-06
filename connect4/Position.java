@@ -8,4 +8,11 @@ public class Position
         x = xx;
         y = yy;
     }
+    /**
+     * OMER
+     */
+    public String toString()
+    {
+        return "(" + x +", " + y + ")";
+    }
 }

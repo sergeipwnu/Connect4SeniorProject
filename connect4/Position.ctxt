@@ -1,4 +1,7 @@
 #BlueJ class context
 comment0.params=yy\ xx
 comment0.target=Position(int,\ int)
-numComments=1
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment1.text=\n\ OMER\n
+numComments=2
