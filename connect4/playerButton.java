@@ -1,15 +1,19 @@
 import javax.swing.*;
 import java.awt.event.*;
 /**
- * Write a description of class playerButton here.
+ * A modified JButton class with left and top insets, as well as a name and imagepath
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Sergei Levashov
  */
 public class playerButton extends JButton
 {
     private String myName;
     private String myImagePath;
+    /**
+     * adds a listener, assigns local variables, and sets bounds.
+     * 
+     * Sergei Levashov
+     */
     playerButton(int left, int top, String name, String imagepath)
     {
         addListener();
@@ -17,6 +21,11 @@ public class playerButton extends JButton
         myImagePath = imagepath;
         setBounds(left,top,100,100);
     }
+    /**
+     * adds a listener for the playerButton click.
+     * 
+     * Sergei Levashov
+     */
     public void addListener()
     {
         this.addActionListener(new ActionListener()
@@ -27,10 +36,20 @@ public class playerButton extends JButton
             }
         });
     }
+    /**
+     * local name getter for listener
+     * 
+     * Sergei Levashov
+     */
     private String getPName()
     {
        return myName; 
     }
+    /**
+     * local imagepath getter for listener
+     * 
+     * Sergei Levashov
+     */
     private String getImagePath()
     {
         return myImagePath;

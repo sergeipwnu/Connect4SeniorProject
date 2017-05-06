@@ -9,7 +9,6 @@ public class PlayingBoard
 {
     private final int ROW = 6;
     private final int COL = 7;
-    private int test = 0;
     private boolean connect4 = false;
     private boolean[][] moves;
 
@@ -40,10 +39,6 @@ public class PlayingBoard
         
         return true;//return true if the move is possible, false if not
     }
-    public void test()
-    {
-        test++;
-        System.out.println(test);
-    }
+
     
 }

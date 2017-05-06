@@ -13,6 +13,8 @@ public class playerButton extends JButton
     playerButton(int left, int top, String name, String imagepath)
     {
         addListener();
+        myName = name;
+        myImagePath = imagepath;
         setBounds(left,top,100,100);
     }
     public void addListener()

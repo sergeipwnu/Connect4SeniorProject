@@ -57,7 +57,7 @@ public class Menu extends JFrame
      * returns true if both players have selected a character, false if not
      * Zachary
      */
-    private boolean charactersSelected()
+    private boolean charactersSelected() //TODO
     {
         //if(player1 != null && player2 != null)
             return true;

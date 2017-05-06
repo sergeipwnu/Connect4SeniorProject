@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.params=left\ top\ name\ imagepath
 comment0.target=playerButton(int,\ int,\ java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ adds\ a\ listener,\ assigns\ local\ variables,\ and\ sets\ bounds.\r\n\ \r\n\ Sergei\ Levashov\r\n
 comment1.params=
 comment1.target=void\ addListener()
+comment1.text=\r\n\ adds\ a\ listener\ for\ the\ playerButton\ click.\r\n\ \r\n\ Sergei\ Levashov\r\n
 comment2.params=e
 comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment3.params=
 comment3.target=java.lang.String\ getPName()
+comment3.text=\r\n\ local\ name\ getter\ for\ listener\r\n\ \r\n\ Sergei\ Levashov\r\n
 comment4.params=
 comment4.target=java.lang.String\ getImagePath()
+comment4.text=\r\n\ local\ imagepath\ getter\ for\ listener\r\n\ \r\n\ Sergei\ Levashov\r\n
 numComments=5

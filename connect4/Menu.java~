@@ -3,7 +3,7 @@ import javax.swing.*;
 /**
  * Menu screen
  * 
- * Zachary
+ * Zachary and Sergei
  */
 public class Menu extends JFrame
 {
@@ -12,6 +12,7 @@ public class Menu extends JFrame
     private Board myBoard;
     JLabel label;
     /**
+     * 
      * Zachary
      */
     Menu()
@@ -24,6 +25,10 @@ public class Menu extends JFrame
         add(menu);
         createButtons();
     }
+    /**
+     * 
+     * Zachary
+     */
     public void initBoard()
     {
         myBoard = new Board();
@@ -41,13 +46,15 @@ public class Menu extends JFrame
         }
     }
     /**
+     * starts the game by adding the board
      * Zachary
      */
     private void startGame()
     {
-        myBoard.addBoard();
+        myBoard.addBoard(player1, player2);
     }
     /**
+     * returns true if both players have selected a character, false if not
      * Zachary
      */
     private boolean charactersSelected()
@@ -56,6 +63,10 @@ public class Menu extends JFrame
             return true;
         //return false;
     }
+    /**
+     * creates all player buttons
+     * Sergei
+     */
     private void createButtons()
     {
         add(makeButtonInvisible(new playerButton(135,200,"Omid","omid_face.png")));
@@ -63,6 +74,10 @@ public class Menu extends JFrame
         add(makeButtonInvisible(new playerButton(555,200,"Omer","omer_face.png")));
         add(makeButtonInvisible(new playerButton(770,200,"Zachary","zach_face.png")));
     }
+    /**
+     * returns the passed playerButton as invisible
+     * Sergei
+     */
     private playerButton makeButtonInvisible(playerButton b)
     {
         b.setOpaque(false);

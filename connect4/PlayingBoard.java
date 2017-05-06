@@ -10,14 +10,14 @@ public class PlayingBoard
     private final int ROW = 6;
     private final int COL = 7;
     private boolean connect4 = false;
-    private boolean[][] moves;
+    private int[][] moves;
 
     /**
      * Constructor for objects of class PlayingBoard
      */
     public PlayingBoard()
     {
-        moves = new boolean[ROW][COL];
+        moves = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
     }
     
     /**
