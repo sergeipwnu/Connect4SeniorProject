@@ -32,7 +32,7 @@ public class Board extends JFrame{
         label.setIcon(new ImageIcon("images/connect4board2.png"));
         tokens.setLayout(null);
         tokens.setOpaque(true);
-        addToken(0,0); //this should be moved to the Peices Listener later
+        //addToken(0,0); //this should be moved to the Peices Listener later
         tokens.setBackground(new Color(0,0,0,0));
         add(tokens);
         add(label);
@@ -41,7 +41,7 @@ public class Board extends JFrame{
         generateButtons(getInsets(),Brain);
     }
     /**
-     * adds a single token,
+     * adds a single token, at the specified y and x
      * Author: Sergei Levashov
      */
     public void addToken(int y, int x)
