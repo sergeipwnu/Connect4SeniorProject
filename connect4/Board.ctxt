@@ -4,27 +4,7 @@ comment0.target=Board()
 comment0.text=\n\ Board\ constructor,\ initializes\ the\ JFframe\n\ Author\:\ Sergei\ Levashov\n
 comment1.params=player1\ player2
 comment1.target=void\ addBoard(Player,\ Player)
-<<<<<<< HEAD
-<<<<<<< HEAD
-comment2.params=insets\ Brain
-comment2.target=void\ generateButtons(java.awt.Insets,\ PlayingBoard)
-comment2.text=\n\ generates\ the\ 6X7\ grid\ of\ buttons\ and\ makes\ them\ invisible\n\ Author\:\ Sergei\ Levashov\n
-comment3.params=b
-comment3.target=void\ backButtonListener(Piece)
-comment3.text=\n\ creates\ listener\ at\ back\ button\n\ Author\:\ Sergei\ Levashov\n
-comment4.params=e
-comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment5.params=b
-comment5.target=void\ makeButtonInvisible(Piece)
-comment5.text=\n\ makes\ the\ JButton\ passed\ invisible\n\ Author\:\ Sergei\ Levashov\n
-comment6.params=
-comment6.target=void\ addMenuButtons()
-numComments=7
-=======
-comment1.text=\r\n\ generates\ a\ new\ board\ and\ buttons\r\n\ Author\:\ Sergei\ Levashov\r\n
-=======
 comment1.text=\n\ generates\ a\ new\ board\ and\ buttons\n\ Author\:\ Sergei\ Levashov\n
->>>>>>> origin/master
 comment2.params=y\ x
 comment2.target=void\ addToken(int,\ int)
 comment2.text=\n\ adds\ a\ single\ token,\ at\ the\ specified\ y\ and\ x\n\ Author\:\ Sergei\ Levashov\n
@@ -42,4 +22,3 @@ comment6.text=\n\ makes\ the\ JButton\ passed\ invisible\n\ Author\:\ Sergei\ Le
 comment7.params=
 comment7.target=void\ addMenuButtons()
 numComments=8
->>>>>>> origin/master

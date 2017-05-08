@@ -10,13 +10,7 @@ public class PlayingBoard
     private final int ROW = 6;
     private final int COL = 7;
     private boolean connect4 = false;
-<<<<<<< HEAD
-
     private int playerNum = 1;
-
-=======
-    private int playerNum = 1;
->>>>>>> origin/master
     private int[][] moves;
 
     /**
