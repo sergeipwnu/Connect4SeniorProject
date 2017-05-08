@@ -130,6 +130,7 @@ public class Board extends JFrame{
         b.setOpaque(false);
         b.setContentAreaFilled(false);
         b.setBorderPainted(false);
+        
     }
     public void addMenuButtons()
     {

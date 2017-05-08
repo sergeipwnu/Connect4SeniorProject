@@ -9,8 +9,14 @@ public class PlayingBoard
 {
     private final int ROW = 6;
     private final int COL = 7;
+<<<<<<< HEAD
     private int playerNum = 1;
     private int[][] board;
+=======
+    private boolean connect4 = false;
+    private int playerNum = 1;
+    private int[][] moves;
+>>>>>>> origin/master
 
     /**
      * Constructor for objects of class PlayingBoard

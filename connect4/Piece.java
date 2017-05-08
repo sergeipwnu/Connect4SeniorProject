@@ -39,7 +39,11 @@ public class Piece extends JButton
                 //System.out.println(myY + " " + myX);
                 myBrain.makeMove(getPosition());
                 System.out.println(myY + " " + myX);
+<<<<<<< HEAD
                 System.out.println(myY + " " + myX);
+=======
+
+>>>>>>> origin/master
                 //this is where you change the boolean of the array in PlayerBoard
             }
         });
