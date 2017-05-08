@@ -70,15 +70,24 @@ public class Menu extends JFrame
     private void createButtons()
     {
         //first row
-        add(makeButtonInvisible(new playerButton(135,200,"Omid","omid_face.png")));
-        add(makeButtonInvisible(new playerButton(345,200,"Sergei","sergei_face.png")));
-        add(makeButtonInvisible(new playerButton(555,200,"Omer","omer_face.png")));
-        add(makeButtonInvisible(new playerButton(770,200,"Zachary","zach_face.png")));
+        add(makeButtonInvisible(new playerButton(110,175,"Omid","omid_face.png")));
+        add(makeButtonInvisible(new playerButton(320,175,"Sergei","sergei_face.png")));
+        add(makeButtonInvisible(new playerButton(530,175,"Omer","omer_face.png")));
+        add(makeButtonInvisible(new playerButton(745,175,"Zachary","zach_face.png")));
         //second row
-        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
-        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
-        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
-        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
+        add(makeButtonInvisible(new playerButton(110,340,"Warrick","warrick_face.png")));
+        add(makeButtonInvisible(new playerButton(320,340,"Catherines","catherines_face.png")));
+        add(makeButtonInvisible(new playerButton(530,340,"Lauren","lauren_face.png")));
+        add(makeButtonInvisible(new playerButton(745,340,"Bubbles","bubbles_face.png")));
+    }
+    /**
+     * unlocckable caharacters
+     * zachary
+     */
+    private void unlock()
+    {
+        add(makeButtonInvisible(new playerButton(320,560,"Mr. L","mr.l_face.png")));
+        add(makeButtonInvisible(new playerButton(530,560,"Mizel","mizel_face.png")));
     }
     /**
      * returns the passed playerButton as invisible
