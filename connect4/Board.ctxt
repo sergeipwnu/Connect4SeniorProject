@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Board()
-comment0.text=\r\n\ Board\ constructor,\ initializes\ the\ JFframe\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment0.text=\n\ Board\ constructor,\ initializes\ the\ JFframe\n\ Author\:\ Sergei\ Levashov\n
 comment1.params=player1\ player2
 comment1.target=void\ addBoard(Player,\ Player)
 comment2.params=insets\ Brain
 comment2.target=void\ generateButtons(java.awt.Insets,\ PlayingBoard)
-comment2.text=\r\n\ generates\ the\ 6X7\ grid\ of\ buttons\ and\ makes\ them\ invisible\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment2.text=\n\ generates\ the\ 6X7\ grid\ of\ buttons\ and\ makes\ them\ invisible\n\ Author\:\ Sergei\ Levashov\n
 comment3.params=b
 comment3.target=void\ backButtonListener(Piece)
-comment3.text=\r\n\ creates\ listener\ at\ back\ button\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment3.text=\n\ creates\ listener\ at\ back\ button\n\ Author\:\ Sergei\ Levashov\n
 comment4.params=e
 comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment5.params=b
 comment5.target=void\ makeButtonInvisible(Piece)
-comment5.text=\r\n\ makes\ the\ JButton\ passed\ invisible\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment5.text=\n\ makes\ the\ JButton\ passed\ invisible\n\ Author\:\ Sergei\ Levashov\n
 comment6.params=
 comment6.target=void\ addMenuButtons()
 numComments=7
