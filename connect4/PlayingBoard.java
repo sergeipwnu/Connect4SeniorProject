@@ -9,37 +9,68 @@ public class PlayingBoard
 {
     private final int ROW = 6;
     private final int COL = 7;
-    private boolean connect4 = false;
-<<<<<<< HEAD
-
     private int playerNum = 1;
-
-=======
-    private int playerNum = 1;
->>>>>>> origin/master
-    private int[][] moves;
+    private int[][] board;
 
     /**
      * Constructor for objects of class PlayingBoard
      */
     public PlayingBoard()
     {
-        moves = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
+        board = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
     }
     
     /**
      * OMER
+     * from  http://stackoverflow.com/questions/32770321/connect-4-check-for-a-win-algorithm 
+     * by ferdelOlmo
      */
     public boolean areFourConnected()
     {
-        //this will be checked and update the variable connect4 
-        //after every time makeMove is successful
-        //for (int i = 0; i < 
+        // horizontalCheck 
+        for (int j = 0; j< ROW-3 ; j++ )
+        {
+            for (int i = 0; i< COL; i++)
+            {
+                if (board[i][j] == playerNum && board[i][j+1] == playerNum &&
+                    board[i][j+2] == playerNum && board[i][j+3] == playerNum)
+                {
+                    return true;
+                }           
+            }
+        }
+        // verticalCheck
+        for (int i = 0; i< COL-3 ; i++ )
+        {
+            for (int j = 0; j< ROW; j++)
+            {
+                if (board[i][j] == playerNum && board[i+1][j] == playerNum &&
+                    board[i+2][j] == playerNum && board[i+3][j] == playerNum)
+                {
+                    return true;
+                }           
+            }
+        }
+        // ascendingDiagonalCheck 
+        for (int i=3; i< COL; i++)
+        {
+            for (int j=0; j<ROW-3; j++)
+            {
+                if (board[i][j] == playerNum && board[i-1][j+1] == playerNum && 
+                    board[i-2][j+2] == playerNum && board[i-3][j+3] == playerNum)
+                    return true;
+            }
+        }
+        // descendingDiagonalCheck
+        for (int i=3; i< COL; i++){
+            for (int j=3; j< ROW; j++){
+                if (board[i][j] == playerNum && board[i-1][j-1] == playerNum && 
+                    board[i-2][j-2] == playerNum && board[i-3][j-3] == playerNum)
+                    return true;
+            }
+        }
         
-        //vertical
-        //horizontal
-        //diagonal
-        return true;
+        return false;
     }
     
     /**
@@ -51,7 +82,7 @@ public class PlayingBoard
         System.out.println(p);
         boolean b;
         
-        if(moves[p.y][p.x] > 0)
+        if(board[p.y][p.x] > 0)
         {
             b = false;
             System.out.println("cant do that buddy");
@@ -60,12 +91,12 @@ public class PlayingBoard
         {
             
             int placeBelow = p.y;
-            while(placeBelow+1 < ROW && moves[placeBelow+1][p.x] == 0)
+            while(placeBelow+1 < ROW && board[placeBelow+1][p.x] == 0)
             {
                 placeBelow++;
             }
             
-            moves[placeBelow][p.x] = playerNum;
+            board[placeBelow][p.x] = playerNum;
             changePlayer();
             b = true;
         }
@@ -75,7 +106,7 @@ public class PlayingBoard
         {
              for(int j = 0; j<COL; j++)
             {
-                System.out.print(moves[i][j]);
+                System.out.print(board[i][j]);
             }
             System.out.println();
         }
