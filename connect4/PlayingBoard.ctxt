@@ -1,14 +1,21 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PlayingBoard()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard\r\n
 comment1.params=
 comment1.target=boolean\ areFourConnected()
+<<<<<<< HEAD
 comment1.text=\n\ OMER\n
 comment2.params=p
 comment2.target=boolean\ makeMove(Position)
 comment2.text=\n\ TO\ BE\ TESTED\ WHEN\ GAMEPLAY\ IMPLEMENTED\n\ OMER\n
+=======
+comment1.text=\r\n\ \r\n
+comment2.params=p
+comment2.target=boolean\ makeMove(Position)
+comment2.text=\r\n\ TO\ BE\ TESTED\ WHEN\ GAMEPLAY\ IMPLEMENTED\r\n
+>>>>>>> origin/master
 comment3.params=
 comment3.target=void\ changePlayer()
-comment3.text=\n\ \n
+comment3.text=\r\n\ \r\n
 numComments=4
