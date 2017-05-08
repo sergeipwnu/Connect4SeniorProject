@@ -9,14 +9,9 @@ public class PlayingBoard
 {
     private final int ROW = 6;
     private final int COL = 7;
-<<<<<<< HEAD
     private int playerNum = 1;
     private int[][] board;
-=======
-    private boolean connect4 = false;
-    private int playerNum = 1;
-    private int[][] moves;
->>>>>>> origin/master
+    private int placeBelow = 0;
 
     /**
      * Constructor for objects of class PlayingBoard
@@ -85,10 +80,11 @@ public class PlayingBoard
      */
     public boolean makeMove(Position p) 
     {
+        placeBelow = 0;
         System.out.println(p);
         boolean b;
         
-        if(board[p.y][p.x] > 0)
+        if(board[p.getY()][p.getX()] > 0)
         {
             b = false;
             System.out.println("cant do that buddy");
@@ -96,13 +92,13 @@ public class PlayingBoard
         else 
         {
             
-            int placeBelow = p.y;
-            while(placeBelow+1 < ROW && board[placeBelow+1][p.x] == 0)
+            placeBelow = p.getY();
+            while(placeBelow+1 < ROW && board[placeBelow+1][p.getX()] == 0)
             {
                 placeBelow++;
             }
             
-            board[placeBelow][p.x] = playerNum;
+            board[placeBelow][p.getX()] = playerNum;
             changePlayer();
             b = true;
         }
@@ -126,6 +122,10 @@ public class PlayingBoard
     {
         playerNum = (playerNum % 2) +1;
     }
-
+    public int getDropOffset()
+    {
+        System.out.println(placeBelow);
+        return placeBelow;
+    }
     
 }

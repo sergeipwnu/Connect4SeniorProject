@@ -49,9 +49,9 @@ public class Board extends JFrame{
     {
         JLabel test = new JLabel();
         test.setIcon(new ImageIcon("images/greentest.png"));
-        test.setBounds(y+10,x+10,60,60);
-        
+        test.setBounds(y+3,x+3,65,65);        
         tokens.add(test);
+        tokens.repaint();
     }
     /**
      * generates the 6X7 grid of buttons and makes them invisible
