@@ -19,7 +19,7 @@ public class playerButton extends JButton
         addListener();
         myName = name;
         myImagePath = imagepath;
-        setBounds(left,top,100,100);
+        setBounds(left,top,150,150);
     }
     /**
      * adds a listener for the playerButton click.
