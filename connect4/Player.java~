@@ -2,19 +2,19 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.event.*; 
 /**
- * Write a description of class Player here.
+ * An object with the border color, face, and name of the chosen players.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Sergei Levashov
  */
 public class Player
 {
     private String myName;
     private ImageIcon myFace;
-    private Color myBorderColor;
+    private Color myBorderColor; //this will be the border of each piece
 
     /**
      * Constructor for objects of class Player
+     * Sergei
      */
     public Player(String name, int playerNum)
     {
@@ -26,7 +26,7 @@ public class Player
     public void play(PlayingBoard pB)
     {
     }
-    /*
+    /**
      * Adds a listener to a specefied JButton, plays an audio file onclick
      * Author: Sergei Levashov
      */

@@ -1,8 +1,8 @@
 
 public class Position
 {
-    public int x;
-    public int y;
+    private int x;
+    private int y;
     Position(int yy, int xx)
     {
         x = xx;
@@ -14,5 +14,13 @@ public class Position
     public String toString()
     {
         return "(" + x +", " + y + ")";
+    }
+    public int getX()
+    {
+        return x;
+    }
+    public int getY()
+    {
+        return y;
     }
 }

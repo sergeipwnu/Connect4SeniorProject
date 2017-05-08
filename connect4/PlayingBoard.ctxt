@@ -1,16 +1,17 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PlayingBoard()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard\r\n\ Omer\r\n
 comment1.params=
 comment1.target=boolean\ areFourConnected()
 comment1.text=\r\n\ OMER\r\n\ from\ \ http\://stackoverflow.com/questions/32770321/connect-4-check-for-a-win-algorithm\ \r\n\ by\ ferdelOlmo\r\n
 comment2.params=p
 comment2.target=boolean\ makeMove(Position)
-comment2.text=\r\n\ TO\ BE\ TESTED\ WHEN\ GAMEPLAY\ IMPLEMENTED\r\n\ OMER\r\n
+comment2.text=\r\n\ \ Attempts\ to\ make\ a\ move\ at\ the\ given\ Position.\ If\ the\ move\ is\ possible,\ the\ move\ is\ made\r\n\ \ and\ makeMove()\ returns\ true.\ If\ a\ move\ is\ not\ possible,\ the\ user\ is\ prompted\ via\ the\ command\r\n\ \ line\ and\ makeMove()\ returns\ false\r\n\ OMER\r\n
 comment3.params=
 comment3.target=void\ changePlayer()
-comment3.text=\r\n\ \r\n
+comment3.text=\r\n\ Changes\ playerNum\ into\ 1\ if\ 2,\ and\ 2\ if\ 1\r\n\ Omer\r\n
 comment4.params=
 comment4.target=int\ getDropOffset()
+comment4.text=\r\n\ returns\ placeBelow\r\n\ Sergei\r\n
 numComments=5

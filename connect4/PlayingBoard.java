@@ -15,6 +15,7 @@ public class PlayingBoard
 
     /**
      * Constructor for objects of class PlayingBoard
+     * Omer
      */
     public PlayingBoard()
     {
@@ -75,7 +76,9 @@ public class PlayingBoard
     }
     
     /**
-     * TO BE TESTED WHEN GAMEPLAY IMPLEMENTED
+     *  Attempts to make a move at the given Position. If the move is possible, the move is made
+     *  and makeMove() returns true. If a move is not possible, the user is prompted via the command
+     *  line and makeMove() returns false
      * OMER
      */
     public boolean makeMove(Position p) 
@@ -116,12 +119,17 @@ public class PlayingBoard
     }
     
     /**
-     * 
+     * Changes playerNum into 1 if 2, and 2 if 1
+     * Omer
      */
     private void changePlayer()
     {
         playerNum = (playerNum % 2) +1;
     }
+    /**
+     * returns placeBelow
+     * Sergei
+     */
     public int getDropOffset()
     {
         System.out.println(placeBelow);

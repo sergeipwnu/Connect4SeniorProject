@@ -1,14 +1,12 @@
 #BlueJ class context
 comment0.params=name\ playerNum
 comment0.target=Player(java.lang.String,\ int)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Player\r\n
-comment1.params=pB
-comment1.target=void\ play(PlayingBoard)
-comment2.params=b\ s
-comment2.target=void\ addVoiceBoxListener(Piece,\ java.lang.String)
-comment2.text=\r\n\ Adds\ a\ listener\ to\ a\ specefied\ JButton,\ plays\ an\ audio\ file\ onclick\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Player\r\n\ Sergei\r\n
+comment1.params=b\ s
+comment1.target=void\ addVoiceBoxListener(Piece,\ java.lang.String)
+comment1.text=\r\n\ Adds\ a\ listener\ to\ a\ specefied\ JButton,\ plays\ an\ audio\ file\ onclick\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment3.params=e
 comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
-comment4.params=e
-comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=5
+numComments=4

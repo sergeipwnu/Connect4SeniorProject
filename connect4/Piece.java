@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
 /**
-     * Modified JButton with X and Y coordinates added
+     * Modified JButton with X and Y coordinates added, as well as a listener
      * Author: Sergei Levashov
      */
 public class Piece extends JButton
@@ -10,6 +10,10 @@ public class Piece extends JButton
     private int myX;
     private Board myBoard;
     private PlayingBoard myBrain;
+     /**
+     * Sets local y, x, and local references to PlayingBoard and Board.
+     * Sergei Levashov
+     */
     public Piece(int y, int x, PlayingBoard Brain,Board brd)
     {
         myX = x;
@@ -20,16 +24,24 @@ public class Piece extends JButton
     public Piece()
     {
     }
+     /**
+     * Returns a new Position object with the y and x
+     * Sergei Levashov
+     */
     public Position getPosition()
     {
         return new Position(myY,myX);
     }
+     /**
+     * Prints the y and x
+     * Sergei Levashov
+     */
     public String toString()
     {
         return myY + " " + myX;
     }
     /**
-     * Listener that changes boolean @ position y,x in PlayingBoard onclick
+     * Listener that changes int position y,x in PlayingBoards board[][] array onclick
      * Author: Sergei Levashov
      */
     public void addListener()
