@@ -30,11 +30,12 @@ public class PlayingBoard
     {
         //this will be checked and update the variable connect4 
         //after every time makeMove is successful
-        for (int i = 0; i < 
+        //for (int i = 0; i < 
         
         //vertical
         //horizontal
         //diagonal
+        return true;
     }
     
     /**
