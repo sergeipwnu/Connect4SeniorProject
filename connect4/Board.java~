@@ -51,6 +51,7 @@ public class Board extends JFrame{
         test.setIcon(new ImageIcon("images/greentest.png"));
         test.setBounds(y+3,x+3,65,65);        
         tokens.add(test);
+        tokens.repaint();
     }
     /**
      * generates the 6X7 grid of buttons and makes them invisible

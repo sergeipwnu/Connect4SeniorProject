@@ -20,7 +20,7 @@ public class Menu extends JFrame
         super("Connect4 Menu");
         setLayout(null);
         JLabel menu = new JLabel();
-        menu.setIcon(new ImageIcon("images/Connect4Menu.png"));
+        menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
         menu.setBounds(0,0,1000,800);
         add(menu);
         createButtons();
@@ -87,7 +87,7 @@ public class Menu extends JFrame
     private void unlock()
     {
         add(makeButtonInvisible(new playerButton(320,560,"Mr. L","mr.l_face.png")));
-        add(makeButtonInvisible(new playerButton(530,560,"Mizel","mizel_face.png")));
+        add(makeButtonInvisible(new playerButton(530,560,"unknown","unknown_face.png")));
     }
     /**
      * returns the passed playerButton as invisible

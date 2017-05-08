@@ -30,7 +30,7 @@ public class Board extends JFrame{
         p2 = player2;
         label = new JLabel();
         tokens = new JPanel();
-        label.setIcon(new ImageIcon("images/connect4board2.png"));
+        label.setIcon(new ImageIcon("images/boards/connect4board2.png"));
         tokens.setLayout(null);
         tokens.setOpaque(false);
         //addToken(0,0); //this should be moved to the Peices Listener later
@@ -48,7 +48,7 @@ public class Board extends JFrame{
     public void addToken(int y, int x)
     {
         JLabel test = new JLabel();
-        test.setIcon(new ImageIcon("images/greentest.png"));
+        test.setIcon(new ImageIcon("images/people/greentest.png"));
         test.setBounds(y+3,x+3,65,65);        
         tokens.add(test);
         tokens.repaint();
