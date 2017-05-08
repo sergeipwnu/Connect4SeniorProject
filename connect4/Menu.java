@@ -31,7 +31,6 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
-        
         if(charactersSelected())
         {
             myBoard = new Board();
@@ -70,10 +69,16 @@ public class Menu extends JFrame
      */
     private void createButtons()
     {
+        //first row
         add(makeButtonInvisible(new playerButton(135,200,"Omid","omid_face.png")));
         add(makeButtonInvisible(new playerButton(345,200,"Sergei","sergei_face.png")));
         add(makeButtonInvisible(new playerButton(555,200,"Omer","omer_face.png")));
         add(makeButtonInvisible(new playerButton(770,200,"Zachary","zach_face.png")));
+        //second row
+        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
+        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
+        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
+        add(makeButtonInvisible(new playerButton(135,360,"Zachary2","zach_face.png")));
     }
     /**
      * returns the passed playerButton as invisible
@@ -81,9 +86,9 @@ public class Menu extends JFrame
      */
     private playerButton makeButtonInvisible(playerButton b)
     {
-        b.setOpaque(false);
-        b.setContentAreaFilled(false);
-        b.setBorderPainted(false);
+        //b.setOpaque(false);
+        //b.setContentAreaFilled(false);
+        //b.setBorderPainted(false);
         return b;
     }
     
