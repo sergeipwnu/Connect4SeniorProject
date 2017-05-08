@@ -8,11 +8,13 @@ public class Piece extends JButton
 {
     private int myY;
     private int myX;
+    private Board myBoard;
     private PlayingBoard myBrain;
-    public Piece(int y, int x, PlayingBoard Brain)
+    public Piece(int y, int x, PlayingBoard Brain,Board brd)
     {
         myX = x;
         myY = y;
+        myBoard = brd;
         myBrain = Brain;
     }
     public Piece()
@@ -39,6 +41,7 @@ public class Piece extends JButton
                 //System.out.println(myY + " " + myX);
                 myBrain.makeMove(getPosition());
                 System.out.println(myY + " " + myX);
+                myBoard.addToken(myBoard.getOffsetArray()[myY][myX].y,myBoard.getOffsetArray()[myY][myX].x);
 
                 //this is where you change the boolean of the array in PlayerBoard
             }

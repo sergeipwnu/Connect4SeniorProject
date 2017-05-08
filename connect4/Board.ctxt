@@ -21,4 +21,6 @@ comment6.target=void\ makeButtonInvisible(Piece)
 comment6.text=\n\ makes\ the\ JButton\ passed\ invisible\n\ Author\:\ Sergei\ Levashov\n
 comment7.params=
 comment7.target=void\ addMenuButtons()
-numComments=8
+comment8.params=
+comment8.target=Position[][]\ getOffsetArray()
+numComments=9

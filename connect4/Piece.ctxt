@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=y\ x\ Brain
-comment0.target=Piece(int,\ int,\ PlayingBoard)
+comment0.params=y\ x\ Brain\ brd
+comment0.target=Piece(int,\ int,\ PlayingBoard,\ Board)
 comment1.params=
 comment1.target=Piece()
 comment2.params=
