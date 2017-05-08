@@ -31,13 +31,14 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
-        myBoard = new Board();
-        myBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myBoard.setSize(1000,800);
-        myBoard.setResizable(false);
-        myBoard.setVisible(true);
+        
         if(charactersSelected())
         {
+            myBoard = new Board();
+            myBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            myBoard.setSize(1000,800);
+            myBoard.setResizable(false);
+            myBoard.setVisible(true);
             startGame();
         }
         else
@@ -59,9 +60,9 @@ public class Menu extends JFrame
      */
     private boolean charactersSelected() //TODO
     {
-        //if(player1 != null && player2 != null)
+        if(player1 != null && player2 != null)
             return true;
-        //return false;
+        return false;
     }
     /**
      * creates all player buttons
