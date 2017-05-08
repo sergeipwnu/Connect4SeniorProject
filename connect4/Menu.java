@@ -59,9 +59,9 @@ public class Menu extends JFrame
      */
     private boolean charactersSelected() //TODO
     {
-        if(player1 != null && player2 != null)
+        //if(player1 != null && player2 != null)
             return true;
-        return false;
+        //return false;
     }
     /**
      * creates all player buttons
