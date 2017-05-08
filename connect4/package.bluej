@@ -33,13 +33,39 @@ dependency9.from=Menu
 dependency9.to=Player
 dependency9.type=UsesDependency
 objectbench.height=76
+<<<<<<< HEAD
+<<<<<<< HEAD
+objectbench.width=678
+package.editor.height=381
+package.editor.width=570
+package.editor.x=210
+package.editor.y=44
+package.numDependencies=11
+=======
+objectbench.width=752
+package.editor.height=404
+package.editor.width=654
+package.editor.x=260
+package.editor.y=283
+package.numDependencies=13
+>>>>>>> origin/master
+package.numTargets=8
+=======
 objectbench.width=668
 package.editor.height=381
 package.editor.width=560
+<<<<<<< HEAD
 package.editor.x=592
 package.editor.y=143
 package.numDependencies=11
 package.numTargets=8
+=======
+package.editor.x=462
+package.editor.y=298
+package.numDependencies=4
+package.numTargets=6
+>>>>>>> origin/master
+>>>>>>> origin/master
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -53,8 +79,22 @@ target1.x=70
 target1.y=60
 target2.editor.height=700
 target2.editor.width=900
+<<<<<<< HEAD
+<<<<<<< HEAD
+target2.editor.x=44
+target2.editor.y=291
+=======
+target2.editor.x=600
+target2.editor.y=323
+>>>>>>> origin/master
+=======
 target2.editor.x=34
+<<<<<<< HEAD
 target2.editor.y=271
+=======
+target2.editor.y=296
+>>>>>>> origin/master
+>>>>>>> origin/master
 target2.height=50
 target2.name=Board
 target2.naviview.expanded=false
@@ -66,8 +106,18 @@ target2.x=20
 target2.y=240
 target3.editor.height=700
 target3.editor.width=900
+<<<<<<< HEAD
+<<<<<<< HEAD
+target3.editor.x=540
+target3.editor.y=149
+=======
+target3.editor.x=955
+target3.editor.y=156
+>>>>>>> origin/master
+=======
 target3.editor.x=0
 target3.editor.y=2
+>>>>>>> origin/master
 target3.height=50
 target3.name=PlayingBoard
 target3.naviview.expanded=false
@@ -83,12 +133,28 @@ target4.showInterface=false
 target4.type=ClassTarget
 target4.typeParameters=
 target4.width=80
+<<<<<<< HEAD
+target4.x=250
+target4.y=20
+target5.editor.height=700
+target5.editor.width=900
+target5.editor.x=0
+<<<<<<< HEAD
+target5.editor.y=22
+=======
+target5.editor.y=0
+>>>>>>> origin/master
+=======
 target4.x=160
 target4.y=10
+<<<<<<< HEAD
 target5.editor.height=700
 target5.editor.width=900
 target5.editor.x=0
 target5.editor.y=2
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 target5.height=50
 target5.name=Piece
 target5.showInterface=false
@@ -97,11 +163,29 @@ target5.typeParameters=
 target5.width=80
 target5.x=250
 target5.y=10
+<<<<<<< HEAD
+=======
+target6.editor.height=700
+target6.editor.width=900
+<<<<<<< HEAD
+<<<<<<< HEAD
+target6.editor.x=540
+target6.editor.y=149
+=======
+target6.editor.x=396
+target6.editor.y=86
+>>>>>>> origin/master
+=======
+target6.editor.x=-114
+target6.editor.y=387
+>>>>>>> origin/master
+>>>>>>> origin/master
 target6.height=50
 target6.name=playerButton
 target6.showInterface=false
 target6.type=ClassTarget
 target6.typeParameters=
+<<<<<<< HEAD
 target6.width=100
 target6.x=340
 target6.y=10
@@ -109,6 +193,21 @@ target7.editor.height=700
 target7.editor.width=900
 target7.editor.x=0
 target7.editor.y=271
+=======
+<<<<<<< HEAD
+target6.width=100
+target6.x=360
+target6.y=210
+target7.editor.height=700
+target7.editor.width=900
+<<<<<<< HEAD
+target7.editor.x=84
+target7.editor.y=149
+=======
+target7.editor.x=144
+target7.editor.y=549
+>>>>>>> origin/master
+>>>>>>> origin/master
 target7.height=50
 target7.name=Driver
 target7.naviview.expanded=true
@@ -116,17 +215,41 @@ target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
 target7.width=80
+<<<<<<< HEAD
 target7.x=390
 target7.y=270
 target8.editor.height=700
 target8.editor.width=900
 target8.editor.x=71
 target8.editor.y=112
+=======
+target7.x=400
+target7.y=300
+target8.editor.height=700
+target8.editor.width=900
+<<<<<<< HEAD
+target8.editor.x=540
+target8.editor.y=149
+=======
+target8.editor.x=600
+target8.editor.y=158
+>>>>>>> origin/master
+>>>>>>> origin/master
 target8.height=50
 target8.name=Menu
 target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
 target8.width=80
+<<<<<<< HEAD
 target8.x=280
 target8.y=70
+=======
+target8.x=180
+target8.y=300
+=======
+target6.width=80
+target6.x=390
+target6.y=220
+>>>>>>> origin/master
+>>>>>>> origin/master
