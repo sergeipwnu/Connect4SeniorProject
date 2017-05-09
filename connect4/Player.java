@@ -9,18 +9,31 @@ import java.awt.event.*;
 public class Player
 {
     private String myName;
-    private ImageIcon myFace;
+    private String myImage;
     private Color myBorderColor; //this will be the border of each piece
 
     /**
      * Constructor for objects of class Player
      * Sergei
      */
-    public Player(String name, int playerNum)
+    public Player(String name)
     {
         myName = name;
-        myFace = new ImageIcon(name+"_face.png");
+        myImage = name+ "face.png";
         
+    }
+    public String toString()
+    {
+        return myName;
+    }
+    public String getPath()
+    {
+        return myImage;
+    }
+    public void addColorToPath(String color)
+    {
+        myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
+        System.out.println(myImage);
     }
     /**
      * Adds a listener to a specefied JButton, plays an audio file onclick

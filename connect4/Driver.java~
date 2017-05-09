@@ -10,6 +10,6 @@ public class Driver {
         mainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainMenu.setResizable(false);
         mainMenu.setVisible(true);
-         //mainMenu.start();
+        mainMenu.initBoard();
     }
 }

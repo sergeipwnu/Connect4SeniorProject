@@ -143,5 +143,13 @@ public class PlayingBoard
         System.out.println(placeBelow);
         return placeBelow;
     }
+    /**
+     * returns playerNum
+     * Sergei
+     */
+    public int getPlayerNum()
+    {
+        return playerNum;
+    }
     
 }
