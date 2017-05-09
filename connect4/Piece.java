@@ -92,7 +92,7 @@ public class Piece extends JButton
                 System.out.println(myY + " " + myX);
                 if(myBrain.makeMove(getPosition()))
                 {
-                    myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+102*myBrain.getDropOffset());
+                    myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
                     playSound();
                 }
                 else

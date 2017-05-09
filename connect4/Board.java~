@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 import java.awt.image.BufferedImage;
+import javafx.embed.swing.JFXPanel;
 /**
      * Board is a type of JFrame that has the Buttons and graphical interface
      * This class corelates directly with information stored in PlayingBoard
@@ -54,7 +55,7 @@ public class Board extends JFrame{
     {
         JLabel test = new JLabel();
         test.setIcon(new ImageIcon("images/people/greentest.png"));
-        test.setBounds(y+3,x+3,65,65);        
+        test.setBounds(y,x,65,65);        
         tokens.add(test);
         tokens.repaint();
     }

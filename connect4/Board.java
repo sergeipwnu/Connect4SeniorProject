@@ -55,7 +55,7 @@ public class Board extends JFrame{
     {
         JLabel test = new JLabel();
         test.setIcon(new ImageIcon("images/people/greentest.png"));
-        test.setBounds(y+3,x+3,65,65);        
+        test.setBounds(y+2,x,65,65);        
         tokens.add(test);
         tokens.repaint();
     }
