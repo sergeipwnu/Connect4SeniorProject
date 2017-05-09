@@ -11,7 +11,6 @@ comment3.params=
 comment3.target=java.lang.String\ toString()
 comment3.text=\r\n\ Prints\ the\ y\ and\ x\r\n\ Sergei\ Levashov\r\n
 comment4.params=
-<<<<<<< Updated upstream
 comment4.target=void\ playSound()
 comment4.text=\r\n\ Prints\ the\ y\ and\ x\r\n\ Sergei\ Levashov\r\n
 comment5.params=
@@ -22,10 +21,3 @@ comment6.text=\r\n\ Listener\ that\ changes\ int\ position\ y,x\ in\ PlayingBoar
 comment7.params=e
 comment7.target=void\ actionPerformed(java.awt.event.ActionEvent)
 numComments=8
-=======
-comment4.target=void\ addListener()
-comment4.text=\n\ Listener\ that\ changes\ int\ position\ y,x\ in\ PlayingBoards\ board[][]\ array\ onclick\n\ Author\:\ Sergei\ Levashov\n
-comment5.params=e
-comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=6
->>>>>>> Stashed changes
