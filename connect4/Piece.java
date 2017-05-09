@@ -94,6 +94,7 @@ public class Piece extends JButton
                 {
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
                     playSound();
+                    
                 }
                 else
                 {
@@ -102,5 +103,6 @@ public class Piece extends JButton
             }
         });
     }
+    
     }
 

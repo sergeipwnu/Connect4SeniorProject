@@ -54,8 +54,8 @@ public class Board extends JFrame{
     public void addToken(int y, int x)
     {
         JLabel test = new JLabel();
-        test.setIcon(new ImageIcon("images/people/greentest.png"));
-        test.setBounds(y+2,x,65,65);        
+        test.setIcon(new ImageIcon("images/people/greentest2.png"));
+        test.setBounds(y-8,x-8,85,85);        
         tokens.add(test);
         tokens.repaint();
     }
