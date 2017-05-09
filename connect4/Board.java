@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 import java.awt.image.BufferedImage;
+import javafx.embed.swing.JFXPanel;
 /**
      * Board is a type of JFrame that has the Buttons and graphical interface
      * This class corelates directly with information stored in PlayingBoard
@@ -21,6 +22,7 @@ public class Board extends JFrame{
      */
     public Board(){
         super("Connect 4");
+        JFXPanel fxPanel = new JFXPanel();
         Brain = new PlayingBoard();
         setLayout(null);
     }

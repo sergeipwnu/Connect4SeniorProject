@@ -115,11 +115,11 @@ public class PlayingBoard
             }
             System.out.println();
         }
-        if(areFourConnected())
-        {
-            changePlayer();
-            System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
-        }
+        //if(areFourConnected())
+        //{
+        //    changePlayer();
+        //     System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
+        //}
         return b;
     }
     
