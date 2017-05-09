@@ -1,0 +1,27 @@
+PICK
+Omid: "Me?! Okay!"
+Omer: "Its-a me"!
+Zachary: "You picked the RIGHT guy"
+Sergei: "Yeah! Girl Power!"
+Mr. L: "No surprise"
+
+WIN
+Omid: "How does that L taste?"
+Omer: "I am the master  bow to me"
+Zachary: "Hahaha!"
+Sergei: "Null pointer exception"
+Mr. Lantsberger: "You should go back to intro"
+
+LOSE
+Mr Lantsberger: "Looks like I pulled a henry"
+Omid: "I should go back to intro"
+Omer: "This isn't fun"
+Zachary: "My b"
+Sergei: "No fair, my huge dick got in the way."
+
+DROP
+Mr. Lantsberger: "Stay frosty" "down to davy jones' locker"  "That's the name of the game"
+Zachary: "Yoink!" "Nyoom" "Yes"
+Omer: "Wowzers!" "Whoa!" "Yippee!"
+Omid: "All part of the plan" "Aaaall part of the plan" "allpartoftheplan"
+Sergei: "nya!" "I'm obviously winning" "This is easy"
