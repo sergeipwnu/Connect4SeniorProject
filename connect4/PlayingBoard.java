@@ -29,6 +29,9 @@ public class PlayingBoard
      */
     public boolean areFourConnected()
     {
+        
+        
+        /*
         // horizontalCheck 
         for (int j = 0; j< ROW-3 ; j++ )
         {
@@ -70,7 +73,7 @@ public class PlayingBoard
                     board[i-2][j-2] == playerNum && board[i-3][j-3] == playerNum)
                     return true;
             }
-        }
+        }*/
         
         return false;
     }
@@ -115,6 +118,7 @@ public class PlayingBoard
             }
             System.out.println();
         }
+        
         if(areFourConnected())
         {
             changePlayer();
