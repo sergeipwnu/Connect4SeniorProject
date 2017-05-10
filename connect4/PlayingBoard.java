@@ -24,57 +24,42 @@ public class PlayingBoard
     
     /**
      * OMER
-     * from  http://stackoverflow.com/questions/32770321/connect-4-check-for-a-win-algorithm 
-     * by ferdelOlmo
+     * 
      */
-    public boolean areFourConnected()
+    public boolean areFourConnected(Position p)
     {
+        int count =0;
         
-        
-        /*
-        // horizontalCheck 
-        for (int j = 0; j< ROW-3 ; j++ )
+        //horizontal
+        for(int i =0; i < COL; i++)
         {
-            for (int i = 0; i< COL; i++)
+            if(board[p.getY()][i] == playerNum)
             {
-                if (board[i][j] == playerNum && board[i][j+1] == playerNum &&
-                    board[i][j+2] == playerNum && board[i][j+3] == playerNum)
-                {
+                count++;
+                if (count == 4) 
                     return true;
-                }           
+            }
+            else
+                count =0;  
+        }
+        
+            
+        //veritcal check
+        for(int i = 0; i < ROW; i++)
+        {
+            if(board[i][p.getX()] == playerNum)
+            {
+                count++;
+                if (count == 4) 
+                    return true;
+            }
+            else
+            {
+                count =0;  
             }
         }
-        // verticalCheck
-        for (int i = 0; i< COL-3 ; i++ )
-        {
-            for (int j = 0; j< ROW; j++)
-            {
-                if (board[i][j] == playerNum && board[i+1][j] == playerNum &&
-                    board[i+2][j] == playerNum && board[i+3][j] == playerNum)
-                {
-                    return true;
-                }           
-            }
-        }
-        // ascendingDiagonalCheck 
-        for (int i=3; i< COL; i++)
-        {
-            for (int j=0; j<ROW-3; j++)
-            {
-                if (board[i][j] == playerNum && board[i-1][j+1] == playerNum && 
-                    board[i-2][j+2] == playerNum && board[i-3][j+3] == playerNum)
-                    return true;
-            }
-        }
-        // descendingDiagonalCheck
-        for (int i=3; i< COL; i++){
-            for (int j=3; j< ROW; j++){
-                if (board[i][j] == playerNum && board[i-1][j-1] == playerNum && 
-                    board[i-2][j-2] == playerNum && board[i-3][j-3] == playerNum)
-                    return true;
-            }
-        }*/
         
+            
         return false;
     }
     
@@ -97,7 +82,6 @@ public class PlayingBoard
         }
         else 
         {
-            
             placeBelow = p.getY();
             while(placeBelow+1 < ROW && board[placeBelow+1][p.getX()] == 0)
             {
@@ -105,6 +89,11 @@ public class PlayingBoard
             }
             
             board[placeBelow][p.getX()] = playerNum;
+            if(areFourConnected(p))
+            {
+                System.out.println(">>>>>>>PLAYER " + playerNum + 
+                                    " WINS<<<<<<<<<");
+            }
             changePlayer();
             b = true;
         }
@@ -118,11 +107,8 @@ public class PlayingBoard
             }
             System.out.println();
         }
-        //if(areFourConnected())
-        //{
-        //    changePlayer();
-        //     System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
-        //}
+        
+        
         return b;
     }
     

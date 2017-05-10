@@ -1,31 +1,23 @@
 #BlueJ class context
 comment0.params=y\ x\ Brain\ brd
 comment0.target=Piece(int,\ int,\ PlayingBoard,\ Board)
-comment0.text=\r\n\ Sets\ local\ y,\ x,\ and\ local\ references\ to\ PlayingBoard\ and\ Board.\r\n\ Sergei\ Levashov\r\n
+comment0.text=\n\ Sets\ local\ y,\ x,\ and\ local\ references\ to\ PlayingBoard\ and\ Board.\n\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=Piece()
 comment2.params=
 comment2.target=Position\ getPosition()
-comment2.text=\r\n\ Returns\ a\ new\ Position\ object\ with\ the\ y\ and\ x\r\n\ Sergei\ Levashov\r\n
+comment2.text=\n\ Returns\ a\ new\ Position\ object\ with\ the\ y\ and\ x\n\ Sergei\ Levashov\n
 comment3.params=
 comment3.target=java.lang.String\ toString()
-comment3.text=\r\n\ Prints\ the\ y\ and\ x\r\n\ Sergei\ Levashov\r\n
+comment3.text=\n\ Prints\ the\ y\ and\ x\n\ Sergei\ Levashov\n
 comment4.params=
-<<<<<<< Updated upstream
 comment4.target=void\ playSound()
-comment4.text=\r\n\ Prints\ the\ y\ and\ x\r\n\ Sergei\ Levashov\r\n
+comment4.text=\n\ Prints\ the\ y\ and\ x\n\ Sergei\ Levashov\n
 comment5.params=
 comment5.target=void\ playErr()
 comment6.params=
 comment6.target=void\ addListener()
-comment6.text=\r\n\ Listener\ that\ changes\ int\ position\ y,x\ in\ PlayingBoards\ board[][]\ array\ onclick\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment6.text=\n\ Listener\ that\ changes\ int\ position\ y,x\ in\ PlayingBoards\ board[][]\ array\ onclick\n\ Author\:\ Sergei\ Levashov\n
 comment7.params=e
 comment7.target=void\ actionPerformed(java.awt.event.ActionEvent)
 numComments=8
-=======
-comment4.target=void\ addListener()
-comment4.text=\n\ Listener\ that\ changes\ int\ position\ y,x\ in\ PlayingBoards\ board[][]\ array\ onclick\n\ Author\:\ Sergei\ Levashov\n
-comment5.params=e
-comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=6
->>>>>>> Stashed changes
