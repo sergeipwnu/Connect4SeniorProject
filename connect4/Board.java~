@@ -51,6 +51,7 @@ public class Board extends JFrame{
         tokens.setBounds(0,0,1000,800);
         label.setBounds(0,0,1000,800);
         generateButtons(getInsets(),Brain);
+        shiftGlow();
         repaint();
     }
     /**
@@ -68,7 +69,7 @@ public class Board extends JFrame{
         {
             test.setIcon(new ImageIcon("images/people/" + p2.getPath()));
         }
-        test.setBounds(y-8,x-9,85,85);        
+        test.setBounds(y-8,x-10,85,85);        
         tokens.add(test);
         tokens.repaint();
     }

@@ -51,6 +51,7 @@ public class Board extends JFrame{
         tokens.setBounds(0,0,1000,800);
         label.setBounds(0,0,1000,800);
         generateButtons(getInsets(),Brain);
+        shiftGlow(1);
         repaint();
     }
     /**
