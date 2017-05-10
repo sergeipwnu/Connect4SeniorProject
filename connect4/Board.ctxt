@@ -21,12 +21,7 @@ comment6.target=void\ makeButtonInvisible(Piece)
 comment6.text=\n\ makes\ the\ JButton\ passed\ invisible,\ by\ reference\n\ Sergei\ Levashov\n
 comment7.params=
 comment7.target=Position[][]\ getOffsetArray()
-<<<<<<< HEAD
 comment7.text=\n\ returns\ offset\ array\ generated\ by\ generateButtons()\n\ Sergei\ Levashov\n
-numComments=8
-=======
-comment7.text=\r\n\ returns\ offset\ array\ generated\ by\ generateButtons()\r\n\ Sergei\ Levashov\r\n
 comment8.params=pNum
 comment8.target=void\ shiftGlow(int)
 numComments=9
->>>>>>> origin/master

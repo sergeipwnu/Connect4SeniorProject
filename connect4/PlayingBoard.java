@@ -99,16 +99,13 @@ public class PlayingBoard
         }
         
         printBoard();
-        //if(areFourConnected())
-        //{
-        //    changePlayer();
-        //     System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
-        //}
         return b;
     }
+    
     private void printBoard()
     {
         System.out.println("board");
+        
         for(int i =0; i < ROW; i++)
         {
              for(int j = 0; j<COL; j++)
@@ -116,13 +113,7 @@ public class PlayingBoard
                 System.out.print(board[i][j]);
             }
             System.out.println();
-        }
-<<<<<<< HEAD
-        
-        
-        return b;
-=======
->>>>>>> origin/master
+        }    
     }
     /**
      * Changes playerNum into 1 if 2, and 2 if 1

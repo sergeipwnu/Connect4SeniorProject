@@ -9,23 +9,14 @@ comment2.params=p
 comment2.target=boolean\ makeMove(Position)
 comment2.text=\n\ \ Attempts\ to\ make\ a\ move\ at\ the\ given\ Position.\ If\ the\ move\ is\ possible,\ the\ move\ is\ made\n\ \ and\ makeMove()\ returns\ true.\ If\ a\ move\ is\ not\ possible,\ the\ user\ is\ prompted\ via\ the\ command\n\ \ line\ and\ makeMove()\ returns\ false\n\ OMER\n
 comment3.params=
-<<<<<<< HEAD
-comment3.target=void\ changePlayer()
-comment3.text=\n\ Changes\ playerNum\ into\ 1\ if\ 2,\ and\ 2\ if\ 1\n\ Omer\n
-comment4.params=
-comment4.target=int\ getDropOffset()
-comment4.text=\n\ returns\ placeBelow\n\ Sergei\n
-numComments=5
-=======
 comment3.target=void\ printBoard()
 comment4.params=
 comment4.target=void\ changePlayer()
-comment4.text=\r\n\ Changes\ playerNum\ into\ 1\ if\ 2,\ and\ 2\ if\ 1\r\n\ Omer\r\n
+comment4.text=\n\ Changes\ playerNum\ into\ 1\ if\ 2,\ and\ 2\ if\ 1\n\ Omer\n
 comment5.params=
 comment5.target=int\ getDropOffset()
-comment5.text=\r\n\ returns\ placeBelow\r\n\ Sergei\r\n
+comment5.text=\n\ returns\ placeBelow\n\ Sergei\n
 comment6.params=
 comment6.target=int\ getPlayerNum()
-comment6.text=\r\n\ returns\ playerNum\r\n\ Sergei\r\n
+comment6.text=\n\ returns\ playerNum\n\ Sergei\n
 numComments=7
->>>>>>> origin/master
