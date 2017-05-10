@@ -109,6 +109,16 @@ public class PlayingBoard
             b = true;
         }
         
+        printBoard();
+        //if(areFourConnected())
+        //{
+        //    changePlayer();
+        //     System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
+        //}
+        return b;
+    }
+    private void printBoard()
+    {
         System.out.println("board");
         for(int i =0; i < ROW; i++)
         {
@@ -118,14 +128,7 @@ public class PlayingBoard
             }
             System.out.println();
         }
-        //if(areFourConnected())
-        //{
-        //    changePlayer();
-        //     System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
-        //}
-        return b;
     }
-    
     /**
      * Changes playerNum into 1 if 2, and 2 if 1
      * Omer

@@ -12,6 +12,7 @@ import javafx.embed.swing.JFXPanel;
 public class Board extends JFrame{
     private PlayingBoard Brain;
     private JLabel label;
+    private JLabel glow;
     private Player p1;
     private Player p2;
     private JPanel tokens;
@@ -39,8 +40,11 @@ public class Board extends JFrame{
         label.setIcon(new ImageIcon("images/boards/connect4board2.png"));
         tokens.setLayout(null);
         tokens.setOpaque(false);
-        //addToken(0,0); //this should be moved to the Peices Listener later
+        glow = new JLabel();
+        glow.setIcon(new ImageIcon("images/gloweffectsquare.png"));
+        
         tokens.setBackground(new Color(0,0,0,0));
+        tokens.add(glow);
         add(tokens);
         add(label);
         tokens.setBounds(0,0,1000,800);
@@ -57,12 +61,10 @@ public class Board extends JFrame{
         if(Brain.getPlayerNum() == 1)
         {
             test.setIcon(new ImageIcon("images/people/" + p1.getPath()));
-            System.out.println( p1.getPath());
         }
         else
         {
             test.setIcon(new ImageIcon("images/people/" + p2.getPath()));
-            System.out.println(p2.getPath());
         }
         test.setBounds(y-8,x-8,85,85);        
         tokens.add(test);
@@ -162,5 +164,17 @@ public class Board extends JFrame{
     public Position[][] getOffsetArray()
     {
         return offsets;
+    }
+    public void shiftGlow(int pNum)
+    {
+        if(pNum == 1)
+        {
+            glow.setBounds(587,12,120,120);
+        }
+        else
+        {
+            glow.setBounds(296,12,120,120);
+        }
+        tokens.repaint();
     }
 }

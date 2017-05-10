@@ -20,6 +20,7 @@ public class playerButton extends JButton
         myMenu = m;
         myName = name;
         setBounds(left,top,150,150);
+        setText(name);
     }
     public Player getPlayer()
     {

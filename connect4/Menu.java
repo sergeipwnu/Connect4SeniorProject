@@ -38,6 +38,8 @@ public class Menu extends JFrame
             myBoard.setResizable(false);
             myBoard.setVisible(true);
             startGame();
+            myBoard.setVisible(true);
+            playerInstanceLoaded = false; // resets first player picked boolean to false
     }
     /**
      * starts the game by adding the board
@@ -91,6 +93,7 @@ public class Menu extends JFrame
         add(makeButtonInvisible(new playerButton(320,340,"catherines",this)));
         add(makeButtonInvisible(new playerButton(530,340,"lauren",this)));
         add(makeButtonInvisible(new playerButton(745,340,"bubbles",this)));
+        
     }
     /**
      * unlocckable caharacters
@@ -107,8 +110,8 @@ public class Menu extends JFrame
      */
     private playerButton makeButtonInvisible(playerButton b)
     {
-        b.setOpaque(false);
-        b.setContentAreaFilled(false);
+        //b.setOpaque(false);
+        //b.setContentAreaFilled(false);
         b.setBorderPainted(false);
         return b;
     }

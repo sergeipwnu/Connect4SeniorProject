@@ -22,4 +22,6 @@ comment6.text=\r\n\ makes\ the\ JButton\ passed\ invisible,\ by\ reference\r\n\ 
 comment7.params=
 comment7.target=Position[][]\ getOffsetArray()
 comment7.text=\r\n\ returns\ offset\ array\ generated\ by\ generateButtons()\r\n\ Sergei\ Levashov\r\n
-numComments=8
+comment8.params=pNum
+comment8.target=void\ shiftGlow(int)
+numComments=9
