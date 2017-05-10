@@ -68,16 +68,8 @@ public class Piece extends JButton
     }
     private void playErr()
     {
-            if(((int)(Math.random() * 2)) == 0)
-            {
-                myAudioPlayerErr.play();
-                myAudioPlayerErr.seek(Duration.ZERO);
-            }
-            else
-            {
-                myAudioPlayerErr2.play();
-                myAudioPlayerErr2.seek(Duration.ZERO);
-            }
+          myAudioPlayerErr.play();
+          myAudioPlayerErr.seek(Duration.ZERO);
     }
     /**
      * Listener that changes int position y,x in PlayingBoards board[][] array onclick

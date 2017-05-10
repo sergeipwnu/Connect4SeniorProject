@@ -38,6 +38,7 @@ public class Board extends JFrame{
         label = new JLabel();
         tokens = new JPanel();
         label.setIcon(new ImageIcon("images/boards/connect4board2.png"));
+        
         tokens.setLayout(null);
         tokens.setOpaque(false);
         glow = new JLabel();
@@ -67,7 +68,7 @@ public class Board extends JFrame{
         {
             test.setIcon(new ImageIcon("images/people/" + p2.getPath()));
         }
-        test.setBounds(y-8,x-8,85,85);        
+        test.setBounds(y-8,x-10,85,85);        
         tokens.add(test);
         tokens.repaint();
     }
@@ -154,7 +155,7 @@ public class Board extends JFrame{
     private void makeButtonInvisible(Piece b) //makes an individual button invisible
     {
         b.setOpaque(false);
-        b.setContentAreaFilled(true);
+        b.setContentAreaFilled(false);
         b.setBorderPainted(false);
         
     }

@@ -23,6 +23,7 @@ public class Menu extends JFrame
         JLabel menu = new JLabel();
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
         menu.setBounds(0,0,1000,800);
+        menu.setVisible(true);
         add(menu);
         createButtons();
     }
@@ -33,7 +34,7 @@ public class Menu extends JFrame
     public void initBoard()
     {
             myBoard = new Board();
-            myBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            myBoard.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myBoard.setSize(1000,800);
             myBoard.setResizable(false);
             myBoard.setVisible(true);

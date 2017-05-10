@@ -1,5 +1,4 @@
 import javax.swing.ImageIcon; 
-import java.awt.Color;
 import java.awt.event.*; 
 /**
  * An object with the border color, face, and name of the chosen players.
@@ -10,7 +9,6 @@ public class Player
 {
     private String myName;
     private String myImage;
-    private Color myBorderColor; //this will be the border of each piece
 
     /**
      * Constructor for objects of class Player

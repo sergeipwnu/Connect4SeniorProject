@@ -33,7 +33,6 @@ public class Player
     public void addColorToPath(String color)
     {
         myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
-        System.out.println(myImage);
     }
     /**
      * Adds a listener to a specefied JButton, plays an audio file onclick
