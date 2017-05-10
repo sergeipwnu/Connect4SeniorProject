@@ -118,20 +118,11 @@ public class PlayingBoard
             }
             System.out.println();
         }
-<<<<<<< HEAD
-        
-        if(areFourConnected())
-        {
-            changePlayer();
-            System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
-        }
-=======
         //if(areFourConnected())
         //{
         //    changePlayer();
         //     System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
         //}
->>>>>>> origin/master
         return b;
     }
     
@@ -151,6 +142,14 @@ public class PlayingBoard
     {
         System.out.println(placeBelow);
         return placeBelow;
+    }
+    /**
+     * returns playerNum
+     * Sergei
+     */
+    public int getPlayerNum()
+    {
+        return playerNum;
     }
     
 }

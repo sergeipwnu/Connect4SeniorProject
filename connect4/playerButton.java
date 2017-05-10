@@ -8,18 +8,23 @@ import java.awt.event.*;
 public class playerButton extends JButton
 {
     private String myName;
-    private String myImagePath;
+    private Menu myMenu;
     /**
      * adds a listener, assigns local variables, and sets bounds.
      * 
      * Sergei Levashov
      */
-    playerButton(int left, int top, String name, String imagepath)
+    playerButton(int left, int top, String name, Menu m)
     {
         addListener();
+        myMenu = m;
         myName = name;
-        myImagePath = imagepath;
         setBounds(left,top,150,150);
+        setText(name);
+    }
+    public Player getPlayer()
+    {
+        return new Player(myName);
     }
     /**
      * adds a listener for the playerButton click.
@@ -32,7 +37,16 @@ public class playerButton extends JButton
         {
             public void actionPerformed(ActionEvent e)
             {
-                System.out.println(getPName() + " " + getImagePath());
+                if(myMenu.isPicked())
+                {
+                    myMenu.setPlayer2(getPlayer());
+                    myMenu.initBoard();
+                }
+                else
+                {
+                    myMenu.setPlayer1(getPlayer());
+                    myMenu.setPicked();
+                }
             }
         });
     }
@@ -44,14 +58,5 @@ public class playerButton extends JButton
     private String getPName()
     {
        return myName; 
-    }
-    /**
-     * local imagepath getter for listener
-     * 
-     * Sergei Levashov
-     */
-    private String getImagePath()
-    {
-        return myImagePath;
     }
 }

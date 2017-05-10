@@ -12,6 +12,7 @@ import javafx.embed.swing.JFXPanel;
 public class Board extends JFrame{
     private PlayingBoard Brain;
     private JLabel label;
+    private JLabel glow;
     private Player p1;
     private Player p2;
     private JPanel tokens;
@@ -37,15 +38,21 @@ public class Board extends JFrame{
         label = new JLabel();
         tokens = new JPanel();
         label.setIcon(new ImageIcon("images/boards/connect4board2.png"));
+        
         tokens.setLayout(null);
         tokens.setOpaque(false);
-        //addToken(0,0); //this should be moved to the Peices Listener later
+        glow = new JLabel();
+        glow.setIcon(new ImageIcon("images/gloweffectsquare.png"));
+        
         tokens.setBackground(new Color(0,0,0,0));
+        tokens.add(glow);
         add(tokens);
         add(label);
         tokens.setBounds(0,0,1000,800);
         label.setBounds(0,0,1000,800);
         generateButtons(getInsets(),Brain);
+        shiftGlow(1);
+        repaint();
     }
     /**
      * adds a single token, at the specified y and x
@@ -54,8 +61,15 @@ public class Board extends JFrame{
     public void addToken(int y, int x)
     {
         JLabel test = new JLabel();
-        test.setIcon(new ImageIcon("images/people/greentest.png"));
-        test.setBounds(y+2,x,65,65);        
+        if(Brain.getPlayerNum() == 1)
+        {
+            test.setIcon(new ImageIcon("images/people/" + p1.getPath()));
+        }
+        else
+        {
+            test.setIcon(new ImageIcon("images/people/" + p2.getPath()));
+        }
+        test.setBounds(y-8,x-10,85,85);        
         tokens.add(test);
         tokens.repaint();
     }
@@ -103,18 +117,16 @@ public class Board extends JFrame{
         
         
         //here we add the buttons for the vs boxes on the top right of the board
-        Piece p1 = new Piece();
-        Piece p2 = new Piece();
-        p2.setBounds(615,34,70,70);
-        p1.setBounds(317,34,70,70);
-        add(p1);
-        add(p2);
-        makeButtonInvisible(p2);
-        makeButtonInvisible(p1);
-        Player Player1 = new Player("testname",0);
-        Player Player2 = new Player("testname",0);
-        Player1.addVoiceBoxListener(p1,"left");
-        Player2.addVoiceBoxListener(p2,"right");
+        Piece pb1 = new Piece();
+        Piece pb2 = new Piece();
+        pb2.setBounds(615,34,70,70);
+        pb1.setBounds(317,34,70,70);
+        add(pb1);
+        add(pb2);
+        makeButtonInvisible(pb2);
+        makeButtonInvisible(pb1);
+        p1.addVoiceBoxListener(pb1,"left");
+        p2.addVoiceBoxListener(pb2,"right");
         
         //back button
         Piece backButton = new Piece();
@@ -144,7 +156,7 @@ public class Board extends JFrame{
     private void makeButtonInvisible(Piece b) //makes an individual button invisible
     {
         b.setOpaque(false);
-        b.setContentAreaFilled(true);
+        b.setContentAreaFilled(false);
         b.setBorderPainted(false);
         
     }
@@ -155,5 +167,17 @@ public class Board extends JFrame{
     public Position[][] getOffsetArray()
     {
         return offsets;
+    }
+    public void shiftGlow(int pNum)
+    {
+        if(pNum == 1)
+        {
+            glow.setBounds(587,12,120,120);
+        }
+        else
+        {
+            glow.setBounds(296,12,120,120);
+        }
+        tokens.repaint();
     }
 }

@@ -1,5 +1,4 @@
 import javax.swing.ImageIcon; 
-import java.awt.Color;
 import java.awt.event.*; 
 /**
  * An object with the border color, face, and name of the chosen players.
@@ -9,18 +8,29 @@ import java.awt.event.*;
 public class Player
 {
     private String myName;
-    private ImageIcon myFace;
-    private Color myBorderColor; //this will be the border of each piece
+    private String myImage;
 
     /**
      * Constructor for objects of class Player
      * Sergei
      */
-    public Player(String name, int playerNum)
+    public Player(String name)
     {
         myName = name;
-        myFace = new ImageIcon(name+"_face.png");
+        myImage = name+ "face.png";
         
+    }
+    public String toString()
+    {
+        return myName;
+    }
+    public String getPath()
+    {
+        return myImage;
+    }
+    public void addColorToPath(String color)
+    {
+        myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
     }
     /**
      * Adds a listener to a specefied JButton, plays an audio file onclick

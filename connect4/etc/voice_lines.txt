@@ -1,0 +1,27 @@
+PICK
+Omid: "Me?! Okay!"
+Omer: "Its-a me"!
+Zachary: "You picked the RIGHT guy"
+Sergei: "instawin"
+Mr. L: "No surprise"
+
+WIN
+Omid: "Oh, what happened?"
+Omer: "I am the master bow to me"
+Zachary: "Hahaha!"
+Sergei: "aw, did you crash?"
+Mr. Lantsberger: "You should go back to intro"
+
+LOSE
+Mr Lantsberger: "Looks like I pulled a henry"
+Omid: "I should go back to intro"
+Omer: "This isn't fun"
+Zachary: "That wasnt the plan"
+Sergei: "Theres a bug in the program"
+
+DROP
+Mr. Lantsberger: "Stay frosty" "That's the name of the game"
+Zachary: "get connected on" "Nyoom" "Yes"
+Omer: "Wowzers!" "Whoa!" "Yippee!"
+Omid: "All part of the plan" "Aaaall part of the plan" "allpartoftheplan"
+Sergei: "nya!" "I'm obviously winning" "This is easy"
