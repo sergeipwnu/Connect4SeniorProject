@@ -19,7 +19,17 @@ public class Menu extends JFrame
     Menu()
     {
         super("Connect4 Menu");
-        
+        if(System.getProperty("os.name").indexOf("Mac") != -1)
+        {
+            System.out.println("mac");
+            //figure out how to add icon image for mac here
+        }
+        else
+        {
+            System.out.println("pc");
+            setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
+            
+        }
         setLayout(null);
         JLabel menu = new JLabel();
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
