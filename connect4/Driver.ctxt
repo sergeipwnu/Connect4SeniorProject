@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=args
 comment0.target=void\ main(java.lang.String[])
-comment0.text=\r\n\ Connect4\!\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment0.text=\n\ Connect4\!\n\ Author\:\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=void\ run()
 numComments=2

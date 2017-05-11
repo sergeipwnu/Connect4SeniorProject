@@ -19,6 +19,7 @@ public class Menu extends JFrame
     Menu()
     {
         super("Connect4 Menu");
+        
         setLayout(null);
         JLabel menu = new JLabel();
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
@@ -33,6 +34,7 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
+
             myBoard = new Board();
             myBoard.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myBoard.setSize(1000,800);

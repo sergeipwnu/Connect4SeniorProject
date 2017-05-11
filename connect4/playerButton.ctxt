@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.params=left\ top\ name\ m
 comment0.target=playerButton(int,\ int,\ java.lang.String,\ Menu)
-comment0.text=\r\n\ adds\ a\ listener,\ assigns\ local\ variables,\ and\ sets\ bounds.\r\n\ \r\n\ Sergei\ Levashov\r\n
+comment0.text=\n\ adds\ a\ listener,\ assigns\ local\ variables,\ and\ sets\ bounds.\n\ \n\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=Player\ getPlayer()
 comment2.params=
 comment2.target=void\ addListener()
-comment2.text=\r\n\ adds\ a\ listener\ for\ the\ playerButton\ click.\r\n\ \r\n\ Sergei\ Levashov\r\n
+comment2.text=\n\ adds\ a\ listener\ for\ the\ playerButton\ click.\n\ \n\ Sergei\ Levashov\n
 comment3.params=e
 comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment4.params=
 comment4.target=java.lang.String\ getPName()
-comment4.text=\r\n\ local\ name\ getter\ for\ listener\r\n\ \r\n\ Sergei\ Levashov\r\n
+comment4.text=\n\ local\ name\ getter\ for\ listener\n\ \n\ Sergei\ Levashov\n
 numComments=5

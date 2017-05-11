@@ -12,27 +12,18 @@ public class Piece extends JButton
 {
     private int myY;
     private int myX;
-    private Board myBoard;
-    private PlayingBoard myBrain;
-    private MediaPlayer myAudioPlayer;
-    private MediaPlayer myAudioPlayerErr;
-    private MediaPlayer myAudioPlayerErr2;
      /**
      * Sets local y, x, and local references to PlayingBoard and Board.
      * Sergei Levashov
      */
-    public Piece(int y, int x, PlayingBoard Brain,Board brd)
+    public Piece(int y, int x, PlayingBoard Brain,Board myBoard)
     {
         myX = x;
         myY = y;
-        myBoard = brd;
-        myBrain = Brain;
+        addListener(Brain,myBoard);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());
         Media err = new Media(new File("audio/err.wav").toURI().toString());
         Media err2 = new Media(new File("audio/no.wav").toURI().toString());
-        myAudioPlayer = new MediaPlayer(place);
-        myAudioPlayerErr = new MediaPlayer(err);
-        myAudioPlayerErr2 = new MediaPlayer(err2);
     }
     public Piece()
     {
@@ -59,8 +50,6 @@ public class Piece extends JButton
      */
     private void playSound()
     {
-        myAudioPlayer.play();
-        myAudioPlayer.seek(Duration.ZERO);
         if(((int)(Math.random() * 6)) == 0)
         {
             //play the players voice line here
@@ -68,14 +57,12 @@ public class Piece extends JButton
     }
     private void playErr()
     {
-          myAudioPlayerErr.play();
-          myAudioPlayerErr.seek(Duration.ZERO);
     }
     /**
      * Listener that changes int position y,x in PlayingBoards board[][] array onclick
      * Author: Sergei Levashov
      */
-    public void addListener()
+    public void addListener(PlayingBoard myBrain,Board myBoard)
     {
         this.addActionListener(new ActionListener()
         {

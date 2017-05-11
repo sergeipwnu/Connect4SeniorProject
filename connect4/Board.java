@@ -33,12 +33,12 @@ public class Board extends JFrame{
      */
     public void addBoard(Player player1, Player player2)
     {
+        
         p1 = player1;
         p2 = player2;
         label = new JLabel();
         tokens = new JPanel();
         label.setIcon(new ImageIcon("images/boards/connect4board2.png"));
-        
         tokens.setLayout(null);
         tokens.setOpaque(false);
         glow = new JLabel();
@@ -79,6 +79,10 @@ public class Board extends JFrame{
      */
     private void generateButtons(Insets insets,PlayingBoard Brain)
     {
+                   
+        
+        long time = System.currentTimeMillis();
+        
         ArrayList<Piece> buttons = new ArrayList<Piece>();
         offsets = new Position[6][7];
         int LeftInset = 165;
@@ -92,10 +96,10 @@ public class Board extends JFrame{
             {
                 Piece p = new Piece(y,x,Brain,this);
                 buttons.add(p);
-                p.addListener(); //this adds a listener in the instance of the button
+                 //p.addListener(); //this adds a listener in the instance of the button
             }
         }
-        
+        System.out.println(System.currentTimeMillis() - time); 
         for(Piece b : buttons)
         {
             add(b);
