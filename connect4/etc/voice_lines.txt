@@ -9,6 +9,7 @@ Warrick: "This is totes hippity hip hop"
 Hannah: "This is gonna be easy!"
 Kanika: "Sharkeisha in the house"
 Bubbles: "blublub!"
+Tim the Enchanter: "I have been summoned!"
 
 WIN
 Omid: "Oh, what happened buddy?"
@@ -21,6 +22,7 @@ Warrick: "Awwwww yyyeeaaaahhhh"
 Hannah: "Yeah! Girl power!"
 Kanika: Whatchu want! Whatchu want!
 Bubbles: "BLUBUBBLUB!"
+Tim the Enchanter: "Get enchanted!"
 
 LOSE
 Mr Lantsberger: "Looks like I pulled a henry"
@@ -33,6 +35,7 @@ Warrick: "Somethin' aint right"
 Hannah: "Better luck next time!"
 Kanika: "Excuse me!"
 Bubbles: "blubblub..."
+Tim the Enchanter: "How could this be?!"
 
 DROP
 Mr. Lantsberger: "Stay frosty" "That's the name of the game" "Down to davy jones locker"
@@ -45,3 +48,4 @@ Warrick: "Fashizzle my nizzle" "alright alright alright" "You feel?"
 Hannah: "Yippee!" "Oke doke!" "This great!"
 Kanika: "Surprise!" "Les go!" "Das right!"
 Bubbles: "blub" "blubblub?" "blub..."
+Tim the Enchanter: "Ahah!" "Fear me" "I enchant upon thee!"
