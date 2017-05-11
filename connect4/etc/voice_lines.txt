@@ -8,6 +8,7 @@ Catherines: "You can actually win now"
 Warrick: "This is totes hippity hip hop"
 Hannah: "This is gonna be easy!"
 Kanika: "Sharkeisha in the house"
+Bubbles: "blublub!"
 
 WIN
 Omid: "Oh, what happened buddy?"
@@ -19,6 +20,7 @@ Catherines: "No surprise"
 Warrick: "Awwwww yyyeeaaaahhhh"
 Hannah: "Yeah! Girl power!"
 Kanika: Whatchu want! Whatchu want!
+Bubbles: "BLUBUBBLUB!"
 
 LOSE
 Mr Lantsberger: "Looks like I pulled a henry"
@@ -30,7 +32,7 @@ Catherines: "This is all your fault!-No, this is your fault!"
 Warrick: "Somethin' aint right"
 Hannah: "Better luck next time!"
 Kanika: "Excuse me!"
-
+Bubbles: "blubblub..."
 
 DROP
 Mr. Lantsberger: "Stay frosty" "That's the name of the game" "Down to davy jones locker"
@@ -42,3 +44,4 @@ Catherines: "nya!" "Your going down-yeah" "We're gonna win"
 Warrick: "Fashizzle my nizzle" "alright alright alright" "You feel?"
 Hannah: "Yippee!" "Oke doke!" "This great!"
 Kanika: "Surprise!" "Les go!" "Das right!"
+Bubbles: "blub" "blubblub?" "blub..."
