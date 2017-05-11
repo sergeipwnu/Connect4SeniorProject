@@ -4,24 +4,28 @@ Omer: "Its-a me"!
 Zachary: "You picked the RIGHT guy"
 Sergei: "instawin"
 Mr. L: "No surprise"
+Catherines: "You can actually win now"
 
 WIN
-Omid: "Oh, what happened?"
+Omid: "Oh, what happened buddy?"
 Omer: "I am the master bow to me"
 Zachary: "Hahaha!"
-Sergei: "aw, did you crash?"
+Sergei: "That was too easy."
 Mr. Lantsberger: "You should go back to intro"
+Catherines: "No surprise"
 
 LOSE
 Mr Lantsberger: "Looks like I pulled a henry"
-Omid: "I should go back to intro"
+Omid: "Hey, you cheated!"
 Omer: "This isn't fun"
 Zachary: "That wasnt the plan"
 Sergei: "Theres a bug in the program"
+Catherines: "This is all your fault!-No, this is your fault!"
 
 DROP
-Mr. Lantsberger: "Stay frosty" "That's the name of the game"
+Mr. Lantsberger: "Stay frosty" "That's the name of the game" "Down to davy jones locker"
 Zachary: "get connected on" "Nyoom" "Yes"
 Omer: "Wowzers!" "Whoa!" "Yippee!"
 Omid: "All part of the plan" "Aaaall part of the plan" "allpartoftheplan"
-Sergei: "nya!" "I'm obviously winning" "This is easy"
+Sergei: "Hooet!" "I'm obviously winning" "This is easy"
+Catherines: "nya!" "Your going down-yeah" "We're gonna win"
