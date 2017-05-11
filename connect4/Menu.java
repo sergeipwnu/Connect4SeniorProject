@@ -111,8 +111,8 @@ public class Menu extends JFrame
      */
     private playerButton makeButtonInvisible(playerButton b)
     {
-        //b.setOpaque(false);
-        //b.setContentAreaFilled(false);
+        b.setOpaque(false);
+        b.setContentAreaFilled(false);
         b.setBorderPainted(false);
         return b;
     }
