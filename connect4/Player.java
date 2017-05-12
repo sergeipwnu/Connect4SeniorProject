@@ -9,7 +9,6 @@ public class Player
 {
     private String myName;
     private String myImage;
-
     /**
      * Constructor for objects of class Player
      * Sergei
@@ -18,7 +17,6 @@ public class Player
     {
         myName = name;
         myImage = name+ "face.png";
-        
     }
     public String toString()
     {

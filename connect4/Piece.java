@@ -9,15 +9,19 @@ public class Piece extends JButton
 {
     private int myY;
     private int myX;
+    private PlayingBoard myBrain;
+    private Board myBoard;
      /**
      * Sets local y, x, and local references to PlayingBoard and Board.
      * Sergei Levashov
      */
-    public Piece(int y, int x, PlayingBoard Brain,Board myBoard)
+    public Piece(int y, int x, PlayingBoard Brain,Board myB)
     {
         myX = x;
+        myBoard = myB;
+        myBrain = Brain;
         myY = y;
-        addListener(Brain,myBoard);
+        addListener();
     }
     public Piece()
     {
@@ -42,7 +46,7 @@ public class Piece extends JButton
      * Listener that changes int position y,x in PlayingBoards board[][] array onclick
      * Author: Sergei Levashov
      */
-    public void addListener(PlayingBoard myBrain,Board myBoard)
+    public void addListener()
     {
         this.addActionListener(new ActionListener()
         {
