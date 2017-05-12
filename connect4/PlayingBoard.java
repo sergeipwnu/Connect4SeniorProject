@@ -24,14 +24,14 @@ public class PlayingBoard
     
     /**
      * OMER
-     * 
+     * zach
      */
     public boolean areFourConnected(Position p)
     {
-        int count =0;
+        int count = 0;
         
         //horizontal
-        for(int i =0; i < COL; i++)
+        for(int i = 0; i < COL; i++)
         {
             if(board[p.getY()][i] == playerNum)
             {
@@ -40,11 +40,11 @@ public class PlayingBoard
                     return true;
             }
             else
-                count =0;  
+                count = 0;
         }
+        count = 0;
         
-            
-        //veritcal check
+        //veritcal check -- WORKS
         for(int i = 0; i < ROW; i++)
         {
             if(board[i][p.getX()] == playerNum)
@@ -54,12 +54,26 @@ public class PlayingBoard
                     return true;
             }
             else
+                count = 0;
+        }
+        count = 0;
+        
+        int j = p.getX();
+        //upper right diagonal check
+        if(p.getX() < COL-3 && p.getY() < ROW-3)
+        {
+            for(int i = p.getY(); i < p.getY() + 4; i++)
             {
-                count =0;  
+                if(board[i][j] == playerNum)
+                {
+                    count++;
+                    if(count == 4)
+                        return true;
+                }
+                j++;
             }
         }
-        
-            
+        //try-catch to the efficient thing zach was talking about
         return false;
     }
     
