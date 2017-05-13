@@ -178,12 +178,20 @@ public class Board extends JFrame{
         if(b)
         {
             myAudioPlayer.play();
-            myAudioPlayer.seek(Duration.ZERO);
+            myAudioPlayer.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               myAudioPlayer.stop();
+            }
+        });
         }
         else
         {
             myAudioPlayerErr.play();
-            myAudioPlayerErr.seek(Duration.ZERO);
+            myAudioPlayerErr.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               myAudioPlayerErr.stop();
+            }
+        });
         }
     }
     /**
@@ -205,5 +213,17 @@ public class Board extends JFrame{
             glow.setBounds(296,12,120,120);
         }
         tokens.repaint();
+    }
+    static void disable(final AbstractButton b, final long ms) {
+        b.setEnabled(false);
+        new SwingWorker() {
+            protected Object doInBackground() throws Exception {
+                Thread.sleep(ms);
+                return null;
+            }
+            @Override protected void done() {
+                b.setEnabled(true);
+            }
+        }.execute();
     }
 }

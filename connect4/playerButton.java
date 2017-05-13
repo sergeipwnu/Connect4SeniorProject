@@ -37,8 +37,11 @@ public class playerButton extends JButton
     {
         System.out.println("play pick audio file for " + myName);
         pick.play();
-        pick.seek(Duration.ZERO);
-        
+        pick.setOnEndOfMedia(new Runnable(){
+        public void run() {
+           pick.stop();
+        }
+    });
     }
     /**
      * adds a listener for the playerButton click.

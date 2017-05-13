@@ -138,8 +138,8 @@ public class Board extends JFrame{
         add(pb2);
         makeButtonInvisible(pb2);
         makeButtonInvisible(pb1);
-        p1.addVoiceBoxListener(pb1,"left",1);
-        p2.addVoiceBoxListener(pb2,"right",2);
+        p1.addVoiceBoxListener(pb1,"left");
+        p2.addVoiceBoxListener(pb2,"right");
         
         //back button
         Piece backButton = new Piece();
@@ -178,12 +178,20 @@ public class Board extends JFrame{
         if(b)
         {
             myAudioPlayer.play();
-            myAudioPlayer.seek(Duration.ZERO);
+            myAudioPlayer.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               myAudioPlayer.stop();
+            }
+        });
         }
         else
         {
             myAudioPlayerErr.play();
-            myAudioPlayerErr.seek(Duration.ZERO);
+            myAudioPlayerErr.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               myAudioPlayerErr.stop();
+            }
+        });
         }
     }
     /**

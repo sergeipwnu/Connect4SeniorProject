@@ -34,6 +34,10 @@ public class Piece extends JButton
     {
         return new Position(myY,myX);
     }
+    private Piece returnThis()
+    {
+        return this; //if youre reading this pretend you never saw this method please
+    }
      /**
      * Prints the y and x
      * Sergei Levashov
@@ -58,7 +62,7 @@ public class Piece extends JButton
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
                     myBoard.shiftGlow(myBrain.getPlayerNum());
                     myBoard.playSound(true);
-                    
+                    myBoard.disable(returnThis(),200);
                 }
                 else
                 {
