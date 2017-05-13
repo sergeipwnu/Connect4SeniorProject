@@ -19,6 +19,17 @@ public class Menu extends JFrame
     Menu()
     {
         super("Connect4 Menu");
+        if(System.getProperty("os.name").indexOf("Mac") != -1)
+        {
+            System.out.println("mac");
+            //figure out how to add icon image for mac here
+        }
+        else
+        {
+            System.out.println("pc");
+            setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
+            
+        }
         setLayout(null);
         JLabel menu = new JLabel();
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
@@ -33,6 +44,7 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
+
             myBoard = new Board();
             myBoard.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myBoard.setSize(1000,800);
@@ -111,8 +123,8 @@ public class Menu extends JFrame
      */
     private playerButton makeButtonInvisible(playerButton b)
     {
-        //b.setOpaque(false);
-        //b.setContentAreaFilled(false);
+        b.setOpaque(false);
+        b.setContentAreaFilled(false);
         b.setBorderPainted(false);
         return b;
     }

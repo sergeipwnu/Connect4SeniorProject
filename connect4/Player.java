@@ -9,6 +9,7 @@ public class Player
 {
     private String myName;
     private String myImage;
+    private AudioPlayer mySounds;
     /**
      * Constructor for objects of class Player
      * Sergei
@@ -30,6 +31,10 @@ public class Player
     {
         myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
     }
+    public void setAudioPlayer(AudioPlayer au)
+    {
+        mySounds = au;
+    }
     /**
      * Adds a listener to a specefied JButton, plays an audio file onclick
      * Author: Sergei Levashov
@@ -42,8 +47,7 @@ public class Player
         {
             public void actionPerformed(ActionEvent e)
             {
-                    //then play the voice line of the left player
-                    System.out.println("left player voice line");
+                mySounds.playName(1);
             }
         });
         }
@@ -53,8 +57,7 @@ public class Player
         {
             public void actionPerformed(ActionEvent e)
             {
-                //play voice of right player;
-                System.out.println("right player voice line");
+                mySounds.playName(2);
             }
         });
         }

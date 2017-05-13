@@ -39,6 +39,9 @@ public class Board extends JFrame{
      */
     public void addBoard(Player player1, Player player2)
     {
+        AudioPlayer sounds = new AudioPlayer(player1,player2);
+        player1.setAudioPlayer(sounds);
+        player2.setAudioPlayer(sounds);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());
         Media err = new Media(new File("audio/err.wav").toURI().toString());
         myAudioPlayer = new MediaPlayer(place);
@@ -135,8 +138,8 @@ public class Board extends JFrame{
         add(pb2);
         makeButtonInvisible(pb2);
         makeButtonInvisible(pb1);
-        p1.addVoiceBoxListener(pb1,"left");
-        p2.addVoiceBoxListener(pb2,"right");
+        p1.addVoiceBoxListener(pb1,"left",1);
+        p2.addVoiceBoxListener(pb2,"right",2);
         
         //back button
         Piece backButton = new Piece();

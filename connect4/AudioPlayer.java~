@@ -36,8 +36,15 @@ public class AudioPlayer
     }
     public void playPick(int player)
     {
+        try
+        {
         pick1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "pick.wav").toURI().toString()));
         pick2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "pick.wav").toURI().toString()));
+        }
+        catch(Exception e)
+        {
+            
+        }
         if(player == 1)
         {
             pick1.play();
@@ -47,6 +54,21 @@ public class AudioPlayer
         {
             pick2.play();
             pick2.seek(Duration.ZERO);
+        }
+    }
+    public void playName(int player)
+    {
+        name1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "name.wav").toURI().toString()));
+        name2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "name.wav").toURI().toString()));
+        if(player == 1)
+        {
+            name1.play();
+            name1.seek(Duration.ZERO);
+        }
+        else
+        {
+            name2.play();
+            name2.seek(Duration.ZERO);
         }
     }
     public void playWin(int player)
@@ -117,7 +139,7 @@ public class AudioPlayer
                 drop22.play();
                 drop22.seek(Duration.ZERO);
             }
-            else
+            else //THIS IS THE RAREST LINE
             {
                 drop23.play();
                 drop23.seek(Duration.ZERO);

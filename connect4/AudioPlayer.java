@@ -49,6 +49,21 @@ public class AudioPlayer
             pick2.seek(Duration.ZERO);
         }
     }
+    public void playName(int player)
+    {
+        name1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "name.wav").toURI().toString()));
+        name2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "name.wav").toURI().toString()));
+        if(player == 1)
+        {
+            name1.play();
+            name1.seek(Duration.ZERO);
+        }
+        else
+        {
+            name2.play();
+            name2.seek(Duration.ZERO);
+        }
+    }
     public void playWin(int player)
     {
         win1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "win.wav").toURI().toString()));
