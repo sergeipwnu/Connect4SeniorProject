@@ -1,4 +1,4 @@
-import javax.swing.*;
+
 /**
  * Write a description of class PlayingBoard here.
  * 
@@ -24,57 +24,56 @@ public class PlayingBoard
     
     /**
      * OMER
-     * from  http://stackoverflow.com/questions/32770321/connect-4-check-for-a-win-algorithm 
-     * by ferdelOlmo
+     * zach
      */
-    public boolean areFourConnected()
+    public boolean areFourConnected(Position p)
     {
+        int count = 0;
         
-        
-        /*
-        // horizontalCheck 
-        for (int j = 0; j< ROW-3 ; j++ )
+        //horizontal
+        for(int i = 0; i < COL; i++)
         {
-            for (int i = 0; i< COL; i++)
+            if(board[p.getY()][i] == playerNum)
             {
-                if (board[i][j] == playerNum && board[i][j+1] == playerNum &&
-                    board[i][j+2] == playerNum && board[i][j+3] == playerNum)
+                count++;
+                if (count == 4) 
+                    return true;
+            }
+            else
+                count = 0;
+        }
+        count = 0;
+        
+        //veritcal check -- WORKS
+        for(int i = 0; i < ROW; i++)
+        {
+            if(board[i][p.getX()] == playerNum)
+            {
+                count++;
+                if (count == 4) 
+                    return true;
+            }
+            else
+                count = 0;
+        }
+        count = 0;
+        
+        int j = p.getX();
+        //upper right diagonal check
+        if(p.getX() < COL-3 && p.getY() < ROW-3)
+        {
+            for(int i = p.getY(); i < p.getY() + 4; i++)
+            {
+                if(board[i][j] == playerNum)
                 {
-                    return true;
-                }           
+                    count++;
+                    if(count == 4)
+                        return true;
+                }
+                j++;
             }
         }
-        // verticalCheck
-        for (int i = 0; i< COL-3 ; i++ )
-        {
-            for (int j = 0; j< ROW; j++)
-            {
-                if (board[i][j] == playerNum && board[i+1][j] == playerNum &&
-                    board[i+2][j] == playerNum && board[i+3][j] == playerNum)
-                {
-                    return true;
-                }           
-            }
-        }
-        // ascendingDiagonalCheck 
-        for (int i=3; i< COL; i++)
-        {
-            for (int j=0; j<ROW-3; j++)
-            {
-                if (board[i][j] == playerNum && board[i-1][j+1] == playerNum && 
-                    board[i-2][j+2] == playerNum && board[i-3][j+3] == playerNum)
-                    return true;
-            }
-        }
-        // descendingDiagonalCheck
-        for (int i=3; i< COL; i++){
-            for (int j=3; j< ROW; j++){
-                if (board[i][j] == playerNum && board[i-1][j-1] == playerNum && 
-                    board[i-2][j-2] == playerNum && board[i-3][j-3] == playerNum)
-                    return true;
-            }
-        }*/
-        
+        //try-catch to the efficient thing zach was talking about
         return false;
     }
     
@@ -97,7 +96,6 @@ public class PlayingBoard
         }
         else 
         {
-            
             placeBelow = p.getY();
             while(placeBelow+1 < ROW && board[placeBelow+1][p.getX()] == 0)
             {
@@ -105,11 +103,19 @@ public class PlayingBoard
             }
             
             board[placeBelow][p.getX()] = playerNum;
+            if(areFourConnected(p))
+            {
+                System.out.println(">>>>>>>PLAYER " + playerNum + 
+                                    " WINS<<<<<<<<<");
+            }
             changePlayer();
             b = true;
         }
-        
-        System.out.println("board");
+        printBoard();
+        return b;
+    }
+    private void printBoard()
+    {
         for(int i =0; i < ROW; i++)
         {
              for(int j = 0; j<COL; j++)
@@ -117,15 +123,8 @@ public class PlayingBoard
                 System.out.print(board[i][j]);
             }
             System.out.println();
-        }
-        //if(areFourConnected())
-        //{
-        //    changePlayer();
-        //     System.out.println(">>>>>>>PLAYER " + playerNum + " WINS<<<<<<<<<");
-        //}
-        return b;
+        }    
     }
-    
     /**
      * Changes playerNum into 1 if 2, and 2 if 1
      * Omer
@@ -135,7 +134,8 @@ public class PlayingBoard
         playerNum = (playerNum % 2) +1;
     }
     /**
-     * returns placeBelow
+     * returns placeBelow, a variable representing the offset from the button that was pressed
+     * from the location of where the peice should be. placeBelow will always be a number from 1-6
      * Sergei
      */
     public int getDropOffset()
@@ -144,7 +144,7 @@ public class PlayingBoard
         return placeBelow;
     }
     /**
-     * returns playerNum
+     * returns playerNum, which will always be 1 or 2
      * Sergei
      */
     public int getPlayerNum()

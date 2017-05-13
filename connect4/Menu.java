@@ -1,5 +1,7 @@
 import javax.swing.JFrame;
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 /**
  * Menu screen
  * 
@@ -21,14 +23,13 @@ public class Menu extends JFrame
         super("Connect4 Menu");
         if(System.getProperty("os.name").indexOf("Mac") != -1)
         {
-            System.out.println("mac");
+            System.out.println("you are using a mac");
             //figure out how to add icon image for mac here
         }
         else
         {
-            System.out.println("pc");
+            System.out.println("you are using a pc");
             setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
-            
         }
         setLayout(null);
         JLabel menu = new JLabel();
@@ -44,7 +45,6 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
-
             myBoard = new Board();
             myBoard.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myBoard.setSize(1000,800);
@@ -60,7 +60,6 @@ public class Menu extends JFrame
      */
     private void startGame()
     {
-        
         myBoard.addBoard(player1, player2);
     }
     /**
@@ -82,7 +81,7 @@ public class Menu extends JFrame
         playerInstanceLoaded = true;
     }
     /**
-     * sets the player to the player passed from listener
+     * sets the player to the player passed from listener, as well as the their piece color
      * 
      * Sergei Levashov
      */
@@ -92,7 +91,7 @@ public class Menu extends JFrame
         player1.addColorToPath("b");
     }
     /**
-     * sets the player to the player passed from listener
+     * sets the player to the player passed from listener, as well as the their piece color
      * 
      * Sergei Levashov
      */
@@ -103,7 +102,7 @@ public class Menu extends JFrame
     }
     /**
      * creates all player buttons
-     * Sergei
+     * Sergei and Zachary
      */
     private void createButtons()
     {
@@ -120,8 +119,8 @@ public class Menu extends JFrame
         
     }
     /**
-     * unlocckable caharacters
-     * zachary
+     * unlocckable characters
+     * Zachary
      */
     private void unlock()
     {

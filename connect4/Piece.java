@@ -36,12 +36,13 @@ public class Piece extends JButton
     }
      /**
      * returns this instance of Piece
+     * used for ActionListener calls to functions requiring the instance of the object that the action originated in
      * 
      * Sergei Levashov
      */
     private Piece returnThis()
     {
-        return this; //if youre reading this pretend you never saw this method please
+        return this;
     }
      /**
      * Prints the y and x

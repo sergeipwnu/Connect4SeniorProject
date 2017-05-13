@@ -1,5 +1,7 @@
 import javax.swing.JFrame;
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 /**
  * Menu screen
  * 
@@ -21,14 +23,13 @@ public class Menu extends JFrame
         super("Connect4 Menu");
         if(System.getProperty("os.name").indexOf("Mac") != -1)
         {
-            System.out.println("mac");
+            System.out.println("you are using a mac");
             //figure out how to add icon image for mac here
         }
         else
         {
-            System.out.println("pc");
+            System.out.println("you are using a pc");
             setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
-            
         }
         setLayout(null);
         JLabel menu = new JLabel();
@@ -63,33 +64,43 @@ public class Menu extends JFrame
         
         myBoard.addBoard(player1, player2);
     }
+    /**
+     * returns true if player 1 is already selected, false if not
+     * 
+     * Sergei Levashov
+     */
     public boolean isPicked()
     {
         return playerInstanceLoaded;
     }
+     /**
+     * sets player 1 selected
+     * 
+     * Sergei Levashov
+     */
     public void setPicked()
     {
         playerInstanceLoaded = true;
     }
+    /**
+     * sets the player to the player passed from listener
+     * 
+     * Sergei Levashov
+     */
     public void setPlayer1(Player p)
     {
         player1 = p;
         player1.addColorToPath("b");
     }
+    /**
+     * sets the player to the player passed from listener
+     * 
+     * Sergei Levashov
+     */
     public void setPlayer2(Player p)
     {
         player2 = p;
         player2.addColorToPath("r");
-    }
-    /**
-     * returns true if both players have selected a character, false if not
-     * Zachary
-     */
-    private boolean charactersSelected() //TODO
-    {
-        //if(player1 != null && player2 != null)
-            return true;
-        //return false;
     }
     /**
      * creates all player buttons

@@ -15,10 +15,11 @@ public class Driver {
                  public void run() 
                  {
                        new JFXPanel();
-                        latch.countDown();
+                       latch.countDown(); //runs latch countdown until JFXPanel fully loaded,
+                                          //this is to prevent the toolkit from being initialized afterwards
                  }
             });
-               System.out.println("as of now, only omid and zachary work as characters");
+            System.out.println("as of now, only omid and zachary work as characters");
             Menu mainMenu = new Menu();
             mainMenu.setSize(1000,800);
             mainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

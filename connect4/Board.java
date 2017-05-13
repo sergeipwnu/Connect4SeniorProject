@@ -1,8 +1,15 @@
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Insets;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
+import javax.swing.SwingWorker;
 import java.io.File;
 import java.util.*;
 import java.awt.image.BufferedImage;
@@ -55,7 +62,6 @@ public class Board extends JFrame{
         tokens.setOpaque(false);
         glow = new JLabel();
         glow.setIcon(new ImageIcon("images/gloweffectsquare.png"));
-        
         tokens.setBackground(new Color(0,0,0,0));
         tokens.add(glow);
         add(tokens);
@@ -91,9 +97,6 @@ public class Board extends JFrame{
      */
     private void generateButtons(Insets insets,PlayingBoard Brain)
     {
-                   
-        
-        
         ArrayList<Piece> buttons = new ArrayList<Piece>();
         offsets = new Position[6][7];
         int LeftInset = 165;
@@ -171,7 +174,6 @@ public class Board extends JFrame{
         b.setOpaque(false);
         b.setContentAreaFilled(false);
         b.setBorderPainted(false);
-        
     }
      /**
      * plays drop sound if true, error sound if false
@@ -183,20 +185,22 @@ public class Board extends JFrame{
         if(b)
         {
             myAudioPlayer.play();
-            myAudioPlayer.setOnEndOfMedia(new Runnable(){
-            public void run() {
-               myAudioPlayer.stop();
-            }
-        });
+            myAudioPlayer.setOnEndOfMedia(new Runnable()
+            {
+                public void run() {
+                   myAudioPlayer.stop();
+                }
+            });
         }
         else
         {
             myAudioPlayerErr.play();
-            myAudioPlayerErr.setOnEndOfMedia(new Runnable(){
-            public void run() {
-               myAudioPlayerErr.stop();
-            }
-        });
+            myAudioPlayerErr.setOnEndOfMedia(new Runnable()
+            {
+                public void run() {
+                   myAudioPlayerErr.stop();
+                }
+            });
         }
     }
     /**
@@ -222,7 +226,9 @@ public class Board extends JFrame{
         {
             glow.setBounds(296,12,120,120);
         }
-        tokens.repaint();
+        tokens.repaint(); //repaint is needed in order to prevent the image from not showing
+                          //until it is hovered over. This is because layout being set to null
+                          //forces the JPanel to stretch dynamically for each element added.
     }
     /**
      * static function that disables an AbstractButton for ms amount of seconds
@@ -231,7 +237,8 @@ public class Board extends JFrame{
      */
     static void disable(final AbstractButton b, final long ms) {
         b.setEnabled(false);
-        new SwingWorker() {
+        new SwingWorker() 
+        {
             protected Object doInBackground() throws Exception {
                 Thread.sleep(ms);
                 return null;

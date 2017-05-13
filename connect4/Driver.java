@@ -15,7 +15,8 @@ public class Driver {
                  public void run() 
                  {
                        new JFXPanel();
-                        latch.countDown();
+                       latch.countDown(); //runs latch countdown until JFXPanel fully loaded,
+                                          //this is to prevent the toolkit from being initialized afterwords
                  }
             });
             System.out.println("as of now, only omid and zachary work as characters");

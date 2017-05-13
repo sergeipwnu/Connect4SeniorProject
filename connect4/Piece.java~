@@ -34,6 +34,11 @@ public class Piece extends JButton
     {
         return new Position(myY,myX);
     }
+     /**
+     * returns this instance of Piece
+     * 
+     * Sergei Levashov
+     */
     private Piece returnThis()
     {
         return this; //if youre reading this pretend you never saw this method please

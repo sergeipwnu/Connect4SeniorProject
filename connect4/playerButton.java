@@ -21,27 +21,32 @@ public class playerButton extends JButton
      */
     playerButton(int left, int top, String name, Menu m)
     {
-        
-        addListener();
-        myMenu = m;
-        myName = name;
-        setBounds(left,top,150,150);
-        setText(name);
-        pick = new MediaPlayer(new Media(new File("audio/" + "omid" + "name.wav").toURI().toString())); //THIS PLAYS ONLY OMIDS VOICE LINE FOR TESTING PURPOSES
+            addListener();
+            myMenu = m;
+            myName = name;
+            setBounds(left,top,150,150);
+            setText(name);
+            pick = new MediaPlayer(new Media(new File("audio/" + "omid" + "name.wav").toURI().toString())); //THIS PLAYS ONLY OMIDS VOICE LINE FOR TESTING PURPOSES
     }
     public Player getPlayer()
     {
         return new Player(myName);
     }
+    /**
+     * Plays pick sound of player
+     * 
+     * Sergei Levashov
+     */
     private void playPick()
     {
         System.out.println("play pick audio file for " + myName);
         pick.play();
-        pick.setOnEndOfMedia(new Runnable(){
-        public void run() {
-           pick.stop();
-        }
-    });
+        pick.setOnEndOfMedia(new Runnable()
+        {
+            public void run() {
+               pick.stop();
+            }
+        });
     }
     /**
      * adds a listener for the playerButton click.
@@ -76,6 +81,6 @@ public class playerButton extends JButton
      */
     private String getPName()
     {
-       return myName; 
+         return myName; 
     }
 }
