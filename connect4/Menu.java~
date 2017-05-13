@@ -60,6 +60,7 @@ public class Menu extends JFrame
      */
     private void startGame()
     {
+        
         myBoard.addBoard(player1, player2);
     }
     public boolean isPicked()

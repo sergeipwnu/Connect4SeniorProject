@@ -19,18 +19,39 @@ public class Player
         myName = name;
         myImage = name+ "face.png";
     }
+         /**
+     * Plays the pick sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public String toString()
     {
         return myName;
     }
+     /**
+     * returns image path
+     * 
+     * Sergei Levashov
+     */
     public String getPath()
     {
         return myImage;
     }
+     /**
+     * adds a color to the imagepath 
+     * 
+     * Sergei Levashov
+     */
     public void addColorToPath(String color)
     {
         myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
     }
+    /**
+     * Sets local audioplayer
+     * 
+     * Sergei Levashov
+     */
     public void setAudioPlayer(AudioPlayer au)
     {
         mySounds = au;

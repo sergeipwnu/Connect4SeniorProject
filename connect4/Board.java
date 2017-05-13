@@ -173,6 +173,11 @@ public class Board extends JFrame{
         b.setBorderPainted(false);
         
     }
+     /**
+     * plays drop sound if true, error sound if false
+     * 
+     * Sergei Levashov
+     */
     public void playSound(boolean b)
     {
         if(b)
@@ -202,6 +207,11 @@ public class Board extends JFrame{
     {
         return offsets;
     }
+     /**
+     * shifts glow to pNum image on the top of the board
+     * 
+     * Sergei Levashov
+     */
     public void shiftGlow(int pNum)
     {
         if(pNum == 1)
@@ -214,6 +224,11 @@ public class Board extends JFrame{
         }
         tokens.repaint();
     }
+    /**
+     * static function that disables an AbstractButton for ms amount of seconds
+     * 
+     * Sergei Levashov
+     */
     static void disable(final AbstractButton b, final long ms) {
         b.setEnabled(false);
         new SwingWorker() {

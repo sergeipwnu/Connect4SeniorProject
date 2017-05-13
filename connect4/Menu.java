@@ -63,33 +63,43 @@ public class Menu extends JFrame
         
         myBoard.addBoard(player1, player2);
     }
+    /**
+     * returns true if player 1 is already selected, false if not
+     * 
+     * Sergei Levashov
+     */
     public boolean isPicked()
     {
         return playerInstanceLoaded;
     }
+     /**
+     * sets player 1 selected
+     * 
+     * Sergei Levashov
+     */
     public void setPicked()
     {
         playerInstanceLoaded = true;
     }
+    /**
+     * sets the player to the player passed from listener
+     * 
+     * Sergei Levashov
+     */
     public void setPlayer1(Player p)
     {
         player1 = p;
         player1.addColorToPath("b");
     }
+    /**
+     * sets the player to the player passed from listener
+     * 
+     * Sergei Levashov
+     */
     public void setPlayer2(Player p)
     {
         player2 = p;
         player2.addColorToPath("r");
-    }
-    /**
-     * returns true if both players have selected a character, false if not
-     * Zachary
-     */
-    private boolean charactersSelected() //TODO
-    {
-        //if(player1 != null && player2 != null)
-            return true;
-        //return false;
     }
     /**
      * creates all player buttons

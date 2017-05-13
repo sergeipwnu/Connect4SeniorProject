@@ -9,6 +9,7 @@ comment2.target=Position\ getPosition()
 comment2.text=\r\n\ Returns\ a\ new\ Position\ object\ with\ the\ y\ and\ x\r\n\ Sergei\ Levashov\r\n
 comment3.params=
 comment3.target=Piece\ returnThis()
+comment3.text=\r\n\ returns\ this\ instance\ of\ Piece\r\n\ \r\n\ Sergei\ Levashov\r\n
 comment4.params=
 comment4.target=java.lang.String\ toString()
 comment4.text=\r\n\ Prints\ the\ y\ and\ x\r\n\ Sergei\ Levashov\r\n
