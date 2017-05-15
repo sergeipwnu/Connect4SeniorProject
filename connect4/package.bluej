@@ -2,6 +2,7 @@
 dependency1.from=Driver
 dependency1.to=Board
 dependency1.type=UsesDependency
+<<<<<<< Updated upstream
 dependency10.from=Menu
 dependency10.to=playerButton
 dependency10.type=UsesDependency
@@ -14,6 +15,7 @@ dependency12.type=UsesDependency
 dependency13.from=Board
 dependency13.to=Position
 dependency13.type=UsesDependency
+<<<<<<< HEAD
 dependency14.from=Player
 dependency14.to=Piece
 dependency14.type=UsesDependency
@@ -23,71 +25,100 @@ dependency15.type=UsesDependency
 dependency16.from=Driver
 dependency16.to=Menu
 dependency16.type=UsesDependency
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 dependency2.from=Player
 dependency2.to=PlayingBoard
 dependency2.type=UsesDependency
-dependency3.from=Board
+dependency3.from=Piece
 dependency3.to=PlayingBoard
 dependency3.type=UsesDependency
-dependency4.from=Board
-dependency4.to=Piece
+dependency4.from=Piece
+dependency4.to=Position
 dependency4.type=UsesDependency
-dependency5.from=Board
-dependency5.to=Player
-dependency5.type=UsesDependency
-dependency6.from=Piece
-dependency6.to=Position
-dependency6.type=UsesDependency
-dependency7.from=Piece
-dependency7.to=PlayingBoard
-dependency7.type=UsesDependency
-dependency8.from=Menu
-dependency8.to=Player
-dependency8.type=UsesDependency
-dependency9.from=Menu
-dependency9.to=Board
-dependency9.type=UsesDependency
 objectbench.height=76
 objectbench.width=668
 package.editor.height=381
 package.editor.width=560
+<<<<<<< HEAD
 package.editor.x=259
 package.editor.y=96
 package.numDependencies=16
+=======
+<<<<<<< Updated upstream
+package.editor.x=342
+package.editor.y=329
+package.numDependencies=13
+=======
+package.editor.x=487
+package.editor.y=331
+package.numDependencies=4
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 package.numTargets=9
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
+<<<<<<< Updated upstream
 target1.editor.height=700
 target1.editor.width=900
 target1.editor.x=176
 target1.editor.y=150
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 target1.height=50
 target1.name=Player
-target1.naviview.expanded=true
 target1.showInterface=false
 target1.type=ClassTarget
 target1.typeParameters=
 target1.width=80
+<<<<<<< HEAD
 target1.x=70
 target1.y=60
 target2.editor.height=700
 target2.editor.width=900
 target2.editor.x=380
 target2.editor.y=240
+=======
+<<<<<<< Updated upstream
+target1.x=70
+target1.y=60
+=======
+target1.x=20
+target1.y=140
+>>>>>>> Stashed changes
+target2.editor.height=700
+target2.editor.width=900
+target2.editor.x=34
+target2.editor.y=296
+>>>>>>> origin/master
 target2.height=50
 target2.name=Board
-target2.naviview.expanded=true
+target2.naviview.expanded=false
 target2.showInterface=false
 target2.type=ClassTarget
 target2.typeParameters=
 target2.width=80
+<<<<<<< HEAD
 target2.x=150
 target2.y=250
 target3.editor.height=665
 target3.editor.width=851
 target3.editor.x=399
 target3.editor.y=159
+=======
+target2.x=20
+target2.y=240
+target3.editor.height=700
+target3.editor.width=900
+target3.editor.x=0
+target3.editor.y=2
+>>>>>>> origin/master
 target3.height=50
 target3.name=PlayingBoard
 target3.naviview.expanded=false
@@ -95,30 +126,60 @@ target3.showInterface=false
 target3.type=ClassTarget
 target3.typeParameters=
 target3.width=110
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> origin/master
 target3.x=350
 target3.y=40
 target4.editor.height=700
 target4.editor.width=900
 target4.editor.x=381
 target4.editor.y=149
+<<<<<<< HEAD
+=======
+=======
+target3.x=160
+target3.y=70
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 target4.height=50
 target4.name=Position
 target4.showInterface=false
 target4.type=ClassTarget
 target4.typeParameters=
 target4.width=80
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> origin/master
 target4.x=330
 target4.y=240
 target5.editor.height=700
 target5.editor.width=973
 target5.editor.x=339
 target5.editor.y=162
+<<<<<<< HEAD
+=======
+=======
+target4.x=160
+target4.y=10
+target5.editor.height=700
+target5.editor.width=900
+target5.editor.x=0
+target5.editor.y=2
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 target5.height=50
 target5.name=Piece
 target5.showInterface=false
 target5.type=ClassTarget
 target5.typeParameters=
 target5.width=80
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> origin/master
 target5.x=320
 target5.y=140
 target6.editor.height=700
@@ -135,40 +196,97 @@ target6.width=80
 target6.x=30
 target6.y=280
 target7.editor.height=700
+<<<<<<< HEAD
 target7.editor.width=900
 target7.editor.x=225
 target7.editor.y=179
 target7.height=50
 target7.name=playerButton
 target7.naviview.expanded=true
+=======
+target7.editor.width=900
+target7.editor.x=225
+target7.editor.y=179
+target7.height=50
+target7.name=playerButton
+target7.naviview.expanded=true
+=======
+target5.x=250
+target5.y=10
+target6.height=50
+target6.name=AudioPlayer
+target6.showInterface=false
+target6.type=ClassTarget
+target6.typeParameters=
+target6.width=100
+target6.x=280
+target6.y=70
+target7.editor.height=700
+target7.editor.width=900
+target7.editor.x=-114
+target7.editor.y=387
+target7.height=50
+target7.name=playerButton
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 target7.showInterface=false
 target7.type=ClassTarget
 target7.typeParameters=
 target7.width=100
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> origin/master
 target7.x=160
 target7.y=10
 target8.editor.height=700
 target8.editor.width=900
 target8.editor.x=362
 target8.editor.y=166
+<<<<<<< HEAD
+=======
+=======
+target7.x=410
+target7.y=170
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 target8.height=50
 target8.name=Driver
-target8.naviview.expanded=true
 target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
 target8.width=80
+<<<<<<< HEAD
 target8.x=160
 target8.y=70
 target9.editor.height=700
 target9.editor.width=900
 target9.editor.x=0
 target9.editor.y=2
+=======
+<<<<<<< Updated upstream
+target8.x=160
+target8.y=70
+=======
+target8.x=340
+target8.y=10
+>>>>>>> Stashed changes
+>>>>>>> origin/master
 target9.height=50
 target9.name=Menu
 target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
 target9.width=80
+<<<<<<< HEAD
 target9.x=250
 target9.y=70
+=======
+<<<<<<< Updated upstream
+target9.x=250
+target9.y=70
+=======
+target9.x=260
+target9.y=190
+>>>>>>> Stashed changes
+>>>>>>> origin/master

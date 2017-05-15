@@ -1,8 +1,15 @@
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Insets;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
+import javax.swing.SwingWorker;
 import java.io.File;
 import java.util.*;
 import java.awt.image.BufferedImage;
@@ -39,6 +46,9 @@ public class Board extends JFrame{
      */
     public void addBoard(Player player1, Player player2)
     {
+        AudioPlayer sounds = new AudioPlayer(player1,player2);
+        player1.setAudioPlayer(sounds);
+        player2.setAudioPlayer(sounds);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());
         Media err = new Media(new File("audio/err.wav").toURI().toString());
         myAudioPlayer = new MediaPlayer(place);
@@ -170,17 +180,30 @@ public class Board extends JFrame{
         b.setBorderPainted(false);
         
     }
+     /**
+     * plays drop sound if true, error sound if false
+     * 
+     * Sergei Levashov
+     */
     public void playSound(boolean b)
     {
         if(b)
         {
             myAudioPlayer.play();
-            myAudioPlayer.seek(Duration.ZERO);
+            myAudioPlayer.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               myAudioPlayer.stop();
+            }
+        });
         }
         else
         {
             myAudioPlayerErr.play();
-            myAudioPlayerErr.seek(Duration.ZERO);
+            myAudioPlayerErr.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               myAudioPlayerErr.stop();
+            }
+        });
         }
     }
     /**
@@ -191,6 +214,11 @@ public class Board extends JFrame{
     {
         return offsets;
     }
+     /**
+     * shifts glow to pNum image on the top of the board
+     * 
+     * Sergei Levashov
+     */
     public void shiftGlow(int pNum)
     {
         if(pNum == 1)
@@ -202,5 +230,22 @@ public class Board extends JFrame{
             glow.setBounds(296,12,120,120);
         }
         tokens.repaint();
+    }
+    /**
+     * static function that disables an AbstractButton for ms amount of seconds
+     * 
+     * Sergei Levashov
+     */
+    static void disable(final AbstractButton b, final long ms) {
+        b.setEnabled(false);
+        new SwingWorker() {
+            protected Object doInBackground() throws Exception {
+                Thread.sleep(ms);
+                return null;
+            }
+            @Override protected void done() {
+                b.setEnabled(true);
+            }
+        }.execute();
     }
 }

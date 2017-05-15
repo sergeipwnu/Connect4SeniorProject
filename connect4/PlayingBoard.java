@@ -1,9 +1,9 @@
-import javax.swing.*;
+
 /**
- * Write a description of class PlayingBoard here.
+ * Data storage that runs and updates alongside the GUI.
+ * Contains an array that stores player peice information and other functions analyzing game information
  * 
- * @author OmerHananya
- * @version (a version number or a date)
+ * OmerHananya
  */
 public class PlayingBoard 
 {
@@ -138,15 +138,11 @@ public class PlayingBoard
             changePlayer();
             b = true;
         }
-        
         printBoard();
         return b;
     }
-    
     private void printBoard()
     {
-        System.out.println("board");
-        
         for(int i =0; i < ROW; i++)
         {
              for(int j = 0; j<COL; j++)
@@ -165,7 +161,8 @@ public class PlayingBoard
         playerNum = (playerNum % 2) +1;
     }
     /**
-     * returns placeBelow
+     * returns placeBelow, a variable representing the offset from the button that was pressed
+     * from the location of where the peice should be. placeBelow will always be a number from 1-6
      * Sergei
      */
     public int getDropOffset()
@@ -174,7 +171,7 @@ public class PlayingBoard
         return placeBelow;
     }
     /**
-     * returns playerNum
+     * returns playerNum, which will always be 1 or 2
      * Sergei
      */
     public int getPlayerNum()

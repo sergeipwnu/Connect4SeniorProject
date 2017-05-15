@@ -9,6 +9,7 @@ public class Player
 {
     private String myName;
     private String myImage;
+    private AudioPlayer mySounds;
     /**
      * Constructor for objects of class Player
      * Sergei
@@ -18,17 +19,42 @@ public class Player
         myName = name;
         myImage = name+ "face.png";
     }
+         /**
+     * Plays the pick sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public String toString()
     {
         return myName;
     }
+     /**
+     * returns image path
+     * 
+     * Sergei Levashov
+     */
     public String getPath()
     {
         return myImage;
     }
+     /**
+     * adds a color to the imagepath 
+     * 
+     * Sergei Levashov
+     */
     public void addColorToPath(String color)
     {
         myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
+    }
+    /**
+     * Sets local audioplayer
+     * 
+     * Sergei Levashov
+     */
+    public void setAudioPlayer(AudioPlayer au)
+    {
+        mySounds = au;
     }
     /**
      * Adds a listener to a specefied JButton, plays an audio file onclick
@@ -42,8 +68,7 @@ public class Player
         {
             public void actionPerformed(ActionEvent e)
             {
-                    //then play the voice line of the left player
-                    System.out.println("left player voice line");
+                mySounds.playName(1);
             }
         });
         }
@@ -53,8 +78,7 @@ public class Player
         {
             public void actionPerformed(ActionEvent e)
             {
-                //play voice of right player;
-                System.out.println("right player voice line");
+                mySounds.playName(2);
             }
         });
         }

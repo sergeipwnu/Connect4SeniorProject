@@ -35,6 +35,16 @@ public class Piece extends JButton
         return new Position(myY,myX);
     }
      /**
+     * returns this instance of Piece
+     * used for ActionListener calls to functions requiring the instance of the object that the action originated in
+     * 
+     * Sergei Levashov
+     */
+    private Piece returnThis()
+    {
+        return this;
+    }
+     /**
      * Prints the y and x
      * Sergei Levashov
      */
@@ -58,7 +68,7 @@ public class Piece extends JButton
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
                     myBoard.shiftGlow(myBrain.getPlayerNum());
                     myBoard.playSound(true);
-                    
+                    myBoard.disable(returnThis(),200);
                 }
                 else
                 {

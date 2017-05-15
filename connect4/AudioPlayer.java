@@ -34,21 +34,71 @@ public class AudioPlayer
         myP2 = p2;
         
     }
+     /**
+     * Plays the pick sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public void playPick(int player)
     {
         pick1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "pick.wav").toURI().toString()));
         pick2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "pick.wav").toURI().toString()));
         if(player == 1)
         {
-            pick1.play();
-            pick1.seek(Duration.ZERO);
+        pick1.play();
+        pick1.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               pick1.stop();
+            }
+        });
         }
         else
         {
             pick2.play();
-            pick2.seek(Duration.ZERO);
+            pick2.setOnEndOfMedia(new Runnable(){
+                public void run() {
+                     pick2.stop();
+                }
+        
+            });
         }
     }
+     /**
+     * Plays the name sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
+    public void playName(int player)
+    {
+        name1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "name.wav").toURI().toString()));
+        name2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "name.wav").toURI().toString()));
+        if(player == 1)
+        {
+            name1.play();
+            name1.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               name1.stop();
+            }
+        });
+        }
+        else
+        {
+            name2.play();
+            name2.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               name2.stop();
+            }
+        });
+        }
+    }
+     /**
+     * Plays the win sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public void playWin(int player)
     {
         win1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "win.wav").toURI().toString()));
@@ -56,14 +106,28 @@ public class AudioPlayer
         if(player == 1)
         {
             win1.play();
-            win1.seek(Duration.ZERO);
+            win1.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               win1.stop();
+            }
+        });
         }
         else
         {
             win2.play();
-            win2.seek(Duration.ZERO);
+            win2.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               win2.stop();
+            }
+        });
         }
     }
+     /**
+     * Plays the lose sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public void playLose(int player)
     {
         lose1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "lose.wav").toURI().toString()));
@@ -71,14 +135,28 @@ public class AudioPlayer
         if(player == 1)
         {
             lose1.play();
-            lose1.seek(Duration.ZERO);
+            lose1.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               lose1.stop();
+            }
+        });
         }
         else
         {
             lose2.play();
-            lose2.seek(Duration.ZERO);
+            lose2.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               lose2.stop();
+            }
+        });
         }
     }
+    /**
+     * Plays the drop sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public void playDrop(int player)
     {
         drop11 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "drop1.wav").toURI().toString()));
@@ -92,17 +170,29 @@ public class AudioPlayer
             if(((int)Math.random() * 3) == 0)
             {
                 drop11.play();
-                drop11.seek(Duration.ZERO);
+                drop11.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               drop11.stop();
+            }
+        });
             }
             else if(((int)Math.random() * 3) == 0)
             {
                 drop12.play();
-                drop12.seek(Duration.ZERO);
+                drop12.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               drop12.stop();
+            }
+        });
             }
             else
             {
                 drop13.play();
-                drop13.seek(Duration.ZERO);
+                drop13.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               drop13.stop();
+            }
+        });
             }
         }
         else
@@ -110,17 +200,29 @@ public class AudioPlayer
             if(((int)Math.random() * 3) == 0)
             {
                 drop21.play();
-                drop21.seek(Duration.ZERO);
+                drop21.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               drop21.stop();
+            }
+        });
             }
             else if(((int)Math.random() * 3) == 0)
             {
                 drop22.play();
-                drop22.seek(Duration.ZERO);
+                drop22.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               drop22.stop();
+            }
+        });
             }
             else //THIS IS THE RAREST LINE
             {
                 drop23.play();
-                drop23.seek(Duration.ZERO);
+                drop23.setOnEndOfMedia(new Runnable(){
+            public void run() {
+               drop23.stop();
+            }
+        });
             }
         }
     }
