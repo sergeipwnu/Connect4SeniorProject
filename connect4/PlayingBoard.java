@@ -23,13 +23,12 @@ public class PlayingBoard
     }
     
     /**
-     * OMER
      * zach
      */
     public boolean areFourConnected(Position p)
     {
         int count = 0;
-        
+        /*
         //horizontal
         for(int i = 0; i < COL; i++)
         {
@@ -58,22 +57,50 @@ public class PlayingBoard
         }
         count = 0;
         
-        int j = p.getX();
-        //upper right diagonal check
-        if(p.getX() < COL-3 && p.getY() < ROW-3)
+        //uppper rght -- WORKS
+        int j = p.getX() - (ROW - p.getY());
+        int r = p.getY() + p.getX();
+        
+        if(j < 0)
+            j = 0;
+        if(r >= ROW)
+            r = ROW - 1;
+        while(r > 0 && j < COL)
         {
-            for(int i = p.getY(); i < p.getY() + 4; i++)
+            if(board[r][j] == playerNum)
             {
-                if(board[i][j] == playerNum)
-                {
-                    count++;
-                    if(count == 4)
-                        return true;
-                }
-                j++;
+                count++;
+                if(count == 4) 
+                    return true;
             }
+            else
+                count = 0;
+            j++;
+            r--;
         }
-        //try-catch to the efficient thing zach was talking about
+        */
+        
+        //lower left
+        int j = p.getX() - (ROW - p.getY());
+        int r = p.getY() - p.getX();
+        
+        if(j < 0)
+            j = 0;
+        if(r >= ROW)
+            r = ROW - 1;
+        while(r > 0 && j < COL)
+        {
+            if(board[r][j] == playerNum)
+            {
+                count++;
+                if(count == 4) 
+                    return true;
+            }
+            else
+                count = 0;
+            j++;
+            r--;
+        }
         return false;
     }
     
