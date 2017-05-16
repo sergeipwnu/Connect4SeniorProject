@@ -1,9 +1,9 @@
-
+import javax.swing.*;
 /**
- * Data storage that runs and updates alongside the GUI.
- * Contains an array that stores player peice information and other functions analyzing game information
+ * Write a description of class PlayingBoard here.
  * 
- * OmerHananya
+ * @author OmerHananya, Zachary, Sergei
+ * @version (a version number or a date)
  */
 public class PlayingBoard 
 {
@@ -11,15 +11,17 @@ public class PlayingBoard
     private final int COL = 7;
     private int playerNum = 1;
     private int[][] board;
+    private int[][] winArray;
     private int placeBelow = 0;
 
     /**
      * Constructor for objects of class PlayingBoard
-     * Omer
+     * Omer and zach
      */
     public PlayingBoard()
     {
         board = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
+        winArray = new int[ROW][COL];
     }
     
     /**
@@ -28,18 +30,21 @@ public class PlayingBoard
     public boolean areFourConnected(Position p)
     {
         int count = 0;
-        /*
-        //horizontal
+        
+        //horizontal -- WORKS
         for(int i = 0; i < COL; i++)
         {
-            if(board[p.getY()][i] == playerNum)
+            if(board[getDropOffset()][i] == playerNum)
             {
                 count++;
-                if (count == 4) 
+                if(count == 4) 
                     return true;
             }
             else
+            {
                 count = 0;
+            }
+            
         }
         count = 0;
         
@@ -49,17 +54,19 @@ public class PlayingBoard
             if(board[i][p.getX()] == playerNum)
             {
                 count++;
-                if (count == 4) 
+                if(count == 4) 
                     return true;
             }
             else
+            {
                 count = 0;
+            }
         }
         count = 0;
         
         //uppper rght -- WORKS
-        int j = p.getX() - (ROW - p.getY());
-        int r = p.getY() + p.getX();
+        int j = p.getX() - (ROW - getDropOffset());
+        int r = getDropOffset() + p.getX();
         
         if(j < 0)
             j = 0;
@@ -78,17 +85,16 @@ public class PlayingBoard
             j++;
             r--;
         }
-        */
         
-        //lower left
-        int j = p.getX() - (ROW - p.getY());
-        int r = p.getY() - p.getX();
+        //lower left -- WORKS
+        /*int*/ j = p.getX() - getDropOffset();
+        /*int*/ r = getDropOffset() - p.getX();
         
         if(j < 0)
             j = 0;
-        if(r >= ROW)
-            r = ROW - 1;
-        while(r > 0 && j < COL)
+        if(r < 0)
+            r = 0;
+        while(r < ROW && j < COL)
         {
             if(board[r][j] == playerNum)
             {
@@ -99,11 +105,19 @@ public class PlayingBoard
             else
                 count = 0;
             j++;
-            r--;
+            r++;
         }
+        
         return false;
     }
     
+    /**
+     * zach
+     */
+    public int[][] getWinArray()
+    {
+        return winArray;
+    }
     /**
      *  Attempts to make a move at the given Position. If the move is possible, the move is made
      *  and makeMove() returns true. If a move is not possible, makeMove returns false
@@ -137,11 +151,17 @@ public class PlayingBoard
             changePlayer();
             b = true;
         }
+        
         printBoard();
         return b;
     }
+    /**
+     * zach
+     */
     private void printBoard()
     {
+        System.out.println("board");
+        
         for(int i =0; i < ROW; i++)
         {
              for(int j = 0; j<COL; j++)
@@ -160,8 +180,7 @@ public class PlayingBoard
         playerNum = (playerNum % 2) +1;
     }
     /**
-     * returns placeBelow, a variable representing the offset from the button that was pressed
-     * from the location of where the peice should be. placeBelow will always be a number from 1-6
+     * returns placeBelow
      * Sergei
      */
     public int getDropOffset()
@@ -170,7 +189,7 @@ public class PlayingBoard
         return placeBelow;
     }
     /**
-     * returns playerNum, which will always be 1 or 2
+     * returns playerNum
      * Sergei
      */
     public int getPlayerNum()

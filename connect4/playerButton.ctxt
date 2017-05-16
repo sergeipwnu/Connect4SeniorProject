@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.params=left\ top\ name\ m
 comment0.target=playerButton(int,\ int,\ java.lang.String,\ Menu)
-comment0.text=\r\n\ adds\ a\ listener,\ assigns\ local\ variables,\ and\ sets\ bounds.\r\n\ \r\n\ Sergei\ Levashov\r\n
+comment0.text=\n\ adds\ a\ listener,\ assigns\ local\ variables,\ and\ sets\ bounds\ for\ the\ playerButton\ based\ on\ passed\ left\ and\ top\ offsets.\n\ \n\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=Player\ getPlayer()
 comment2.params=
 comment2.target=void\ playPick()
-comment2.text=\r\n\ Plays\ pick\ sound\ of\ player\r\n\ \r\n\ Sergei\ Levashov\r\n
+comment2.text=\n\ Plays\ pick\ sound\ of\ player\n\ \n\ Sergei\ Levashov\n
 comment3.params=
 comment3.target=void\ run()
 comment4.params=
 comment4.target=void\ addListener()
-comment4.text=\r\n\ adds\ a\ listener\ for\ the\ playerButton\ click.\r\n\ \r\n\ Sergei\ Levashov\r\n
+comment4.text=\n\ adds\ a\ listener\ for\ the\ playerButton\ click.\n\ \n\ Sergei\ Levashov\n
 comment5.params=e
 comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment6.params=
 comment6.target=java.lang.String\ getPName()
-comment6.text=\r\n\ local\ name\ getter\ for\ listener\r\n\ \r\n\ Sergei\ Levashov\r\n
+comment6.text=\n\ local\ name\ getter\n\ \n\ Sergei\ Levashov\n
 numComments=7
