@@ -37,12 +37,15 @@ public class PlayingBoard
             if(board[getDropOffset()][i] == playerNum)
             {
                 count++;
+                winArray[getDropOffset()][i] = playerNum;
                 if(count == 4) 
                     return true;
             }
             else
             {
                 count = 0;
+                for(int x = 0; x < COL; x++)
+                    winArray[getDropOffset()][x] = 0;
             }
             
         }
@@ -118,6 +121,19 @@ public class PlayingBoard
     {
         return winArray;
     }
+    private void printWinArray()
+    {
+        System.out.println("board");
+        
+        for(int i =0; i < ROW; i++)
+        {
+             for(int j = 0; j<COL; j++)
+            {
+                System.out.print(winArray[i][j]);
+            }
+            System.out.println();
+        }    
+    }
     /**
      *  Attempts to make a move at the given Position. If the move is possible, the move is made
      *  and makeMove() returns true. If a move is not possible, makeMove returns false
@@ -147,6 +163,7 @@ public class PlayingBoard
             {
                 System.out.println(">>>>>>>PLAYER " + playerNum + 
                                     " WINS<<<<<<<<<");
+                printWinArray();
             }
             changePlayer();
             b = true;
