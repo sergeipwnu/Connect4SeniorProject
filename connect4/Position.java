@@ -17,7 +17,7 @@ public class Position
     }
     /**
      * toString() that prints the x,y
-     * OMER
+     * Omer
      */
     public String toString()
     {
