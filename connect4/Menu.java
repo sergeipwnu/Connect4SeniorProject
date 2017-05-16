@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
+import java.awt.Color;
 /**
  * Menu screen
  * 
@@ -14,6 +15,7 @@ public class Menu extends JFrame
     private Board myBoard;
     private boolean playerInstanceLoaded = false;
     JLabel label;
+    JPanel playerIcons;
     /**
      * 
      * Zachary
@@ -36,6 +38,12 @@ public class Menu extends JFrame
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
         menu.setBounds(0,0,1000,800);
         menu.setVisible(true);
+        playerIcons = new JPanel();
+        playerIcons.setBounds(0,0,1000,800);
+        playerIcons.setBackground(new Color(0,0,0,0));
+        playerIcons.setLayout(null);
+        addPlayerImages();
+        add(playerIcons);
         add(menu);
         createButtons();
     }
@@ -106,8 +114,10 @@ public class Menu extends JFrame
      */
     private void createButtons()
     {
+        
         //first row
         add(makeButtonInvisible(new playerButton(110,175,"omid",this)));
+        
         add(makeButtonInvisible(new playerButton(320,175,"sergei",this)));
         add(makeButtonInvisible(new playerButton(530,175,"omer",this)));
         add(makeButtonInvisible(new playerButton(745,175,"zachary",this)));
@@ -138,5 +148,28 @@ public class Menu extends JFrame
         b.setBorderPainted(false);
         return b;
     }
-    
+    private void addPlayerImages()
+    {
+        JLabel p1 = new JLabel();
+        p1.setIcon(new ImageIcon("images/people/omidneutral.png"));
+        p1.setBounds(123,182,140,140);
+        playerIcons.add(p1);
+        
+        JLabel p2 = new JLabel();
+        p2.setIcon(new ImageIcon("images/people/sergeineutral.png"));
+        p2.setBounds(322,182,140,140);
+        playerIcons.add(p2);
+        
+        JLabel p3 = new JLabel();
+        p3.setIcon(new ImageIcon("images/people/omerneutral.png"));
+        p3.setBounds(535,182,140,140);
+        playerIcons.add(p3);
+        
+        JLabel p4 = new JLabel();
+        p4.setIcon(new ImageIcon("images/people/zachneutral.png"));
+        p4.setBounds(735,182,140,140);
+        playerIcons.add(p4);
+        
+        
+    }
 }

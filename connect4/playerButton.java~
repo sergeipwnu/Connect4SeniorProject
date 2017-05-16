@@ -32,6 +32,11 @@ public class playerButton extends JButton
     {
         return new Player(myName);
     }
+    /**
+     * Plays pick sound of player
+     * 
+     * Sergei Levashov
+     */
     private void playPick()
     {
         System.out.println("play pick audio file for " + myName);

@@ -4,11 +4,7 @@ comment0.target=PlayingBoard()
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard\r\n\ Omer\r\n
 comment1.params=p
 comment1.target=boolean\ areFourConnected(Position)
-<<<<<<< HEAD
-comment1.text=\n\ zach\n
-=======
-comment1.text=\r\n\ OMER\r\n\ zach\r\n
->>>>>>> origin/master
+comment1.text=\r\n\ zach\r\n
 comment2.params=p
 comment2.target=boolean\ makeMove(Position)
 comment2.text=\r\n\ \ Attempts\ to\ make\ a\ move\ at\ the\ given\ Position.\ If\ the\ move\ is\ possible,\ the\ move\ is\ made\r\n\ \ and\ makeMove()\ returns\ true.\ If\ a\ move\ is\ not\ possible,\ the\ user\ is\ prompted\ via\ the\ command\r\n\ \ line\ and\ makeMove()\ returns\ false\r\n\ OMER\r\n
