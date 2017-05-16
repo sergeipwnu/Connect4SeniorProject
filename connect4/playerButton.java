@@ -15,7 +15,7 @@ public class playerButton extends JButton
     private Menu myMenu;
     private MediaPlayer pick;
     /**
-     * adds a listener, assigns local variables, and sets bounds.
+     * adds a listener, assigns local variables, and sets bounds for the playerButton based on passed left and top offsets.
      * 
      * Sergei Levashov
      */
@@ -76,7 +76,7 @@ public class playerButton extends JButton
         });
     }
     /**
-     * local name getter for listener
+     * local name getter
      * 
      * Sergei Levashov
      */

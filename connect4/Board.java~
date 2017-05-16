@@ -18,6 +18,7 @@ import javafx.util.Duration;
 /**
      * Board is a type of JFrame that has the Buttons and graphical interface
      * This class corelates directly with information stored in PlayingBoard
+     * Board is DISPOSE_ON_CLOSE, meaning this menu can be used for multiple games
      * Author: Sergei Levashov
      */
 public class Board extends JFrame{
@@ -36,7 +37,7 @@ public class Board extends JFrame{
      */
     public Board(){
         super("Connect 4");
-        JFXPanel fxPanel = new JFXPanel();
+        //JFXPanel fxPanel = new JFXPanel(); // initalizes JFX enviroment to prevent threading issues later
         Brain = new PlayingBoard();
         setLayout(null);
     }
@@ -62,7 +63,6 @@ public class Board extends JFrame{
         tokens.setOpaque(false);
         glow = new JLabel();
         glow.setIcon(new ImageIcon("images/gloweffectsquare.png"));
-        
         tokens.setBackground(new Color(0,0,0,0));
         tokens.add(glow);
         add(tokens);
@@ -98,9 +98,6 @@ public class Board extends JFrame{
      */
     private void generateButtons(Insets insets,PlayingBoard Brain)
     {
-                   
-        
-        
         ArrayList<Piece> buttons = new ArrayList<Piece>();
         offsets = new Position[6][7];
         int LeftInset = 165;
@@ -178,7 +175,6 @@ public class Board extends JFrame{
         b.setOpaque(false);
         b.setContentAreaFilled(false);
         b.setBorderPainted(false);
-        
     }
      /**
      * plays drop sound if true, error sound if false
@@ -190,20 +186,22 @@ public class Board extends JFrame{
         if(b)
         {
             myAudioPlayer.play();
-            myAudioPlayer.setOnEndOfMedia(new Runnable(){
-            public void run() {
-               myAudioPlayer.stop();
-            }
-        });
+            myAudioPlayer.setOnEndOfMedia(new Runnable()
+            {
+                public void run() {
+                   myAudioPlayer.stop();
+                }
+            });
         }
         else
         {
             myAudioPlayerErr.play();
-            myAudioPlayerErr.setOnEndOfMedia(new Runnable(){
-            public void run() {
-               myAudioPlayerErr.stop();
-            }
-        });
+            myAudioPlayerErr.setOnEndOfMedia(new Runnable()
+            {
+                public void run() {
+                   myAudioPlayerErr.stop();
+                }
+            });
         }
     }
     /**
@@ -229,7 +227,9 @@ public class Board extends JFrame{
         {
             glow.setBounds(296,12,120,120);
         }
-        tokens.repaint();
+        tokens.repaint(); //repaint is needed in order to prevent the image from not showing
+                          //until it is hovered over. This is because layout being set to null
+                          //forces the JPanel to stretch dynamically for each element added.
     }
     /**
      * static function that disables an AbstractButton for ms amount of seconds
@@ -238,7 +238,8 @@ public class Board extends JFrame{
      */
     static void disable(final AbstractButton b, final long ms) {
         b.setEnabled(false);
-        new SwingWorker() {
+        new SwingWorker() 
+        {
             protected Object doInBackground() throws Exception {
                 Thread.sleep(ms);
                 return null;

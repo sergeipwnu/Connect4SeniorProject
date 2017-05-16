@@ -23,7 +23,7 @@ public class PlayingBoard
     }
     
     /**
-     * zach
+     * Zach
      */
     public boolean areFourConnected(Position p)
     {
@@ -106,8 +106,7 @@ public class PlayingBoard
     
     /**
      *  Attempts to make a move at the given Position. If the move is possible, the move is made
-     *  and makeMove() returns true. If a move is not possible, the user is prompted via the command
-     *  line and makeMove() returns false
+     *  and makeMove() returns true. If a move is not possible, makeMove returns false
      * OMER
      */
     public boolean makeMove(Position p) 

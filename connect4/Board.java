@@ -18,6 +18,7 @@ import javafx.util.Duration;
 /**
      * Board is a type of JFrame that has the Buttons and graphical interface
      * This class corelates directly with information stored in PlayingBoard
+     * Board is DISPOSE_ON_CLOSE, meaning this menu can be used for multiple games
      * Author: Sergei Levashov
      */
 public class Board extends JFrame{
@@ -31,17 +32,16 @@ public class Board extends JFrame{
     private MediaPlayer myAudioPlayer;
     private MediaPlayer myAudioPlayerErr;
     /**
-     * Board constructor, initializes the JFframe
+     * Board constructor, sets layout to null and creates new PlayingBoard
      * Sergei Levashov
      */
     public Board(){
         super("Connect 4");
-        JFXPanel fxPanel = new JFXPanel();
         Brain = new PlayingBoard();
         setLayout(null);
     }
     /**
-     * generates a new board and buttons
+     * generates a new board, buttons, glow icons, insets, and token JPanel
      * Sergei Levashov
      */
     public void addBoard(Player player1, Player player2)
@@ -73,7 +73,7 @@ public class Board extends JFrame{
         repaint();
     }
     /**
-     * adds a single token, at the specified y and x
+     * adds a single ImageIcon token, at the specified y and x, then repaints the JPanel
      * Sergei Levashov
      */
     public void addToken(int y, int x)
@@ -152,7 +152,7 @@ public class Board extends JFrame{
         makeButtonInvisible(backButton);
     }
     /**
-     * creates listener at back button
+     * creates listener at back button, located at upper left corner
      * Sergei Levashov
      */
     private void backButtonListener(Piece b) //implement change to new JFrame here

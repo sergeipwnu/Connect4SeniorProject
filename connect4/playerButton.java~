@@ -27,6 +27,7 @@ public class playerButton extends JButton
             setBounds(left,top,150,150);
             setText(name);
             pick = new MediaPlayer(new Media(new File("audio/" + "omid" + "name.wav").toURI().toString())); //THIS PLAYS ONLY OMIDS VOICE LINE FOR TESTING PURPOSES
+            
     }
     public Player getPlayer()
     {
