@@ -29,10 +29,17 @@ public class PlayingBoard
      */
     public boolean areFourConnected(Position p)
     {
+        return horizontal() || vertical(p) || diagonal(p);
+    }
+    
+    /**
+     * zach
+     * horizontal
+     */
+    private boolean horizontal()
+    {
         int count = 0;
-        int count2 = 0;
-        int count3 = 0;
-        //horizontal -- WORKS
+        
         for(int i = 0; i < COL; i++)
         {
             if(board[getDropOffset()][i] == playerNum)
@@ -40,11 +47,12 @@ public class PlayingBoard
                 count++;
                 if(count == 4) 
                 {
-                    for(int x = 0; x < COL; x++)
+                    for(int x = 1; x < COL-2; x++)
                     {
-                        if(board[getDropOffset()][x] == playerNum)
+                        if(board[getDropOffset()][x-1] == playerNum && board[getDropOffset()][x] == playerNum && board[getDropOffset()][x+1] == playerNum)
                         {
-                            winArray[getDropOffset()][x] = board[getDropOffset()][x];
+                            for(int z = x-1; z <= x+2; z++)
+                                winArray[getDropOffset()][z] = board[getDropOffset()][z];
                         }
                     }
                     return true;
@@ -55,25 +63,62 @@ public class PlayingBoard
                 count = 0;
             }
         }
-        count = 0;
         
-        //veritcal check -- WORKS
+        return false;
+    }
+    
+    /**
+     * zach
+     * vertical
+     */
+    private boolean vertical(Position p)
+    {
+        int count = 0;
+        
         for(int i = 0; i < ROW; i++)
         {
             if(board[i][p.getX()] == playerNum)
             {
                 count++;
-                if(count == 4) 
+                if(count == 4)
+                {
+                    for(int y = 1; y < ROW-2; y++)
+                    {
+                        if(board[y-1][p.getX()] == playerNum && board[y][p.getX()] == playerNum && board[y+1][p.getX()] == playerNum)
+                        {
+                            for(int z = y-1; z <= y+2; z++)
+                                winArray[z][p.getX()] = board[z][p.getX()];
+                        }
+                    }
+                    //not efficient
+                    for(int l = 0; l < ROW; l++)
+                    {
+                        if(!(winArray[l][p.getX()] == playerNum))
+                        {
+                            winArray[l][p.getX()] = 0;
+                        }
+                    }
                     return true;
+                }
             }
             else
             {
                 count = 0;
             }
         }
-        count = 0;
         
-        //uppper rght -- WORKS
+        return false;
+    }
+    
+    /**
+     * zach
+     * diagonal
+     */
+    private boolean diagonal(Position p)
+    {
+        int count = 0;
+        
+        //upper rght
         int j = p.getX() - (ROW - getDropOffset());
         int r = getDropOffset() + p.getX();
         
@@ -86,18 +131,37 @@ public class PlayingBoard
             if(board[r][j] == playerNum)
             {
                 count++;
-                if(count == 4) 
+                if(count == 4)
+                {
+                    /*
+                    j = p.getX() - (ROW - getDropOffset());
+                    r = getDropOffset() + p.getX();
+                    if(j < 0)
+                        j = 0;
+                    if(r >= ROW)
+                        r = ROW - 1;
+                    while(r > 3 && j < COL-3)
+                    {
+                        if(board[r][j] == playerNum && board[r+1][j+1] == playerNum && board[r+2][j+2] == playerNum)
+                        {
+                            for(int z = 0; z < 4; z++)
+                                winArray[r][j] = board[r][j];
+                        }
+                    }
+                    */
                     return true;
+                }
             }
             else
                 count = 0;
             j++;
             r--;
         }
+        count = 0;
         
-        //lower left -- WORKS
-        /*int*/ j = p.getX() - getDropOffset();
-        /*int*/ r = getDropOffset() - p.getX();
+        //lower left
+        j = p.getX() - getDropOffset();
+        r = getDropOffset() - p.getX();
         
         if(j < 0)
             j = 0;
@@ -119,7 +183,6 @@ public class PlayingBoard
         
         return false;
     }
-    
     /**
      * zach
      */
@@ -129,6 +192,7 @@ public class PlayingBoard
     }
     private void printWinArray()
     {
+        System.out.println("win array");
         for(int i =0; i < ROW; i++)
         {
              for(int j = 0; j<COL; j++)
@@ -167,7 +231,7 @@ public class PlayingBoard
             {
                 System.out.println(">>>>>>>PLAYER " + playerNum + 
                                     " WINS<<<<<<<<<");
-                //printWinArray();
+                printWinArray();
             }
             changePlayer();
             b = true;

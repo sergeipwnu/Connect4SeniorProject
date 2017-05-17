@@ -23,6 +23,7 @@ dependency15.type=UsesDependency
 dependency16.from=Board
 dependency16.to=Position
 dependency16.type=UsesDependency
+<<<<<<< HEAD
 dependency17.from=PlayingBoard
 dependency17.to=Position
 dependency17.type=UsesDependency
@@ -31,6 +32,16 @@ dependency18.to=Board
 dependency18.type=UsesDependency
 dependency19.from=Driver
 dependency19.to=Menu
+=======
+dependency17.from=Piece
+dependency17.to=Board
+dependency17.type=UsesDependency
+dependency18.from=Driver
+dependency18.to=Menu
+dependency18.type=UsesDependency
+dependency19.from=PlayingBoard
+dependency19.to=Position
+>>>>>>> origin/master
 dependency19.type=UsesDependency
 dependency2.from=Player
 dependency2.to=PlayingBoard
@@ -59,9 +70,15 @@ dependency9.type=UsesDependency
 objectbench.height=76
 objectbench.width=668
 package.editor.height=381
+<<<<<<< HEAD
 package.editor.width=570
 package.editor.x=-1068
 package.editor.y=227
+=======
+package.editor.width=560
+package.editor.x=133
+package.editor.y=66
+>>>>>>> origin/master
 package.numDependencies=19
 package.numTargets=9
 package.showExtends=true
@@ -94,9 +111,15 @@ target2.width=80
 target2.x=150
 target2.y=250
 target3.editor.height=591
+<<<<<<< HEAD
 target3.editor.width=1087
 target3.editor.x=477
 target3.editor.y=200
+=======
+target3.editor.width=582
+target3.editor.x=579
+target3.editor.y=82
+>>>>>>> origin/master
 target3.height=50
 target3.name=PlayingBoard
 target3.naviview.expanded=false
@@ -108,7 +131,7 @@ target3.x=350
 target3.y=40
 target4.editor.height=700
 target4.editor.width=900
-target4.editor.x=381
+target4.editor.x=380
 target4.editor.y=149
 target4.height=50
 target4.name=Position
