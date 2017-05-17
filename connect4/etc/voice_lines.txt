@@ -9,7 +9,7 @@ Warrick: "This is totes hippity hip hop"
 Hannah: "nice choice!"
 Kanika: "Sharkeisha in the house"
 Bubbles: "blublub!"
-Tim the Enchanter: "Yes, I can help you find the Holy Grail."
+Tim the Enchanter: ~~"I have been summoned!"~~"Yes, I can help you find the Holy Grail."
 
 WIN
 Omid: "Oh, what happened buddy?"
@@ -22,7 +22,7 @@ Warrick: "Awwwww yyyeeaaaahhhh"
 Hannah: "Yeah! Girl power!"
 Kanika: Whatchu want! Whatchu want!
 Bubbles: "BLUBUBBLUB!"
-Tim the Enchanter: "Get enchanted!"
+Tim the Enchanter: ~~"Get enchanted!"~~ "I warned you but did you listen oh no"
 
 LOSE
 Mr Lantsberger: "Looks like I pulled a henry"
@@ -35,7 +35,7 @@ Warrick: "Somethin' aint right"
 Hannah: "I'll get it next time for sure"
 Kanika: "Excuse me!"
 Bubbles: "blubblub..."
-Tim the Enchanter: "How could this be?!"
+Tim the Enchanter: ~~"How could this be?!"~~ "So foul, so cruel!"
 
 DROP
 Mr. Lantsberger: "Stay frosty" "That's the name of the game" "Down to davy jones locker"
@@ -48,4 +48,4 @@ Warrick: "Fashizzle my nizzle" "alright alright alright" "You feel?"
 Hannah: "Yippee!" "Oke doke!" "This is great!"
 Kanika: "Surprise!" "Les go!" "Das right!"
 Bubbles: "blub" "blubblub?" "blub..."
-Tim the Enchanter: "Ahah!" "Fear me" "I enchant upon thee!"
+Tim the Enchanter: ~~"Ahah!" "Fear me" "I enchant upon thee!"~~ "Quite." "*Explosion Sound*" "I'm warning you!"
