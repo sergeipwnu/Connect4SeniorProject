@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.params=yy\ xx
 comment0.target=Position(int,\ int)
-comment0.text=\n\ Initializes\ local\ y\ and\ x\ to\ passed\ variables\n\ Sergei\ Levashov\n
+comment0.text=\r\n\ Initializes\ local\ y\ and\ x\ to\ passed\ variables\r\n\ Sergei\ Levashov\r\n
 comment1.params=
 comment1.target=java.lang.String\ toString()
-comment1.text=\n\ toString()\ that\ prints\ the\ x,y\n\ Omer\n
+comment1.text=\r\n\ toString()\ that\ prints\ the\ x,y\r\n\ Omer\r\n
 comment2.params=
 comment2.target=int\ getX()
-comment2.text=\n\ getter\ for\ local\ X\n\ Sergei\ Levashov\n
+comment2.text=\r\n\ getter\ for\ local\ X\r\n\ Sergei\ Levashov\r\n
 comment3.params=
 comment3.target=int\ getY()
-comment3.text=\n\ getter\ for\ local\ Y\n\ Sergei\ Levashov\n
+comment3.text=\r\n\ getter\ for\ local\ Y\r\n\ Sergei\ Levashov\r\n
 numComments=4

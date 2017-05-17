@@ -30,24 +30,30 @@ public class PlayingBoard
     public boolean areFourConnected(Position p)
     {
         int count = 0;
-        
+        int count2 = 0;
+        int count3 = 0;
         //horizontal -- WORKS
         for(int i = 0; i < COL; i++)
         {
             if(board[getDropOffset()][i] == playerNum)
             {
                 count++;
-                winArray[getDropOffset()][i] = playerNum;
                 if(count == 4) 
+                {
+                    for(int x = 0; x < COL; x++)
+                    {
+                        if(board[getDropOffset()][x] == playerNum)
+                        {
+                            winArray[getDropOffset()][x] = board[getDropOffset()][x];
+                        }
+                    }
                     return true;
+                }
             }
             else
             {
                 count = 0;
-                for(int x = 0; x < COL; x++)
-                    winArray[getDropOffset()][x] = 0;
             }
-            
         }
         count = 0;
         
@@ -123,8 +129,6 @@ public class PlayingBoard
     }
     private void printWinArray()
     {
-        System.out.println("board");
-        
         for(int i =0; i < ROW; i++)
         {
              for(int j = 0; j<COL; j++)
@@ -163,7 +167,7 @@ public class PlayingBoard
             {
                 System.out.println(">>>>>>>PLAYER " + playerNum + 
                                     " WINS<<<<<<<<<");
-                printWinArray();
+                //printWinArray();
             }
             changePlayer();
             b = true;
@@ -202,7 +206,7 @@ public class PlayingBoard
      */
     public int getDropOffset()
     {
-        System.out.println(placeBelow);
+        //System.out.println(placeBelow);
         return placeBelow;
     }
     /**
