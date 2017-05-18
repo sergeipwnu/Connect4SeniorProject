@@ -153,7 +153,7 @@ public class Menu extends JFrame
     {
         omid = new JLabel();
         omid.setIcon(new ImageIcon("images/people/omidneutral.png"));
-        omid.setBounds(123,182,140,140);
+        omid.setBounds(110,182,140,140);
         playerIcons.add(omid);
         
         sergei = new JLabel();
@@ -168,7 +168,7 @@ public class Menu extends JFrame
         
         zach = new JLabel();
         zach.setIcon(new ImageIcon("images/people/zachneutral.png"));
-        zach.setBounds(735,182,140,140);
+        zach.setBounds(745,182,140,140);
         playerIcons.add(zach);
         
         
@@ -180,7 +180,7 @@ public class Menu extends JFrame
         {
             case OMID: 
                 omid.setIcon(new ImageIcon("images/people/omidpick.png"));
-                omid.setBounds(123,182,140,140);    
+                omid.setBounds(110,182,140,140);    
                 repaint();
                 break;
             case SERGEI:
@@ -195,7 +195,7 @@ public class Menu extends JFrame
                 break;
             case ZACH:
                 zach.setIcon(new ImageIcon("images/people/zachpick.png"));
-                zach.setBounds(735,182,140,140);
+                zach.setBounds(745,182,140,140);
                 repaint();
                 break; 
         }
