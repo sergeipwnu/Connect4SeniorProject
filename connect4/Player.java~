@@ -8,6 +8,7 @@ import java.awt.event.*;
 public class Player
 {
     private String myName;
+    private enumPlayers myEnum;
     private String myImage;
     private AudioPlayer mySounds;
     /**
@@ -18,19 +19,79 @@ public class Player
     {
         myName = name;
         myImage = name+ "face.png";
+        if(name.toLowerCase().equals("omid"))
+        {
+            myEnum = myEnum.OMID;
+        }
+        else
+            if(name.toLowerCase().equals("sergei"))
+            {
+                myEnum = myEnum.SERGEI;
+            }
+            else
+                if(name.toLowerCase().equals("omer"))
+                {
+                    myEnum = myEnum.OMER;
+                }
+                else
+                    if(name.toLowerCase().equals("zach"))
+                    {
+                        myEnum = myEnum.ZACH;
+                    }
+                    else
+                        if(name.toLowerCase().equals("warrick"))
+                        {
+                            myEnum = myEnum.WARRICK;
+                        }
+                        else
+                            if(name.toLowerCase().equals("catherines"))
+                            {
+                                myEnum = myEnum.CATS;
+                            }
+                            else
+                                if(name.toLowerCase().equals("lauren"))
+                                {
+                                    myEnum = myEnum.LAUREN;
+                                }
+                                else
+                                    if(name.toLowerCase().equals("kanika"))
+                                    {
+                                        myEnum = myEnum.KANIKA;
+                                    }
     }
+         /**
+     * Plays the pick sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public String toString()
     {
         return myName;
     }
+     /**
+     * returns image path
+     * 
+     * Sergei Levashov
+     */
     public String getPath()
     {
         return myImage;
     }
+     /**
+     * adds a color to the imagepath 
+     * 
+     * Sergei Levashov
+     */
     public void addColorToPath(String color)
     {
         myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
     }
+    /**
+     * Sets local audioplayer
+     * 
+     * Sergei Levashov
+     */
     public void setAudioPlayer(AudioPlayer au)
     {
         mySounds = au;
@@ -62,4 +123,10 @@ public class Player
         });
         }
     }
+    
+    public enumPlayers getEnum()
+    {
+        return myEnum;
+    }
+    
 }

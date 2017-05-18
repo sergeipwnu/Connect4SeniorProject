@@ -34,10 +34,30 @@ public class Player
                     myEnum = myEnum.OMER;
                 }
                 else
-                    if(name.toLowerCase().equals("zach"))
+                    if(name.toLowerCase().equals("zachary"))
                     {
                         myEnum = myEnum.ZACH;
                     }
+                    else
+                        if(name.toLowerCase().equals("warrick"))
+                        {
+                            myEnum = myEnum.WARRICK;
+                        }
+                        else
+                            if(name.toLowerCase().equals("catherines"))
+                            {
+                                myEnum = myEnum.CATS;
+                            }
+                            else
+                                if(name.toLowerCase().equals("lauren"))
+                                {
+                                    myEnum = myEnum.LAUREN;
+                                }
+                                else
+                                    if(name.toLowerCase().equals("kanika"))
+                                    {
+                                        myEnum = myEnum.KANIKA;
+                                    }
     }
          /**
      * Plays the pick sounds for the player passed

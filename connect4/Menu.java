@@ -16,7 +16,7 @@ public class Menu extends JFrame
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
-    private JLabel omid, sergei, omer, zach;
+    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika;
     /**
      * 
      * Zachary
@@ -126,7 +126,7 @@ public class Menu extends JFrame
         add(makeButtonInvisible(new playerButton(110,340,"warrick",this)));
         add(makeButtonInvisible(new playerButton(320,340,"catherines",this)));
         add(makeButtonInvisible(new playerButton(530,340,"lauren",this)));
-        add(makeButtonInvisible(new playerButton(745,340,"bubbles",this)));
+        add(makeButtonInvisible(new playerButton(745,340,"kanika",this)));
         
     }
     /**
@@ -171,7 +171,25 @@ public class Menu extends JFrame
         zach.setBounds(745,182,140,140);
         playerIcons.add(zach);
         
+        warrick = new JLabel();
+        warrick.setIcon(new ImageIcon("images/people/warrickneutral.png"));
+        warrick.setBounds(110,348,140,140);
+        playerIcons.add(warrick);
         
+        catherines = new JLabel();
+        catherines.setIcon(new ImageIcon("images/people/catherinesneutral.png"));
+        catherines.setBounds(322,348,140,140);
+        playerIcons.add(catherines);
+        
+        lauren = new JLabel();
+        lauren.setIcon(new ImageIcon("images/people/laurenneutral.png"));
+        lauren.setBounds(535,348,139,140);
+        playerIcons.add(lauren);
+        
+        kanika = new JLabel();
+        kanika.setIcon(new ImageIcon("images/people/kanikaneutral.png"));
+        kanika.setBounds(745,348,140,140);
+        playerIcons.add(kanika);
     }
     
     public void changePlayerImage(enumPlayers p)
@@ -194,8 +212,28 @@ public class Menu extends JFrame
                 repaint();
                 break;
             case ZACH:
-                zach.setIcon(new ImageIcon("images/people/zachpick.png"));
+                zach.setIcon(new ImageIcon("images/people/zacharypick.png"));
                 zach.setBounds(745,182,140,140);
+                repaint();
+                break; 
+            case WARRICK:
+                warrick.setIcon(new ImageIcon("images/people/warrickpick.png"));
+                warrick.setBounds(110,348,140,140);
+                repaint();
+                break;
+            case CATS:
+                catherines.setIcon(new ImageIcon("images/people/catherinespick.png"));
+                catherines.setBounds(322,348,140,140);
+                repaint();
+                break; 
+            case LAUREN:
+                lauren.setIcon(new ImageIcon("images/people/laurenpick.png"));
+                lauren.setBounds(535,348,139,140);
+                repaint();
+                break; 
+            case KANIKA:
+                kanika.setIcon(new ImageIcon("images/people/kanikapick.png"));
+                kanika.setBounds(745,348,140,140);
                 repaint();
                 break; 
         }
