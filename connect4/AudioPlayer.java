@@ -13,6 +13,7 @@ public class AudioPlayer
      * Constructor for objects of class AudioPlayer
      */
     private MediaPlayer pick1;
+    private MediaPlayer soundtrack;
     private MediaPlayer pick2;
     private MediaPlayer win1;
     private MediaPlayer win2;
@@ -32,6 +33,8 @@ public class AudioPlayer
     {
         myP1 = p1;
         myP2 = p2;
+        soundtrack = new MediaPlayer(new Media(new File("audio/soundtrack.mp3").toURI().toString()));
+        soundtrack.play();
         
     }
      /**

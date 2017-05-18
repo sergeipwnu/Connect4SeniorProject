@@ -39,11 +39,8 @@ public class PlayingBoard
     private boolean horizontal()
     {
         int count = 0;
-<<<<<<< HEAD
         //horizontal -- WORKS
-=======
         
->>>>>>> origin/master
         for(int i = 0; i < COL; i++)
         {
             if(board[getDropOffset()][i] == playerNum)
@@ -162,17 +159,9 @@ public class PlayingBoard
             r--;
         }
         count = 0;
-<<<<<<< HEAD
         //lower left -- WORKS
         /*int*/ j = p.getX() - getDropOffset();
         /*int*/ r = getDropOffset() - p.getX();
-=======
-        
-        //lower left
-        j = p.getX() - getDropOffset();
-        r = getDropOffset() - p.getX();
->>>>>>> origin/master
-        
         if(j < 0)
             j = 0;
         if(r < 0)

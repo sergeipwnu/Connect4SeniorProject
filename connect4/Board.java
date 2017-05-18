@@ -50,6 +50,7 @@ public class Board extends JFrame{
     public void addBoard(Player player1, Player player2)
     {
         AudioPlayer sounds = new AudioPlayer(player1,player2);
+        
         player1.setAudioPlayer(sounds);
         player2.setAudioPlayer(sounds);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());
