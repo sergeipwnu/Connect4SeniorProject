@@ -39,7 +39,11 @@ public class PlayingBoard
     private boolean horizontal()
     {
         int count = 0;
+        //horizontal -- WORKS
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin/master
         for(int i = 0; i < COL; i++)
         {
             if(board[getDropOffset()][i] == playerNum)
@@ -133,7 +137,7 @@ public class PlayingBoard
                 count++;
                 if(count == 4)
                 {
-                    /*
+                    //winArray
                     j = p.getX() - (ROW - getDropOffset());
                     r = getDropOffset() + p.getX();
                     if(j < 0)
@@ -142,27 +146,44 @@ public class PlayingBoard
                         r = ROW - 1;
                     while(r > 3 && j < COL-3)
                     {
-                        if(board[r][j] == playerNum && board[r+1][j+1] == playerNum && board[r+2][j+2] == playerNum)
+                        if(board[r][j] == playerNum && board[r-1][j+1] == playerNum && board[r-2][j+2] == playerNum)
                         {
                             for(int z = 0; z < 4; z++)
+                            {
                                 winArray[r][j] = board[r][j];
+                                r--;
+                                j++;
+                            }
                         }
+                        j++;
+                        r--;
                     }
-                    */
+                    
                     return true;
                 }
             }
             else
+            {
                 count = 0;
+            }
             j++;
             r--;
         }
         count = 0;
+<<<<<<< HEAD
+        //lower left -- WORKS
+        /*int*/ j = p.getX() - getDropOffset();
+        /*int*/ r = getDropOffset() - p.getX();
+=======
         
+        //lower left -- WORKS
+        /*int*/ j = p.getX() - getDropOffset();
+        /*int*/ r = getDropOffset() - p.getX();
         //lower left
         j = p.getX() - getDropOffset();
         r = getDropOffset() - p.getX();
         
+>>>>>>> origin/master
         if(j < 0)
             j = 0;
         if(r < 0)
@@ -180,7 +201,7 @@ public class PlayingBoard
             j++;
             r++;
         }
-        
+        count = 0;
         return false;
     }
     /**
@@ -193,9 +214,9 @@ public class PlayingBoard
     private void printWinArray()
     {
         System.out.println("win array");
-        for(int i =0; i < ROW; i++)
+        for(int i = 0; i < ROW; i++)
         {
-             for(int j = 0; j<COL; j++)
+            for(int j = 0; j<COL; j++)
             {
                 System.out.print(winArray[i][j]);
             }
@@ -260,7 +281,7 @@ public class PlayingBoard
      * Changes playerNum into 1 if 2, and 2 if 1
      * Omer
      */
-    private void changePlayer()
+    public void changePlayer()
     {
         playerNum = (playerNum % 2) +1;
     }

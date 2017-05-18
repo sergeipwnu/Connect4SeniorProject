@@ -26,8 +26,15 @@ public class playerButton extends JButton
             myName = name;
             setBounds(left,top,150,150);
             setText(name);
-            pick = new MediaPlayer(new Media(new File("audio/" + "omid" + "name.wav").toURI().toString())); //THIS PLAYS ONLY OMIDS VOICE LINE FOR TESTING PURPOSES
-            
+            try
+            {
+                System.out.println("attempting to load " + myName);
+                System.out.println("audio/" + myName+ "/" + myName + "_pick.wav");
+                pick = new MediaPlayer(new Media(new File("audio/" + myName+ "/" + myName + "_pick.wav").toURI().toString())); //THIS PLAYS ONLY OMIDS VOICE LINE FOR TESTING PURPOSES
+            }
+            catch(Exception e){ 
+                System.out.println("failed to load " + myName);
+                pick = null;}
     }
     public Player getPlayer()
     {
@@ -40,14 +47,17 @@ public class playerButton extends JButton
      */
     private void playPick()
     {
-        System.out.println("play pick audio file for " + myName);
-        pick.play();
-        pick.setOnEndOfMedia(new Runnable()
+        if(pick != null)
         {
-            public void run() {
-               pick.stop();
-            }
-        });
+            System.out.println("play pick audio file for " + myName);
+            pick.play();
+            pick.setOnEndOfMedia(new Runnable()
+            {
+                public void run() {
+                   pick.stop();
+                }
+            });
+        }
     }
     /**
      * adds a listener for the playerButton click.
@@ -62,12 +72,14 @@ public class playerButton extends JButton
             {
                 if(myMenu.isPicked())
                 {
-                    myMenu.setPlayer2(getPlayer());
+                    myMenu.changePlayerImage(getPlayer().getEnum());
                     playPick();
+                    myMenu.setPlayer2(getPlayer());
                     myMenu.initBoard();
                 }
                 else
                 {
+                    myMenu.changePlayerImage(getPlayer().getEnum());
                     playPick();
                     myMenu.setPlayer1(getPlayer());
                     myMenu.setPicked();

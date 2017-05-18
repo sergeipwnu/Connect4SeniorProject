@@ -8,6 +8,7 @@ import java.awt.event.*;
 public class Player
 {
     private String myName;
+    private enumPlayers myEnum;
     private String myImage;
     private AudioPlayer mySounds;
     /**
@@ -18,6 +19,25 @@ public class Player
     {
         myName = name;
         myImage = name+ "face.png";
+        if(name.toLowerCase().equals("omid"))
+        {
+            myEnum = myEnum.OMID;
+        }
+        else
+            if(name.toLowerCase().equals("sergei"))
+            {
+                myEnum = myEnum.SERGEI;
+            }
+            else
+                if(name.toLowerCase().equals("omer"))
+                {
+                    myEnum = myEnum.OMER;
+                }
+                else
+                    if(name.toLowerCase().equals("zach"))
+                    {
+                        myEnum = myEnum.ZACH;
+                    }
     }
          /**
      * Plays the pick sounds for the player passed
@@ -83,4 +103,10 @@ public class Player
         });
         }
     }
+    
+    public enumPlayers getEnum()
+    {
+        return myEnum;
+    }
+    
 }
