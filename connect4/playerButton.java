@@ -62,12 +62,14 @@ public class playerButton extends JButton
             {
                 if(myMenu.isPicked())
                 {
-                    myMenu.setPlayer2(getPlayer());
+                    myMenu.changePlayerImage(getPlayer().getEnum());
                     playPick();
+                    myMenu.setPlayer2(getPlayer());
                     myMenu.initBoard();
                 }
                 else
                 {
+                    myMenu.changePlayerImage(getPlayer().getEnum());
                     playPick();
                     myMenu.setPlayer1(getPlayer());
                     myMenu.setPicked();

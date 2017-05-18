@@ -16,6 +16,7 @@ public class Menu extends JFrame
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
+    private JLabel omid, sergei, omer, zach;
     /**
      * 
      * Zachary
@@ -150,26 +151,53 @@ public class Menu extends JFrame
     }
     private void addPlayerImages()
     {
-        JLabel p1 = new JLabel();
-        p1.setIcon(new ImageIcon("images/people/omidneutral.png"));
-        p1.setBounds(123,182,140,140);
-        playerIcons.add(p1);
+        omid = new JLabel();
+        omid.setIcon(new ImageIcon("images/people/omidneutral.png"));
+        omid.setBounds(123,182,140,140);
+        playerIcons.add(omid);
         
-        JLabel p2 = new JLabel();
-        p2.setIcon(new ImageIcon("images/people/sergeineutral.png"));
-        p2.setBounds(322,182,140,140);
-        playerIcons.add(p2);
+        sergei = new JLabel();
+        sergei.setIcon(new ImageIcon("images/people/sergeineutral.png"));
+        sergei.setBounds(322,182,140,140);
+        playerIcons.add(sergei);
         
-        JLabel p3 = new JLabel();
-        p3.setIcon(new ImageIcon("images/people/omerneutral.png"));
-        p3.setBounds(535,182,140,140);
-        playerIcons.add(p3);
+        omer = new JLabel();
+        omer.setIcon(new ImageIcon("images/people/omerneutral.png"));
+        omer.setBounds(535,182,140,140);
+        playerIcons.add(omer);
         
-        JLabel p4 = new JLabel();
-        p4.setIcon(new ImageIcon("images/people/zachneutral.png"));
-        p4.setBounds(735,182,140,140);
-        playerIcons.add(p4);
+        zach = new JLabel();
+        zach.setIcon(new ImageIcon("images/people/zachneutral.png"));
+        zach.setBounds(735,182,140,140);
+        playerIcons.add(zach);
         
         
+    }
+    
+    public void changePlayerImage(enumPlayers p)
+    {
+        switch(p)
+        {
+            case OMID: 
+                omid.setIcon(new ImageIcon("images/people/omidpick.png"));
+                omid.setBounds(123,182,140,140);    
+                repaint();
+                break;
+            case SERGEI:
+                sergei.setIcon(new ImageIcon("images/people/sergeipick.png"));
+                sergei.setBounds(322,182,140,140);  
+                repaint();
+                break;
+            case OMER:
+                omer.setIcon(new ImageIcon("images/people/omerpick.png"));
+                omer.setBounds(535,182,140,140);
+                repaint();
+                break;
+            case ZACH:
+                zach.setIcon(new ImageIcon("images/people/zachpick.png"));
+                zach.setBounds(735,182,140,140);
+                repaint();
+                break; 
+        }
     }
 }
