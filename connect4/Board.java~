@@ -31,18 +31,25 @@ public class Board extends JFrame{
     private Position[][] offsets;
     private MediaPlayer myAudioPlayer;
     private MediaPlayer myAudioPlayerErr;
+    private ArrayList<Piece> buttons;
+    private Piece pb1;
+    private Piece pb2;
     /**
-     * Board constructor, initializes the JFframe
+     * Board constructor, sets layout to null and creates new PlayingBoard
      * Sergei Levashov
      */
     public Board(){
         super("Connect 4");
-        //JFXPanel fxPanel = new JFXPanel(); // initalizes JFX enviroment to prevent threading issues later
         Brain = new PlayingBoard();
         setLayout(null);
     }
+    @Override
+    public void dispose() {
+        sounds.stopSoundtrack();
+        super.dispose();
+    }
     /**
-     * generates a new board and buttons
+     * generates a new board, buttons, glow icons, insets, and token JPanel
      * Sergei Levashov
      */
     public void addBoard(Player player1, Player player2)
@@ -74,7 +81,7 @@ public class Board extends JFrame{
         repaint();
     }
     /**
-     * adds a single token, at the specified y and x
+     * adds a single ImageIcon token, at the specified y and x, then repaints the JPanel
      * Sergei Levashov
      */
     public void addToken(int y, int x)
@@ -98,7 +105,7 @@ public class Board extends JFrame{
      */
     private void generateButtons(Insets insets,PlayingBoard Brain)
     {
-        ArrayList<Piece> buttons = new ArrayList<Piece>();
+        buttons = new ArrayList<Piece>();
         offsets = new Position[6][7];
         int LeftInset = 165;
         int count = 1;
@@ -134,8 +141,8 @@ public class Board extends JFrame{
         
         
         //here we add the buttons for the vs boxes on the top right of the board
-        Piece pb1 = new Piece();
-        Piece pb2 = new Piece();
+        pb1 = new Piece();
+        pb2 = new Piece();
         pb2.setBounds(615,34,70,70);
         pb1.setBounds(317,34,70,70);
         add(pb1);
@@ -153,7 +160,7 @@ public class Board extends JFrame{
         makeButtonInvisible(backButton);
     }
     /**
-     * creates listener at back button
+     * creates listener at back button, located at upper left corner
      * Sergei Levashov
      */
     private void backButtonListener(Piece b) //implement change to new JFrame here
@@ -231,6 +238,20 @@ public class Board extends JFrame{
                           //until it is hovered over. This is because layout being set to null
                           //forces the JPanel to stretch dynamically for each element added.
     }
+    public void winDisplay()
+    {
+        label.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
+        remove(tokens);
+        for(Piece b: buttons)
+        {
+            remove(b);
+        }
+        remove(glow);
+        remove(pb1);
+        remove(pb2);
+        repaint();
+    }
+    
     /**
      * static function that disables an AbstractButton for ms amount of seconds
      * 
@@ -249,4 +270,5 @@ public class Board extends JFrame{
             }
         }.execute();
     }
+    
 }

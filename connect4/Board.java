@@ -28,6 +28,7 @@ public class Board extends JFrame{
     private Player p1;
     private Player p2;
     private JPanel tokens;
+    private AudioPlayer sounds;
     private Position[][] offsets;
     private MediaPlayer myAudioPlayer;
     private MediaPlayer myAudioPlayerErr;
@@ -43,14 +44,18 @@ public class Board extends JFrame{
         Brain = new PlayingBoard();
         setLayout(null);
     }
+    @Override
+    public void dispose() {
+        sounds.stopSoundtrack();
+        super.dispose();
+    }
     /**
      * generates a new board, buttons, glow icons, insets, and token JPanel
      * Sergei Levashov
      */
     public void addBoard(Player player1, Player player2)
     {
-        AudioPlayer sounds = new AudioPlayer(player1,player2);
-        
+        sounds = new AudioPlayer(player1,player2);
         player1.setAudioPlayer(sounds);
         player2.setAudioPlayer(sounds);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());

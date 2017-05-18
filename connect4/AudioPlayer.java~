@@ -13,6 +13,7 @@ public class AudioPlayer
      * Constructor for objects of class AudioPlayer
      */
     private MediaPlayer pick1;
+    private MediaPlayer soundtrack;
     private MediaPlayer pick2;
     private MediaPlayer win1;
     private MediaPlayer win2;
@@ -32,7 +33,18 @@ public class AudioPlayer
     {
         myP1 = p1;
         myP2 = p2;
-        
+        soundtrack = new MediaPlayer(new Media(new File("audio/soundtrack.mp3").toURI().toString()));
+        soundtrack.setRate(.8);
+        soundtrack.setCycleCount(5);
+        soundtrack.setVolume(.05);
+        soundtrack.play();
+        soundtrack.setOnHalted(new Runnable() {
+            @Override
+            public void run() {
+                soundtrack.stop();
+                soundtrack.dispose();
+            }
+        });
     }
      /**
      * Plays the pick sounds for the player passed
@@ -93,6 +105,12 @@ public class AudioPlayer
         });
         }
     }
+     /**
+     * Plays the win sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public void playWin(int player)
     {
         win1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "win.wav").toURI().toString()));
@@ -116,6 +134,12 @@ public class AudioPlayer
         });
         }
     }
+     /**
+     * Plays the lose sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public void playLose(int player)
     {
         lose1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "lose.wav").toURI().toString()));
@@ -139,6 +163,12 @@ public class AudioPlayer
         });
         }
     }
+    /**
+     * Plays the drop sounds for the player passed
+     * Precondition: 1 or 2 is passed
+     * 
+     * Sergei Levashov
+     */
     public void playDrop(int player)
     {
         drop11 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "drop1.wav").toURI().toString()));
