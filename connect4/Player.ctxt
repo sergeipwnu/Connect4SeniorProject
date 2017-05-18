@@ -21,4 +21,6 @@ comment6.params=e
 comment6.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment7.params=e
 comment7.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=8
+comment8.params=
+comment8.target=enumPlayers\ getEnum()
+numComments=9
