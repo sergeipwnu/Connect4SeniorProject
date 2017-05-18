@@ -57,6 +57,15 @@ dependency9.from=Menu
 dependency9.to=Board
 dependency9.type=UsesDependency
 objectbench.height=76
+<<<<<<< HEAD
+objectbench.width=655
+package.editor.height=366
+package.editor.width=547
+package.editor.x=0
+package.editor.y=23
+package.numDependencies=13
+package.numTargets=9
+=======
 objectbench.width=668
 package.editor.height=381
 package.editor.width=560
@@ -64,6 +73,7 @@ package.editor.x=330
 package.editor.y=205
 package.numDependencies=19
 package.numTargets=10
+>>>>>>> origin/master
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -106,10 +116,17 @@ target2.typeParameters=
 target2.width=80
 target2.x=150
 target2.y=250
+<<<<<<< HEAD
+target3.editor.height=529
+target3.editor.width=587
+target3.editor.x=676
+target3.editor.y=23
+=======
 target3.editor.height=591
 target3.editor.width=582
 target3.editor.x=710
 target3.editor.y=24
+>>>>>>> origin/master
 target3.height=50
 target3.name=PlayingBoard
 target3.naviview.expanded=false
@@ -133,9 +150,15 @@ target4.width=80
 target4.x=330
 target4.y=240
 target5.editor.height=700
+<<<<<<< HEAD
+target5.editor.width=900
+target5.editor.x=140
+target5.editor.y=273
+=======
 target5.editor.width=973
 target5.editor.x=339
 target5.editor.y=162
+>>>>>>> origin/master
 target5.height=50
 target5.name=Piece
 target5.showInterface=false
@@ -176,13 +199,22 @@ target8.editor.x=362
 target8.editor.y=166
 target8.height=50
 target8.name=Driver
+<<<<<<< HEAD
+target8.naviview.expanded=false
+=======
 target8.naviview.expanded=true
+>>>>>>> origin/master
 target8.showInterface=false
 target8.type=ClassTarget
 target8.typeParameters=
 target8.width=80
+<<<<<<< HEAD
+target8.x=380
+target8.y=290
+=======
 target8.x=160
 target8.y=70
+>>>>>>> origin/master
 target9.editor.height=700
 target9.editor.width=900
 target9.editor.x=140
