@@ -63,12 +63,19 @@ public class Piece extends JButton
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println(myY + " " + myX);
-                if(myBrain.makeMove(getPosition()))
+                Position p = getPosition();
+                if(myBrain.makeMove(p))
                 {
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
                     myBoard.shiftGlow(myBrain.getPlayerNum());
                     myBoard.playSound(true);
                     myBoard.disable(returnThis(),200);
+                    myBrain.changePlayer();
+                    if(myBrain.areFourConnected(p))
+                    {
+                        myBoard.winDisplay();
+                    }
+                    myBrain.changePlayer();
                 }
                 else
                 {

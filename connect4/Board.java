@@ -31,6 +31,9 @@ public class Board extends JFrame{
     private Position[][] offsets;
     private MediaPlayer myAudioPlayer;
     private MediaPlayer myAudioPlayerErr;
+    private ArrayList<Piece> buttons;
+    private Piece pb1;
+    private Piece pb2;
     /**
      * Board constructor, sets layout to null and creates new PlayingBoard
      * Sergei Levashov
@@ -97,7 +100,7 @@ public class Board extends JFrame{
      */
     private void generateButtons(Insets insets,PlayingBoard Brain)
     {
-        ArrayList<Piece> buttons = new ArrayList<Piece>();
+        buttons = new ArrayList<Piece>();
         offsets = new Position[6][7];
         int LeftInset = 165;
         int count = 1;
@@ -133,8 +136,8 @@ public class Board extends JFrame{
         
         
         //here we add the buttons for the vs boxes on the top right of the board
-        Piece pb1 = new Piece();
-        Piece pb2 = new Piece();
+        pb1 = new Piece();
+        pb2 = new Piece();
         pb2.setBounds(615,34,70,70);
         pb1.setBounds(317,34,70,70);
         add(pb1);
@@ -230,6 +233,20 @@ public class Board extends JFrame{
                           //until it is hovered over. This is because layout being set to null
                           //forces the JPanel to stretch dynamically for each element added.
     }
+    public void winDisplay()
+    {
+        label.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
+        remove(tokens);
+        for(Piece b: buttons)
+        {
+            remove(b);
+        }
+        remove(glow);
+        remove(pb1);
+        remove(pb2);
+        repaint();
+    }
+    
     /**
      * static function that disables an AbstractButton for ms amount of seconds
      * 
@@ -248,4 +265,5 @@ public class Board extends JFrame{
             }
         }.execute();
     }
+    
 }

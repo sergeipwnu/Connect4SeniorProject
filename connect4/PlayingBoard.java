@@ -39,7 +39,11 @@ public class PlayingBoard
     private boolean horizontal()
     {
         int count = 0;
+<<<<<<< HEAD
+        //horizontal -- WORKS
+=======
         
+>>>>>>> origin/master
         for(int i = 0; i < COL; i++)
         {
             if(board[getDropOffset()][i] == playerNum)
@@ -158,10 +162,16 @@ public class PlayingBoard
             r--;
         }
         count = 0;
+<<<<<<< HEAD
+        //lower left -- WORKS
+        /*int*/ j = p.getX() - getDropOffset();
+        /*int*/ r = getDropOffset() - p.getX();
+=======
         
         //lower left
         j = p.getX() - getDropOffset();
         r = getDropOffset() - p.getX();
+>>>>>>> origin/master
         
         if(j < 0)
             j = 0;
@@ -180,7 +190,7 @@ public class PlayingBoard
             j++;
             r++;
         }
-        
+        count = 0;
         return false;
     }
     /**
@@ -260,7 +270,7 @@ public class PlayingBoard
      * Changes playerNum into 1 if 2, and 2 if 1
      * Omer
      */
-    private void changePlayer()
+    public void changePlayer()
     {
         playerNum = (playerNum % 2) +1;
     }
