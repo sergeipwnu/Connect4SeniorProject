@@ -18,3 +18,7 @@ Token offsets were slightly different on different operating systems. Mac OS and
 correct offsets for the tokens.
 
 MediaUnavaliable exceptions were fixed by including a try catch block in MediaPlayer instanciation
+
+A 2.5 second pause was needed after the second player had selected their character. However, calling Thread.sleep() in the listener caused for the sleep command to be issued
+in the EDT, freezing the gui while still proceeding in the main thread. Adding Thread.sleep() to the main thread resulted in both the EDT and main thread to sleep for 2.5 seconds.
+This issue was resolved by using a swingtimer and executing the remaining code only after the actionlistener for the timer reached the 2500 miliseconds.
