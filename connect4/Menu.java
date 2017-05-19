@@ -138,6 +138,15 @@ public class Menu extends JFrame
         add(makeButtonInvisible(new playerButton(320,560,"Mr. L",this)));
         add(makeButtonInvisible(new playerButton(530,560,"unknown",this)));
     }
+    public void threadSleep()
+    {
+        try
+        {
+            Thread.sleep(1500);
+            
+        }
+        catch(Exception e){}
+    }
     /**
      * returns the passed playerButton as invisible
      * Sergei

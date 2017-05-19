@@ -72,9 +72,22 @@ public class playerButton extends JButton
                 if(myMenu.isPicked())
                 {
                     myMenu.changePlayerImage(getPlayer().getEnum());
+                    System.out.println("playerimage");
                     playPick();
-                    myMenu.setPlayer2(getPlayer());
-                    myMenu.initBoard();
+                    try{
+                        Timer timer = new Timer(2500, new ActionListener() {
+                            public void actionPerformed(ActionEvent evt) {
+                                System.out.println("test");
+                                myMenu.setPlayer2(getPlayer());
+                                myMenu.initBoard();
+                            }
+                        });
+                        timer.setRepeats(false);
+                        timer.start();
+                    }catch(Exception l){
+                        l.printStackTrace();
+                    }
+                    
                 }
                 else
                 {
