@@ -241,7 +241,7 @@ public class Board extends JFrame{
     }
     public void winDisplay()
     {
-        label.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
+        label.setIcon(new ImageIcon("images/people/omidlose.JPG"));
         remove(tokens);
         for(Piece b: buttons)
         {

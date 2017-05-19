@@ -77,7 +77,6 @@ public class playerButton extends JButton
                     try{
                         Timer timer = new Timer(2500, new ActionListener() {
                             public void actionPerformed(ActionEvent evt) {
-                                System.out.println("test");
                                 myMenu.setPlayer2(getPlayer());
                                 myMenu.initBoard();
                             }
