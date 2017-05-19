@@ -19,7 +19,6 @@ public class Driver {
                                           //this is to prevent the toolkit from being initialized afterwords
                  }
             });
-            System.out.println("as of now, only omid and zachary work as characters");
             Menu mainMenu = new Menu();
             mainMenu.setSize(1000,800);
             mainMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
