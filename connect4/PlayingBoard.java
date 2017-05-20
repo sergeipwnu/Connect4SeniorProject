@@ -126,7 +126,7 @@ public class PlayingBoard
             j = 0;
         if(r >= ROW)
             r = ROW - 1;
-        while(r > 0 && j < COL)
+        while(r >= 0 && j < COL)
         {
             if(board[r][j] == playerNum)
             {
@@ -134,7 +134,8 @@ public class PlayingBoard
                 if(count == 4)
                 {
                     //winArray
-                    j = p.getX() - (ROW - getDropOffset());
+                    
+                    /*j = p.getX() - (ROW - getDropOffset());
                     r = getDropOffset() + p.getX();
                     if(j < 0)
                         j = 0;
@@ -152,9 +153,27 @@ public class PlayingBoard
                             }
                         }
                         j++;
-                        r--;
+                        r--;*/
+                    int i = p.getX() - (ROW - getDropOffset());
+                int k = getDropOffset() + p.getX(); 
+                    if(i < 0)
+                        i = 0;
+                    if(k >= ROW)
+                        k = ROW - 1;
+                    while(k > 2 && i < COL-3)
+                    {
+                        if(board[k][i] == playerNum && board[k-1][i+1] == playerNum && board[k-2][i+2] == playerNum)
+                        {
+                            for(int z = 0; z < 4; z++)
+                            {
+                                winArray[k][i] = board[k][i];
+                                k--;
+                                i++;
+                            }
+                        }
+                        i++;
+                        k--;
                     }
-                    
                     return true;
                 }
             }
@@ -179,15 +198,20 @@ public class PlayingBoard
             if(board[r][j] == playerNum)
             {
                 count++;
-                if(count == 4) 
+                if(count == 4)
+                {
                     return true;
+                }
             }
             else
+            {
                 count = 0;
+            }
             j++;
             r++;
         }
         count = 0;
+        
         return false;
     }
     /**
