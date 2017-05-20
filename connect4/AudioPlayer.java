@@ -35,15 +35,15 @@ public class AudioPlayer
     {
         myP1 = p1;
         myP2 = p2;
-        soundtrack = new MediaPlayer(new Media(new File("audio/soundtrack.mp3").toURI().toString()));
-        soundtrack.setRate(.8);
-        soundtrack.setCycleCount(5);
-        soundtrack.setVolume(.05);
-        soundtrack.play();
+        //soundtrack = new MediaPlayer(new Media(new File("audio/soundtrack.mp3").toURI().toString()));
+        //soundtrack.setRate(.8);
+        //soundtrack.setCycleCount(5);
+        //soundtrack.setVolume(.05);
+        //soundtrack.play();
     }
     public void stopSoundtrack()
     {
-        soundtrack.stop();
+        //soundtrack.stop();
     }
     public void DingDingDing()
     {

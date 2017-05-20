@@ -201,7 +201,7 @@ public class Board extends JFrame{
     {
         if(b)
         {
-            if((int)(Math.random() * 3) == 0)
+            if((int)(Math.random() * 2) == 0)
             {
                 myAudioPlayer.play();
                 myAudioPlayer.setOnEndOfMedia(new Runnable()
@@ -211,7 +211,7 @@ public class Board extends JFrame{
                     }
                 });
             }
-            else if((int)(Math.random() * 3) == 0)
+            else if((int)(Math.random() * 2) == 0)
             {
                 myAudioPlayer2.play();
                 myAudioPlayer2.setOnEndOfMedia(new Runnable()
