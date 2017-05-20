@@ -32,6 +32,7 @@ public class Board extends JFrame{
     private Position[][] offsets;
     private MediaPlayer myAudioPlayer;
     private MediaPlayer myAudioPlayer2;
+    private MediaPlayer myAudioPlayer3;
     private MediaPlayer myAudioPlayerErr;
     private ArrayList<Piece> buttons;
     private Piece pb1;
@@ -67,6 +68,7 @@ public class Board extends JFrame{
         Media err = new Media(new File("audio/err.wav").toURI().toString());
         myAudioPlayer = new MediaPlayer(place);
         myAudioPlayer2 = new MediaPlayer(drop2);
+        myAudioPlayer3 = new MediaPlayer(drop3);
         myAudioPlayerErr = new MediaPlayer(err);
         p1 = player1;
         p2 = player2;
@@ -216,6 +218,15 @@ public class Board extends JFrame{
                 {
                     public void run() {
                        myAudioPlayer2.stop();
+                    }
+                });
+            }
+            else{
+            myAudioPlayer3.play();
+                myAudioPlayer3.setOnEndOfMedia(new Runnable()
+                {
+                    public void run() {
+                       myAudioPlayer3.stop();
                     }
                 });
             }
