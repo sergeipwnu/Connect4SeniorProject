@@ -27,6 +27,7 @@ public class AudioPlayer
     private MediaPlayer drop23;
     private MediaPlayer name1;
     private MediaPlayer name2;
+    private MediaPlayer ding;
     private Player myP1;
     private Player myP2;
     public AudioPlayer(Player p1, Player p2)
@@ -38,11 +39,18 @@ public class AudioPlayer
         soundtrack.setCycleCount(5);
         soundtrack.setVolume(.05);
         soundtrack.play();
-        soundtrack.setOnHalted(new Runnable() {
-            @Override
+    }
+    public void stopSoundtrack()
+    {
+        soundtrack.stop();
+    }
+    public void DingDingDing()
+    {
+        ding = new MediaPlayer(new Media(new File("audio/ding1.mp3").toURI().toString()));
+        ding.play();
+        ding.setOnEndOfMedia(new Runnable(){
             public void run() {
-                soundtrack.stop();
-                soundtrack.dispose();
+               ding.stop();
             }
         });
     }

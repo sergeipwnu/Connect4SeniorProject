@@ -73,7 +73,19 @@ public class Piece extends JButton
                     myBrain.changePlayer();
                     if(myBrain.areFourConnected(p))
                     {
-                        myBoard.winDisplay();
+                    myBoard.spinWinTokens(myBrain.getWinArray());
+                        try{
+                        Timer timer = new Timer(5000, new ActionListener() {
+                            public void actionPerformed(ActionEvent evt) {
+                                myBoard.winDisplay();
+                            }
+                        });
+                        timer.setRepeats(false);
+                        timer.start();
+                    }catch(Exception l){
+                        l.printStackTrace();
+                    }
+                    
                     }
                     myBrain.changePlayer();
                 }

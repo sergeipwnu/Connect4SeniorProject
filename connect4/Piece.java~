@@ -36,12 +36,13 @@ public class Piece extends JButton
     }
      /**
      * returns this instance of Piece
+     * used for ActionListener calls to functions requiring the instance of the object that the action originated in
      * 
      * Sergei Levashov
      */
     private Piece returnThis()
     {
-        return this; //if youre reading this pretend you never saw this method please
+        return this;
     }
      /**
      * Prints the y and x
@@ -62,12 +63,31 @@ public class Piece extends JButton
             public void actionPerformed(ActionEvent e)
             {
                 System.out.println(myY + " " + myX);
-                if(myBrain.makeMove(getPosition()))
+                Position p = getPosition();
+                if(myBrain.makeMove(p))
                 {
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
                     myBoard.shiftGlow(myBrain.getPlayerNum());
                     myBoard.playSound(true);
                     myBoard.disable(returnThis(),200);
+                    myBrain.changePlayer();
+                    if(myBrain.areFourConnected(p))
+                    {
+                    myBoard.spinWinTokens(myBrain.getWinArray());
+                        try{
+                        Timer timer = new Timer(2500, new ActionListener() {
+                            public void actionPerformed(ActionEvent evt) {
+                                myBoard.winDisplay();
+                            }
+                        });
+                        timer.setRepeats(false);
+                        timer.start();
+                    }catch(Exception l){
+                        l.printStackTrace();
+                    }
+                    
+                    }
+                    myBrain.changePlayer();
                 }
                 else
                 {

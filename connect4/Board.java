@@ -31,9 +31,12 @@ public class Board extends JFrame{
     private AudioPlayer sounds;
     private Position[][] offsets;
     private MediaPlayer myAudioPlayer;
+    private MediaPlayer myAudioPlayer2;
     private MediaPlayer myAudioPlayerErr;
     private ArrayList<Piece> buttons;
     private Piece pb1;
+    private Media drop2;
+    private Media drop3;
     private Piece pb2;
     /**
      * Board constructor, sets layout to null and creates new PlayingBoard
@@ -59,8 +62,11 @@ public class Board extends JFrame{
         player1.setAudioPlayer(sounds);
         player2.setAudioPlayer(sounds);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());
+        Media drop2 = new Media(new File("audio/drop2.wav").toURI().toString());
+        Media drop3 = new Media(new File("audio/drop3.wav").toURI().toString());
         Media err = new Media(new File("audio/err.wav").toURI().toString());
         myAudioPlayer = new MediaPlayer(place);
+        myAudioPlayer2 = new MediaPlayer(drop2);
         myAudioPlayerErr = new MediaPlayer(err);
         p1 = player1;
         p2 = player2;
@@ -193,13 +199,26 @@ public class Board extends JFrame{
     {
         if(b)
         {
-            myAudioPlayer.play();
-            myAudioPlayer.setOnEndOfMedia(new Runnable()
+            if((int)(Math.random() * 3) == 0)
             {
-                public void run() {
-                   myAudioPlayer.stop();
-                }
-            });
+                myAudioPlayer.play();
+                myAudioPlayer.setOnEndOfMedia(new Runnable()
+                {
+                    public void run() {
+                       myAudioPlayer.stop();
+                    }
+                });
+            }
+            else if((int)(Math.random() * 3) == 0)
+            {
+                myAudioPlayer2.play();
+                myAudioPlayer2.setOnEndOfMedia(new Runnable()
+                {
+                    public void run() {
+                       myAudioPlayer2.stop();
+                    }
+                });
+            }
         }
         else
         {
@@ -241,7 +260,8 @@ public class Board extends JFrame{
     }
     public void winDisplay()
     {
-        label.setIcon(new ImageIcon("images/people/omidlose.JPG"));
+        
+        label.setIcon(new ImageIcon("images/boards/WinScreen1.png"));
         remove(tokens);
         for(Piece b: buttons)
         {
@@ -252,7 +272,10 @@ public class Board extends JFrame{
         remove(pb2);
         repaint();
     }
-    
+    public void spinWinTokens(int[][] winArr)
+    {
+        
+    }
     /**
      * static function that disables an AbstractButton for ms amount of seconds
      * 

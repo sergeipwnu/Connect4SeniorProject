@@ -27,8 +27,10 @@ public class AudioPlayer
     private MediaPlayer drop23;
     private MediaPlayer name1;
     private MediaPlayer name2;
+    private MediaPlayer ding;
     private Player myP1;
     private Player myP2;
+    private int dingCount = 4;
     public AudioPlayer(Player p1, Player p2)
     {
         myP1 = p1;
@@ -42,6 +44,25 @@ public class AudioPlayer
     public void stopSoundtrack()
     {
         soundtrack.stop();
+    }
+    public void DingDingDing()
+    {
+        if(dingCount == 0)
+        {
+            dingCount = 4;
+        }
+        else
+        {
+            ding = new MediaPlayer(new Media(new File("audio/ding" + dingCount + ".mp3").toURI().toString()));
+            ding.play();
+            ding.setOnEndOfMedia(new Runnable(){
+                public void run() {
+                   ding.stop();
+                }
+            });
+            dingCount--;
+            DingDingDing();
+        }
     }
      /**
      * Plays the pick sounds for the player passed
