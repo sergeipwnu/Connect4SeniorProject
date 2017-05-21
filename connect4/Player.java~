@@ -34,7 +34,7 @@ public class Player
                     myEnum = myEnum.OMER;
                 }
                 else
-                    if(name.toLowerCase().equals("zach"))
+                    if(name.toLowerCase().equals("zachary"))
                     {
                         myEnum = myEnum.ZACH;
                     }

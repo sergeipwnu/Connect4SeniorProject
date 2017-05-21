@@ -20,6 +20,7 @@ comment15.target=void\ shiftGlow(int)
 comment15.text=\r\n\ shifts\ glow\ to\ pNum\ image\ on\ the\ top\ of\ the\ board\r\n\ \r\n\ Sergei\ Levashov\r\n
 comment16.params=player
 comment16.target=void\ winDisplay(int)
+comment16.text=\r\n\ Displays\ win\ screen\ for\ winning\ player\ and\ removes\ all\ buttons,tokens,and\ glows\r\n\ \r\n\ Sergei\ Levashov\r\n
 comment17.params=winArr\ player
 comment17.target=void\ spinWinTokens(int[],\ int)
 comment17.text=\r\n\ makes\ winning\ token\ line\ glow\ and\ spin\r\n\ \r\n\ Sergei\ Levashov\r\n

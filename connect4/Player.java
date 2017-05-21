@@ -49,9 +49,9 @@ public class Player
                                 myEnum = myEnum.CATS;
                             }
                             else
-                                if(name.toLowerCase().equals("lauren"))
+                                if(name.toLowerCase().equals("hannah"))
                                 {
-                                    myEnum = myEnum.LAUREN;
+                                    myEnum = myEnum.HANNAH;
                                 }
                                 else
                                     if(name.toLowerCase().equals("kanika"))
