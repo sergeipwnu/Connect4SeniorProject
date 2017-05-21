@@ -28,7 +28,9 @@ public class Board extends JFrame{
     private Player p1;
     private Player p2;
     private JPanel tokens;
+    private JPanel tokensGlow;
     private AudioPlayer sounds;
+    private boolean isPC;
     private Position[][] offsets;
     private MediaPlayer myAudioPlayer;
     private MediaPlayer myAudioPlayer2;
@@ -43,8 +45,9 @@ public class Board extends JFrame{
      * Board constructor, sets layout to null and creates new PlayingBoard
      * Sergei Levashov
      */
-    public Board(){
+    public Board(boolean os){
         super("Connect 4");
+        isPC = os;
         Brain = new PlayingBoard();
         setLayout(null);
     }
@@ -74,16 +77,23 @@ public class Board extends JFrame{
         p2 = player2;
         label = new JLabel();
         tokens = new JPanel();
+        tokensGlow = new JPanel();
         label.setIcon(new ImageIcon("images/boards/connect4board2.png"));
         tokens.setLayout(null);
         tokens.setOpaque(false);
+        tokensGlow.setLayout(null);
+        tokensGlow.setOpaque(false);
         glow = new JLabel();
         glow.setIcon(new ImageIcon("images/gloweffectsquare.png"));
         tokens.setBackground(new Color(0,0,0,0));
+        tokensGlow.setBackground(new Color(0,0,0,0));
         tokens.add(glow);
+        add(tokensGlow);
         add(tokens);
+        
         add(label);
         tokens.setBounds(0,0,1000,800);
+        tokensGlow.setBounds(0,0,1000,800);
         label.setBounds(0,0,1000,800);
         generateButtons(getInsets(),Brain);
         shiftGlow(1);
@@ -104,9 +114,45 @@ public class Board extends JFrame{
         {
             test.setIcon(new ImageIcon("images/people/" + p2.getPath()));
         }
-        test.setBounds(y-6,x-8,85,85);        
+        if(isPC)
+        {
+            test.setBounds(y-8,x-10,85,85);        
+        }
+        else
+        {
+            test.setBounds(y-6,x-8,85,85);  
+        }
         tokens.add(test);
         tokens.repaint();
+    }
+    /**
+     * adds a single ImageIcon token, at the specified y and x, then repaints the JPanel
+     * this addToken method also adds a glow
+     * Sergei Levashov
+     */
+    public void addToken(int y, int x, int player)
+    {
+        JLabel test = new JLabel();
+        System.out.println("uh " + x + " " + y);
+        if(Brain.getPlayerNum() == 1)
+        {
+            test.setIcon(new ImageIcon("images/circleglow.png")); //"images/people/" + "glow" + p1.getPath())
+        }
+        else
+        {
+            test.setIcon(new ImageIcon("images/circleglow.png"));//test.setIcon(new ImageIcon("images/people/" + "glow" + p2.getPath()));
+        }
+        if(isPC)
+        {
+            test.setBounds(y-8-25,x-10-25,135,135);
+        }
+        else
+        {
+            test.setBounds(y-6-25,x-8-25,135,135);
+        }
+        tokensGlow.add(test);
+        tokensGlow.repaint();
+        
     }
     /**
      * generates the 6X7 grid of buttons and makes them invisible
@@ -201,7 +247,7 @@ public class Board extends JFrame{
     {
         if(b)
         {
-            if((int)(Math.random() * 3) == 0)
+            if((int)(Math.random() * 2) == 0)
             {
                 myAudioPlayer.play();
                 myAudioPlayer.setOnEndOfMedia(new Runnable()
@@ -211,7 +257,7 @@ public class Board extends JFrame{
                     }
                 });
             }
-            else if((int)(Math.random() * 3) == 0)
+            else if((int)(Math.random() * 2) == 0)
             {
                 myAudioPlayer2.play();
                 myAudioPlayer2.setOnEndOfMedia(new Runnable()
@@ -269,11 +315,11 @@ public class Board extends JFrame{
                           //until it is hovered over. This is because layout being set to null
                           //forces the JPanel to stretch dynamically for each element added.
     }
-    public void winDisplay()
+    public void winDisplay(int player)
     {
-        
-        label.setIcon(new ImageIcon("images/boards/WinScreen1.png"));
+        label.setIcon(new ImageIcon("images/boards/WinScreen" + player + ".png"));
         remove(tokens);
+        remove(tokensGlow);
         for(Piece b: buttons)
         {
             remove(b);
@@ -283,9 +329,34 @@ public class Board extends JFrame{
         remove(pb2);
         repaint();
     }
-    public void spinWinTokens(int[][] winArr)
+    /**
+     * makes winning token line glow and spin
+     * 
+     * Sergei Levashov
+     */
+    public void spinWinTokens(int[] winArr, int player)
     {
-        
+        Position myPos;
+        System.out.println(winArr[0] + " " + winArr[1] + " " + winArr[2] + " " + winArr[3] + " ");
+        for(int x = 0; x < 4; x++)
+        {
+            
+            System.out.println(buttons.get(winArr[x]).getPosition());
+            myPos = buttons.get(winArr[x]).getPosition();
+            addToken(getOffsetArray()[myPos.getY()][myPos.getX()].getY(),getOffsetArray()[0][myPos.getX()].getX()+103*(x+2),player);
+        }
+    }
+    /**
+     * removes all board buttons
+     * 
+     * Sergei Levashov
+     */
+    public void removeAllButtons()
+    {
+        for(Piece b: buttons)
+        {
+            remove(b);
+        }
     }
     /**
      * static function that disables an AbstractButton for ms amount of seconds

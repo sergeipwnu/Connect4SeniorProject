@@ -13,6 +13,7 @@ public class Menu extends JFrame
     private Player player1 = null;
     private Player player2 = null;
     private Board myBoard;
+    private boolean isPC = false;
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
@@ -27,11 +28,13 @@ public class Menu extends JFrame
         if(System.getProperty("os.name").indexOf("Mac") != -1)
         {
             System.out.println("you are using a mac");
+            
             //figure out how to add icon image for mac here
         }
         else
         {
             System.out.println("you are using a pc");
+            isPC = true;
             setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
         }
         setLayout(null);
@@ -54,7 +57,7 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
-            myBoard = new Board();
+            myBoard = new Board(isPC);
             myBoard.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myBoard.setSize(1000,800);
             myBoard.setResizable(false);

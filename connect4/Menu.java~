@@ -59,7 +59,6 @@ public class Menu extends JFrame
             myBoard.setSize(1000,800);
             myBoard.setResizable(false);
             myBoard.setVisible(true);
-            playerInstanceLoaded = false;
             startGame();
             myBoard.setVisible(true);
             playerInstanceLoaded = false; // resets first player picked boolean to false
@@ -138,6 +137,15 @@ public class Menu extends JFrame
     {
         add(makeButtonInvisible(new playerButton(320,560,"Mr. L",this)));
         add(makeButtonInvisible(new playerButton(530,560,"unknown",this)));
+    }
+    public void threadSleep()
+    {
+        try
+        {
+            Thread.sleep(1500);
+            
+        }
+        catch(Exception e){}
     }
     /**
      * returns the passed playerButton as invisible
