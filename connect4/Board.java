@@ -348,7 +348,8 @@ public class Board extends JFrame{
             
             System.out.println(buttons.get(winArr[x]).getPosition());
             myPos = buttons.get(winArr[x]).getPosition();
-            addToken(getOffsetArray()[myPos.getY()][myPos.getX()].getY(),getOffsetArray()[0][myPos.getX()].getX()+103*(x+2),player);
+            System.out.println("modulo test" + winArr[x]/7);
+            addToken(getOffsetArray()[myPos.getY()][myPos.getX()].getY(),getOffsetArray()[0][myPos.getX()].getX()+103*(winArr[x]/7),player);
         }
     }
     /**
