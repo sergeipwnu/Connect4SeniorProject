@@ -11,7 +11,9 @@ public class PlayingBoard
     private final int COL = 7;
     private int playerNum = 1;
     private int[][] board;
+    private int[][] convWinArray;
     private int[][] winArray;
+    private int[] newWinArray = new int[3];
     private int placeBelow = 0;
 
     /**
@@ -22,6 +24,7 @@ public class PlayingBoard
     {
         board = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
         winArray = new int[ROW][COL];
+        convWinArray = new int[ROW][COL];
     }
     
     /**
@@ -126,7 +129,7 @@ public class PlayingBoard
             j = 0;
         if(r >= ROW)
             r = ROW - 1;
-        while(r > 0 && j < COL)
+        while(r >= 0 && j < COL)
         {
             if(board[r][j] == playerNum)
             {
@@ -134,7 +137,8 @@ public class PlayingBoard
                 if(count == 4)
                 {
                     //winArray
-                    j = p.getX() - (ROW - getDropOffset());
+                    
+                    /*j = p.getX() - (ROW - getDropOffset());
                     r = getDropOffset() + p.getX();
                     if(j < 0)
                         j = 0;
@@ -152,9 +156,27 @@ public class PlayingBoard
                             }
                         }
                         j++;
-                        r--;
+                        r--;*/
+                    int i = p.getX() - (ROW - getDropOffset());
+                int k = getDropOffset() + p.getX(); 
+                    if(i < 0)
+                        i = 0;
+                    if(k >= ROW)
+                        k = ROW - 1;
+                    while(k > 2 && i < COL-3)
+                    {
+                        if(board[k][i] == playerNum && board[k-1][i+1] == playerNum && board[k-2][i+2] == playerNum)
+                        {
+                            for(int z = 0; z < 4; z++)
+                            {
+                                winArray[k][i] = board[k][i];
+                                k--;
+                                i++;
+                            }
+                        }
+                        i++;
+                        k--;
                     }
-                    
                     return true;
                 }
             }
@@ -170,10 +192,6 @@ public class PlayingBoard
         //lower left -- WORKS
         /*int*/ j = p.getX() - getDropOffset();
         /*int*/ r = getDropOffset() - p.getX();
-        //lower left
-        j = p.getX() - getDropOffset();
-        r = getDropOffset() - p.getX();
-
         if(j < 0)
             j = 0;
         if(r < 0)
@@ -183,15 +201,20 @@ public class PlayingBoard
             if(board[r][j] == playerNum)
             {
                 count++;
-                if(count == 4) 
+                if(count == 4)
+                {
                     return true;
+                }
             }
             else
+            {
                 count = 0;
+            }
             j++;
             r++;
         }
         count = 0;
+        
         return false;
     }
     /**
@@ -242,6 +265,7 @@ public class PlayingBoard
             {
                 System.out.println(">>>>>>>PLAYER " + playerNum + 
                                     " WINS<<<<<<<<<");
+
                 printWinArray();
             }
             changePlayer();
@@ -267,6 +291,24 @@ public class PlayingBoard
             System.out.println();
         }    
     }
+    public int[] getNewWinArray()
+    {
+        int p = 0;
+        int count = 0;
+        for(int y = 0; y < ROW; y++)
+        {
+            for(int x = 0; x < COL; x++)
+            {
+                if(winArray[y][x] == 1 || winArray[y][x] == 2)
+                {
+                     newWinArray[count] = p;
+                     count++;
+                }
+                p++;
+            }
+        }
+        return newWinArray;
+    }
     /**
      * Changes playerNum into 1 if 2, and 2 if 1
      * Omer
@@ -281,7 +323,6 @@ public class PlayingBoard
      */
     public int getDropOffset()
     {
-        //System.out.println(placeBelow);
         return placeBelow;
     }
     /**

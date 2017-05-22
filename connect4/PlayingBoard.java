@@ -11,7 +11,9 @@ public class PlayingBoard
     private final int COL = 7;
     private int playerNum = 1;
     private int[][] board;
+    private int[][] convWinArray;
     private int[][] winArray;
+    private int[] newWinArray = new int[5];
     private int placeBelow = 0;
 
     /**
@@ -22,6 +24,7 @@ public class PlayingBoard
     {
         board = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
         winArray = new int[ROW][COL];
+        convWinArray = new int[ROW][COL];
     }
     
     /**
@@ -262,6 +265,7 @@ public class PlayingBoard
             {
                 System.out.println(">>>>>>>PLAYER " + playerNum + 
                                     " WINS<<<<<<<<<");
+
                 printWinArray();
             }
             changePlayer();
@@ -287,6 +291,24 @@ public class PlayingBoard
             System.out.println();
         }    
     }
+    public int[] getNewWinArray()
+    {
+        int p = 0;
+        int count = 0;
+        for(int y = 0; y < ROW; y++)
+        {
+            for(int x = 0; x < COL; x++)
+            {
+                if(winArray[y][x] == 1 || winArray[y][x] == 2)
+                {
+                     newWinArray[count] = p;
+                     count++;
+                }
+                p++;
+            }
+        }
+        return newWinArray;
+    }
     /**
      * Changes playerNum into 1 if 2, and 2 if 1
      * Omer
@@ -301,7 +323,6 @@ public class PlayingBoard
      */
     public int getDropOffset()
     {
-        //System.out.println(placeBelow);
         return placeBelow;
     }
     /**

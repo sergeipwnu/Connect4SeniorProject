@@ -13,6 +13,7 @@ public class Menu extends JFrame
     private Player player1 = null;
     private Player player2 = null;
     private Board myBoard;
+    private boolean isPC = false;
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
@@ -27,11 +28,13 @@ public class Menu extends JFrame
         if(System.getProperty("os.name").indexOf("Mac") != -1)
         {
             System.out.println("you are using a mac");
+            
             //figure out how to add icon image for mac here
         }
         else
         {
             System.out.println("you are using a pc");
+            isPC = true;
             setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
         }
         setLayout(null);
@@ -54,7 +57,7 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
-            myBoard = new Board();
+            myBoard = new Board(isPC);
             myBoard.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myBoard.setSize(1000,800);
             myBoard.setResizable(false);
@@ -125,7 +128,7 @@ public class Menu extends JFrame
         //second row
         add(makeButtonInvisible(new playerButton(110,340,"warrick",this)));
         add(makeButtonInvisible(new playerButton(320,340,"catherines",this)));
-        add(makeButtonInvisible(new playerButton(530,340,"lauren",this)));
+        add(makeButtonInvisible(new playerButton(530,340,"hannah",this)));
         add(makeButtonInvisible(new playerButton(745,340,"kanika",this)));
         
     }
@@ -191,7 +194,7 @@ public class Menu extends JFrame
         playerIcons.add(catherines);
         
         lauren = new JLabel();
-        lauren.setIcon(new ImageIcon("images/people/laurenneutral.png"));
+        lauren.setIcon(new ImageIcon("images/people/hannahneutral.png"));
         lauren.setBounds(535,348,139,140);
         playerIcons.add(lauren);
         
@@ -235,8 +238,8 @@ public class Menu extends JFrame
                 catherines.setBounds(322,348,140,140);
                 repaint();
                 break; 
-            case LAUREN:
-                lauren.setIcon(new ImageIcon("images/people/laurenpick.png"));
+            case HANNAH:
+                lauren.setIcon(new ImageIcon("images/people/hannahpick.png"));
                 lauren.setBounds(535,348,139,140);
                 repaint();
                 break; 
