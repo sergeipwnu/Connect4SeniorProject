@@ -133,7 +133,6 @@ public class Board extends JFrame{
     public void addToken(int y, int x, int player)
     {
         JLabel test = new JLabel();
-        System.out.println("uh " + x + " " + y);
         if(Brain.getPlayerNum() == 1)
         {
             test.setIcon(new ImageIcon("images/circleglow.png")); //"images/people/" + "glow" + p1.getPath())
@@ -342,13 +341,13 @@ public class Board extends JFrame{
     public void spinWinTokens(int[] winArr, int player)
     {
         Position myPos;
+        sounds.DingDingDing();
         System.out.println(winArr[0] + " " + winArr[1] + " " + winArr[2] + " " + winArr[3] + " ");
         for(int x = 0; x < 4; x++)
         {
             
             System.out.println(buttons.get(winArr[x]).getPosition());
             myPos = buttons.get(winArr[x]).getPosition();
-            System.out.println("modulo test" + winArr[x]/7);
             addToken(getOffsetArray()[myPos.getY()][myPos.getX()].getY(),getOffsetArray()[0][myPos.getX()].getX()+103*(winArr[x]/7),player);
         }
     }
