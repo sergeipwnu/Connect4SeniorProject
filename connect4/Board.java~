@@ -24,6 +24,7 @@ import javafx.util.Duration;
 public class Board extends JFrame{
     private PlayingBoard Brain;
     private JLabel label;
+    private JLabel vsImage;
     private JLabel glow;
     private Player p1;
     private Player p2;
@@ -63,6 +64,8 @@ public class Board extends JFrame{
     public void addBoard(Player player1, Player player2)
     {
         sounds = new AudioPlayer(player1,player2);
+        
+        
         player1.setAudioPlayer(sounds);
         player2.setAudioPlayer(sounds);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());
@@ -90,7 +93,8 @@ public class Board extends JFrame{
         tokens.add(glow);
         add(tokensGlow);
         add(tokens);
-        
+        addPlayerVsImage(player1.toString(),1);
+        addPlayerVsImage(player2.toString(),2);
         add(label);
         tokens.setBounds(0,0,1000,800);
         tokensGlow.setBounds(0,0,1000,800);
@@ -133,7 +137,6 @@ public class Board extends JFrame{
     public void addToken(int y, int x, int player)
     {
         JLabel test = new JLabel();
-        System.out.println("uh " + x + " " + y);
         if(Brain.getPlayerNum() == 1)
         {
             test.setIcon(new ImageIcon("images/circleglow.png")); //"images/people/" + "glow" + p1.getPath())
@@ -314,6 +317,21 @@ public class Board extends JFrame{
         tokens.repaint(); //repaint is needed in order to prevent the image from not showing
                           //until it is hovered over. This is because layout being set to null
                           //forces the JPanel to stretch dynamically for each element added.
+    }
+    public void addPlayerVsImage(String name, int player)
+    {
+        vsImage = new JLabel();
+        vsImage.setIcon(new ImageIcon("images/people/" + name + "vs.png"));
+        if(player == 1)
+        {
+            vsImage.setBounds(299,40,90,65);
+        }
+        else
+        {
+            vsImage.setBounds(589,39,90,65);
+        }
+        tokensGlow.add(vsImage);
+        tokensGlow.repaint();
     }
     /**
      * Displays win screen for winning player and removes all buttons,tokens,and glows
