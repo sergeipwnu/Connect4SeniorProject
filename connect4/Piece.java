@@ -4,7 +4,7 @@ import java.awt.event.*;
 /**
      * Modified JButton with X and Y coordinates added, as well as a listener
      * Author: Sergei Levashov
-     */
+    */
 public class Piece extends JButton
 {
     private int myY;

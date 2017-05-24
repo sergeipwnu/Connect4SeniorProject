@@ -1,6 +1,6 @@
 
 /**
- * Enumeration class myPlayers - write a description of the enum class here
+ * Enumeration class myPlayers is a representaion of every player as an enum
  * 
  * @author OmerHananya
  * @version 0.0.1
