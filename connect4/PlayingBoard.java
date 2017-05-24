@@ -122,13 +122,15 @@ public class PlayingBoard
         int count = 0;
         
         //upper rght
-        int j = p.getX() - (ROW - getDropOffset());
-        int r = getDropOffset() + p.getX();
+        int j = p.getX() - (ROW - getDropOffset() -1);
+        int r = p.getY() + p.getX();
         
         if(j < 0)
             j = 0;
         if(r >= ROW)
             r = ROW - 1;
+        System.out.println(j);
+        System.out.println(r);
         while(r >= 0 && j < COL)
         {
             if(board[r][j] == playerNum)
@@ -138,7 +140,7 @@ public class PlayingBoard
                 {
                     //winArray
                     
-                    int i = p.getX() - (ROW - getDropOffset());
+                    int i = p.getX() - (ROW - getDropOffset() - 1);
                     int k = getDropOffset() + p.getX(); 
                     if(i < 0)
                         i = 0;
@@ -171,8 +173,8 @@ public class PlayingBoard
         count = 0;
 
         //lower left -- WORKS
-        /*int*/ j = p.getX() - getDropOffset();
-        /*int*/ r = getDropOffset() - p.getX();
+        j = p.getX() - getDropOffset();
+        r = getDropOffset() - p.getX();
         if(j < 0)
             j = 0;
         if(r < 0)
