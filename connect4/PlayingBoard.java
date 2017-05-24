@@ -138,32 +138,13 @@ public class PlayingBoard
                 {
                     //winArray
                     
-                    /*j = p.getX() - (ROW - getDropOffset());
-                    r = getDropOffset() + p.getX();
-                    if(j < 0)
-                        j = 0;
-                    if(r >= ROW)
-                        r = ROW - 1;
-                    while(r > 3 && j < COL-3)
-                    {
-                        if(board[r][j] == playerNum && board[r-1][j+1] == playerNum && board[r-2][j+2] == playerNum)
-                        {
-                            for(int z = 0; z < 4; z++)
-                            {
-                                winArray[r][j] = board[r][j];
-                                r--;
-                                j++;
-                            }
-                        }
-                        j++;
-                        r--;*/
                     int i = p.getX() - (ROW - getDropOffset());
-                int k = getDropOffset() + p.getX(); 
+                    int k = getDropOffset() + p.getX(); 
                     if(i < 0)
                         i = 0;
                     if(k >= ROW)
                         k = ROW - 1;
-                    while(k > 2 && i < COL-3)
+                    while(k > 2 && i < COL-2)
                     {
                         if(board[k][i] == playerNum && board[k-1][i+1] == playerNum && board[k-2][i+2] == playerNum)
                         {
@@ -203,6 +184,28 @@ public class PlayingBoard
                 count++;
                 if(count == 4)
                 {
+                    //winArray
+                    
+                    int i = p.getX() - getDropOffset();//col
+                    int k = getDropOffset() - p.getX();//row
+                    if(i < 0)
+                        i = 0;
+                    if(k < 0)
+                        k = 0;
+                    while(k < ROW - 2 && i < COL-2)
+                    {
+                        if(board[k][i] == playerNum && board[k+1][i+1] == playerNum && board[k+2][i+2] == playerNum)
+                        {
+                            for(int z = 0; z < 4; z++)
+                            {
+                                winArray[k][i] = board[k][i];
+                                k++;
+                                i++;
+                            }
+                        }
+                        i++;
+                        k++;
+                    }
                     return true;
                 }
             }
