@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PlayingBoard()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard\n\ Omer\ and\ zach\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard\n\ \n\ Zach\n
 comment1.params=p
 comment1.target=boolean\ areFourConnected(Position)
-comment1.text=\n\ Zach\n
+comment1.text=\n\ Called\ after\ every\ move.\ Check\ for\ vertical,\ horizontal,\ and\ diagonal\ to\ see\ whether\n\ a\ person\ won.\ p\ is\ the\ position\ of\ the\ last\ piece\ put\ by\ the\ user.\ The\ horizontal,\ vertical,\n\ and\ diagonal\ method\ are\ called,\ if\ one\ is\ true,\ then\ it\ shortcircuits\ and\ returns\ true,\ else\n\ if\ none\ of\ the\ methods\ return\ true,\ areFourConnected\ returns\ false\n\ \n\ Zach\n
 comment10.params=
 comment10.target=void\ changePlayer()
 comment10.text=\n\ Changes\ playerNum\ into\ 1\ if\ 2,\ and\ 2\ if\ 1\n\ Omer\n
@@ -16,7 +16,7 @@ comment12.target=int\ getPlayerNum()
 comment12.text=\n\ returns\ playerNum\n\ Sergei\n
 comment2.params=
 comment2.target=boolean\ horizontal()
-comment2.text=\n\ zach\n\ horizontal\n
+comment2.text=\n\ Checks\ every\ spot\ in\ then\ proper\ line.\ \n\ \n\ Zach\n
 comment3.params=p
 comment3.target=boolean\ vertical(Position)
 comment3.text=\n\ zach\n\ vertical\n

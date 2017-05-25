@@ -1,9 +1,10 @@
-import javax.swing.*;
+//import javax.swing.*;
 /**
- * Write a description of class PlayingBoard here.
+ * In this class we check whether or not one of the players won or not. This areFourConnnected
+ * method is called after every move.
  * 
- * @author OmerHananya, Zachary, Sergei
- * @version (a version number or a date)
+ * @author Zachary, Omer, Sergei
+ * @version (1.0 --- June 2, 2017)
  */
 public class PlayingBoard 
 {
@@ -18,7 +19,8 @@ public class PlayingBoard
 
     /**
      * Constructor for objects of class PlayingBoard
-     * Omer and zach
+     * 
+     * Zach
      */
     public PlayingBoard()
     {
@@ -28,6 +30,11 @@ public class PlayingBoard
     }
     
     /**
+     * Called after every move. Check for vertical, horizontal, and diagonal to see whether
+     * a person won. p is the position of the last piece put by the user. The horizontal, vertical,
+     * and diagonal method are called, if one is true, then it shortcircuits and returns true, else
+     * if none of the methods return true, areFourConnected returns false
+     * 
      * Zach
      */
     public boolean areFourConnected(Position p)
@@ -36,20 +43,23 @@ public class PlayingBoard
     }
     
     /**
-     * zach
-     * horizontal
+     * Checks every spot in then proper line. 
+     * 
+     * Zach
      */
     private boolean horizontal()
     {
         int count = 0;
-        //horizontal -- WORKS
-        for(int i = 0; i < COL; i++)
+        
+        for(int i = 0; i < COL; i++)//goes through entire row
         {
-            if(board[getDropOffset()][i] == playerNum)
+            if(board[getDropOffset()][i] == playerNum)//checks the row in the specific row
             {
-                count++;
-                if(count == 4) 
+                count++;//every time a spot has he player s piece, count increments
+                /*winArray[getDropOffset()][z] == playerNum*/
+                if(count == 4)//when 4 are connected
                 {
+                    //stores the connected 4 into winArray
                     for(int x = 1; x < COL-2; x++)
                     {
                         if(board[getDropOffset()][x-1] == playerNum && board[getDropOffset()][x] == playerNum && board[getDropOffset()][x+1] == playerNum)
@@ -58,12 +68,14 @@ public class PlayingBoard
                                 winArray[getDropOffset()][z] = board[getDropOffset()][z];
                         }
                     }
+                    //returns true to areFourConnected()
                     return true;
                 }
             }
-            else
+            else//if there is a space between two pieces
             {
                 count = 0;
+                /*clearWinArray();*/
             }
         }
         
@@ -93,7 +105,6 @@ public class PlayingBoard
                                 winArray[z][p.getX()] = board[z][p.getX()];
                         }
                     }
-                    //not efficient
                     for(int l = 0; l < ROW; l++)
                     {
                         if(!(winArray[l][p.getX()] == playerNum))
@@ -287,7 +298,7 @@ public class PlayingBoard
     {
         System.out.println("board");
         
-        for(int i =0; i < ROW; i++)
+        for(int i = 0; i < ROW; i++)
         {
              for(int j = 0; j<COL; j++)
             {
@@ -338,5 +349,11 @@ public class PlayingBoard
     {
         return playerNum;
     }
-    
+    /*
+     * 
+    public void claerWinArray()
+    {
+        winArray = 0;
+    }
+    */
 }
