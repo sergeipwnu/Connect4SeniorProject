@@ -11,7 +11,7 @@ import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.SwingWorker;
 import java.io.File;
-import java.util.*;
+
 import java.awt.image.BufferedImage;
 import javafx.embed.swing.JFXPanel;
 import javafx.util.Duration;
@@ -324,7 +324,7 @@ public class Board extends JFrame{
         vsImage.setIcon(new ImageIcon("images/people/" + name + "vs.png"));
         if(player == 1)
         {
-            vsImage.setBounds(299,40,90,65);
+            vsImage.setBounds(298,39,90,65);
         }
         else
         {
