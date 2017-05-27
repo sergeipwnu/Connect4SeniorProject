@@ -175,7 +175,7 @@ public class Board extends JFrame{
             for(int x = 0; x < 7; x++) //adds in all buttons
             {
                 
-                buttons.add(new Piece(y,x,Brain,this));
+                buttons.add(new Piece(y,x,Brain,this,sounds));
             }
         }
         for(Piece b : buttons)

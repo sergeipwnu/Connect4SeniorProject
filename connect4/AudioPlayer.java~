@@ -2,6 +2,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import java.io.File;
+import java.awt.event.*;
+import javax.swing.*;
 /**
  * A class for all of the MediaPlayers used by the board
  * 
@@ -47,7 +49,7 @@ public class AudioPlayer
     public void DingDingDing()
     {
             ding = new MediaPlayer(new Media(new File("audio/ding.mp3").toURI().toString()));
-            ding.setVolume(.1);
+            ding.setVolume(.16);
             ding.play();
             ding.setOnEndOfMedia(new Runnable(){
                 public void run() {
@@ -123,8 +125,8 @@ public class AudioPlayer
      */
     public void playWin(int player)
     {
-        win1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "win.wav").toURI().toString()));
-        win2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "win.wav").toURI().toString()));
+        win1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_win.wav").toURI().toString()));
+        win2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_win.wav").toURI().toString()));
         if(player == 1)
         {
             win1.play();
@@ -150,27 +152,40 @@ public class AudioPlayer
      * 
      * Sergei Levashov
      */
-    public void playLose(int player)
+    public void playLose(final int player)
     {
-        lose1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "lose.wav").toURI().toString()));
-        lose2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "lose.wav").toURI().toString()));
-        if(player == 1)
-        {
-            lose1.play();
-            lose1.setOnEndOfMedia(new Runnable(){
-            public void run() {
-               lose1.stop();
-            }
+        lose1 = new MediaPlayer(new Media(new File("audio/" +  myP1.toString() + "/" + myP1.toString() + "_lose.wav").toURI().toString()));
+        lose2 = new MediaPlayer(new Media(new File("audio/" +  myP2.toString() + "/" + myP2.toString() + "_lose.wav").toURI().toString()));
+        try{
+                        Timer timer = new Timer(1500, new ActionListener() {
+                            public void actionPerformed(ActionEvent evt) {
+                                if(player == 1)
+                                {
+                                    lose1.play();
+                                    lose1.setOnEndOfMedia(new Runnable()
+                                    {
+                                        public void run() {
+                                           lose1.stop();
+                                        }
+                                    });
+                                }
+                                else
+                                {
+                                    lose2.play();
+                                    lose2.setOnEndOfMedia(new Runnable()
+                                    {
+                                        public void run() {
+                                           lose2.stop();
+                                        }
+                                    });
+                                }
+                            }
         });
+        timer.setRepeats(false);
+        timer.start();
         }
-        else
-        {
-            lose2.play();
-            lose2.setOnEndOfMedia(new Runnable(){
-            public void run() {
-               lose2.stop();
-            }
-        });
+        catch(Exception l){
+            l.printStackTrace();
         }
     }
     /**
@@ -181,15 +196,15 @@ public class AudioPlayer
      */
     public void playDrop(int player)
     {
-        drop11 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "drop1.wav").toURI().toString()));
-        drop21 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "drop1.wav").toURI().toString()));
-        drop12 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "drop2.wav").toURI().toString()));
-        drop22 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "drop2.wav").toURI().toString()));
-        drop13 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "drop3.wav").toURI().toString()));
-        drop23 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "drop3.wav").toURI().toString()));
+        drop11 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop1.wav").toURI().toString()));
+        drop21 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop1.wav").toURI().toString()));
+        drop12 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop2.wav").toURI().toString()));
+        drop22 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop2.wav").toURI().toString()));
+        drop13 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop3.wav").toURI().toString()));
+        drop23 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop3.wav").toURI().toString()));
         if(player == 1)
         {
-            if(((int)Math.random() * 3) == 0)
+            if((((int)(Math.random() * 7))) == 0)
             {
                 drop11.play();
                 drop11.setOnEndOfMedia(new Runnable(){
@@ -198,7 +213,7 @@ public class AudioPlayer
             }
         });
             }
-            else if(((int)Math.random() * 3) == 0)
+            else if((((int)(Math.random() * 7))) == 0)
             {
                 drop12.play();
                 drop12.setOnEndOfMedia(new Runnable(){
@@ -207,7 +222,7 @@ public class AudioPlayer
             }
         });
             }
-            else
+            else if((((int)(Math.random() * 7))) == 0)
             {
                 drop13.play();
                 drop13.setOnEndOfMedia(new Runnable(){
@@ -219,7 +234,7 @@ public class AudioPlayer
         }
         else
         {
-            if(((int)Math.random() * 3) == 0)
+            if((((int)(Math.random() * 7))) == 0)
             {
                 drop21.play();
                 drop21.setOnEndOfMedia(new Runnable(){
@@ -228,7 +243,7 @@ public class AudioPlayer
             }
         });
             }
-            else if(((int)Math.random() * 3) == 0)
+            else if((((int)(Math.random() * 7))) == 0)
             {
                 drop22.play();
                 drop22.setOnEndOfMedia(new Runnable(){
@@ -237,7 +252,7 @@ public class AudioPlayer
             }
         });
             }
-            else //THIS IS THE RAREST LINE
+            else if((((int)(Math.random() * 7))) == 0)
             {
                 drop23.play();
                 drop23.setOnEndOfMedia(new Runnable(){
