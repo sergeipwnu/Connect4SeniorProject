@@ -8,25 +8,24 @@
  */
 public class PlayingBoard 
 {
-    private final int ROW = 6;
-    private final int COL = 7;
-    private int playerNum = 1;
-    private int[][] board;
-    private int[][] convWinArray;
-    private int[][] winArray;
-    private int[] newWinArray = new int[5];
-    private int placeBelow = 0;
+    private final int ROW = 6;//number of rows in board
+    private final int COL = 7;//number of columns in board
+    private int playerNum = 1;//represents which player's turn it is; starts at 1 (player 1)
+    private int[][] board;//the playing board
+    private int[][] winArray;//represents the winning 4 pieces
+    private int[] newWinArray = new int[5];//represents the winArray matrix into an array
+    private int placeBelow = 0;//used in getDropOffset() to determine the row position of the last placed piece
 
     /**
-     * Constructor for objects of class PlayingBoard
+     * Constructor for objects of class PlayingBoard. board and winArray are instantiated to the
+     * size of the board, ROW x COL
      * 
      * Zach
      */
     public PlayingBoard()
     {
         board = new int[ROW][COL]; //0 if no piece, 1 if player1, 2 if player2.
-        winArray = new int[ROW][COL];
-        convWinArray = new int[ROW][COL];
+        winArray = new int[ROW][COL];//entire matrix which stores the four positions of the winning 4
     }
     
     /**
@@ -43,13 +42,15 @@ public class PlayingBoard
     }
     
     /**
-     * Checks every spot in then proper line. 
-     * 
+     * Checks every spot in then proper row. Uses getDropOffset() to find the spot where the user
+     * placed their last piece. Uses a for loop to check every spot in the getDropOffset() row for
+     * four pieces in a row.
+     *  
      * Zach
      */
     private boolean horizontal()
     {
-        int count = 0;
+        int count = 0;//number of connected pieces in arrow
         
         for(int i = 0; i < COL; i++)//goes through entire row
         {
@@ -75,27 +76,30 @@ public class PlayingBoard
             else//if there is a space between two pieces
             {
                 count = 0;
-                /*clearWinArray();*/
+                
             }
         }
         
-        return false;
+        return false;//returns false if trur isnt returned
     }
     
     /**
-     * zach
-     * vertical
+     * Checks for a vertical win in the column the user last placed their piece. Does not
+     * use getDropOffset(), onnly use p.getX(). All that is needed is the place the player put
+     * their piece so the column can be checked.
+     * 
+     * Zach
      */
     private boolean vertical(Position p)
     {
-        int count = 0;
+        int count = 0;//number of connected pieces in arrow
         
-        for(int i = 0; i < ROW; i++)
+        for(int i = 0; i < ROW; i++)//checkes every spot in a certain column
         {
-            if(board[i][p.getX()] == playerNum)
+            if(board[i][p.getX()] == playerNum)//checks in the specific column
             {
                 count++;
-                if(count == 4)
+                if(count == 4)//if four are connected
                 {
                     for(int y = 1; y < ROW-2; y++)
                     {
@@ -109,7 +113,7 @@ public class PlayingBoard
                     {
                         if(!(winArray[l][p.getX()] == playerNum))
                         {
-                            winArray[l][p.getX()] = 0;
+                            winArray[l][p.getX()] = 0; // removes everything that isnt the winning player
                         }
                     }
                     return true;
@@ -117,7 +121,7 @@ public class PlayingBoard
             }
             else
             {
-                count = 0;
+                count = 0;//restarts looking for 4 in a row
             }
         }
         
@@ -125,23 +129,27 @@ public class PlayingBoard
     }
     
     /**
-     * zach
-     * diagonal
+     * Checks upper right and lower left diagnol for four connected pieces.
+     * Uses the location of the last placed piece. Uses an algoritm to search diagnolly for
+     * both upper and lower diagonal.
+     * 
+     * Zach
      */
     private boolean diagonal(Position p)
     {
-        int count = 0;
+        int count = 0;//number of connected pieces in arrow
         
-        //upper rght
-        int j = p.getX() - (ROW - getDropOffset() -1);
-        int r = p.getY() + p.getX();
+        //********upper rght**********
+        //algortim to find lower left of diagonal line to search
+        int j = p.getX() - (ROW - getDropOffset() - 1);//represents col
+        int r = p.getY() + p.getX();//represets row
         
+        //if it's off the board
         if(j < 0)
             j = 0;
         if(r >= ROW)
             r = ROW - 1;
-        System.out.println(j);
-        System.out.println(r);
+        //while it's still on the board
         while(r >= 0 && j < COL)
         {
             if(board[r][j] == playerNum)
@@ -150,7 +158,6 @@ public class PlayingBoard
                 if(count == 4)
                 {
                     //winArray
-                    
                     int i = p.getX() - (ROW - getDropOffset() - 1);
                     int k = getDropOffset() + p.getX(); 
                     if(i < 0)
@@ -183,13 +190,15 @@ public class PlayingBoard
         }
         count = 0;
 
-        //lower left -- WORKS
-        j = p.getX() - getDropOffset();
-        r = getDropOffset() - p.getX();
+        //***********lower left*********
+        //resets positions
+        /*int*/j = p.getX() - getDropOffset();
+        /*int*/r = getDropOffset() - p.getX();
         if(j < 0)
             j = 0;
         if(r < 0)
             r = 0;
+            //algorthim to check 4 in arrow
         while(r < ROW && j < COL)
         {
             if(board[r][j] == playerNum)
@@ -229,17 +238,21 @@ public class PlayingBoard
             j++;
             r++;
         }
-        count = 0;
         
         return false;
     }
     /**
-     * zach
+     * Returns the winArray.
+     * 
+     * Zach
      */
     public int[][] getWinArray()
     {
         return winArray;
     }
+    /**
+     * 
+     */
     private void printWinArray()
     {
         System.out.println("win array");
@@ -255,7 +268,7 @@ public class PlayingBoard
     /**
      *  Attempts to make a move at the given Position. If the move is possible, the move is made
      *  and makeMove() returns true. If a move is not possible, makeMove returns false
-     * OMER
+     *  OMER
      */
     public boolean makeMove(Position p) 
     {
