@@ -14,8 +14,8 @@ public class Driver {
             {
                  public void run() 
                  {
-                       //new JFXPanel();
-                       //latch.countDown(); //runs latch countdown until JFXPanel fully loaded,
+                       new JFXPanel();
+                       latch.countDown(); //runs latch countdown until JFXPanel fully loaded,
                                           //this is to prevent the toolkit from being initialized afterwords
                  }
             });

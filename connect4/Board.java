@@ -16,11 +16,11 @@ import java.awt.image.BufferedImage;
 import javafx.embed.swing.JFXPanel;
 import javafx.util.Duration;
 /**
-     * Board is a type of JFrame that has the Buttons and graphical interface
-     * This class corelates directly with information stored in PlayingBoard
-     * Board is DISPOSE_ON_CLOSE, meaning this menu can be used for multiple games
-     * Author: Sergei Levashov
-     */
+ * Board is a type of JFrame that has the Buttons and graphical interface
+ * This class corelates directly with information stored in PlayingBoard
+ * Board is DISPOSE_ON_CLOSE, meaning this menu can be used for multiple games
+ * Author: Sergei Levashov
+ */
 public class Board extends JFrame{
     private PlayingBoard Brain;
     private JLabel label;
@@ -52,11 +52,7 @@ public class Board extends JFrame{
         Brain = new PlayingBoard();
         setLayout(null);
     }
-    @Override
-    public void dispose() {
-        sounds.stopSoundtrack();
-        super.dispose();
-    }
+    
     /**
      * generates a new board, buttons, glow icons, insets, and token JPanel
      * Sergei Levashov

@@ -194,7 +194,7 @@ public class Menu extends JFrame
         playerIcons.add(catherines);
         
         lauren = new JLabel();
-        lauren.setIcon(new ImageIcon("images/people/laurenneutral.png"));
+        lauren.setIcon(new ImageIcon("images/people/hannahneutral.png"));
         lauren.setBounds(535,348,139,140);
         playerIcons.add(lauren);
         

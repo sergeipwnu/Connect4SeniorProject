@@ -157,7 +157,7 @@ public class AudioPlayer
         lose1 = new MediaPlayer(new Media(new File("audio/" +  myP1.toString() + "/" + myP1.toString() + "_lose.wav").toURI().toString()));
         lose2 = new MediaPlayer(new Media(new File("audio/" +  myP2.toString() + "/" + myP2.toString() + "_lose.wav").toURI().toString()));
         try{
-        Timer timer = new Timer(1500, new ActionListener() {
+        Timer timer = new Timer(2000, new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 if(player == 1)
                 {

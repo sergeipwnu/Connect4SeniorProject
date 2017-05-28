@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=args
 comment0.target=void\ main(java.lang.String[])
-comment0.text=\r\n\ \ Creates\ a\ new\ CountDownLatch\ and\ initializes\ JFX,\ then\ initializes\ the\ menu\ @\ 1000X800\r\n\ Author\:\ Sergei\ Levashov\r\n
+comment0.text=\r\n\ initializes\ JFX,\ then\ initializes\ and\ launches\ the\ menu\ @\ 1000X800\r\n\ \r\n\ Postconditions\:\ Non-Resizable,\ EXIT_ON_CLOSE\r\n\ Author\:\ Sergei\ Levashov\r\n
 comment1.params=
 comment1.target=void\ run()
 numComments=2
