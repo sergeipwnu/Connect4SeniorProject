@@ -129,6 +129,11 @@ public class Player
         }
     }
     
+    /**
+     * getEnum will return the enum representation of the player
+     * 
+     * @return enum myEnum
+     */
     public enumPlayers getEnum()
     {
         return myEnum;

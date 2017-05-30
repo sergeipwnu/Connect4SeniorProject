@@ -251,7 +251,7 @@ public class PlayingBoard
         return winArray;
     }
     /**
-     * 
+     * printWinArray will print out the created winArray
      */
     private void printWinArray()
     {
@@ -305,6 +305,7 @@ public class PlayingBoard
         return b;
     }
     /**
+     * printBoard wil print out hte board to the console window
      * zach
      */
     private void printBoard()
@@ -320,6 +321,9 @@ public class PlayingBoard
             System.out.println();
         }    
     }
+    /**
+     * @author omid
+     */
     public int[] getNewWinArray()
     {
         int p = 0;

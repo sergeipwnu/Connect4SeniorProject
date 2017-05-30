@@ -4,9 +4,12 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 /**
- * the menu screen, a window which launches a new Board
+ * <code>Menu</code> class is the menu screen, a window which launches a new Board
+ * It extends <code>JFrame</code> link -- 
  * 
- * Sergei
+ * @see JFrame API
+ * @author Sergei
+ * @version 1.0.0
  */
 public class Menu extends JFrame
 {
@@ -19,9 +22,11 @@ public class Menu extends JFrame
     JPanel playerIcons;
     private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika;
     /**
-     * Creates isPC variable to calculate offsets later in Board.
-     * Creates and adds all buttons to the JFrame, as well as player images
-     * Sergei
+     * <code>Menu()</code> constructor will creates isPC variable to 
+     * calculate offsets later in Board.
+     * Will also create and add all buttons to the JFrame, as well as player images
+     * 
+     * @author Sergei
      */
     Menu()
     {
@@ -52,10 +57,13 @@ public class Menu extends JFrame
         add(menu);
         createButtons();
     }
+    
     /**
-     * Initializes the board with the isPC variable
+     * <code>initBoard()</code> initializes the board with the isPC variable
+     * 
      * Postcondition: DISPOSE_ON_CLOSE,1000x800,non-resizable
-     * Sergei
+     * 
+     * @author Sergei
      */
     public void initBoard()
     {
@@ -68,26 +76,30 @@ public class Menu extends JFrame
             myBoard.setVisible(true);
             playerInstanceLoaded = false; // resets first player picked boolean to false
     }
+    
     /**
-     * starts the game by launching the local Board with both players
-     * Sergei
+     * <code>startGame()</code> starts the game by launching the local Board with both players
+     * @author Sergei
      */
     private void startGame()
     {
         myBoard.addBoard(player1, player2);
     }
+    
     /**
-     * returns true if player 1 is already selected, false if not
+     * <code>isPicked()</code> returns true if player 1 is already selected, false if not
      * 
-     * Sergei Levashov
+     * @return true or false if player 1 is picked
+     * @author Sergei Levashov
      */
     public boolean isPicked()
     {
         return playerInstanceLoaded;
     }
      /**
-     * sets player 1 to selected
-     * Sergei Levashov
+     * <code>setPicked</code> sets player 1 to be selected
+     * 
+     * @author Sergei Levashov
      */
     public void setPicked()
     {
@@ -113,38 +125,45 @@ public class Menu extends JFrame
         player2 = p;
         player2.addColorToPath("r");
     }
+    
     /**
-     * creates all player buttons and makes them invisible
-     * Sergei and Zachary
+     * <code>createButtons()</code> creates all player buttons and makes them <b>invisible</b>
+     * 
+     * @author Sergei and Zachary
      */
     private void createButtons()
     {
         
         //first row
         add(makeButtonInvisible(new playerButton(110,175,"omid",this)));
-        
         add(makeButtonInvisible(new playerButton(320,175,"sergei",this)));
         add(makeButtonInvisible(new playerButton(530,175,"omer",this)));
         add(makeButtonInvisible(new playerButton(745,175,"zachary",this)));
+        
         //second row
         add(makeButtonInvisible(new playerButton(110,340,"warrick",this)));
         add(makeButtonInvisible(new playerButton(320,340,"catherines",this)));
         add(makeButtonInvisible(new playerButton(530,340,"hannah",this)));
         add(makeButtonInvisible(new playerButton(745,340,"kanika",this)));
-        
     }
+    
     /**
-     * unlocckable characters
-     * Zachary
+     * <code>unlockableButtons()</code>creates buttons for the unlocckable characters
+     * 
+     * @author Zachary
      */
-    private void unlock()
+    private void unlockableButtons()
     {
         add(makeButtonInvisible(new playerButton(320,560,"Mr. L",this)));
         add(makeButtonInvisible(new playerButton(530,560,"unknown",this)));
     }
+    
     /**
      * returns the passed playerButton as invisible
-     * Sergei
+     * 
+     * @return <b>invisible</b> <code>playerButton</code>  
+     * @param  <code>playerButton</code> to be made invisible
+     * @author Sergei
      */
     private playerButton makeButtonInvisible(playerButton b)
     {
@@ -153,9 +172,12 @@ public class Menu extends JFrame
         b.setBorderPainted(false);
         return b;
     }
+    
     /**
-     * adds all player images to the JPanel over the invisible buttons
-     * Sergei
+     * <code>addPlayerImages()</code> adds all player images 
+     * to the JPanel over the <b>invisible</b> buttons
+     * 
+     * @author Sergei
      */
     private void addPlayerImages()
     {
@@ -199,9 +221,12 @@ public class Menu extends JFrame
         kanika.setBounds(745,348,140,140);
         playerIcons.add(kanika);
     }
+    
     /**
-     * overlays pick image over passed player
-     * Sergei
+     * <code>changePlayerImage()</code> overlays pick image over passed player
+     * 
+     * @param <code>enumPlayers</code> p -- enum representation of the player names
+     * @author Omer
      */
     public void changePlayerImage(enumPlayers p)
     {
