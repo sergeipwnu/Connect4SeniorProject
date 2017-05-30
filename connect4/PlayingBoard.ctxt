@@ -22,20 +22,35 @@ comment3.target=boolean\ vertical(Position)
 comment3.text=\n\ Checks\ for\ a\ vertical\ win\ in\ the\ column\ the\ user\ last\ placed\ their\ piece.\ Does\ not\n\ use\ getDropOffset(),\ onnly\ use\ p.getX().\ All\ that\ is\ needed\ is\ the\ place\ the\ player\ put\n\ their\ piece\ so\ the\ column\ can\ be\ checked.\n\ \n\ Zach\n
 comment4.params=p
 comment4.target=boolean\ diagonal(Position)
+<<<<<<< HEAD
 comment4.text=\n\ Checks\ upper\ right\ and\ lower\ left\ diagnol\ for\ four\ connected\ pieces.\n\ Uses\ the\ location\ of\ the\ last\ placed\ piece.\ Uses\ an\ algoritm\ to\ search\ diagnolly\ for\n\ both\ upper\ and\ lower\ diagonal.\n\ \n\ Zach\n
+=======
+comment4.text=\n\ Checks\ upper\ right\ and\ lower\ left\ diagnol\ for\ four\ connected\ pieces.\n\ Uses\ the\ location\ of\ the\ last\ placed\ piece.\ Uses\ an\ algoritm\ to\ search\ diagnolly\ for\n\ both\ upper\ and\ lower\ diagonal.\n\ \n\ Omid\ Hedayatnia\ and\ his\ servant\ Zach\n
+>>>>>>> origin/master
 comment5.params=
 comment5.target=int[][]\ getWinArray()
 comment5.text=\n\ Returns\ the\ winArray.\n\ \n\ Zach\n
 comment6.params=
 comment6.target=void\ printWinArray()
+<<<<<<< HEAD
 comment6.text=\n\ printWinArray\ will\ print\ out\ the\ created\ winArray\n
+=======
+comment6.text=\n\ \n
+>>>>>>> origin/master
 comment7.params=p
 comment7.target=boolean\ makeMove(Position)
 comment7.text=\n\ \ Attempts\ to\ make\ a\ move\ at\ the\ given\ Position.\ If\ the\ move\ is\ possible,\ the\ move\ is\ made\n\ \ and\ makeMove()\ returns\ true.\ If\ a\ move\ is\ not\ possible,\ makeMove\ returns\ false\n\ \ OMER\n
 comment8.params=
 comment8.target=void\ printBoard()
+<<<<<<< HEAD
 comment8.text=\n\ printBoard\ wil\ print\ out\ hte\ board\ to\ the\ console\ window\n\ zach\n
 comment9.params=
 comment9.target=int[]\ getNewWinArray()
 comment9.text=\n\ @author\ omid\n
+=======
+comment8.text=\n\ zach\n
+comment9.params=
+comment9.target=int[]\ getNewWinArray()
+comment9.text=\n\ returns\ new\ array\ with\ length\ 4,\ with\ linear\ positions\ of\ tokens.\n\ Sergei\ and\ his\ humble\ assistant\ Omid\n
+>>>>>>> origin/master
 numComments=13
