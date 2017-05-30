@@ -4,7 +4,9 @@ import java.util.concurrent.CountDownLatch;
 import javafx.embed.swing.JFXPanel;
 public class Driver {
     /**
-     *  Creates a new CountDownLatch and initializes JFX, then initializes the menu @ 1000X800
+     * initializes JFX, then initializes and launches the menu @ 1000X800
+     * 
+     * Postconditions: Non-Resizable, EXIT_ON_CLOSE
      * Author: Sergei Levashov
      */
     public static void main(String[] args)

@@ -4,9 +4,9 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 /**
- * Menu screen
+ * the menu screen, a window which launches a new Board
  * 
- * Zachary and Sergei
+ * Sergei
  */
 public class Menu extends JFrame
 {
@@ -19,8 +19,9 @@ public class Menu extends JFrame
     JPanel playerIcons;
     private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika;
     /**
-     * 
-     * Zachary
+     * Creates isPC variable to calculate offsets later in Board.
+     * Creates and adds all buttons to the JFrame, as well as player images
+     * Sergei
      */
     Menu()
     {
@@ -52,8 +53,9 @@ public class Menu extends JFrame
         createButtons();
     }
     /**
-     * 
-     * Zachary
+     * Initializes the board with the isPC variable
+     * Postcondition: DISPOSE_ON_CLOSE,1000x800,non-resizable
+     * Sergei
      */
     public void initBoard()
     {
@@ -67,8 +69,8 @@ public class Menu extends JFrame
             playerInstanceLoaded = false; // resets first player picked boolean to false
     }
     /**
-     * starts the game by adding the board
-     * Zachary
+     * starts the game by launching the local Board with both players
+     * Sergei
      */
     private void startGame()
     {
@@ -84,8 +86,7 @@ public class Menu extends JFrame
         return playerInstanceLoaded;
     }
      /**
-     * sets player 1 selected
-     * 
+     * sets player 1 to selected
      * Sergei Levashov
      */
     public void setPicked()
@@ -94,7 +95,7 @@ public class Menu extends JFrame
     }
     /**
      * sets the player to the player passed from listener, as well as the their piece color
-     * 
+     * player1 is set to blue
      * Sergei Levashov
      */
     public void setPlayer1(Player p)
@@ -104,7 +105,7 @@ public class Menu extends JFrame
     }
     /**
      * sets the player to the player passed from listener, as well as the their piece color
-     * 
+     * player2 is set to red
      * Sergei Levashov
      */
     public void setPlayer2(Player p)
@@ -113,7 +114,7 @@ public class Menu extends JFrame
         player2.addColorToPath("r");
     }
     /**
-     * creates all player buttons
+     * creates all player buttons and makes them invisible
      * Sergei and Zachary
      */
     private void createButtons()
@@ -140,15 +141,6 @@ public class Menu extends JFrame
     {
         add(makeButtonInvisible(new playerButton(320,560,"Mr. L",this)));
         add(makeButtonInvisible(new playerButton(530,560,"unknown",this)));
-    }
-    public void threadSleep()
-    {
-        try
-        {
-            Thread.sleep(1500);
-            
-        }
-        catch(Exception e){}
     }
     /**
      * returns the passed playerButton as invisible
@@ -194,7 +186,7 @@ public class Menu extends JFrame
         playerIcons.add(catherines);
         
         lauren = new JLabel();
-        lauren.setIcon(new ImageIcon("images/people/laurenneutral.png"));
+        lauren.setIcon(new ImageIcon("images/people/hannahneutral.png"));
         lauren.setBounds(535,348,139,140);
         playerIcons.add(lauren);
         

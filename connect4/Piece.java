@@ -11,13 +11,15 @@ public class Piece extends JButton
     private int myX;
     private PlayingBoard myBrain;
     private Board myBoard;
+    private AudioPlayer audioPlayer;
      /**
      * Sets local y, x, and local references to PlayingBoard and Board.
      * Sergei Levashov
      */
-    public Piece(int y, int x, PlayingBoard Brain,Board myB)
+    public Piece(int y, int x, PlayingBoard Brain,Board myB, AudioPlayer a)
     {
         myX = x;
+        audioPlayer = a;
         myBoard = myB;
         myBrain = Brain;
         myY = y;
@@ -64,6 +66,7 @@ public class Piece extends JButton
             {
                 System.out.println(myY + " " + myX);
                 Position p = getPosition();
+                audioPlayer.playDrop(myBrain.getPlayerNum() % 2 + 1);
                 if(myBrain.makeMove(p))
                 {
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
@@ -75,11 +78,13 @@ public class Piece extends JButton
                     {
                     myBrain.changePlayer();    
                     myBoard.removeAllButtons();
+                    
                     myBoard.spinWinTokens(myBrain.getNewWinArray(), myBrain.getPlayerNum());
                         try{
                         Timer timer = new Timer(3500, new ActionListener() {
                             public void actionPerformed(ActionEvent evt) {
-                                
+                                audioPlayer.playWin(myBrain.getPlayerNum() % 2 + 1);
+                                audioPlayer.playLose(myBrain.getPlayerNum());
                                 myBoard.winDisplay(myBrain.getPlayerNum());
                             }
                         });

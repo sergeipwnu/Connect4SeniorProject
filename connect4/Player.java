@@ -11,6 +11,7 @@ public class Player
     private enumPlayers myEnum;
     private String myImage;
     private AudioPlayer mySounds;
+    private Board myBoard;
     /**
      * Constructor for objects of class Player
      * Sergei
@@ -68,6 +69,10 @@ public class Player
     public String toString()
     {
         return myName;
+    }
+    public void setBoard(Board b)
+    {
+        myBoard = b;
     }
      /**
      * returns image path

@@ -11,19 +11,20 @@ import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
 import javax.swing.SwingWorker;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import javafx.embed.swing.JFXPanel;
 import javafx.util.Duration;
 /**
-     * Board is a type of JFrame that has the Buttons and graphical interface
-     * This class corelates directly with information stored in PlayingBoard
-     * Board is DISPOSE_ON_CLOSE, meaning this menu can be used for multiple games
-     * Author: Sergei Levashov
-     */
+ * Board is a type of JFrame that has the Buttons and graphical interface
+ * This class corelates directly with information stored in PlayingBoard
+ * Board is DISPOSE_ON_CLOSE, meaning this menu can be used for multiple games
+ * Author: Sergei Levashov
+ */
 public class Board extends JFrame{
     private PlayingBoard Brain;
     private JLabel label;
+    private JLabel vsImage;
     private JLabel glow;
     private Player p1;
     private Player p2;
@@ -51,11 +52,7 @@ public class Board extends JFrame{
         Brain = new PlayingBoard();
         setLayout(null);
     }
-    @Override
-    public void dispose() {
-        sounds.stopSoundtrack();
-        super.dispose();
-    }
+    
     /**
      * generates a new board, buttons, glow icons, insets, and token JPanel
      * Sergei Levashov
@@ -63,6 +60,8 @@ public class Board extends JFrame{
     public void addBoard(Player player1, Player player2)
     {
         sounds = new AudioPlayer(player1,player2);
+        
+        
         player1.setAudioPlayer(sounds);
         player2.setAudioPlayer(sounds);
         Media place = new Media(new File("audio/drop.wav").toURI().toString());
@@ -90,7 +89,8 @@ public class Board extends JFrame{
         tokens.add(glow);
         add(tokensGlow);
         add(tokens);
-        
+        addPlayerVsImage(player1.toString(),1);
+        addPlayerVsImage(player2.toString(),2);
         add(label);
         tokens.setBounds(0,0,1000,800);
         tokensGlow.setBounds(0,0,1000,800);
@@ -133,7 +133,6 @@ public class Board extends JFrame{
     public void addToken(int y, int x, int player)
     {
         JLabel test = new JLabel();
-        System.out.println("uh " + x + " " + y);
         if(Brain.getPlayerNum() == 1)
         {
             test.setIcon(new ImageIcon("images/circleglow.png")); //"images/people/" + "glow" + p1.getPath())
@@ -172,7 +171,7 @@ public class Board extends JFrame{
             for(int x = 0; x < 7; x++) //adds in all buttons
             {
                 
-                buttons.add(new Piece(y,x,Brain,this));
+                buttons.add(new Piece(y,x,Brain,this,sounds));
             }
         }
         for(Piece b : buttons)
@@ -315,6 +314,21 @@ public class Board extends JFrame{
                           //until it is hovered over. This is because layout being set to null
                           //forces the JPanel to stretch dynamically for each element added.
     }
+    public void addPlayerVsImage(String name, int player)
+    {
+        vsImage = new JLabel();
+        vsImage.setIcon(new ImageIcon("images/people/" + name + "vs.png"));
+        if(player == 1)
+        {
+            vsImage.setBounds(298,39,90,65);
+        }
+        else
+        {
+            vsImage.setBounds(589,39,90,65);
+        }
+        tokensGlow.add(vsImage);
+        tokensGlow.repaint();
+    }
     /**
      * Displays win screen for winning player and removes all buttons,tokens,and glows
      * 
@@ -322,6 +336,16 @@ public class Board extends JFrame{
      */
     public void winDisplay(int player)
     {
+        JPanel winPanel = new JPanel();
+        JLabel winner = new JLabel();
+        if(player == 1)
+        {
+            winner.setIcon(new ImageIcon("images/people/" + p1 + "win.png"));
+        }
+        else
+        {
+            winner.setIcon(new ImageIcon("images/people/" + p2 + "win.png"));
+        }
         label.setIcon(new ImageIcon("images/boards/WinScreen" + player + ".png"));
         remove(tokens);
         remove(tokensGlow);
@@ -332,6 +356,18 @@ public class Board extends JFrame{
         remove(glow);
         remove(pb1);
         remove(pb2);
+        winPanel.setBounds(0,0,1000,800);
+        System.out.println("images/people/" + "p" + player +  "win.png");
+        winner.setBounds(50,200,400,600);
+        winPanel.setLayout(null);
+        winner.setLayout(null);
+        //winPanel.setOpaque(false);
+        
+        winPanel.add(winner);
+        add(winPanel);
+        winPanel.repaint();
+        winPanel.setVisible(true);
+        winner.setVisible(true);
         repaint();
     }
     /**
