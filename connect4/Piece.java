@@ -64,9 +64,12 @@ public class Piece extends JButton
         {
             public void actionPerformed(ActionEvent e)
             {
+                double time = System.currentTimeMillis();
                 System.out.println(myY + " " + myX);
                 Position p = getPosition();
+                System.out.println(System.currentTimeMillis() - time);
                 audioPlayer.playDrop(myBrain.getPlayerNum() % 2 + 1);
+                System.out.println(System.currentTimeMillis() - time);
                 if(myBrain.makeMove(p))
                 {
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());

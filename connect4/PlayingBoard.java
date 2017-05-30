@@ -133,7 +133,7 @@ public class PlayingBoard
      * Uses the location of the last placed piece. Uses an algoritm to search diagnolly for
      * both upper and lower diagonal.
      * 
-     * Zach
+     * Omid Hedayatnia and his servant Zach
      */
     private boolean diagonal(Position p)
     {
@@ -252,10 +252,14 @@ public class PlayingBoard
         return winArray;
     }
     /**
+<<<<<<< HEAD
      * Prints the winArray.
      * For debugging only
      * 
      * Omid
+=======
+     * printWinArray will print out the created winArray
+>>>>>>> origin/master
      */
     private void printWinArray()
     {
@@ -310,10 +314,15 @@ public class PlayingBoard
         return b;
     }
     /**
+<<<<<<< HEAD
      * Prints the actual board after every turn.
      * For debugging only
      * 
      * Zach
+=======
+     * printBoard wil print out hte board to the console window
+     * zach
+>>>>>>> origin/master
      */
     private void printBoard()
     {
@@ -329,9 +338,18 @@ public class PlayingBoard
         }    
     }
     /**
+<<<<<<< HEAD
      * returns new array with length 4, with linear positions of tokens. 
      * 
      * Sergei Levashov
+=======
+<<<<<<< HEAD
+     * @author omid
+=======
+     * returns new array with length 4, with linear positions of tokens.
+     * Sergei and his humble assistant Omid
+>>>>>>> origin/master
+>>>>>>> origin/master
      */
     public int[] getNewWinArray()
     {

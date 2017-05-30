@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.params=name
 comment0.target=Player(java.lang.String)
+<<<<<<< HEAD
 comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Player\n\ \n\ Sergei\n
+=======
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Player\n\ Sergei\n
+>>>>>>> origin/master
 comment1.params=
 comment1.target=java.lang.String\ toString()
 comment1.text=\n\ Plays\ the\ pick\ sounds\ for\ the\ player\ passed\n\ Precondition\:\ 1\ or\ 2\ is\ passed\n\ \n\ Sergei\ Levashov\n
@@ -25,5 +29,9 @@ comment8.params=e
 comment8.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment9.params=
 comment9.target=enumPlayers\ getEnum()
+<<<<<<< HEAD
 comment9.text=\n\ returns\ myEnum\n\ \n\ Omer\n
+=======
+comment9.text=\n\ getEnum\ will\ return\ the\ enum\ representation\ of\ the\ player\n\ \n\ @return\ enum\ myEnum\n
+>>>>>>> origin/master
 numComments=10
