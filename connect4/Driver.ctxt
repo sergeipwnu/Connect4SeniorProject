@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.params=args
 comment0.target=void\ main(java.lang.String[])
+<<<<<<< HEAD
+comment0.text=\n\ Initializes\ JFX,\ then\ initializes\ and\ launches\ the\ menu\ @\ 1000X800\n\ \n\ Postconditions\:\ Non-Resizable,\ EXIT_ON_CLOSE\n\ Author\:\ Sergei\ Levashov\n
+=======
 comment0.text=\n\ initializes\ JFX,\ then\ initializes\ and\ launches\ the\ menu\ @\ 1000X800\n\ \n\ Postconditions\:\ Non-Resizable,\ EXIT_ON_CLOSE\n\ Author\:\ Sergei\ Levashov\n
+>>>>>>> origin/master
 comment1.params=
 comment1.target=void\ run()
 numComments=2

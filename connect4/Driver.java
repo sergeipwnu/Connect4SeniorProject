@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import javafx.embed.swing.JFXPanel;
 public class Driver {
     /**
-     * initializes JFX, then initializes and launches the menu @ 1000X800
+     * Initializes JFX, then initializes and launches the menu @ 1000X800
      * 
      * Postconditions: Non-Resizable, EXIT_ON_CLOSE
      * Author: Sergei Levashov

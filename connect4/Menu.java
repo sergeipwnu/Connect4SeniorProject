@@ -133,7 +133,6 @@ public class Menu extends JFrame
      */
     private void createButtons()
     {
-        
         //first row
         add(makeButtonInvisible(new playerButton(110,175,"omid",this)));
         add(makeButtonInvisible(new playerButton(320,175,"sergei",this)));
@@ -148,9 +147,15 @@ public class Menu extends JFrame
     }
     
     /**
+<<<<<<< HEAD
+     * Represents the unlocckable characters. (Mr. L and Tim)
+     * 
+     * Zachary
+=======
      * <code>unlockableButtons()</code>creates buttons for the unlocckable characters
      * 
      * @author Zachary
+>>>>>>> origin/master
      */
     private void unlockableButtons()
     {

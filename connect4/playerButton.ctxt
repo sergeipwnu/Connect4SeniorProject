@@ -4,6 +4,7 @@ comment0.target=playerButton(int,\ int,\ java.lang.String,\ Menu)
 comment0.text=\n\ adds\ a\ listener,\ assigns\ local\ variables,\ and\ sets\ bounds\ for\ the\ playerButton\ based\ on\ passed\ left\ and\ top\ offsets.\n\ \n\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=Player\ getPlayer()
+comment1.text=\n\ returns\ a\ Player\n\ \n\ Sergei\ Levashov\n
 comment2.params=
 comment2.target=void\ playPick()
 comment2.text=\n\ Plays\ pick\ sound\ of\ player\n\ \n\ Sergei\ Levashov\n

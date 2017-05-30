@@ -1,7 +1,7 @@
 import javax.swing.ImageIcon; 
 import java.awt.event.*; 
 /**
- * An object with the border color, face, and name of the chosen players.
+ * An object with the enum, image path, audioplayer, board, and name of the chosen players.
  * 
  * Sergei Levashov
  */
@@ -14,12 +14,15 @@ public class Player
     private Board myBoard;
     /**
      * Constructor for objects of class Player
+     * 
      * Sergei
      */
     public Player(String name)
     {
         myName = name;
-        myImage = name+ "face.png";
+        myImage = name + "face.png";
+        
+        
         if(name.toLowerCase().equals("omid"))
         {
             myEnum = myEnum.OMID;
@@ -128,15 +131,21 @@ public class Player
         });
         }
     }
+<<<<<<< HEAD
+    /**
+     * returns myEnum
+     * 
+     * Omer
+=======
     
     /**
      * getEnum will return the enum representation of the player
      * 
      * @return enum myEnum
+>>>>>>> origin/master
      */
     public enumPlayers getEnum()
     {
         return myEnum;
     }
-    
 }
