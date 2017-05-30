@@ -35,6 +35,11 @@ public class playerButton extends JButton
                 System.out.println("failed to load " + myName);
                 pick = null;}
     }
+    /**
+     * returns a Player
+     * 
+     * Sergei Levashov
+     */
     public Player getPlayer()
     {
         return new Player(myName);

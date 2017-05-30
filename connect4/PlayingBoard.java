@@ -242,7 +242,8 @@ public class PlayingBoard
         return false;
     }
     /**
-     * Returns the winArray.
+     * Returns the winArray. the winArray stores the positions of the 4 winning pieces by the
+     * player.
      * 
      * Zach
      */
@@ -251,14 +252,17 @@ public class PlayingBoard
         return winArray;
     }
     /**
+     * Prints the winArray.
+     * For debugging only
      * 
+     * Omid
      */
     private void printWinArray()
     {
         System.out.println("win array");
         for(int i = 0; i < ROW; i++)
         {
-            for(int j = 0; j<COL; j++)
+            for(int j = 0; j < COL; j++)
             {
                 System.out.print(winArray[i][j]);
             }
@@ -267,7 +271,8 @@ public class PlayingBoard
     }
     /**
      *  Attempts to make a move at the given Position. If the move is possible, the move is made
-     *  and makeMove() returns true. If a move is not possible, makeMove returns false
+     *  and makeMove() returns true. If a move is not possible, makeMove returns false.
+     *  
      *  OMER
      */
     public boolean makeMove(Position p) 
@@ -305,7 +310,10 @@ public class PlayingBoard
         return b;
     }
     /**
-     * zach
+     * Prints the actual board after every turn.
+     * For debugging only
+     * 
+     * Zach
      */
     private void printBoard()
     {
@@ -313,13 +321,18 @@ public class PlayingBoard
         
         for(int i = 0; i < ROW; i++)
         {
-             for(int j = 0; j<COL; j++)
+             for(int j = 0; j < COL; j++)
             {
                 System.out.print(board[i][j]);
             }
             System.out.println();
         }    
     }
+    /**
+     * returns new array with length 4, with linear positions of tokens. 
+     * 
+     * Sergei Levashov
+     */
     public int[] getNewWinArray()
     {
         int p = 0;
@@ -339,7 +352,8 @@ public class PlayingBoard
         return newWinArray;
     }
     /**
-     * Changes playerNum into 1 if 2, and 2 if 1
+     * Changes playerNum into 1 if 2, and 2 if 1. Represents which players turn it is.
+     * 
      * Omer
      */
     public void changePlayer()
@@ -348,6 +362,7 @@ public class PlayingBoard
     }
     /**
      * returns placeBelow
+     * 
      * Sergei
      */
     public int getDropOffset()
@@ -356,17 +371,11 @@ public class PlayingBoard
     }
     /**
      * returns playerNum
+     * 
      * Sergei
      */
     public int getPlayerNum()
     {
         return playerNum;
     }
-    /*
-     * 
-    public void claerWinArray()
-    {
-        winArray = 0;
-    }
-    */
 }

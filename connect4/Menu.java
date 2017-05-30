@@ -119,7 +119,6 @@ public class Menu extends JFrame
      */
     private void createButtons()
     {
-        
         //first row
         add(makeButtonInvisible(new playerButton(110,175,"omid",this)));
         
@@ -134,7 +133,8 @@ public class Menu extends JFrame
         
     }
     /**
-     * unlocckable characters
+     * Represents the unlocckable characters. (Mr. L and Tim)
+     * 
      * Zachary
      */
     private void unlock()
