@@ -153,6 +153,10 @@ public class Menu extends JFrame
         b.setBorderPainted(false);
         return b;
     }
+    /**
+     * adds all player images to the JPanel over the invisible buttons
+     * Sergei
+     */
     private void addPlayerImages()
     {
         omid = new JLabel();
@@ -195,7 +199,10 @@ public class Menu extends JFrame
         kanika.setBounds(745,348,140,140);
         playerIcons.add(kanika);
     }
-    
+    /**
+     * overlays pick image over passed player
+     * Sergei
+     */
     public void changePlayerImage(enumPlayers p)
     {
         switch(p)
