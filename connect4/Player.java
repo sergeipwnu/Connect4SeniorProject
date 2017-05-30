@@ -131,18 +131,18 @@ public class Player
         });
         }
     }
-<<<<<<< HEAD
+
     /**
      * returns myEnum
      * 
      * Omer
-=======
+
     
     /**
      * getEnum will return the enum representation of the player
      * 
      * @return enum myEnum
->>>>>>> origin/master
+
      */
     public enumPlayers getEnum()
     {

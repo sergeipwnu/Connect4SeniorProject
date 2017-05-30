@@ -5,15 +5,13 @@ import java.io.File;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * A class for all of the MediaPlayers used by the board
+ * <code>AudioPlayer</code> is class for all of the MediaPlayers used by the board
  * 
- * Sergei Levashov
+ * @author Sergei Levashov
+ * @version 1.0.0
  */
 public class AudioPlayer
 {
-    /**
-     * Constructor for objects of class AudioPlayer
-     */
     private MediaPlayer pick1;
     private MediaPlayer soundtrack;
     private MediaPlayer pick2;
@@ -32,6 +30,13 @@ public class AudioPlayer
     private MediaPlayer ding;
     private Player myP1;
     private Player myP2;
+    
+    /**
+     * <code>AudioPlayer</code> constructor will implement all of the voice lines for players 1 and 2
+     * 
+     * @param
+     * @param
+     */
     public AudioPlayer(Player p1, Player p2)
     {
         myP1 = p1;
