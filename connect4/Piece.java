@@ -81,6 +81,7 @@ public class Piece extends JButton
                     {
                     myBrain.changePlayer();    
                     myBoard.removeAllButtons();
+                    myBoard.shiftGlow(myBrain.getPlayerNum() % 2 + 1);
                     
                     myBoard.spinWinTokens(myBrain.getNewWinArray(), myBrain.getPlayerNum());
                         try{

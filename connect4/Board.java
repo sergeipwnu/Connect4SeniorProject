@@ -343,15 +343,17 @@ public class Board extends JFrame{
      */
     public void winDisplay(int player)
     {
-        
+        JLabel loser = new JLabel();
         JLabel winner = new JLabel();
         if(player == 1)
         {
             winner.setIcon(new ImageIcon("images/people/" + p2 + "win.png"));
+            loser.setIcon(new ImageIcon("images/people/" + p1 + "lose.png"));
         }
         else
         {
             winner.setIcon(new ImageIcon("images/people/" + p1 + "win.png"));
+            loser.setIcon(new ImageIcon("images/people/" + p2 + "lose.png"));
         }
         label.setIcon(new ImageIcon("images/boards/WinScreen" + player + ".png"));
         remove(tokens);
@@ -365,10 +367,13 @@ public class Board extends JFrame{
         remove(pb2);
         winPanel.setBounds(0,0,1000,800);
         winner.setBounds(50,200,300,400);
+        loser.setBounds(650,200,300,400);
         winPanel.add(winner);
+        winPanel.add(loser);
         winPanel.repaint();
         winPanel.setVisible(true);
         winner.setVisible(true);
+        loser.setVisible(true);
         repaint();
     }
     /**
