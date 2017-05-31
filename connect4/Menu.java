@@ -3,6 +3,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import chn.util.FileInput;
+import chn.util.FileOutput;
 /**
  * <code>Menu</code> class is the menu screen, a window which launches a new Board
  * It extends <code>JFrame</code> link -- 
@@ -13,6 +15,9 @@ import java.awt.Color;
  */
 public class Menu extends JFrame
 {
+    private int[] winCountByPlayer;
+    private int winCount =0;
+    private FileInput f;
     private Player player1 = null;
     private Player player2 = null;
     private Board myBoard;
@@ -43,6 +48,7 @@ public class Menu extends JFrame
             isPC = true;
             setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
         }
+        loadFromFile();
         setLayout(null);
         JLabel menu = new JLabel();
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
@@ -56,6 +62,16 @@ public class Menu extends JFrame
         add(playerIcons);
         add(menu);
         createButtons();
+        
+        if(winCount > 100)
+        {
+            unlockTim();
+        }
+        
+        if(winCountByPlayer[10] > 1)
+        {
+            unlockL();
+        }
     }
     
     /**
@@ -115,6 +131,7 @@ public class Menu extends JFrame
         player1 = p;
         player1.addColorToPath("b");
     }
+    
     /**
      * sets the player to the player passed from listener, as well as the their piece color
      * player2 is set to red
@@ -147,15 +164,9 @@ public class Menu extends JFrame
     }
     
     /**
-<<<<<<< HEAD
-     * Represents the unlocckable characters. (Mr. L and Tim)
-     * 
-     * Zachary
-=======
      * <code>unlockableButtons()</code>creates buttons for the unlocckable characters
      * 
      * @author Zachary
->>>>>>> origin/master
      */
     private void unlockableButtons()
     {
@@ -278,5 +289,41 @@ public class Menu extends JFrame
                 repaint();
                 break; 
         }
+    }
+    
+    /**
+     * <code>loadFromFile()</code> will load win data from a file
+     * 
+     * @author Omer
+     */
+    private void loadFromFile()
+    {
+        f = new FileInput("wincount.txt");
+        winCountByPlayer = new int[12];
+        
+        for(int i = 0; i < 12; i++)
+        {
+            int a = f.readInt();
+            winCount +=  a;
+            winCountByPlayer[i] = a;
+        }
+    }
+    
+    private void unlockTim()
+    {
+    }
+    
+    private void unlockL()
+    {
+    }
+    
+    public void addWin()
+    {
+        winCount++;
+    }
+    
+    public void writeToFile()
+    {
+        
     }
 }
