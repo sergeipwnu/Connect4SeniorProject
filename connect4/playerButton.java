@@ -5,9 +5,12 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import java.io.File;
 /**
- * A modified JButton class with left and top insets, as well as a name and imagepath
+ * <code>PlayerButton</code> is a modified JButton class with left and top insets, 
+ * as well as a name and imagepath
  * 
- * Sergei Levashov
+ * @author Sergei Levashov
+ * @version 1.0.0
+ * @see JButton API
  */
 public class playerButton extends JButton
 {
@@ -15,9 +18,15 @@ public class playerButton extends JButton
     private Menu myMenu;
     private MediaPlayer pick;
     /**
-     * adds a listener, assigns local variables, and sets bounds for the playerButton based on passed left and top offsets.
+     * <code>PlayerButton</code> constructor adds a listener, assigns local variables,
+     * and sets bounds for the playerButton based on passed left and top offsets.
      * 
-     * Sergei Levashov
+     * @param int left -- left bound for the <code>JButton</code>
+     * @param int top -- top bound fot the <code>JButton</code>
+     * @param String name -- name of the <code>PlayerButton</code>
+     * @param Menu m -- <code>Menu</code> object to be interacted with
+     * 
+     * @author Sergei Levashov
      */
     playerButton(int left, int top, String name, Menu m)
     {
@@ -35,19 +44,22 @@ public class playerButton extends JButton
                 System.out.println("failed to load " + myName);
                 pick = null;}
     }
+   
     /**
-     * returns a Player
+     * <code>getPlayer()</code> returns a new <code>Player</code> object using the name
      * 
-     * Sergei Levashov
+     * @return <code>Player</code> object
+     * @author Sergei Levashov
      */
     public Player getPlayer()
     {
         return new Player(myName);
     }
+    
     /**
-     * Plays pick sound of player
+     * <code>playPick()</code> plays pick sound of player
      * 
-     * Sergei Levashov
+     * @author Sergei Levashov
      */
     private void playPick()
     {
@@ -63,10 +75,11 @@ public class playerButton extends JButton
             });
         }
     }
+    
     /**
-     * adds a listener for the playerButton click.
+     * <code>addListener()</code> adds a listener for the playerButton click.
      * 
-     * Sergei Levashov
+     * @author Sergei Levashov
      */
     public void addListener()
     {
@@ -101,10 +114,12 @@ public class playerButton extends JButton
             }
         });
     }
+    
     /**
-     * local name getter
+     * <code>getPName()<code> returns the name of thr player
      * 
-     * Sergei Levashov
+     * @return String myName -- name of player
+     * @author Sergei Levashov
      */
     private String getPName()
     {

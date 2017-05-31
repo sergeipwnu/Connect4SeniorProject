@@ -34,8 +34,9 @@ public class AudioPlayer
     /**
      * <code>AudioPlayer</code> constructor will implement all of the voice lines for players 1 and 2
      * 
-     * @param
-     * @param
+     * @param Player p1 -- player 1
+     * @param Player p2 -- player 2
+     * @author Sergei
      */
     public AudioPlayer(Player p1, Player p2)
     {
@@ -57,10 +58,17 @@ public class AudioPlayer
         //soundtrack.setVolume(.05);
         //soundtrack.play();
     }
+    
     public void stopSoundtrack()
     {
         //soundtrack.stop();
     }
+    
+    /**
+     * <code>DingDingDing()</code> will play the winning Ding sound
+     * 
+     * @author Sergei
+     */
     public void DingDingDing()
     {
             ding = new MediaPlayer(new Media(new File("audio/ding.mp3").toURI().toString()));
@@ -73,17 +81,12 @@ public class AudioPlayer
             });
         
     }
-     /**
-     * Plays the pick sounds for the player passed
-     * Precondition: 1 or 2 is passed
+    
+    /**
+     * <code>playName()</code> plays the name sounds for the player passed
      * 
-     * Sergei Levashov
-     */
-     /**
-     * Plays the name sounds for the player passed
-     * Precondition: 1 or 2 is passed
-     * 
-     * Sergei Levashov
+     * @parm int player -- 1 or 2 for what player
+     * @author Sergei Levashov
      */
     public void playName(int player)
     {
@@ -108,7 +111,8 @@ public class AudioPlayer
         });
         }
     }
-     /**
+     
+    /**
      * Plays the win sounds for the player passed
      * Precondition: 1 or 2 is passed
      * 
@@ -136,11 +140,12 @@ public class AudioPlayer
         });
         }
     }
-     /**
-     * Plays the lose sounds for the player passed
-     * Precondition: 1 or 2 is passed
+    
+    /**
+     * <code>playLose()</code> plays the lose sounds for the player passed
      * 
-     * Sergei Levashov
+     * @param int player -- 1 or 2 for what player
+     * @author Sergei Levashov
      */
     public void playLose(final int player)
     {
@@ -177,11 +182,12 @@ public class AudioPlayer
             l.printStackTrace();
         }
     }
+    
     /**
-     * Plays the drop sounds for the player passed
-     * Precondition: 1 or 2 is passed
+     * <code>playeDrop()</code> plays the drop sounds for the player passed
      * 
-     * Sergei Levashov
+     * @param int player -- 1 or 2 for what player
+     * @author Sergei Levashov
      */
     public void playDrop(int player)
     {
