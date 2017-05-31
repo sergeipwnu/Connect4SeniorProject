@@ -66,6 +66,16 @@ public class Player
                                     {
                                         myEnum = myEnum.KANIKA;
                                     }
+                                    else
+                                       if(name.toLowerCase().equals("tim"))
+                                        {
+                                            myEnum = myEnum.TIM;
+                                        } 
+                                        else
+                                           if(name.toLowerCase().equals("l"))
+                                            {
+                                                myEnum = myEnum.L;
+                                            } 
     }
     
     /**

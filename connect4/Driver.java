@@ -2,13 +2,16 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import java.util.concurrent.CountDownLatch;
 import javafx.embed.swing.JFXPanel;
-public class Driver {
-    /**
-     * Initializes JFX, then initializes and launches the menu @ 1000X800
-     * 
-     * Postconditions: Non-Resizable, EXIT_ON_CLOSE
-     * Author: Sergei Levashov
-     */
+/**
+ * <code>Driver</code> class initializes JFX, then initializes and 
+ * launches the menu @ 1000X800 size
+ * 
+ * Postconditions: Non-Resizable, EXIT_ON_CLOSE
+ * 
+ * @author Sergei Levashov
+*/
+public class Driver 
+{
     public static void main(String[] args)
     {
             final CountDownLatch latch = new CountDownLatch(1);

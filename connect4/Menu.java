@@ -3,6 +3,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import chn.util.FileInput;
+import chn.util.FileOutput;
 /**
  * <code>Menu</code> class is the menu screen, a window which launches a new Board
  * It extends <code>JFrame</code> link -- 
@@ -13,6 +15,12 @@ import java.awt.Color;
  */
 public class Menu extends JFrame
 {
+<<<<<<< Updated upstream
+=======
+    private int[] winCountByPlayer;
+>>>>>>> Stashed changes
+    private int winCount = 0;
+    private FileInput f;
     private Player player1 = null;
     private Player player2 = null;
     private Board myBoard;
@@ -20,7 +28,7 @@ public class Menu extends JFrame
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
-    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika;
+    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika, tim, l;
     /**
      * <code>Menu()</code> constructor will creates isPC variable to 
      * calculate offsets later in Board.
@@ -43,6 +51,7 @@ public class Menu extends JFrame
             isPC = true;
             setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
         }
+        loadFromFile();
         setLayout(null);
         JLabel menu = new JLabel();
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
@@ -56,6 +65,16 @@ public class Menu extends JFrame
         add(playerIcons);
         add(menu);
         createButtons();
+        
+        if(winCount > 99)
+        {
+            unlockTim();
+        }
+        
+        if(winCount > 999)
+        {
+            unlockL();
+        }
     }
     
     /**
@@ -115,6 +134,7 @@ public class Menu extends JFrame
         player1 = p;
         player1.addColorToPath("b");
     }
+    
     /**
      * sets the player to the player passed from listener, as well as the their piece color
      * player2 is set to red
@@ -147,15 +167,9 @@ public class Menu extends JFrame
     }
     
     /**
-<<<<<<< HEAD
-     * Represents the unlocckable characters. (Mr. L and Tim)
-     * 
-     * Zachary
-=======
      * <code>unlockableButtons()</code>creates buttons for the unlocckable characters
      * 
      * @author Zachary
->>>>>>> origin/master
      */
     private void unlockableButtons()
     {
@@ -277,6 +291,67 @@ public class Menu extends JFrame
                 kanika.setBounds(745,348,140,140);
                 repaint();
                 break; 
+            case TIM:
+                tim.setIcon(new ImageIcon("images/people/timpick.png"));
+                tim.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                repaint();
+                break; 
+            case L:
+                l.setIcon(new ImageIcon("images/people/lpick.png"));
+                l.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                repaint();
         }
+    }
+    
+    /**
+     * <code>loadFromFile()</code> will load win data from a file
+     * 
+     * @author Omer
+     */
+    private void loadFromFile()
+    {
+        f = new FileInput("wincount.txt");
+        winCount = f.readInt();
+    }
+    
+    /**
+     * <code>unlockTim()</code> method will unlock Tim the Enchanter and make
+     * him into a playable character
+     * 
+     * @author
+     */
+    private void unlockTim()
+    {
+        
+    }
+    
+    /**
+     * <code>unlockL()</code> method will unlock Mr. L and make
+     * him into a playable character
+     * 
+     * @author
+     */
+    private void unlockL()
+    {
+    }
+    
+    /**
+     * <code>addWin()</code> will add a win to the total win count
+     * 
+     * @authot omer
+     */
+    public void addWin()
+    {
+        winCount++;
+    }
+    /**
+     * Zach
+     */
+    public void writeToFile()
+    {
+        FileOutput outFile = new FileOutput("wincount.txt");
+        outFile.print("");
+        outFile.print(winCount);
+        outFile.close();
     }
 }

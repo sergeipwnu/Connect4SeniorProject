@@ -15,13 +15,18 @@ import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import javafx.embed.swing.JFXPanel;
 import javafx.util.Duration;
+
 /**
- * Board is a type of JFrame that has the Buttons and graphical interface
+ * <code>Board</code> is a type of JFrame that has the Buttons and graphical interface
  * This class corelates directly with information stored in PlayingBoard
  * Board is DISPOSE_ON_CLOSE, meaning this menu can be used for multiple games
- * Author: Sergei Levashov
+ * 
+ * @author Sergei Levashov
+ * @version 1.0.0
+ * @see JFrame API
  */
-public class Board extends JFrame{
+public class Board extends JFrame
+{
     private PlayingBoard Brain;
     private JLabel label;
     private JLabel vsImage;
@@ -43,11 +48,15 @@ public class Board extends JFrame{
     private Media drop2;
     private Media drop3;
     private Piece pb2;
+    
     /**
-     * Board constructor, sets layout to null and creates new PlayingBoard
-     * Sergei Levashov
+     * <code>Board</code> constructor, sets layout to null and creates new PlayingBoard
+     * 
+     * @param boolean os -- true for PC, false for mac
+     * @author Sergei Levashov
      */
-    public Board(boolean os){
+    public Board(boolean os)
+    {
         super("Connect 4");
         isPC = os;
         Brain = new PlayingBoard();
@@ -55,8 +64,11 @@ public class Board extends JFrame{
     }
     
     /**
-     * generates a new board, buttons, glow icons, insets, and token JPanel
-     * Sergei Levashov
+     * <code>addBoard()<code> generates a new board, buttons, glow icons, insets, and token JPanel
+     * 
+     * @param <code>Player</code> player1 object 
+     * @param <code>Player</code> player2 object 
+     * @author Sergei Levashov
      */
     public void addBoard(Player player1, Player player2)
     {
@@ -106,9 +118,14 @@ public class Board extends JFrame{
         shiftGlow(1);
         repaint();
     }
+    
     /**
-     * adds a single ImageIcon token, at the specified y and x, then repaints the JPanel
-     * Sergei Levashov
+     * <code>addToken()</code> adds a single <code>ImageIcon</code> token, at the specified y and x, 
+     * then repaints the JPanel
+     * 
+     * @param int y -- y-value of the token's coordinate
+     * @param int x -- x-value of the token's coordinate
+     * @author Sergei Levashov
      */
     public void addToken(int y, int x)
     {
@@ -132,10 +149,15 @@ public class Board extends JFrame{
         tokens.add(test);
         tokens.repaint();
     }
+    
     /**
-     * adds a single ImageIcon token, at the specified y and x, then repaints the JPanel
-     * this addToken method also adds a glow
-     * Sergei Levashov
+     * <code>addToken()</code> adds a single <code>ImageIcon</code> token, at the specified y and x, 
+     * then repaints the JPanel, also adds a glow
+     * 
+     * @param int y -- y-value of the token's coordinate
+     * @param int x -- x-value of the token's coordinate
+     * @param int player -- player number (1 or 2)
+     * @author Sergei Levashov
      */
     public void addToken(int y, int x, int player)
     {
@@ -160,9 +182,13 @@ public class Board extends JFrame{
         tokensGlow.repaint();
         
     }
+    
     /**
-     * generates the 6X7 grid of buttons and makes them invisible
-     * Sergei Levashov
+     * <code>generateButtons()</code> generates the 6X7 grid of buttons and makes them invisible
+     * 
+     * @param <code>Insets</code> insets -- 
+     * @param <code>PlayingBoard</code> Brain -- 
+     * @author Sergei Levashov
      */
     private void generateButtons(Insets insets,PlayingBoard Brain)
     {
@@ -177,7 +203,6 @@ public class Board extends JFrame{
         {
             for(int x = 0; x < 7; x++) //adds in all buttons
             {
-                
                 buttons.add(new Piece(y,x,Brain,this,sounds));
             }
         }
@@ -220,9 +245,13 @@ public class Board extends JFrame{
         backButtonListener(backButton);
         makeButtonInvisible(backButton);
     }
+    
     /**
-     * creates listener at back button, located at upper left corner
-     * Sergei Levashov
+     * <code>backButtonListener()</code> creates listener at back button, 
+     * located at upper left corner
+     * 
+     * @param <code>Piece</code> b -- to add an action listener to
+     * @author Sergei Levashov
      */
     private void backButtonListener(Piece b) //implement change to new JFrame here
     {
@@ -234,9 +263,12 @@ public class Board extends JFrame{
             }
         });
     }
+    
     /**
-     * makes the JButton passed invisible, by reference
-     * Sergei Levashov
+     * <code>makeButtonInvisible()</code> makes the JButton passed invisible, by reference
+     * 
+     * @param <code>Piece</code> to be made invisible
+     * @author Sergei Levashov
      */
     private void makeButtonInvisible(Piece b) //makes an individual button invisible
     {
@@ -244,10 +276,12 @@ public class Board extends JFrame{
         b.setContentAreaFilled(false);
         b.setBorderPainted(false);
     }
-     /**
-     * plays drop sound if true, error sound if false
+     
+    /**
+     * <code>playSound()</code> plays drop sound if true, error sound if false
      * 
-     * Sergei Levashov
+     * @param boolean b -- for sound or error
+     * @author Sergei Levashov
      */
     public void playSound(boolean b)
     {
@@ -294,9 +328,12 @@ public class Board extends JFrame{
             });
         }
     }
+    
     /**
-     * returns offset array generated by generateButtons()
-     * Sergei Levashov
+     * <code>getOffsetArray()</code> returns offset array generated by <code>generateButtons()</code>
+     * 
+     * @return <code>Position[][]</code> matrix with offsets
+     * @author Sergei Levashov
      */
     public Position[][] getOffsetArray()
     {

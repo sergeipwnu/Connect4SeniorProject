@@ -376,7 +376,7 @@ public class PlayingBoard
      */
     public void changePlayer()
     {
-        playerNum = (playerNum % 2) +1;
+        playerNum = (playerNum % 2) + 1;
     }
     /**
      * returns placeBelow
