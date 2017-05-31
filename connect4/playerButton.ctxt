@@ -1,22 +1,23 @@
 #BlueJ class context
 comment0.params=left\ top\ name\ m
 comment0.target=playerButton(int,\ int,\ java.lang.String,\ Menu)
-comment0.text=\n\ adds\ a\ listener,\ assigns\ local\ variables,\ and\ sets\ bounds\ for\ the\ playerButton\ based\ on\ passed\ left\ and\ top\ offsets.\n\ \n\ Sergei\ Levashov\n
+comment0.text=\n\ <code>PlayerButton</code>\ constructor\ adds\ a\ listener,\ assigns\ local\ variables,\n\ and\ sets\ bounds\ for\ the\ playerButton\ based\ on\ passed\ left\ and\ top\ offsets.\n\ \n\ @param\ int\ left\ --\ left\ bound\ for\ the\ <code>JButton</code>\n\ @param\ int\ top\ --\ top\ bound\ fot\ the\ <code>JButton</code>\n\ @param\ String\ name\ --\ name\ of\ the\ <code>PlayerButton</code>\n\ @param\ Menu\ m\ --\ <code>Menu</code>\ object\ to\ be\ interacted\ with\n\ \n\ @author\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=Player\ getPlayer()
+comment1.text=\n\ <code>getPlayer()</code>\ returns\ a\ new\ <code>Player</code>\ object\ using\ the\ name\n\ \n\ @return\ <code>Player</code>\ object\n\ @author\ Sergei\ Levashov\n
 comment2.params=
 comment2.target=void\ playPick()
-comment2.text=\n\ Plays\ pick\ sound\ of\ player\n\ \n\ Sergei\ Levashov\n
+comment2.text=\n\ <code>playPick()</code>\ plays\ pick\ sound\ of\ player\n\ \n\ @author\ Sergei\ Levashov\n
 comment3.params=
 comment3.target=void\ run()
 comment4.params=
 comment4.target=void\ addListener()
-comment4.text=\n\ adds\ a\ listener\ for\ the\ playerButton\ click.\n\ \n\ Sergei\ Levashov\n
+comment4.text=\n\ <code>addListener()</code>\ adds\ a\ listener\ for\ the\ playerButton\ click.\n\ \n\ @author\ Sergei\ Levashov\n
 comment5.params=e
 comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment6.params=evt
 comment6.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment7.params=
 comment7.target=java.lang.String\ getPName()
-comment7.text=\n\ local\ name\ getter\n\ \n\ Sergei\ Levashov\n
+comment7.text=\n\ <code>getPName()<code>\ returns\ the\ name\ of\ thr\ player\n\ \n\ @return\ String\ myName\ --\ name\ of\ player\n\ @author\ Sergei\ Levashov\n
 numComments=8

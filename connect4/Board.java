@@ -29,6 +29,7 @@ public class Board extends JFrame{
     private Player p1;
     private Player p2;
     private JPanel tokens;
+    private JPanel winPanel;
     private JPanel tokensGlow;
     private AudioPlayer sounds;
     private boolean isPC;
@@ -60,7 +61,7 @@ public class Board extends JFrame{
     public void addBoard(Player player1, Player player2)
     {
         sounds = new AudioPlayer(player1,player2);
-        
+        winPanel = new JPanel();
         
         player1.setAudioPlayer(sounds);
         player2.setAudioPlayer(sounds);
@@ -82,18 +83,24 @@ public class Board extends JFrame{
         tokens.setOpaque(false);
         tokensGlow.setLayout(null);
         tokensGlow.setOpaque(false);
+        winPanel.setLayout(null);
+        winPanel.setOpaque(false);
         glow = new JLabel();
         glow.setIcon(new ImageIcon("images/gloweffectsquare.png"));
         tokens.setBackground(new Color(0,0,0,0));
         tokensGlow.setBackground(new Color(0,0,0,0));
         tokens.add(glow);
+        
         add(tokensGlow);
         add(tokens);
+        add(winPanel);
         addPlayerVsImage(player1.toString(),1);
         addPlayerVsImage(player2.toString(),2);
         add(label);
+        
         tokens.setBounds(0,0,1000,800);
         tokensGlow.setBounds(0,0,1000,800);
+        winPanel.setBounds(0,0,1000,800);
         label.setBounds(0,0,1000,800);
         generateButtons(getInsets(),Brain);
         shiftGlow(1);
@@ -336,15 +343,15 @@ public class Board extends JFrame{
      */
     public void winDisplay(int player)
     {
-        JPanel winPanel = new JPanel();
+        
         JLabel winner = new JLabel();
         if(player == 1)
         {
-            winner.setIcon(new ImageIcon("images/people/" + p1 + "win.png"));
+            winner.setIcon(new ImageIcon("images/people/" + p2 + "win.png"));
         }
         else
         {
-            winner.setIcon(new ImageIcon("images/people/" + p2 + "win.png"));
+            winner.setIcon(new ImageIcon("images/people/" + p1 + "win.png"));
         }
         label.setIcon(new ImageIcon("images/boards/WinScreen" + player + ".png"));
         remove(tokens);
@@ -357,13 +364,8 @@ public class Board extends JFrame{
         remove(pb1);
         remove(pb2);
         winPanel.setBounds(0,0,1000,800);
-        winner.setBounds(50,200,400,600);
-        winPanel.setLayout(null);
-        winner.setLayout(null);
-        //winPanel.setOpaque(false);
-        
+        winner.setBounds(50,200,300,400);
         winPanel.add(winner);
-        add(winPanel);
         winPanel.repaint();
         winPanel.setVisible(true);
         winner.setVisible(true);

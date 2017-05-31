@@ -1,9 +1,11 @@
 import javax.swing.ImageIcon; 
 import java.awt.event.*; 
 /**
- * An object with the border color, face, and name of the chosen players.
+ * <code>Player</code> object with the enum, image path, 
+ * audioplayer, board, and name of the chosen players.
  * 
- * Sergei Levashov
+ * @author Sergei Levashov
+ * @version 1.0.0
  */
 public class Player
 {
@@ -13,13 +15,18 @@ public class Player
     private AudioPlayer mySounds;
     private Board myBoard;
     /**
-     * Constructor for objects of class Player
-     * Sergei
+     * <code>Player</code> constructor will make a new <code>Player</code>
+     * object with the passed String
+     * 
+     * @param String name -- name of player
+     * @author Sergei
      */
     public Player(String name)
     {
         myName = name;
-        myImage = name+ "face.png";
+        myImage = name + "face.png";
+        
+        
         if(name.toLowerCase().equals("omid"))
         {
             myEnum = myEnum.OMID;
@@ -60,50 +67,72 @@ public class Player
                                         myEnum = myEnum.KANIKA;
                                     }
     }
-         /**
-     * Plays the pick sounds for the player passed
-     * Precondition: 1 or 2 is passed
+    
+    /**
+     * @Override
+     * <code>toString()</code> will make a string representation 
+     * of the <code>Player</code> object
      * 
-     * Sergei Levashov
+     * @return String name -- name of the player
+     * @author Sergei Levashov
      */
     public String toString()
     {
         return myName;
     }
+    
+    /**
+     * <code>setBoard()</code> will set the board with a passed
+     * <code>Board</code> object
+     * 
+     * @param <code>Board</code> b -- <code>Board</code> object
+     * @author Omer                               
+     */
     public void setBoard(Board b)
     {
         myBoard = b;
     }
-     /**
-     * returns image path
+    
+    /**
+     * <code>getPath()</code> returns the image path
      * 
-     * Sergei Levashov
+     * @return String myImage -- the image path
+     * @author Sergei Levashov
      */
     public String getPath()
     {
         return myImage;
     }
-     /**
-     * adds a color to the imagepath 
+     
+    /**
+     * <code>addColorToPath()</code> adds a color to the imagepath 
      * 
-     * Sergei Levashov
+     * @param String color -- the name of the color
+     * @author Sergei Levashov
      */
     public void addColorToPath(String color)
     {
         myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
     }
     /**
-     * Sets local audioplayer
+     * <code>setAudioPlayer()</code> sets local audioplayer with the
+     * passed <code>AudioPlayer</code> object
      * 
-     * Sergei Levashov
+     * @param <code>AudioPlayer</code> object 
+     * @author Sergei Levashov
      */
     public void setAudioPlayer(AudioPlayer au)
     {
         mySounds = au;
     }
+    
     /**
-     * Adds a listener to a specefied JButton, plays an audio file onclick
-     * Author: Sergei Levashov
+     * <code>addVoiceBoxListener</code< adds a listener to a specefied 
+     * JButton and plays an audio file on click
+     * 
+     * @param <code>Piece</code> object
+     * @param String -- either "left" or "right"
+     * @author Sergei Levashov
      */
     public void addVoiceBoxListener(Piece b,String s)
     {
@@ -128,10 +157,16 @@ public class Player
         });
         }
     }
-    
+
+    /**
+     * <code>getEnum()</code> will return the enum representation 
+     * of the player
+     * 
+     * @return enum myEnum
+     * @author Omer
+     */
     public enumPlayers getEnum()
     {
         return myEnum;
     }
-    
 }
