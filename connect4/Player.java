@@ -117,7 +117,7 @@ public class Player
     /**
      * <code>addColorToPath()</code> adds a color to the imagepath 
      * 
-     * @param String color -- the name of the color
+     * @param String color -- the name of the color "b" or "r"
      * @author Sergei Levashov
      */
     public void addColorToPath(String color)

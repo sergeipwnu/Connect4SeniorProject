@@ -58,12 +58,6 @@ public class AudioPlayer
         //soundtrack.setVolume(.05);
         //soundtrack.play();
     }
-    
-    public void stopSoundtrack()
-    {
-        //soundtrack.stop();
-    }
-    
     /**
      * <code>DingDingDing()</code> will play the winning Ding sound
      * 
