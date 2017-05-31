@@ -348,9 +348,8 @@ public class Menu extends JFrame
      */
     public void writeToFile()
     {
-        FileOutput outFile = new FileOutput("wincount.txt");
-        outFile.print("shalom");
-        //outFile.print(winCount);
+        FileOutput outFile = new FileOutput("wincount.txt", "write");//opens inwrite mode to overwrite the data
+        outFile.print(winCount);
         outFile.close();
     }
 }
