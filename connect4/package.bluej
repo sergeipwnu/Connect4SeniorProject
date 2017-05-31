@@ -44,15 +44,9 @@ dependency21.type=UsesDependency
 dependency22.from=Menu
 dependency22.to=enumPlayers
 dependency22.type=UsesDependency
-<<<<<<< Updated upstream
 dependency23.from=Player
 dependency23.to=Board
 dependency23.type=UsesDependency
-dependency24.from=Piece
-dependency24.to=AudioPlayer
-dependency24.type=UsesDependency
-=======
->>>>>>> Stashed changes
 dependency3.from=Piece
 dependency3.to=PlayingBoard
 dependency3.type=UsesDependency
@@ -75,38 +69,20 @@ dependency9.from=Board
 dependency9.to=PlayingBoard
 dependency9.type=UsesDependency
 objectbench.height=76
-objectbench.width=645
-<<<<<<< Updated upstream
-package.editor.height=424
-package.editor.width=547
-package.editor.x=90
-package.editor.y=123
-package.numDependencies=24
-=======
-package.editor.height=381
-package.editor.width=537
-<<<<<<< HEAD
-package.editor.x=67
-package.editor.y=42
-=======
+objectbench.width=825
+package.editor.height=441
+package.editor.width=717
 package.editor.x=302
 package.editor.y=206
->>>>>>> origin/master
-package.numDependencies=22
->>>>>>> Stashed changes
+package.numDependencies=23
 package.numTargets=10
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
 target1.editor.height=700
 target1.editor.width=900
-<<<<<<< Updated upstream
-target1.editor.x=-1274
-target1.editor.y=260
-=======
 target1.editor.x=0
 target1.editor.y=74
->>>>>>> Stashed changes
 target1.height=50
 target1.name=Player
 target1.naviview.expanded=true
@@ -118,13 +94,8 @@ target1.x=20
 target1.y=170
 target10.editor.height=700
 target10.editor.width=900
-<<<<<<< Updated upstream
-target10.editor.x=-1287
-target10.editor.y=116
-=======
 target10.editor.x=0
 target10.editor.y=125
->>>>>>> Stashed changes
 target10.height=50
 target10.name=enumPlayers
 target10.naviview.expanded=false
@@ -134,15 +105,10 @@ target10.typeParameters=
 target10.width=100
 target10.x=370
 target10.y=10
-target2.editor.height=716
-target2.editor.width=1350
-<<<<<<< Updated upstream
-target2.editor.x=105
-target2.editor.y=289
-=======
-target2.editor.x=-1623
-target2.editor.y=61
->>>>>>> Stashed changes
+target2.editor.height=827
+target2.editor.width=1440
+target2.editor.x=0
+target2.editor.y=22
 target2.height=50
 target2.name=Board
 target2.naviview.expanded=false
@@ -153,19 +119,9 @@ target2.width=80
 target2.x=20
 target2.y=240
 target3.editor.height=704
-<<<<<<< Updated upstream
-target3.editor.width=963
-target3.editor.x=879
-target3.editor.y=85
-=======
 target3.editor.width=775
 target3.editor.x=372
-<<<<<<< HEAD
 target3.editor.y=22
-=======
-target3.editor.y=0
->>>>>>> Stashed changes
->>>>>>> origin/master
 target3.height=50
 target3.name=PlayingBoard
 target3.naviview.expanded=false
@@ -175,10 +131,10 @@ target3.typeParameters=
 target3.width=110
 target3.x=130
 target3.y=100
-target4.editor.height=700
-target4.editor.width=900
+target4.editor.height=827
+target4.editor.width=1440
 target4.editor.x=0
-target4.editor.y=248
+target4.editor.y=22
 target4.height=50
 target4.name=Position
 target4.naviview.expanded=false
@@ -190,13 +146,8 @@ target4.x=160
 target4.y=10
 target5.editor.height=717
 target5.editor.width=900
-<<<<<<< Updated upstream
-target5.editor.x=904
-target5.editor.y=116
-=======
 target5.editor.x=419
-target5.editor.y=651
->>>>>>> Stashed changes
+target5.editor.y=132
 target5.height=50
 target5.name=Piece
 target5.naviview.expanded=false
@@ -206,10 +157,10 @@ target5.typeParameters=
 target5.width=80
 target5.x=250
 target5.y=10
-target6.editor.height=700
-target6.editor.width=1227
-target6.editor.x=-1601
-target6.editor.y=47
+target6.editor.height=827
+target6.editor.width=1440
+target6.editor.x=0
+target6.editor.y=22
 target6.height=50
 target6.name=AudioPlayer
 target6.naviview.expanded=true
@@ -221,13 +172,8 @@ target6.x=280
 target6.y=70
 target7.editor.height=700
 target7.editor.width=900
-<<<<<<< Updated upstream
-target7.editor.x=984
-target7.editor.y=330
-=======
 target7.editor.x=209
-target7.editor.y=582
->>>>>>> Stashed changes
+target7.editor.y=149
 target7.height=50
 target7.name=playerButton
 target7.naviview.expanded=true
@@ -250,15 +196,10 @@ target8.typeParameters=
 target8.width=80
 target8.x=240
 target8.y=320
-target9.editor.height=682
-target9.editor.width=900
-<<<<<<< Updated upstream
-target9.editor.x=460
-target9.editor.y=201
-=======
+target9.editor.height=827
+target9.editor.width=1440
 target9.editor.x=0
-target9.editor.y=159
->>>>>>> Stashed changes
+target9.editor.y=22
 target9.height=50
 target9.name=Menu
 target9.naviview.expanded=true
