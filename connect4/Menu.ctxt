@@ -25,6 +25,7 @@ comment15.target=void\ addWin()
 comment15.text=\n\ <code>addWin()</code>\ will\ add\ a\ win\ to\ the\ total\ win\ count\n\ \n\ @authot\ omer\n
 comment16.params=
 comment16.target=void\ writeToFile()
+comment16.text=\n\ Zach\n
 comment2.params=
 comment2.target=void\ startGame()
 comment2.text=\n\ <code>startGame()</code>\ starts\ the\ game\ by\ launching\ the\ local\ Board\ with\ both\ players\n\ @author\ Sergei\n

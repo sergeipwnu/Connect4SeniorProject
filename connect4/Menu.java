@@ -15,6 +15,10 @@ import chn.util.FileOutput;
  */
 public class Menu extends JFrame
 {
+<<<<<<< Updated upstream
+=======
+    private int[] winCountByPlayer;
+>>>>>>> Stashed changes
     private int winCount = 0;
     private FileInput f;
     private Player player1 = null;
@@ -340,9 +344,14 @@ public class Menu extends JFrame
     {
         winCount++;
     }
-    
+    /**
+     * Zach
+     */
     public void writeToFile()
     {
-        
+        FileOutput outFile = new FileOutput("wincount.txt");
+        outFile.print("");
+        outFile.print(winCount);
+        outFile.close();
     }
 }
