@@ -15,8 +15,7 @@ import chn.util.FileOutput;
  */
 public class Menu extends JFrame
 {
-    private int[] winCountByPlayer;
-    private int winCount =0;
+    private int winCount = 0;
     private FileInput f;
     private Player player1 = null;
     private Player player2 = null;
@@ -63,12 +62,12 @@ public class Menu extends JFrame
         add(menu);
         createButtons();
         
-        if(winCount > 100)
+        if(winCount > 99)
         {
             unlockTim();
         }
         
-        if(winCountByPlayer[10] > 1)
+        if(winCount > 999)
         {
             unlockL();
         }
@@ -299,14 +298,7 @@ public class Menu extends JFrame
     private void loadFromFile()
     {
         f = new FileInput("wincount.txt");
-        winCountByPlayer = new int[12];
-        
-        for(int i = 0; i < 12; i++)
-        {
-            int a = f.readInt();
-            winCount +=  a;
-            winCountByPlayer[i] = a;
-        }
+        winCount = f.readInt();
     }
     
     private void unlockTim()
