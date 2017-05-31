@@ -24,7 +24,7 @@ public class Menu extends JFrame
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
-    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika;
+    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika, tim, l;
     /**
      * <code>Menu()</code> constructor will creates isPC variable to 
      * calculate offsets later in Board.
@@ -287,6 +287,15 @@ public class Menu extends JFrame
                 kanika.setBounds(745,348,140,140);
                 repaint();
                 break; 
+            case TIM:
+                tim.setIcon(new ImageIcon("images/people/timpick.png"));
+                tim.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                repaint();
+                break; 
+            case L:
+                l.setIcon(new ImageIcon("images/people/lpick.png"));
+                l.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                repaint();
         }
     }
     
@@ -302,17 +311,31 @@ public class Menu extends JFrame
     }
     
     /**
+     * <code>unlockTim()</code> method will unlock Tim the Enchanter and make
+     * him into a playable character
      * 
+     * @author
      */
     private void unlockTim()
     {
         
     }
     
+    /**
+     * <code>unlockL()</code> method will unlock Mr. L and make
+     * him into a playable character
+     * 
+     * @author
+     */
     private void unlockL()
     {
     }
     
+    /**
+     * <code>addWin()</code> will add a win to the total win count
+     * 
+     * @authot omer
+     */
     public void addWin()
     {
         winCount++;
