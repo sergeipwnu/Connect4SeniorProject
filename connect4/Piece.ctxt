@@ -1,21 +1,30 @@
 #BlueJ class context
+<<<<<<< Updated upstream
 comment0.params=y\ x\ Brain\ myB\ a
 comment0.target=Piece(int,\ int,\ PlayingBoard,\ Board,\ AudioPlayer)
 comment0.text=\n\ <code>Piece</code>Sets\ local\ y,\ x,\ and\ local\ references\ to\ PlayingBoard\ and\ Board.\n\ @author\:\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=Piece()
+=======
+comment0.params=
+comment0.target=Piece()
+comment0.text=\n\ Default\ constructor\ for\ a\ <code>Piece</code>\ object\n
+comment1.params=y\ x\ Brain\ myB\ a
+comment1.target=Piece(int,\ int,\ PlayingBoard,\ Board,\ AudioPlayer)
+comment1.text=\n\ <code>Piece</code>\ constructor\ sets\ local\ y,\ x,\ and\ local\ references\ to\n\ PlayingBoard\ and\ Board\n\ \n\ @param\ int\ y\ --\ y\ coordinate\n\ @param\ int\ x\ --\ x\ coordinate\n\ @param\ <code>PlayingBoard</code>\ object\ reference\n\ @param\ <code>Board</code>\ object\ reference\ \n\ @param\ <code>AudioPlayer</code>\ object\ reference\n\ @author\ Sergei\ Levashov\n
+>>>>>>> Stashed changes
 comment2.params=
 comment2.target=Position\ getPosition()
-comment2.text=\n\ Returns\ a\ new\ Position\ object\ with\ the\ y\ and\ x\n\ Sergei\ Levashov\n
+comment2.text=\n\ <code>getPosition()</code>\ returns\ a\ new\ <code>Position</code>\ object\ with\n\ the\ y\ and\ x\ coordinates\n\ \n\ @return\ <code>Position</code>\ --\ new\ coordinates\n\ @author\ Sergei\ Levashov\n
 comment3.params=
 comment3.target=Piece\ returnThis()
-comment3.text=\n\ returns\ this\ instance\ of\ Piece\n\ used\ for\ ActionListener\ calls\ to\ functions\ requiring\ the\ instance\ of\ the\ object\ that\ the\ action\ originated\ in\n\ \n\ Sergei\ Levashov\n
+comment3.text=\n\ <code>returnThis()</code>\ returns\ this\ instance\ of\ Piece\n\ used\ for\ ActionListener\ calls\ to\ functions\ requiring\ the\ instance\ of\ \n\ the\ object\ that\ the\ action\ originated\ in\n\ \n\ @return\ this\ <code>Piece</code>\ object\n\ @author\ Sergei\ Levashov\n
 comment4.params=
 comment4.target=java.lang.String\ toString()
-comment4.text=\n\ Prints\ the\ y\ and\ x\n\ Sergei\ Levashov\n
+comment4.text=\n\ @Override\n\ <code>toString()</code>\ constructs\ a\ new\ string\ with\ the\ x\ and\ y\ coordinates\ \n\ \n\ @return\ String\ --\ y\ and\ than\ x\n\ @author\ Sergei\ Levashov\n
 comment5.params=
 comment5.target=void\ addListener()
-comment5.text=\n\ Listener\ that\ changes\ int\ position\ y,x\ in\ PlayingBoards\ board[][]\ array\ onclick\n\ Author\:\ Sergei\ Levashov\n
+comment5.text=\n\ <code>addListener()</code>\ adds\ a\ listener\ that\ changes\ int\ position\ y,x\ \n\ in\ PlayingBoards\ board[][]\ array\ on\ click\n\ \n\ @author\ Sergei\ Levashov\n
 comment6.params=e
 comment6.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment7.params=evt

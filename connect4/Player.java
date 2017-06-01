@@ -16,7 +16,7 @@ public class Player
     private Board myBoard;
     /**
      * <code>Player</code> constructor will make a new <code>Player</code>
-     * object with the passed String
+     * object with the passed String.
      * 
      * @param String name -- name of player
      * @author Sergei

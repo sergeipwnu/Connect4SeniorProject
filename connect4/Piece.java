@@ -2,8 +2,12 @@ import javax.swing.*;
 import java.awt.event.*;
 
 /**
-  * Modified JButton with X and Y coordinates added, as well as a listener
-  * Author: Sergei Levashov
+  * <code>Piece</code> is a modified JButton with X and Y coordinates added, 
+  * as well as a listener. It extends <code>JButton</code>
+  * 
+  * @see JButton API
+  * @author Sergei Levashov
+  * @version 1.0.0
   */
 public class Piece extends JButton
 {
@@ -13,11 +17,25 @@ public class Piece extends JButton
     private Board myBoard;
     private AudioPlayer audioPlayer;
     private Menu myMenu;
-     /**
-     * Sets local y, x, and local references to PlayingBoard and Board.
-     * Sergei Levashov
+    
+    /**
+     * Default constructor for a <code>Piece</code> object
      */
-    public Piece(int y, int x, PlayingBoard Brain,Board myB, AudioPlayer a)
+    public Piece()
+    {
+    }
+    /**
+     * <code>Piece</code> constructor sets local y, x, and local references to
+     * PlayingBoard and Board
+     * 
+     * @param int y -- y coordinate
+     * @param int x -- x coordinate
+     * @param <code>PlayingBoard</code> object reference
+     * @param <code>Board</code> object reference 
+     * @param <code>AudioPlayer</code> object reference
+     * @author Sergei Levashov
+     */
+    public Piece(int y, int x, PlayingBoard Brain, Board myB, AudioPlayer a)
     {
         myX = x;
         audioPlayer = a;
@@ -26,38 +44,45 @@ public class Piece extends JButton
         myY = y;
         addListener();
     }
-    public Piece()
-    {
-    }
-     /**
-     * Returns a new Position object with the y and x
-     * Sergei Levashov
+    /**
+     * <code>getPosition()</code> returns a new <code>Position</code> object with
+     * the y and x coordinates
+     * 
+     * @return <code>Position</code> -- new coordinates
+     * @author Sergei Levashov
      */
     public Position getPosition()
     {
         return new Position(myY,myX);
     }
      /**
-     * returns this instance of Piece
-     * used for ActionListener calls to functions requiring the instance of the object that the action originated in
+     * <code>returnThis()</code> returns this instance of Piece
+     * used for ActionListener calls to functions requiring the instance of 
+     * the object that the action originated in
      * 
-     * Sergei Levashov
+     * @return this <code>Piece</code> object
+     * @author Sergei Levashov
      */
     private Piece returnThis()
     {
         return this;
     }
      /**
-     * Prints the y and x
-     * Sergei Levashov
+     * @Override
+     * <code>toString()</code> constructs a new string with the x and y coordinates 
+     * 
+     * @return String -- y and than x
+     * @author Sergei Levashov
      */
     public String toString()
     {
         return myY + " " + myX;
     }
     /**
-     * Listener that changes int position y,x in PlayingBoards board[][] array onclick
-     * Author: Sergei Levashov
+     * <code>addListener()</code> adds a listener that changes int position y,x 
+     * in PlayingBoards board[][] array on click
+     * 
+     * @author Sergei Levashov
      */
     public void addListener()
     {
