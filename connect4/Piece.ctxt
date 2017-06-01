@@ -1,18 +1,10 @@
 #BlueJ class context
-<<<<<<< Updated upstream
-comment0.params=y\ x\ Brain\ myB\ a
-comment0.target=Piece(int,\ int,\ PlayingBoard,\ Board,\ AudioPlayer)
-comment0.text=\n\ <code>Piece</code>Sets\ local\ y,\ x,\ and\ local\ references\ to\ PlayingBoard\ and\ Board.\n\ @author\:\ Sergei\ Levashov\n
-comment1.params=
-comment1.target=Piece()
-=======
 comment0.params=
 comment0.target=Piece()
 comment0.text=\n\ Default\ constructor\ for\ a\ <code>Piece</code>\ object\n
 comment1.params=y\ x\ Brain\ myB\ a
 comment1.target=Piece(int,\ int,\ PlayingBoard,\ Board,\ AudioPlayer)
 comment1.text=\n\ <code>Piece</code>\ constructor\ sets\ local\ y,\ x,\ and\ local\ references\ to\n\ PlayingBoard\ and\ Board\n\ \n\ @param\ int\ y\ --\ y\ coordinate\n\ @param\ int\ x\ --\ x\ coordinate\n\ @param\ <code>PlayingBoard</code>\ object\ reference\n\ @param\ <code>Board</code>\ object\ reference\ \n\ @param\ <code>AudioPlayer</code>\ object\ reference\n\ @author\ Sergei\ Levashov\n
->>>>>>> Stashed changes
 comment2.params=
 comment2.target=Position\ getPosition()
 comment2.text=\n\ <code>getPosition()</code>\ returns\ a\ new\ <code>Position</code>\ object\ with\n\ the\ y\ and\ x\ coordinates\n\ \n\ @return\ <code>Position</code>\ --\ new\ coordinates\n\ @author\ Sergei\ Levashov\n

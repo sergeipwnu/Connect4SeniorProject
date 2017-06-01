@@ -16,14 +16,7 @@ public class Piece extends JButton
     private PlayingBoard myBrain;
     private Board myBoard;
     private AudioPlayer audioPlayer;
-    private Menu myMenu;
-<<<<<<< HEAD
-    private boolean timUnlockedSession = false;
-     /**
-     * Sets local y, x, and local references to PlayingBoard and Board.
-     * Sergei Levashov
-=======
-    
+    private Menu myMenu;    
     /**
      * Default constructor for a <code>Piece</code> object
      */
@@ -40,7 +33,6 @@ public class Piece extends JButton
      * @param <code>Board</code> object reference 
      * @param <code>AudioPlayer</code> object reference
      * @author Sergei Levashov
->>>>>>> origin/master
      */
     public Piece(int y, int x, PlayingBoard Brain, Board myB, AudioPlayer a)
     {
@@ -119,7 +111,6 @@ public class Piece extends JButton
                     if(myMenu.getWins() > 99)
                     { 
                         myMenu.unlockTim();
-                        timUnlockedSession = true;
                     }
                     if(myMenu.getWins() > 999)
                     { 
