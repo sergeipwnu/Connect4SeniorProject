@@ -3,7 +3,7 @@
  * Enumeration class myPlayers is a representaion of every player as an enum
  * 
  * @author OmerHananya
- * @version 0.0.1
+ * @version 1.0.0
  */
 public enum enumPlayers
 {
