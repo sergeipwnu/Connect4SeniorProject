@@ -1,41 +1,41 @@
 #BlueJ class context
 comment0.params=
 comment0.target=PlayingBoard()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PlayingBoard.\ board\ and\ winArray\ are\ instantiated\ to\ the\r\n\ size\ of\ the\ board,\ ROW\ x\ COL\r\n\ \r\n\ Zach\r\n
+comment0.text=\n\ <code>PlayingBoard</code>\ constructor\ will\ construct\ a\ board\ and\ winArray\ with\ the\n\ size\ of\ the\ board,\ ROW\ x\ COL\n\ \n\ @author\ Zach\n
 comment1.params=p
 comment1.target=boolean\ areFourConnected(Position)
-comment1.text=\r\n\ Called\ after\ every\ move.\ Check\ for\ vertical,\ horizontal,\ and\ diagonal\ to\ see\ whether\r\n\ a\ person\ won.\ p\ is\ the\ position\ of\ the\ last\ piece\ put\ by\ the\ user.\ The\ horizontal,\ vertical,\r\n\ and\ diagonal\ method\ are\ called,\ if\ one\ is\ true,\ then\ it\ shortcircuits\ and\ returns\ true,\ else\r\n\ if\ none\ of\ the\ methods\ return\ true,\ areFourConnected\ returns\ false\r\n\ \r\n\ Zach\r\n
+comment1.text=\n\ <code>areFourConnected()</code>\ --\ Called\ after\ every\ move.\ \n\ Check\ for\ vertical,\ horizontal,\ and\ diagonal\ to\ see\ whether\ a\ person\ won.\ \n\ p\ is\ the\ position\ of\ the\ last\ piece\ put\ by\ the\ user.\ \n\ The\ horizontal,\ vertical,\ and\ diagonal\ method\ are\ called,\ if\ one\ is\ true,\ then\ it\ shortcircuits\ and\ returns\ true,\ \n\ else\ if\ none\ of\ the\ methods\ return\ true,\ areFourConnected\ returns\ false\n\ \n\ @return\ boolean\ --\ true\ for\ win\ /\ false\ for\ lose\n\ @author\ Zach\n
 comment10.params=
 comment10.target=void\ changePlayer()
-comment10.text=\r\n\ Changes\ playerNum\ into\ 1\ if\ 2,\ and\ 2\ if\ 1.\ Represents\ which\ players\ turn\ it\ is.\r\n\ \r\n\ Omer\r\n
+comment10.text=\n\ <code>changePlayer()</code>\ --\ Changes\ playerNum\ into\ 1\ if\ 2,\ and\ 2\ if\ 1.\ \n\ Represents\ which\ players\ turn\ it\ is.\n\ \n\ @author\ Omer\n
 comment11.params=
 comment11.target=int\ getDropOffset()
-comment11.text=\r\n\ returns\ placeBelow\r\n\ \r\n\ Sergei\r\n
+comment11.text=\n\ <code>getDropOffset()</code>\ will\ return\ placeBelow\n\ \n\ @return\ int\ placeBelow\n\ @author\ Sergei\n
 comment12.params=
 comment12.target=int\ getPlayerNum()
-comment12.text=\r\n\ returns\ playerNum\r\n\ \r\n\ Sergei\r\n
+comment12.text=\n\ <code>getPlayerNum</code>\ returns\ current\ playerNum\n\ \n\ @return\ int\ playerNum\ --\ either\ 1\ or\ 2\n\ @author\ Sergei\n
 comment2.params=
 comment2.target=boolean\ horizontal()
-comment2.text=\r\n\ Checks\ every\ spot\ in\ then\ proper\ row.\ Uses\ getDropOffset()\ to\ find\ the\ spot\ where\ the\ user\r\n\ placed\ their\ last\ piece.\ Uses\ a\ for\ loop\ to\ check\ every\ spot\ in\ the\ getDropOffset()\ row\ for\r\n\ four\ pieces\ in\ a\ row.\r\n\ \ \r\n\ Zach\r\n
+comment2.text=\n\ <code>horizontal()</code>\ --\ Checks\ every\ spot\ in\ then\ proper\ row.\ \n\ Uses\ getDropOffset()\ to\ find\ the\ spot\ where\ the\ user\ placed\ their\ last\ piece.\ \n\ Uses\ a\ for\ loop\ to\ check\ every\ spot\ in\ the\ getDropOffset()\ row\ for\ four\ pieces\ in\ a\ row.\n\ \ \n\ @return\ boolean\ --\ true\ if\ 4\ are\ connected\ horizontally\ /\ false\ otherwise\ \n\ @author\ Zach\n
 comment3.params=p
 comment3.target=boolean\ vertical(Position)
-comment3.text=\r\n\ Checks\ for\ a\ vertical\ win\ in\ the\ column\ the\ user\ last\ placed\ their\ piece.\ Does\ not\r\n\ use\ getDropOffset(),\ onnly\ use\ p.getX().\ All\ that\ is\ needed\ is\ the\ place\ the\ player\ put\r\n\ their\ piece\ so\ the\ column\ can\ be\ checked.\r\n\ \r\n\ Zach\r\n
+comment3.text=\n\ <code>vertical()</code>\ --\ Checks\ for\ a\ vertical\ win\ in\ the\ column\ the\ user\ last\ placed\ their\ piece.\ \n\ Does\ not\ use\ getDropOffset(),\ only\ use\ p.getX().\ All\ that\ is\ needed\ is\ the\ place\ the\ player\ put\n\ their\ piece\ so\ the\ column\ can\ be\ checked.\n\ \n\ @param\ <code>Position</code>\ object\ of\ the\ last\ play's\ position\n\ @return\ boolean\ --\ true\ if\ conneced\ vertically\ /\ false\ otherwise\n\ @author\ Zach\n
 comment4.params=p
 comment4.target=boolean\ diagonal(Position)
-comment4.text=\r\n\ Checks\ upper\ right\ and\ lower\ left\ diagnol\ for\ four\ connected\ pieces.\r\n\ Uses\ the\ location\ of\ the\ last\ placed\ piece.\ Uses\ an\ algoritm\ to\ search\ diagnolly\ for\r\n\ both\ upper\ and\ lower\ diagonal.\r\n\ \r\n\ Omid\ Hedayatnia\ and\ his\ servant\ Zach\r\n
+comment4.text=\n\ Checks\ upper\ right\ and\ lower\ left\ diagnol\ for\ four\ connected\ pieces.\n\ Uses\ the\ location\ of\ the\ last\ placed\ piece.\ Uses\ an\ algoritm\ to\ search\ diagnolly\ for\n\ both\ upper\ and\ lower\ diagonal.\n\ \n\ @param\ <code>Position</code>\ object\ of\ the\ last\ play's\ position\n\ @return\ boolean\ --\ true\ if\ conneced\ diagonally\ /\ false\ otherwise\n\ @author\ Omid\ Hedayatnia\ and\ Zach\n
 comment5.params=
 comment5.target=int[][]\ getWinArray()
-comment5.text=\r\n\ Returns\ the\ winArray.\ the\ winArray\ stores\ the\ positions\ of\ the\ 4\ winning\ pieces\ by\ the\r\n\ player.\r\n\ \r\n\ Zach\r\n
+comment5.text=\n\ <code>getWinArray()</code>\ --\ Returns\ the\ winArray.\ \n\ the\ winArray\ stores\ the\ positions\ of\ the\ 4\ winning\ pieces\ by\ the\ player.\n\ \n\ @return\ int[][]\ winArray\ --\ the\ win\ array\n\ @author\ Zach\n
 comment6.params=
 comment6.target=void\ printWinArray()
-comment6.text=\r\n<<<<<<<\ HEAD\r\n\ Prints\ the\ winArray.\r\n\ For\ debugging\ only\r\n\ \r\n\ Omid\r\n\=\=\=\=\=\=\=\r\n\ printWinArray\ will\ print\ out\ the\ created\ winArray\r\n>>>>>>>\ origin/master\r\n
+comment6.text=\n\ <code>PrintWinArray()</code>\ --\ print\ the\ winArray\n\ FOR\ DEBUGGING\ PURPOSES\ ONLY\n\ \n\ @author\ Omer\n
 comment7.params=p
 comment7.target=boolean\ makeMove(Position)
-comment7.text=\r\n\ \ Attempts\ to\ make\ a\ move\ at\ the\ given\ Position.\ If\ the\ move\ is\ possible,\ the\ move\ is\ made\r\n\ \ and\ makeMove()\ returns\ true.\ If\ a\ move\ is\ not\ possible,\ makeMove\ returns\ false.\r\n\ \ \r\n\ \ OMER\r\n
+comment7.text=\n\ \ <code>makeMove()</code>\ --\ Attempts\ to\ make\ a\ move\ at\ the\ given\ Position.\ \n\ \ If\ the\ move\ is\ possible,\ the\ move\ is\ made\ and\ <code>makeMove()</code>\ returns\ true.\ \n\ \ If\ a\ move\ is\ not\ possible,\ <code>makeMove</code>\ returns\ false.\n\ \ \n\ \ @param\ <code>Position</code>\ object\ of\ the\ last\ play's\ position\n\ \ @return\ boolean\ --\ true\ if\ the\ move\ was\ made\ /\ false\ otherwise\n\ \ @author\ omer\n
 comment8.params=
 comment8.target=void\ printBoard()
-comment8.text=\r\n<<<<<<<\ HEAD\r\n\ Prints\ the\ actual\ board\ after\ every\ turn.\r\n\ For\ debugging\ only\r\n\ \r\n\ Zach\r\n\=\=\=\=\=\=\=\r\n\ printBoard\ wil\ print\ out\ hte\ board\ to\ the\ console\ window\r\n\ zach\r\n>>>>>>>\ origin/master\r\n
+comment8.text=\n\ <code>printBoard()</code>\ --\ prints\ the\ current\ state\ of\ the\ board\ whe\ called\n\ <b>FOR\ DEBUGGING\ PURPOSES\ ONLY\!</b>\n\ \n\ @author\ omer\n
 comment9.params=
 comment9.target=int[]\ getNewWinArray()
-comment9.text=\r\n<<<<<<<\ HEAD\r\n\ returns\ new\ array\ with\ length\ 4,\ with\ linear\ positions\ of\ tokens.\ \r\n\ \r\n\ Sergei\ Levashov\r\n\=\=\=\=\=\=\=\r\n<<<<<<<\ HEAD\r\n\ @author\ omid\r\n\=\=\=\=\=\=\=\r\n\ returns\ new\ array\ with\ length\ 4,\ with\ linear\ positions\ of\ tokens.\r\n\ Sergei\ and\ his\ humble\ assistant\ Omid\r\n>>>>>>>\ origin/master\r\n>>>>>>>\ origin/master\r\n
+comment9.text=\n\ <code>getNewWinArray()</code>\ returns\ new\ array\ with\ length\ 4,\ with\ linear\ positions\ of\ tokens.\n\ \n\ @return\ int[]\ winArray\n\ @author\ Sergei\ and\ \ Omid\n
 numComments=13

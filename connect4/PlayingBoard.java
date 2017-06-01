@@ -1,10 +1,10 @@
 //import javax.swing.*;
 /**
- * In this class we check whether or not one of the players won or not. This areFourConnnected
- * method is called after every move.
+ * class <code>PlayingBoard</code> -- In this class we check whether or not one of the players won or not. 
+ * This areFourConnnected method is called after every move.
  * 
  * @author Zachary, Omer, Sergei
- * @version (1.0 --- June 2, 2017)
+ * @version (1.0.0 --- June 2, 2017)
  */
 public class PlayingBoard 
 {
@@ -15,12 +15,12 @@ public class PlayingBoard
     private int[][] winArray;//represents the winning 4 pieces
     private int[] newWinArray = new int[5];//represents the winArray matrix into an array
     private int placeBelow = 0;//used in getDropOffset() to determine the row position of the last placed piece
-
+    private int wins =0;
     /**
-     * Constructor for objects of class PlayingBoard. board and winArray are instantiated to the
+     * <code>PlayingBoard</code> constructor will construct a board and winArray with the
      * size of the board, ROW x COL
      * 
-     * Zach
+     * @author Zach
      */
     public PlayingBoard()
     {
@@ -29,12 +29,14 @@ public class PlayingBoard
     }
     
     /**
-     * Called after every move. Check for vertical, horizontal, and diagonal to see whether
-     * a person won. p is the position of the last piece put by the user. The horizontal, vertical,
-     * and diagonal method are called, if one is true, then it shortcircuits and returns true, else
-     * if none of the methods return true, areFourConnected returns false
+     * <code>areFourConnected()</code> -- Called after every move. 
+     * Check for vertical, horizontal, and diagonal to see whether a person won. 
+     * p is the position of the last piece put by the user. 
+     * The horizontal, vertical, and diagonal method are called, if one is true, then it shortcircuits and returns true, 
+     * else if none of the methods return true, areFourConnected returns false
      * 
-     * Zach
+     * @return boolean -- true for win / false for lose
+     * @author Zach
      */
     public boolean areFourConnected(Position p)
     {
@@ -42,11 +44,12 @@ public class PlayingBoard
     }
     
     /**
-     * Checks every spot in then proper row. Uses getDropOffset() to find the spot where the user
-     * placed their last piece. Uses a for loop to check every spot in the getDropOffset() row for
-     * four pieces in a row.
+     * <code>horizontal()</code> -- Checks every spot in then proper row. 
+     * Uses getDropOffset() to find the spot where the user placed their last piece. 
+     * Uses a for loop to check every spot in the getDropOffset() row for four pieces in a row.
      *  
-     * Zach
+     * @return boolean -- true if 4 are connected horizontally / false otherwise 
+     * @author Zach
      */
     private boolean horizontal()
     {
@@ -76,7 +79,6 @@ public class PlayingBoard
             else//if there is a space between two pieces
             {
                 count = 0;
-                
             }
         }
         
@@ -84,11 +86,13 @@ public class PlayingBoard
     }
     
     /**
-     * Checks for a vertical win in the column the user last placed their piece. Does not
-     * use getDropOffset(), onnly use p.getX(). All that is needed is the place the player put
+     * <code>vertical()</code> -- Checks for a vertical win in the column the user last placed their piece. 
+     * Does not use getDropOffset(), only use p.getX(). All that is needed is the place the player put
      * their piece so the column can be checked.
      * 
-     * Zach
+     * @param <code>Position</code> object of the last play's position
+     * @return boolean -- true if conneced vertically / false otherwise
+     * @author Zach
      */
     private boolean vertical(Position p)
     {
@@ -133,7 +137,9 @@ public class PlayingBoard
      * Uses the location of the last placed piece. Uses an algoritm to search diagnolly for
      * both upper and lower diagonal.
      * 
-     * Omid Hedayatnia and his servant Zach
+     * @param <code>Position</code> object of the last play's position
+     * @return boolean -- true if conneced diagonally / false otherwise
+     * @author Omid Hedayatnia and Zach
      */
     private boolean diagonal(Position p)
     {
@@ -241,25 +247,24 @@ public class PlayingBoard
         
         return false;
     }
+    
     /**
-     * Returns the winArray. the winArray stores the positions of the 4 winning pieces by the
-     * player.
+     * <code>getWinArray()</code> -- Returns the winArray. 
+     * the winArray stores the positions of the 4 winning pieces by the player.
      * 
-     * Zach
+     * @return int[][] winArray -- the win array
+     * @author Zach
      */
     public int[][] getWinArray()
     {
         return winArray;
     }
+    
     /**
-<<<<<<< HEAD
-     * Prints the winArray.
-     * For debugging only
+     * <code>PrintWinArray()</code> -- print the winArray
+     * FOR DEBUGGING PURPOSES ONLY
      * 
-     * Omid
-=======
-     * printWinArray will print out the created winArray
->>>>>>> origin/master
+     * @author Omer
      */
     private void printWinArray()
     {
@@ -273,11 +278,15 @@ public class PlayingBoard
             System.out.println();
         }    
     }
+    
     /**
-     *  Attempts to make a move at the given Position. If the move is possible, the move is made
-     *  and makeMove() returns true. If a move is not possible, makeMove returns false.
+     *  <code>makeMove()</code> -- Attempts to make a move at the given Position. 
+     *  If the move is possible, the move is made and <code>makeMove()</code> returns true. 
+     *  If a move is not possible, <code>makeMove</code> returns false.
      *  
-     *  OMER
+     *  @param <code>Position</code> object of the last play's position
+     *  @return boolean -- true if the move was made / false otherwise
+     *  @author omer
      */
     public boolean makeMove(Position p) 
     {
@@ -313,16 +322,12 @@ public class PlayingBoard
         printBoard();
         return b;
     }
+    
     /**
-<<<<<<< HEAD
-     * Prints the actual board after every turn.
-     * For debugging only
+     * <code>printBoard()</code> -- prints the current state of the board whe called
+     * <b>FOR DEBUGGING PURPOSES ONLY!</b>
      * 
-     * Zach
-=======
-     * printBoard wil print out hte board to the console window
-     * zach
->>>>>>> origin/master
+     * @author omer
      */
     private void printBoard()
     {
@@ -338,18 +343,10 @@ public class PlayingBoard
         }    
     }
     /**
-<<<<<<< HEAD
-     * returns new array with length 4, with linear positions of tokens. 
+     * <code>getNewWinArray()</code> returns new array with length 4, with linear positions of tokens.
      * 
-     * Sergei Levashov
-=======
-<<<<<<< HEAD
-     * @author omid
-=======
-     * returns new array with length 4, with linear positions of tokens.
-     * Sergei and his humble assistant Omid
->>>>>>> origin/master
->>>>>>> origin/master
+     * @return int[] winArray
+     * @author Sergei and  Omid
      */
     public int[] getNewWinArray()
     {
@@ -370,27 +367,30 @@ public class PlayingBoard
         return newWinArray;
     }
     /**
-     * Changes playerNum into 1 if 2, and 2 if 1. Represents which players turn it is.
+     * <code>changePlayer()</code> -- Changes playerNum into 1 if 2, and 2 if 1. 
+     * Represents which players turn it is.
      * 
-     * Omer
+     * @author Omer
      */
     public void changePlayer()
     {
         playerNum = (playerNum % 2) + 1;
     }
     /**
-     * returns placeBelow
+     * <code>getDropOffset()</code> will return placeBelow
      * 
-     * Sergei
+     * @return int placeBelow
+     * @author Sergei
      */
     public int getDropOffset()
     {
         return placeBelow;
     }
     /**
-     * returns playerNum
+     * <code>getPlayerNum</code> returns current playerNum
      * 
-     * Sergei
+     * @return int playerNum -- either 1 or 2
+     * @author Sergei
      */
     public int getPlayerNum()
     {
