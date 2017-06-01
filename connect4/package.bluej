@@ -47,9 +47,24 @@ dependency22.type=UsesDependency
 dependency23.from=Player
 dependency23.to=Board
 dependency23.type=UsesDependency
+<<<<<<< HEAD
 dependency24.from=Piece
 dependency24.to=AudioPlayer
 dependency24.type=UsesDependency
+=======
+<<<<<<< HEAD
+=======
+dependency24.from=Piece
+dependency24.to=AudioPlayer
+dependency24.type=UsesDependency
+<<<<<<< HEAD
+=======
+dependency25.from=Board
+dependency25.to=Menu
+dependency25.type=UsesDependency
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 dependency3.from=Piece
 dependency3.to=PlayingBoard
 dependency3.type=UsesDependency
@@ -72,12 +87,39 @@ dependency9.from=Board
 dependency9.to=PlayingBoard
 dependency9.type=UsesDependency
 objectbench.height=76
+<<<<<<< HEAD
 objectbench.width=648
 package.editor.height=399
 package.editor.width=540
 package.editor.x=135
 package.editor.y=217
 package.numDependencies=24
+=======
+<<<<<<< HEAD
+objectbench.width=648
+package.editor.height=399
+package.editor.width=540
+package.editor.x=0
+package.editor.y=23
+package.numDependencies=23
+=======
+<<<<<<< HEAD
+objectbench.width=648
+package.editor.height=399
+package.editor.width=550
+package.editor.x=-1800
+package.editor.y=200
+package.numDependencies=24
+=======
+objectbench.width=825
+package.editor.height=441
+package.editor.width=717
+package.editor.x=302
+package.editor.y=206
+package.numDependencies=25
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 package.numTargets=10
 package.showExtends=true
 package.showUses=true
@@ -121,10 +163,23 @@ target2.typeParameters=
 target2.width=80
 target2.x=20
 target2.y=240
+<<<<<<< HEAD
 target3.editor.height=704
 target3.editor.width=775
 target3.editor.x=372
 target3.editor.y=23
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+target3.editor.height=827
+target3.editor.width=1440
+target3.editor.x=0
+target3.editor.y=22
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 target3.height=50
 target3.name=PlayingBoard
 target3.naviview.expanded=false
@@ -147,10 +202,26 @@ target4.typeParameters=
 target4.width=80
 target4.x=160
 target4.y=10
+<<<<<<< HEAD
 target5.editor.height=717
+<<<<<<< HEAD
 target5.editor.width=707
 target5.editor.x=345
 target5.editor.y=75
+=======
+target5.editor.width=900
+target5.editor.x=419
+target5.editor.y=132
+<<<<<<< HEAD
+=======
+=======
+target5.editor.height=827
+target5.editor.width=1440
+target5.editor.x=0
+target5.editor.y=22
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 target5.height=50
 target5.name=Piece
 target5.naviview.expanded=false
@@ -173,10 +244,29 @@ target6.typeParameters=
 target6.width=100
 target6.x=280
 target6.y=70
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
+>>>>>>> origin/master
 target7.editor.height=700
 target7.editor.width=900
 target7.editor.x=209
 target7.editor.y=149
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+target7.editor.height=827
+target7.editor.width=1440
+target7.editor.x=0
+target7.editor.y=22
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 target7.height=50
 target7.name=playerButton
 target7.naviview.expanded=true
@@ -200,12 +290,26 @@ target8.width=80
 target8.x=240
 target8.y=320
 target9.editor.height=827
+<<<<<<< HEAD
+target9.editor.width=709
+target9.editor.x=45
+target9.editor.y=29
+=======
 target9.editor.width=1440
+<<<<<<< HEAD
+target9.editor.x=687
+target9.editor.y=167
+=======
 target9.editor.x=0
 target9.editor.y=22
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 target9.height=50
 target9.name=Menu
-target9.naviview.expanded=true
+target9.naviview.expanded=false
 target9.showInterface=false
 target9.type=ClassTarget
 target9.typeParameters=
