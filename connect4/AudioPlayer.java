@@ -145,7 +145,7 @@ public class AudioPlayer
     {
         
         try{
-        Timer timer = new Timer(2000, new ActionListener() {
+        Timer timer = new Timer(3000, new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 if(player == 1)
                 {

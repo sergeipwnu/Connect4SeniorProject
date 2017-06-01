@@ -12,6 +12,7 @@ public class Piece extends JButton
     private PlayingBoard myBrain;
     private Board myBoard;
     private AudioPlayer audioPlayer;
+    private Menu myMenu;
      /**
      * Sets local y, x, and local references to PlayingBoard and Board.
      * Sergei Levashov
@@ -60,6 +61,8 @@ public class Piece extends JButton
      */
     public void addListener()
     {
+        myMenu = myBoard.getMenu();
+        
         this.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
@@ -79,11 +82,23 @@ public class Piece extends JButton
                     myBrain.changePlayer();
                     if(myBrain.areFourConnected(p))
                     {
+                    myMenu.addWin();
                     myBrain.changePlayer();    
                     myBoard.removeAllButtons();
                     myBoard.shiftGlow(myBrain.getPlayerNum() % 2 + 1);
-                    
                     myBoard.spinWinTokens(myBrain.getNewWinArray(), myBrain.getPlayerNum());
+                    myMenu.resetNeutral();
+                    
+                    if(myMenu.getWins() > 99)
+                    { 
+                        myMenu.unlockTim();
+                    }
+                    
+                    if(myMenu.getWins() > 999)
+                    { 
+                        myMenu.unlockL();
+                    }
+                    
                         try{
                         Timer timer = new Timer(3500, new ActionListener() {
                             public void actionPerformed(ActionEvent evt) {

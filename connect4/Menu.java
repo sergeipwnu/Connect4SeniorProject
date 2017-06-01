@@ -7,7 +7,7 @@ import chn.util.FileInput;
 import chn.util.FileOutput;
 /**
  * <code>Menu</code> class is the menu screen, a window which launches a new Board
- * It extends <code>JFrame</code> link -- 
+ * It extends <code>JFrame</code>  class
  * 
  * @see JFrame API
  * @author Sergei
@@ -15,9 +15,7 @@ import chn.util.FileOutput;
  */
 public class Menu extends JFrame
 {
-
-    private int[] winCountByPlayer;
-
+    //private int[] winCountByPlayer;
     private int winCount = 0;
     private FileInput f;
     private Player player1 = null;
@@ -27,7 +25,7 @@ public class Menu extends JFrame
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
-    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika, tim, l;
+    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika, tim, lants;
     /**
      * <code>Menu()</code> constructor will creates isPC variable to 
      * calculate offsets later in Board.
@@ -41,7 +39,6 @@ public class Menu extends JFrame
         if(System.getProperty("os.name").indexOf("Mac") != -1)
         {
             System.out.println("you are using a mac");
-            
             //figure out how to add icon image for mac here
         }
         else
@@ -61,10 +58,6 @@ public class Menu extends JFrame
         playerIcons.setBackground(new Color(0,0,0,0));
         playerIcons.setLayout(null);
         addPlayerImages();
-        add(playerIcons);
-        add(menu);
-        createButtons();
-        
         if(winCount > 99)
         {
             unlockTim();
@@ -74,6 +67,11 @@ public class Menu extends JFrame
         {
             unlockL();
         }
+        add(playerIcons);
+        add(menu);
+        createButtons();
+        System.out.println("win count: " + winCount);
+        
     }
     
     /**
@@ -85,7 +83,7 @@ public class Menu extends JFrame
      */
     public void initBoard()
     {
-            myBoard = new Board(isPC);
+            myBoard = new Board(isPC, this);
             myBoard.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             myBoard.setSize(1000,800);
             myBoard.setResizable(false);
@@ -152,6 +150,15 @@ public class Menu extends JFrame
      */
     private void createButtons()
     {
+        if(winCount > 999)
+        {
+            add(makeButtonInvisible(new playerButton(330,555,"l",this)));
+        }
+        if(winCount > 99)
+        {
+            add(makeButtonInvisible(new playerButton(530,555,"tim",this)));
+        }
+        
         //first row
         add(makeButtonInvisible(new playerButton(110,175,"omid",this)));
         add(makeButtonInvisible(new playerButton(320,175,"sergei",this)));
@@ -164,18 +171,6 @@ public class Menu extends JFrame
         add(makeButtonInvisible(new playerButton(530,340,"hannah",this)));
         add(makeButtonInvisible(new playerButton(745,340,"kanika",this)));
     }
-    
-    /**
-     * <code>unlockableButtons()</code>creates buttons for the unlocckable characters
-     * 
-     * @author Zachary
-     */
-    private void unlockableButtons()
-    {
-        add(makeButtonInvisible(new playerButton(320,560,"Mr. L",this)));
-        add(makeButtonInvisible(new playerButton(530,560,"unknown",this)));
-    }
-    
     /**
      * returns the passed playerButton as invisible
      * 
@@ -190,14 +185,13 @@ public class Menu extends JFrame
         b.setBorderPainted(false);
         return b;
     }
-    
     /**
      * <code>addPlayerImages()</code> adds all player images 
      * to the JPanel over the <b>invisible</b> buttons
      * 
      * @author Sergei
      */
-    private void addPlayerImages()
+    public void addPlayerImages()
     {
         omid = new JLabel();
         omid.setIcon(new ImageIcon("images/people/omidneutral.png"));
@@ -238,6 +232,54 @@ public class Menu extends JFrame
         kanika.setIcon(new ImageIcon("images/people/kanikaneutral.png"));
         kanika.setBounds(745,348,140,140);
         playerIcons.add(kanika);
+        
+        if(winCount > 99)
+        {
+            unlockTim();
+        }
+        if(winCount > 999)
+        { 
+            unlockL();
+        }
+    }
+    
+    /**
+     * 
+     */
+    public void resetNeutral()
+    {
+        omid.setIcon(new ImageIcon("images/people/omidneutral.png"));
+        omid.setBounds(110,182,140,140);
+        
+        sergei.setIcon(new ImageIcon("images/people/sergeineutral.png"));
+        sergei.setBounds(322,182,140,140);
+        
+        omer.setIcon(new ImageIcon("images/people/omerneutral.png"));
+        omer.setBounds(535,182,140,140);
+        
+        zach.setIcon(new ImageIcon("images/people/zachneutral.png"));
+        zach.setBounds(745,182,140,140);
+        
+        warrick.setIcon(new ImageIcon("images/people/warrickneutral.png"));
+        warrick.setBounds(110,348,140,140);
+        
+        catherines.setIcon(new ImageIcon("images/people/catherinesneutral.png"));
+        catherines.setBounds(322,348,140,140);
+
+        lauren.setIcon(new ImageIcon("images/people/hannahneutral.png"));
+        lauren.setBounds(535,348,139,140);
+       
+        kanika.setIcon(new ImageIcon("images/people/kanikaneutral.png"));
+        kanika.setBounds(745,348,140,140);
+        
+        if(winCount > 999)
+        {
+            add(makeButtonInvisible(new playerButton(330,555,"l",this)));
+        }
+        if(winCount > 99)
+        {
+            add(makeButtonInvisible(new playerButton(530,555,"tim",this)));
+        }
     }
     
     /**
@@ -292,13 +334,14 @@ public class Menu extends JFrame
                 break; 
             case TIM:
                 tim.setIcon(new ImageIcon("images/people/timpick.png"));
-                tim.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                tim.setBounds(534,568,140,140);
                 repaint();
                 break; 
             case L:
-                l.setIcon(new ImageIcon("images/people/lpick.png"));
-                l.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                lants.setIcon(new ImageIcon("images/people/lpick.png"));
+                lants.setBounds(322,568,140,140);
                 repaint();
+                break;
         }
     }
     
@@ -319,9 +362,13 @@ public class Menu extends JFrame
      * 
      * @author
      */
-    private void unlockTim()
+    public void unlockTim()
     {
-        
+        tim = new JLabel();
+        tim.setIcon(new ImageIcon("images/people/timneutral.png"));
+        tim.setBounds(534,568,140,140);
+        playerIcons.add(tim);
+        repaint();
     }
     
     /**
@@ -330,8 +377,13 @@ public class Menu extends JFrame
      * 
      * @author
      */
-    private void unlockL()
+    public void unlockL()
     {
+        lants = new JLabel();
+        lants.setIcon(new ImageIcon("images/people/lneutral.png"));
+        lants.setBounds(322,568,140,140);
+        playerIcons.add(lants);
+        repaint();
     }
     
     /**
@@ -342,14 +394,23 @@ public class Menu extends JFrame
     public void addWin()
     {
         winCount++;
+        writeToFile();
     }
+    
     /**
-     * Zach
+     * <code>writeToFile</code> writes the data to a .txt file when programs closes 
+     * 
+     * @author Zach
      */
     public void writeToFile()
     {
-        FileOutput outFile = new FileOutput("wincount.txt", "write");//opens inwrite mode to overwrite the data
+        FileOutput outFile = new FileOutput("wincount.txt", "write"); //opens in write mode to overwrite the data
         outFile.print(winCount);
         outFile.close();
+    }
+    
+    public int getWins()
+    {
+        return winCount;
     }
 }

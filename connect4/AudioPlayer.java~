@@ -5,15 +5,13 @@ import java.io.File;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * A class for all of the MediaPlayers used by the board
+ * <code>AudioPlayer</code> is class for all of the MediaPlayers used by the board
  * 
- * Sergei Levashov
+ * @author Sergei Levashov
+ * @version 1.0.0
  */
 public class AudioPlayer
 {
-    /**
-     * Constructor for objects of class AudioPlayer
-     */
     private MediaPlayer pick1;
     private MediaPlayer soundtrack;
     private MediaPlayer pick2;
@@ -32,20 +30,39 @@ public class AudioPlayer
     private MediaPlayer ding;
     private Player myP1;
     private Player myP2;
+    
+    /**
+     * <code>AudioPlayer</code> constructor will implement all of the voice lines for players 1 and 2
+     * 
+     * @param Player p1 -- player 1
+     * @param Player p2 -- player 2
+     * @author Sergei
+     */
     public AudioPlayer(Player p1, Player p2)
     {
         myP1 = p1;
         myP2 = p2;
+        drop11 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop1.wav").toURI().toString()));
+        drop21 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop1.wav").toURI().toString()));
+        drop12 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop2.wav").toURI().toString()));
+        drop22 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop2.wav").toURI().toString()));
+        drop13 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop3.wav").toURI().toString()));
+        drop23 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop3.wav").toURI().toString()));
+        lose1 = new MediaPlayer(new Media(new File("audio/" +  myP1.toString() + "/" + myP1.toString() + "_lose.wav").toURI().toString()));
+        lose2 = new MediaPlayer(new Media(new File("audio/" +  myP2.toString() + "/" + myP2.toString() + "_lose.wav").toURI().toString()));
+        win1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_win.wav").toURI().toString()));
+        win2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_win.wav").toURI().toString()));
         //soundtrack = new MediaPlayer(new Media(new File("audio/soundtrack.mp3").toURI().toString()));
         //soundtrack.setRate(.8);
         //soundtrack.setCycleCount(5);
         //soundtrack.setVolume(.05);
         //soundtrack.play();
     }
-    public void stopSoundtrack()
-    {
-        //soundtrack.stop();
-    }
+    /**
+     * <code>DingDingDing()</code> will play the winning Ding sound
+     * 
+     * @author Sergei
+     */
     public void DingDingDing()
     {
             ding = new MediaPlayer(new Media(new File("audio/ding.mp3").toURI().toString()));
@@ -58,41 +75,12 @@ public class AudioPlayer
             });
         
     }
-     /**
-     * Plays the pick sounds for the player passed
-     * Precondition: 1 or 2 is passed
+    
+    /**
+     * <code>playName()</code> plays the name sounds for the player passed
      * 
-     * Sergei Levashov
-     */
-    public void playPick(int player)
-    {
-        pick1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "pick.wav").toURI().toString()));
-        pick2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "pick.wav").toURI().toString()));
-        if(player == 1)
-        {
-        pick1.play();
-        pick1.setOnEndOfMedia(new Runnable(){
-            public void run() {
-               pick1.stop();
-            }
-        });
-        }
-        else
-        {
-            pick2.play();
-            pick2.setOnEndOfMedia(new Runnable(){
-                public void run() {
-                     pick2.stop();
-                }
-        
-            });
-        }
-    }
-     /**
-     * Plays the name sounds for the player passed
-     * Precondition: 1 or 2 is passed
-     * 
-     * Sergei Levashov
+     * @parm int player -- 1 or 2 for what player
+     * @author Sergei Levashov
      */
     public void playName(int player)
     {
@@ -117,7 +105,8 @@ public class AudioPlayer
         });
         }
     }
-     /**
+     
+    /**
      * Plays the win sounds for the player passed
      * Precondition: 1 or 2 is passed
      * 
@@ -125,8 +114,7 @@ public class AudioPlayer
      */
     public void playWin(int player)
     {
-        win1 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_win.wav").toURI().toString()));
-        win2 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_win.wav").toURI().toString()));
+        
         if(player == 1)
         {
             win1.play();
@@ -146,18 +134,18 @@ public class AudioPlayer
         });
         }
     }
-     /**
-     * Plays the lose sounds for the player passed
-     * Precondition: 1 or 2 is passed
+    
+    /**
+     * <code>playLose()</code> plays the lose sounds for the player passed
      * 
-     * Sergei Levashov
+     * @param int player -- 1 or 2 for what player
+     * @author Sergei Levashov
      */
     public void playLose(final int player)
     {
-        lose1 = new MediaPlayer(new Media(new File("audio/" +  myP1.toString() + "/" + myP1.toString() + "_lose.wav").toURI().toString()));
-        lose2 = new MediaPlayer(new Media(new File("audio/" +  myP2.toString() + "/" + myP2.toString() + "_lose.wav").toURI().toString()));
+        
         try{
-        Timer timer = new Timer(1500, new ActionListener() {
+        Timer timer = new Timer(2000, new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 if(player == 1)
                 {
@@ -188,20 +176,16 @@ public class AudioPlayer
             l.printStackTrace();
         }
     }
+    
     /**
-     * Plays the drop sounds for the player passed
-     * Precondition: 1 or 2 is passed
+     * <code>playeDrop()</code> plays the drop sounds for the player passed
      * 
-     * Sergei Levashov
+     * @param int player -- 1 or 2 for what player
+     * @author Sergei Levashov
      */
     public void playDrop(int player)
     {
-        drop11 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop1.wav").toURI().toString()));
-        drop21 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop1.wav").toURI().toString()));
-        drop12 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop2.wav").toURI().toString()));
-        drop22 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop2.wav").toURI().toString()));
-        drop13 = new MediaPlayer(new Media(new File("audio/" + myP1.toString() + "/" + myP1.toString() + "_drop3.wav").toURI().toString()));
-        drop23 = new MediaPlayer(new Media(new File("audio/" + myP2.toString() + "/" + myP2.toString() + "_drop3.wav").toURI().toString()));
+        
         if(player == 1)
         {
             if((((int)(Math.random() * 7))) == 0)

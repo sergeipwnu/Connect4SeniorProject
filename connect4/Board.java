@@ -27,6 +27,7 @@ import javafx.util.Duration;
  */
 public class Board extends JFrame
 {
+    private Menu myMenu;
     private PlayingBoard Brain;
     private JLabel label;
     private JLabel vsImage;
@@ -55,12 +56,13 @@ public class Board extends JFrame
      * @param boolean os -- true for PC, false for mac
      * @author Sergei Levashov
      */
-    public Board(boolean os)
+    public Board(boolean os, Menu m)
     {
         super("Connect 4");
         isPC = os;
         Brain = new PlayingBoard();
         setLayout(null);
+        myMenu = m;
     }
     
     /**
@@ -340,9 +342,10 @@ public class Board extends JFrame
         return offsets;
     }
      /**
-     * shifts glow to pNum image on the top of the board
+     * <code>shiftGlow()</code> shifts glow to pNum image on the top of the board
      * 
-     * Sergei Levashov
+     * @param int pNum -- player number
+     * @author Sergei Levashov
      */
     public void shiftGlow(int pNum)
     {
@@ -432,9 +435,9 @@ public class Board extends JFrame
         }
     }
     /**
-     * removes all board buttons
+     * method <code>removeAllButtons</code> removes all board buttons
      * 
-     * Sergei Levashov
+     * @author Sergei Levashov
      */
     public void removeAllButtons()
     {
@@ -444,8 +447,10 @@ public class Board extends JFrame
         }
     }
     /**
-     * static function that disables an AbstractButton for ms amount of seconds
+     * <code>disable</code> is a static function that disables an AbstractButton for ms amount of milliseconds
      * 
+     * @param <code>AbstarctButton</code> to be disables
+     * @param long ms -- milliseconds to be paused
      * Sergei Levashov
      */
     static void disable(final AbstractButton b, final long ms) {
@@ -462,4 +467,11 @@ public class Board extends JFrame
         }.execute();
     }
     
+    /**
+     * 
+     */
+    public Menu getMenu()
+    {
+        return myMenu;
+    }
 }
