@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=y\ x\ Brain\ myB\ a
 comment0.target=Piece(int,\ int,\ PlayingBoard,\ Board,\ AudioPlayer)
-comment0.text=\n\ Sets\ local\ y,\ x,\ and\ local\ references\ to\ PlayingBoard\ and\ Board.\n\ Sergei\ Levashov\n
+comment0.text=\n\ <code>Piece</code>Sets\ local\ y,\ x,\ and\ local\ references\ to\ PlayingBoard\ and\ Board.\n\ @author\:\ Sergei\ Levashov\n
 comment1.params=
 comment1.target=Piece()
 comment2.params=
