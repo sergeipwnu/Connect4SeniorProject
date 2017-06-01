@@ -48,6 +48,11 @@ dependency23.from=Player
 dependency23.to=Board
 dependency23.type=UsesDependency
 <<<<<<< HEAD
+dependency24.from=Piece
+dependency24.to=AudioPlayer
+dependency24.type=UsesDependency
+=======
+<<<<<<< HEAD
 =======
 dependency24.from=Piece
 dependency24.to=AudioPlayer
@@ -57,6 +62,7 @@ dependency24.type=UsesDependency
 dependency25.from=Board
 dependency25.to=Menu
 dependency25.type=UsesDependency
+>>>>>>> origin/master
 >>>>>>> origin/master
 >>>>>>> origin/master
 dependency3.from=Piece
@@ -85,6 +91,14 @@ objectbench.height=76
 objectbench.width=648
 package.editor.height=399
 package.editor.width=540
+package.editor.x=135
+package.editor.y=217
+package.numDependencies=24
+=======
+<<<<<<< HEAD
+objectbench.width=648
+package.editor.height=399
+package.editor.width=540
 package.editor.x=0
 package.editor.y=23
 package.numDependencies=23
@@ -105,18 +119,19 @@ package.editor.y=206
 package.numDependencies=25
 >>>>>>> origin/master
 >>>>>>> origin/master
+>>>>>>> origin/master
 package.numTargets=10
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
 target1.editor.height=700
-target1.editor.width=900
-target1.editor.x=0
-target1.editor.y=74
+target1.editor.width=803
+target1.editor.x=2
+target1.editor.y=79
 target1.height=50
 target1.name=Player
 target1.naviview.expanded=true
-target1.showInterface=false
+target1.showInterface=true
 target1.type=ClassTarget
 target1.typeParameters=
 target1.width=80
@@ -155,11 +170,14 @@ target3.editor.x=372
 target3.editor.y=23
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
 target3.editor.height=827
 target3.editor.width=1440
 target3.editor.x=0
 target3.editor.y=22
+>>>>>>> origin/master
 >>>>>>> origin/master
 >>>>>>> origin/master
 target3.height=50
@@ -186,6 +204,11 @@ target4.x=160
 target4.y=10
 <<<<<<< HEAD
 target5.editor.height=717
+<<<<<<< HEAD
+target5.editor.width=707
+target5.editor.x=345
+target5.editor.y=75
+=======
 target5.editor.width=900
 target5.editor.x=419
 target5.editor.y=132
@@ -196,6 +219,7 @@ target5.editor.height=827
 target5.editor.width=1440
 target5.editor.x=0
 target5.editor.y=22
+>>>>>>> origin/master
 >>>>>>> origin/master
 >>>>>>> origin/master
 target5.height=50
@@ -223,6 +247,9 @@ target6.y=70
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
 >>>>>>> origin/master
 target7.editor.height=700
 target7.editor.width=900
@@ -230,11 +257,14 @@ target7.editor.x=209
 target7.editor.y=149
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
 target7.editor.height=827
 target7.editor.width=1440
 target7.editor.x=0
 target7.editor.y=22
+>>>>>>> origin/master
 >>>>>>> origin/master
 >>>>>>> origin/master
 target7.height=50
@@ -272,6 +302,9 @@ target9.editor.y=167
 =======
 target9.editor.x=0
 target9.editor.y=22
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
 >>>>>>> origin/master
 >>>>>>> origin/master
 target9.height=50
