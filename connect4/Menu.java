@@ -15,13 +15,7 @@ import chn.util.FileOutput;
  */
 public class Menu extends JFrame
 {
-
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     private int[] winCountByPlayer;
-
     private int winCount = 0;
     private FileInput f;
     private Player player1 = null;
@@ -31,7 +25,7 @@ public class Menu extends JFrame
     private boolean playerInstanceLoaded = false;
     JLabel label;
     JPanel playerIcons;
-    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika, tim, l;
+    private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika, tim, lants;
     /**
      * <code>Menu()</code> constructor will creates isPC variable to 
      * calculate offsets later in Board.
@@ -65,10 +59,6 @@ public class Menu extends JFrame
         playerIcons.setBackground(new Color(0,0,0,0));
         playerIcons.setLayout(null);
         addPlayerImages();
-        add(playerIcons);
-        add(menu);
-        createButtons();
-        
         if(winCount > 99)
         {
             unlockTim();
@@ -78,6 +68,11 @@ public class Menu extends JFrame
         {
             unlockL();
         }
+        add(playerIcons);
+        add(menu);
+        createButtons();
+        System.out.println("win count: " + winCount);
+        
     }
     
     /**
@@ -156,6 +151,15 @@ public class Menu extends JFrame
      */
     private void createButtons()
     {
+        if(winCount > 999)
+        {
+            add(makeButtonInvisible(new playerButton(330,555,"l",this)));
+        }
+        if(winCount > 99)
+        {
+            add(makeButtonInvisible(new playerButton(530,555,"tim",this)));
+        }
+        
         //first row
         add(makeButtonInvisible(new playerButton(110,175,"omid",this)));
         add(makeButtonInvisible(new playerButton(320,175,"sergei",this)));
@@ -168,18 +172,6 @@ public class Menu extends JFrame
         add(makeButtonInvisible(new playerButton(530,340,"hannah",this)));
         add(makeButtonInvisible(new playerButton(745,340,"kanika",this)));
     }
-    
-    /**
-     * <code>unlockableButtons()</code>creates buttons for the unlocckable characters
-     * 
-     * @author Zachary
-     */
-    private void unlockableButtons()
-    {
-        add(makeButtonInvisible(new playerButton(320,560,"Mr. L",this)));
-        add(makeButtonInvisible(new playerButton(530,560,"unknown",this)));
-    }
-    
     /**
      * returns the passed playerButton as invisible
      * 
@@ -194,7 +186,6 @@ public class Menu extends JFrame
         b.setBorderPainted(false);
         return b;
     }
-    
     /**
      * <code>addPlayerImages()</code> adds all player images 
      * to the JPanel over the <b>invisible</b> buttons
@@ -296,12 +287,12 @@ public class Menu extends JFrame
                 break; 
             case TIM:
                 tim.setIcon(new ImageIcon("images/people/timpick.png"));
-                tim.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                tim.setBounds(534,568,140,140);
                 repaint();
                 break; 
             case L:
-                l.setIcon(new ImageIcon("images/people/lpick.png"));
-                l.setBounds(745,348,140,140); //FIGURE OUT COORDINATES
+                lants.setIcon(new ImageIcon("images/people/lpick.png"));
+                lants.setBounds(322,568,140,140);
                 repaint();
         }
     }
@@ -326,6 +317,10 @@ public class Menu extends JFrame
     private void unlockTim()
     {
         
+        tim = new JLabel();
+        tim.setIcon(new ImageIcon("images/people/timneutral.png"));
+        tim.setBounds(534,568,140,140);
+        playerIcons.add(tim);
     }
     
     /**
@@ -336,6 +331,12 @@ public class Menu extends JFrame
      */
     private void unlockL()
     {
+        
+        lants = new JLabel();
+        lants.setIcon(new ImageIcon("images/people/lneutral.png"));
+        lants.setBounds(322,568,140,140);
+        playerIcons.add(lants);
+        
     }
     
     /**
