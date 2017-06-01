@@ -13,6 +13,7 @@ public class Piece extends JButton
     private Board myBoard;
     private AudioPlayer audioPlayer;
     private Menu myMenu;
+    private boolean timUnlockedSession = false;
      /**
      * Sets local y, x, and local references to PlayingBoard and Board.
      * Sergei Levashov
@@ -67,12 +68,8 @@ public class Piece extends JButton
         {
             public void actionPerformed(ActionEvent e)
             {
-                double time = System.currentTimeMillis();
-                System.out.println(myY + " " + myX);
                 Position p = getPosition();
-                System.out.println(System.currentTimeMillis() - time);
                 audioPlayer.playDrop(myBrain.getPlayerNum() % 2 + 1);
-                System.out.println(System.currentTimeMillis() - time);
                 if(myBrain.makeMove(p))
                 {
                     myBoard.addToken(myBoard.getOffsetArray()[myY][myX].getY(),myBoard.getOffsetArray()[0][myX].getX()+103*myBrain.getDropOffset());
@@ -88,12 +85,11 @@ public class Piece extends JButton
                     myBoard.shiftGlow(myBrain.getPlayerNum() % 2 + 1);
                     myBoard.spinWinTokens(myBrain.getNewWinArray(), myBrain.getPlayerNum());
                     myMenu.resetNeutral();
-                    
                     if(myMenu.getWins() > 99)
                     { 
                         myMenu.unlockTim();
+                        timUnlockedSession = true;
                     }
-                    
                     if(myMenu.getWins() > 999)
                     { 
                         myMenu.unlockL();

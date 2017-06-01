@@ -37,11 +37,11 @@ public class playerButton extends JButton
             setText(name);
             try
             {
-                System.out.println("loading " + myName + "    @     audio/" + myName+ "/" + myName + "_pick.wav");
+                //System.out.println("loading " + myName + "    @     audio/" + myName+ "/" + myName + "_pick.wav");
                 pick = new MediaPlayer(new Media(new File("audio/" + myName+ "/" + myName + "_pick.wav").toURI().toString())); //THIS PLAYS ONLY OMIDS VOICE LINE FOR TESTING PURPOSES
             }
             catch(Exception e){ 
-                System.out.println("failed to load " + myName);
+                //System.out.println("failed to load " + myName);
                 pick = null;}
     }
    
@@ -65,7 +65,7 @@ public class playerButton extends JButton
     {
         if(pick != null)
         {
-            System.out.println("play pick audio file for " + myName);
+            //System.out.println("play pick audio file for " + myName);
             pick.play();
             pick.setOnEndOfMedia(new Runnable()
             {

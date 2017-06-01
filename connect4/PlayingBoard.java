@@ -291,13 +291,11 @@ public class PlayingBoard
     public boolean makeMove(Position p) 
     {
         placeBelow = 0;
-        System.out.println(p);
         boolean b;
         
         if(board[p.getY()][p.getX()] > 0)
         {
             b = false;
-            System.out.println("cant do that buddy");
         }
         else 
         {
@@ -308,18 +306,10 @@ public class PlayingBoard
             }
             
             board[placeBelow][p.getX()] = playerNum;
-            if(areFourConnected(p))
-            {
-                System.out.println(">>>>>>>PLAYER " + playerNum + 
-                                    " WINS<<<<<<<<<");
-
-                printWinArray();
-            }
             changePlayer();
             b = true;
         }
         
-        printBoard();
         return b;
     }
     

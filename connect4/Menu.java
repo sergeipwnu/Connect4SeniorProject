@@ -38,12 +38,11 @@ public class Menu extends JFrame
         super("Connect4 Menu");
         if(System.getProperty("os.name").indexOf("Mac") != -1)
         {
-            System.out.println("you are using a mac");
-            //figure out how to add icon image for mac here
+            //System.out.println("you are using a mac");
         }
         else
         {
-            System.out.println("you are using a pc");
+            //System.out.println("you are using a pc");
             isPC = true;
             setIconImage(new ImageIcon("images/icons/connect4.png").getImage());
         }
@@ -53,24 +52,18 @@ public class Menu extends JFrame
         menu.setIcon(new ImageIcon("images/boards/Connect4Menu.png"));
         menu.setBounds(0,0,1000,800);
         menu.setVisible(true);
+        tim = new JLabel();
+        lants = new JLabel();
         playerIcons = new JPanel();
         playerIcons.setBounds(0,0,1000,800);
         playerIcons.setBackground(new Color(0,0,0,0));
         playerIcons.setLayout(null);
         addPlayerImages();
-        if(winCount > 99)
-        {
-            unlockTim();
-        }
-        
-        if(winCount > 999)
-        {
-            unlockL();
-        }
         add(playerIcons);
         add(menu);
         createButtons();
-        System.out.println("win count: " + winCount);
+        
+        //System.out.println("win count: " + winCount);
         
     }
     
@@ -275,10 +268,14 @@ public class Menu extends JFrame
         if(winCount > 999)
         {
             add(makeButtonInvisible(new playerButton(330,555,"l",this)));
+            lants.setIcon(new ImageIcon("images/people/lneutral.png"));
+            lants.setBounds(322,568,140,140);
         }
         if(winCount > 99)
         {
             add(makeButtonInvisible(new playerButton(530,555,"tim",this)));
+            tim.setIcon(new ImageIcon("images/people/timneutral.png"));
+            tim.setBounds(534,568,140,140);
         }
     }
     
@@ -364,13 +361,11 @@ public class Menu extends JFrame
      */
     public void unlockTim()
     {
-        tim = new JLabel();
         tim.setIcon(new ImageIcon("images/people/timneutral.png"));
         tim.setBounds(534,568,140,140);
         playerIcons.add(tim);
         repaint();
     }
-    
     /**
      * <code>unlockL()</code> method will unlock Mr. L and make
      * him into a playable character
@@ -379,7 +374,6 @@ public class Menu extends JFrame
      */
     public void unlockL()
     {
-        lants = new JLabel();
         lants.setIcon(new ImageIcon("images/people/lneutral.png"));
         lants.setBounds(322,568,140,140);
         playerIcons.add(lants);
