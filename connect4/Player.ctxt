@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.params=name
 comment0.target=Player(java.lang.String)
+<<<<<<< Updated upstream
 comment0.text=\n\ constructor\ <code>Player</code>\ -\ will\ make\ a\ new\ <code>Player</code>\n\ object\ with\ the\ passed\ String.\n\ \n\ @param\ String\ name\ --\ name\ of\ player\n\ @author\ Sergei\ and\ Omid\n
 comment1.params=
 comment1.target=java.lang.String\ toString()
@@ -20,11 +21,36 @@ comment5.text=\n\ <code>setAudioPlayer()</code>\ <b>summary</b>\:\ sets\ local\ 
 comment6.params=b\ s
 comment6.target=void\ addVoiceBoxListener(Piece,\ java.lang.String)
 comment6.text=\n\ <code>addVoiceBoxListener</code>\ <b>summary</b>\:\ adds\ a\ listener\ to\ a\ specefied\ \n\ JButton\ and\ plays\ an\ audio\ file\ on\ click\n\ \n\ @param\ <code>Piece</code>\ object\n\ @param\ String\ --\ either\ "left"\ or\ "right"\n\ @author\ Sergei\ Levashov\n
+=======
+comment0.text=\n\ <code>Player</code>\ constructor\ will\ make\ a\ new\ <code>Player</code>\n\ object\ with\ the\ passed\ String.\n\ \n\ @param\ String\ name\ --\ name\ of\ player\n\ @author\ Sergei\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+comment1.text=\n\ @Override\n\ <code>toString()</code>\ will\ make\ a\ string\ representation\ \n\ of\ the\ <code>Player</code>\ object\n\ \n\ @return\ String\ name\ --\ name\ of\ the\ player\n\ @author\ Sergei\ Levashov\n
+comment2.params=b
+comment2.target=void\ setBoard(Board)
+comment2.text=\n\ <code>setBoard()</code>\ will\ set\ the\ board\ with\ a\ passed\n\ <code>Board</code>\ object\n\ \n\ @param\ <code>Board</code>\ b\ --\ <code>Board</code>\ object\n\ @author\ Omer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \n
+comment3.params=
+comment3.target=java.lang.String\ getPath()
+comment3.text=\n\ <code>getPath()</code>\ returns\ the\ image\ path\n\ \n\ @return\ String\ myImage\ --\ the\ image\ path\n\ @author\ Sergei\ Levashov\n
+comment4.params=color
+comment4.target=void\ addColorToPath(java.lang.String)
+comment4.text=\n\ <code>addColorToPath()</code>\ adds\ a\ color\ to\ the\ imagepath\ \n\ \n\ @param\ String\ color\ --\ the\ name\ of\ the\ color\ "b"\ or\ "r"\n\ @author\ Sergei\ Levashov\n
+comment5.params=au
+comment5.target=void\ setAudioPlayer(AudioPlayer)
+comment5.text=\n\ <code>setAudioPlayer()</code>\ sets\ local\ audioplayer\ with\ the\n\ passed\ <code>AudioPlayer</code>\ object\n\ \n\ @param\ <code>AudioPlayer</code>\ object\ \n\ @author\ Sergei\ Levashov\n
+comment6.params=b\ s
+comment6.target=void\ addVoiceBoxListener(Piece,\ java.lang.String)
+comment6.text=\n\ <code>addVoiceBoxListener</code<\ adds\ a\ listener\ to\ a\ specefied\ \n\ JButton\ and\ plays\ an\ audio\ file\ on\ click\n\ \n\ @param\ <code>Piece</code>\ object\n\ @param\ String\ --\ either\ "left"\ or\ "right"\n\ @author\ Sergei\ Levashov\n
+>>>>>>> Stashed changes
 comment7.params=e
 comment7.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment8.params=e
 comment8.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment9.params=
 comment9.target=enumPlayers\ getEnum()
+<<<<<<< Updated upstream
 comment9.text=\n\ <code>getEnum()</code>\ <b>summary</b>\:\ will\ return\ the\ enum\ representation\ \n\ of\ the\ player\n\ \n\ @return\ enum\ myEnum\n\ @author\ Omer\n
+=======
+comment9.text=\n\ <code>getEnum()</code>\ will\ return\ the\ enum\ representation\ \n\ of\ the\ player\n\ \n\ @return\ enum\ myEnum\n\ @author\ Omer\n
+>>>>>>> Stashed changes
 numComments=10

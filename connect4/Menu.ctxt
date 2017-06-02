@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Menu()
+<<<<<<< Updated upstream
 comment0.text=\n\ constructor\ <code>Menu()</code>\ -\ will\ creates\ isPC\ variable\ to\ \n\ calculate\ offsets\ later\ in\ Board.\n\ Will\ also\ create\ and\ add\ all\ buttons\ to\ the\ JFrame,\ as\ well\ as\ player\ images\n\ \n\ @author\ Sergei\n
 comment1.params=
 comment1.target=void\ initBoard()
@@ -26,10 +27,38 @@ comment15.text=\n\ <code>addWin()</code>\ <b>summary</b>\:\ will\ add\ a\ win\ t
 comment16.params=
 comment16.target=void\ writeToFile()
 comment16.text=\n\ <code>writeToFile</code>\ <b>summary</b>\:\ writes\ the\ data\ to\ a\ .txt\ file\ when\ programs\ closes\ \n\ \n\ @author\ Zach\n
+=======
+comment0.text=\n\ <code>Menu()</code>\ constructor\ will\ creates\ isPC\ variable\ to\ \n\ calculate\ offsets\ later\ in\ Board.\n\ Will\ also\ create\ and\ add\ all\ buttons\ to\ the\ JFrame,\ as\ well\ as\ player\ images\n\ \n\ @author\ Sergei\n
+comment1.params=
+comment1.target=void\ initBoard()
+comment1.text=\n\ <code>initBoard()</code>\ initializes\ the\ board\ with\ the\ isPC\ variable\n\ \n\ Postcondition\:\ DISPOSE_ON_CLOSE,1000x800,non-resizable\n\ \n\ @author\ Sergei\n
+comment10.params=
+comment10.target=void\ resetNeutral()
+comment10.text=\n\ \n
+comment11.params=p
+comment11.target=void\ changePlayerImage(enumPlayers)
+comment11.text=\n\ <code>changePlayerImage()</code>\ overlays\ pick\ image\ over\ passed\ player\n\ \n\ @param\ <code>enumPlayers</code>\ p\ --\ enum\ representation\ of\ the\ player\ names\n\ @author\ Omer\n
+comment12.params=
+comment12.target=void\ loadFromFile()
+comment12.text=\n\ <code>loadFromFile()</code>\ will\ load\ win\ data\ from\ a\ file\n\ \n\ @author\ Omer\n
+comment13.params=
+comment13.target=void\ unlockTim()
+comment13.text=\n\ <code>unlockTim()</code>\ method\ will\ unlock\ Tim\ the\ Enchanter\ and\ make\n\ him\ into\ a\ playable\ character\n\ \n\ @author\n
+comment14.params=
+comment14.target=void\ unlockL()
+comment14.text=\n\ <code>unlockL()</code>\ method\ will\ unlock\ Mr.\ L\ and\ make\n\ him\ into\ a\ playable\ character\n\ \n\ @author\n
+comment15.params=
+comment15.target=void\ addWin()
+comment15.text=\n\ <code>addWin()</code>\ will\ add\ a\ win\ to\ the\ total\ win\ count\n\ \n\ @authot\ omer\n
+comment16.params=
+comment16.target=void\ writeToFile()
+comment16.text=\n\ <code>writeToFile</code>\ writes\ the\ data\ to\ a\ .txt\ file\ when\ programs\ closes\ \n\ \n\ @author\ Zach\n
+>>>>>>> Stashed changes
 comment17.params=
 comment17.target=int\ getWins()
 comment2.params=
 comment2.target=void\ startGame()
+<<<<<<< Updated upstream
 comment2.text=\n\ <code>startGame()</code>\ <b>summary</b>\:\ starts\ the\ game\ by\ launching\ the\ local\ Board\ with\ both\ players\n\ @author\ Sergei\n
 comment3.params=
 comment3.target=boolean\ isPicked()
@@ -52,4 +81,28 @@ comment8.text=\n\ <code>playerButton()</code>\ <b>summary</b>\:\ returns\ the\ p
 comment9.params=
 comment9.target=void\ addPlayerImages()
 comment9.text=\n\ <code>addPlayerImages()</code>\ <b>summary</b>\:\ adds\ all\ player\ images\ \n\ to\ the\ JPanel\ over\ the\ <b>invisible</b>\ buttons\n\ \n\ @author\ Sergei\n
+=======
+comment2.text=\n\ <code>startGame()</code>\ starts\ the\ game\ by\ launching\ the\ local\ Board\ with\ both\ players\n\ @author\ Sergei\n
+comment3.params=
+comment3.target=boolean\ isPicked()
+comment3.text=\n\ <code>isPicked()</code>\ returns\ true\ if\ player\ 1\ is\ already\ selected,\ false\ if\ not\n\ \n\ @return\ true\ or\ false\ if\ player\ 1\ is\ picked\n\ @author\ Sergei\ Levashov\n
+comment4.params=
+comment4.target=void\ setPicked()
+comment4.text=\n\ <code>setPicked</code>\ sets\ player\ 1\ to\ be\ selected\n\ \n\ @author\ Sergei\ Levashov\n
+comment5.params=p
+comment5.target=void\ setPlayer1(Player)
+comment5.text=\n\ sets\ the\ player\ to\ the\ player\ passed\ from\ listener,\ as\ well\ as\ the\ their\ piece\ color\n\ player1\ is\ set\ to\ blue\n\ Sergei\ Levashov\n
+comment6.params=p
+comment6.target=void\ setPlayer2(Player)
+comment6.text=\n\ sets\ the\ player\ to\ the\ player\ passed\ from\ listener,\ as\ well\ as\ the\ their\ piece\ color\n\ player2\ is\ set\ to\ red\n\ Sergei\ Levashov\n
+comment7.params=
+comment7.target=void\ createButtons()
+comment7.text=\n\ <code>createButtons()</code>\ creates\ all\ player\ buttons\ and\ makes\ them\ <b>invisible</b>\n\ \n\ @author\ Sergei\ and\ Zachary\n
+comment8.params=b
+comment8.target=playerButton\ makeButtonInvisible(playerButton)
+comment8.text=\n\ returns\ the\ passed\ playerButton\ as\ invisible\n\ \n\ @return\ <b>invisible</b>\ <code>playerButton</code>\ \ \n\ @param\ \ <code>playerButton</code>\ to\ be\ made\ invisible\n\ @author\ Sergei\n
+comment9.params=
+comment9.target=void\ addPlayerImages()
+comment9.text=\n\ <code>addPlayerImages()</code>\ adds\ all\ player\ images\ \n\ to\ the\ JPanel\ over\ the\ <b>invisible</b>\ buttons\n\ \n\ @author\ Sergei\n
+>>>>>>> Stashed changes
 numComments=18

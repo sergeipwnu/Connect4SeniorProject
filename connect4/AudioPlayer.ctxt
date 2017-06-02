@@ -1,10 +1,17 @@
 #BlueJ class context
 comment0.params=p1\ p2
 comment0.target=AudioPlayer(Player,\ Player)
+<<<<<<< Updated upstream
 comment0.text=\n\ constructor\ <code>AudioPlayer</code>\ -\ will\ implement\ all\ of\ the\ voice\ lines\ for\ players\ 1\ and\ 2\n\ \n\ @param\ Player\ p1\ --\ player\ 1\n\ @param\ Player\ p2\ --\ player\ 2\n\ @author\ Sergei\n
 comment1.params=
 comment1.target=void\ DingDingDing()
 comment1.text=\n\ <code>DingDingDing()</code>\ <b>summary</b>\:\ will\ play\ the\ winning\ Ding\ sound\n\ \n\ @author\ Sergei\n
+=======
+comment0.text=\n\ <code>AudioPlayer</code>\ constructor\ will\ implement\ all\ of\ the\ voice\ lines\ for\ players\ 1\ and\ 2\n\ \n\ @param\ Player\ p1\ --\ player\ 1\n\ @param\ Player\ p2\ --\ player\ 2\n\ @author\ Sergei\n
+comment1.params=
+comment1.target=void\ DingDingDing()
+comment1.text=\n\ <code>DingDingDing()</code>\ will\ play\ the\ winning\ Ding\ sound\n\ \n\ @author\ Sergei\n
+>>>>>>> Stashed changes
 comment10.params=evt
 comment10.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment11.params=
@@ -13,7 +20,11 @@ comment12.params=
 comment12.target=void\ run()
 comment13.params=player
 comment13.target=void\ playDrop(int)
+<<<<<<< Updated upstream
 comment13.text=\n\ <code>playeDrop()</code>\ <b>summary</b>\:\ plays\ the\ drop\ sounds\ for\ the\ player\ passed\n\ \n\ @param\ int\ player\ --\ 1\ or\ 2\ for\ what\ player\n\ @author\ Sergei\ Levashov\n
+=======
+comment13.text=\n\ <code>playeDrop()</code>\ plays\ the\ drop\ sounds\ for\ the\ player\ passed\n\ \n\ @param\ int\ player\ --\ 1\ or\ 2\ for\ what\ player\n\ @author\ Sergei\ Levashov\n
+>>>>>>> Stashed changes
 comment14.params=
 comment14.target=void\ run()
 comment15.params=
@@ -30,19 +41,31 @@ comment2.params=
 comment2.target=void\ run()
 comment3.params=player
 comment3.target=void\ playName(int)
+<<<<<<< Updated upstream
 comment3.text=\n\ <code>playName()</code>\ <b>summary</b>\:\ plays\ the\ name\ sounds\ for\ the\ player\ passed\n\ \n\ @parm\ int\ player\ --\ 1\ or\ 2\ for\ what\ player\n\ @author\ Sergei\ Levashov\n
+=======
+comment3.text=\n\ <code>playName()</code>\ plays\ the\ name\ sounds\ for\ the\ player\ passed\n\ \n\ @parm\ int\ player\ --\ 1\ or\ 2\ for\ what\ player\n\ @author\ Sergei\ Levashov\n
+>>>>>>> Stashed changes
 comment4.params=
 comment4.target=void\ run()
 comment5.params=
 comment5.target=void\ run()
 comment6.params=player
 comment6.target=void\ playWin(int)
+<<<<<<< Updated upstream
 comment6.text=\n\ <code>playWin()</code>\ <b>summary</b>\:\ Plays\ the\ win\ sounds\ for\ the\ player\ passed\n\ Precondition\:\ 1\ or\ 2\ is\ passed\n\ \n\ @author\ Sergei\ Levashov\n
+=======
+comment6.text=\n\ Plays\ the\ win\ sounds\ for\ the\ player\ passed\n\ Precondition\:\ 1\ or\ 2\ is\ passed\n\ \n\ Sergei\ Levashov\n
+>>>>>>> Stashed changes
 comment7.params=
 comment7.target=void\ run()
 comment8.params=
 comment8.target=void\ run()
 comment9.params=player
 comment9.target=void\ playLose(int)
+<<<<<<< Updated upstream
 comment9.text=\n\ <code>playLose()</code>\ <b>summary</b>\:\ plays\ the\ lose\ sounds\ for\ the\ player\ passed\n\ \n\ @param\ int\ player\ --\ 1\ or\ 2\ for\ what\ player\n\ @author\ Sergei\ Levashov\n
+=======
+comment9.text=\n\ <code>playLose()</code>\ plays\ the\ lose\ sounds\ for\ the\ player\ passed\n\ \n\ @param\ int\ player\ --\ 1\ or\ 2\ for\ what\ player\n\ @author\ Sergei\ Levashov\n
+>>>>>>> Stashed changes
 numComments=20
