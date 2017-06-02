@@ -100,6 +100,7 @@ public class PlayingBoard
                 {
                     if(board[k][i] == playerNum && board[k-1][i+1] == playerNum && board[k-2][i+2] == playerNum)
                     {
+                        System.out.println("yeet " + i + " " + k);
                         for(int z = 0; z < 4; z++)
                         {
                             winArray[k][i] = board[k][i];
@@ -445,7 +446,7 @@ public class PlayingBoard
      */
     public int[] getNewWinArray()
     {
-        newWinArray = new int[7]{-1,-1,-1,-1,-1,-1,-1,-1};
+        newWinArray = new int[]{-1,-1,-1,-1,-1,-1,-1,-1};
         int p = 0;
         int count = 0;
         for(int y = 0; y < ROW; y++)
