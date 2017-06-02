@@ -428,10 +428,12 @@ public class Board extends JFrame
         //System.out.println(winArr[0] + " " + winArr[1] + " " + winArr[2] + " " + winArr[3] + " ");
         for(int x = 0; x < winArr.length; x++)
         {
-            
-            System.out.println(buttons.get(winArr[x]).getPosition());
-            myPos = buttons.get(winArr[x]).getPosition();
-            addToken(getOffsetArray()[myPos.getY()][myPos.getX()].getY(),getOffsetArray()[0][myPos.getX()].getX()+103*(winArr[x]/7),player);
+            if(winArr[x] != -1)
+            {
+                System.out.println(buttons.get(winArr[x]).getPosition());
+                myPos = buttons.get(winArr[x]).getPosition();
+                addToken(getOffsetArray()[myPos.getY()][myPos.getX()].getY(),getOffsetArray()[0][myPos.getX()].getX()+103*(winArr[x]/7),player);
+            }
         }
     }
     /**

@@ -13,7 +13,7 @@ public class PlayingBoard
     private int playerNum = 1;//represents which player's turn it is; starts at 1 (player 1)
     private int[][] board;//the playing board
     private int[][] winArray;//represents the winning 4 pieces
-    private int[] newWinArray = new int[7];//represents the winArray matrix into an array
+    private int[] newWinArray;//represents the winArray matrix into an array
     private int placeBelow = 0;//used in getDropOffset() to determine the row position of the last placed piece
     private int wins =0;
     /**
@@ -40,7 +40,112 @@ public class PlayingBoard
      */
     public boolean areFourConnected(Position p)
     {
-        return horizontal() || vertical(p) || diagonal(p);
+    int k = 0;
+    // horizontalCheck 
+    for (int j = 0; j<COL-3 ; j++ ){
+        for (int i = 0; i<ROW; i++){
+            if (board[i][j] == playerNum && board[i][j+1] == playerNum && board[i][j+2] == playerNum && board[i][j+3] == playerNum){
+                {
+                    for(int x = 1; x < COL-2; x++)
+                    {
+                        if(board[getDropOffset()][x-1] == playerNum && board[getDropOffset()][x] == playerNum && board[getDropOffset()][x+1] == playerNum)
+                        {
+                            for(int z = x-1; z <= x+2; z++)
+                                winArray[getDropOffset()][z] = board[getDropOffset()][z];
+                        }
+                    }
+                    return true;
+                }
+            }           
+        }
+    }
+    // verticalCheck
+    for (int i = 0; i<ROW-3 ; i++ ){
+        for (int j = 0; j<COL; j++){
+            if (board[i][j] == playerNum && board[i+1][j] == playerNum && board[i+2][j] == playerNum && board[i+3][j] == playerNum){
+                
+                {
+                    for(int y = 1; y < ROW-2; y++)
+                    {
+                        if(board[y-1][p.getX()] == playerNum && board[y][p.getX()] == playerNum && board[y+1][p.getX()] == playerNum)
+                        {
+                            for(int z = y-1; z <= y+2; z++)
+                                winArray[z][p.getX()] = board[z][p.getX()];
+                        }
+                    }
+                    for(int l = 0; l < ROW; l++)
+                    {
+                        if(!(winArray[l][p.getX()] == playerNum))
+                        {
+                            winArray[l][p.getX()] = 0; // removes everything that isnt the winning player
+                        }
+                    }
+                    return true;
+                }
+            }           
+        }
+    }
+    // ascendingDiagonalCheck 
+    for (int i=3; i<ROW; i++){
+        for (int j=0; j<COL-3; j++){
+            if (board[i][j] == playerNum && board[i-1][j+1] == playerNum && board[i-2][j+2] == playerNum && board[i-3][j+3] == playerNum)
+            {    
+                i = p.getX() - (ROW - getDropOffset() - 1);
+                k = getDropOffset() + p.getX(); 
+                if(i < 0)
+                    i = 0;
+                if(k >= ROW)
+                    k = ROW - 1;
+                while(k > 2 && i < COL-2)
+                {
+                    if(board[k][i] == playerNum && board[k-1][i+1] == playerNum && board[k-2][i+2] == playerNum)
+                    {
+                        for(int z = 0; z < 4; z++)
+                        {
+                            winArray[k][i] = board[k][i];
+                            k--;
+                            i++;
+                        }
+                    }
+                    i++;
+                    k--;
+                }
+                return true;
+            }
+        }
+    }
+    // descendingDiagonalCheck
+    for (int i=3; i<ROW; i++){
+        for (int j=3; j<COL; j++){
+            if (board[i][j] == playerNum && board[i-1][j-1] == playerNum && board[i-2][j-2] == playerNum && this.board[i-3][j-3] == playerNum)
+            {    
+                i = p.getX() - getDropOffset();//col
+                k = getDropOffset() - p.getX();//row
+                if(i < 0)
+                    i = 0;
+                if(k < 0)
+                    k = 0;
+                while(k < ROW - 2 && i < COL-2)
+                {
+                    if(board[k][i] == playerNum && board[k+1][i+1] == playerNum && board[k+2][i+2] == playerNum)
+                    {
+                        for(int z = 0; z < 4; z++)
+                        {
+                            winArray[k][i] = board[k][i];
+                            k++;
+                            i++;
+                        }
+                    }
+                    i++;
+                    k++;
+                }
+                return true;
+            }
+        }
+    }
+    return false;
+
+        //return horizontal() || vertical(p) || diagonal(p);
     }
     
     /**
@@ -340,6 +445,7 @@ public class PlayingBoard
      */
     public int[] getNewWinArray()
     {
+        newWinArray = new int[]{-1,-1,-1,-1,-1,-1,-1,-1};
         int p = 0;
         int count = 0;
         for(int y = 0; y < ROW; y++)

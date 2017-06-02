@@ -425,8 +425,8 @@ public class Board extends JFrame
     {
         Position myPos;
         sounds.DingDingDing();
-        System.out.println(winArr[0] + " " + winArr[1] + " " + winArr[2] + " " + winArr[3] + " ");
-        for(int x = 0; x < 4; x++)
+        //System.out.println(winArr[0] + " " + winArr[1] + " " + winArr[2] + " " + winArr[3] + " ");
+        for(int x = 0; x < winArr.length; x++)
         {
             
             System.out.println(buttons.get(winArr[x]).getPosition());
