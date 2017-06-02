@@ -13,7 +13,7 @@ public class PlayingBoard
     private int playerNum = 1;//represents which player's turn it is; starts at 1 (player 1)
     private int[][] board;//the playing board
     private int[][] winArray;//represents the winning 4 pieces
-    private int[] newWinArray = new int[5];//represents the winArray matrix into an array
+    private int[] newWinArray = new int[7];//represents the winArray matrix into an array
     private int placeBelow = 0;//used in getDropOffset() to determine the row position of the last placed piece
     private int wins =0;
     /**
