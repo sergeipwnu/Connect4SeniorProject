@@ -5,7 +5,7 @@ import java.io.File;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * <code>AudioPlayer</code> is class for all of the MediaPlayers used by the board
+ * class <code>AudioPlayer</code> - for all of the MediaPlayers used by the board
  * 
  * @author Sergei Levashov
  * @version 1.0.0
@@ -32,7 +32,7 @@ public class AudioPlayer
     private Player myP2;
     
     /**
-     * <code>AudioPlayer</code> constructor will implement all of the voice lines for players 1 and 2
+     * constructor <code>AudioPlayer</code> - will implement all of the voice lines for players 1 and 2
      * 
      * @param Player p1 -- player 1
      * @param Player p2 -- player 2
@@ -59,7 +59,7 @@ public class AudioPlayer
         //soundtrack.play();
     }
     /**
-     * <code>DingDingDing()</code> will play the winning Ding sound
+     * <code>DingDingDing()</code> <b>summary</b>: will play the winning Ding sound
      * 
      * @author Sergei
      */
@@ -77,7 +77,7 @@ public class AudioPlayer
     }
     
     /**
-     * <code>playName()</code> plays the name sounds for the player passed
+     * <code>playName()</code> <b>summary</b>: plays the name sounds for the player passed
      * 
      * @parm int player -- 1 or 2 for what player
      * @author Sergei Levashov
@@ -107,10 +107,10 @@ public class AudioPlayer
     }
      
     /**
-     * Plays the win sounds for the player passed
+     * <code>playWin()</code> <b>summary</b>: Plays the win sounds for the player passed
      * Precondition: 1 or 2 is passed
      * 
-     * Sergei Levashov
+     * @author Sergei Levashov
      */
     public void playWin(int player)
     {
@@ -136,7 +136,7 @@ public class AudioPlayer
     }
     
     /**
-     * <code>playLose()</code> plays the lose sounds for the player passed
+     * <code>playLose()</code> <b>summary</b>: plays the lose sounds for the player passed
      * 
      * @param int player -- 1 or 2 for what player
      * @author Sergei Levashov
@@ -178,7 +178,7 @@ public class AudioPlayer
     }
     
     /**
-     * <code>playeDrop()</code> plays the drop sounds for the player passed
+     * <code>playeDrop()</code> <b>summary</b>: plays the drop sounds for the player passed
      * 
      * @param int player -- 1 or 2 for what player
      * @author Sergei Levashov

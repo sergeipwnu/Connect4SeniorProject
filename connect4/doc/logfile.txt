@@ -1,6 +1,6 @@
 Class documentation
 <---- javadoc command: ---->
-/Applications/BlueJ.app/Contents/JDK/Home/bin/javadoc
+/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/JDK/Home/bin/javadoc
 -author
 -version
 -nodeprecated
@@ -12,46 +12,42 @@ Class documentation
 -source
 1.8
 -classpath
-/Applications/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/Applications/BlueJ.app/Contents/Resources/Java/junit-4.8.2.jar:/Users/omerhananya/Downloads/APCS install/extra libraries:/Users/omerhananya/Downloads/APCS install/extra libraries/chndocs.jar:/Users/omerhananya/Downloads/APCS install/extra libraries/chnutil.jar:/Applications/BlueJ.app/Contents/Resources/Java/userlib/pi4j-core.jar:/Applications/BlueJ.app/Contents/Resources/Java/userlib/pi4j-device.jar:/Applications/BlueJ.app/Contents/Resources/Java/userlib/pi4j-gpio-extension.jar:/Applications/BlueJ.app/Contents/Resources/Java/userlib/pi4j-service.jar:/Users/omerhananya/Desktop/Connect4SeniorProject/connect4
+/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/Resources/Java/junit-4.8.2.jar:/Applications/BlueJ 3.1.7/extra libraries:/Users/omidheda/Downloads/BlueJ 3.1.7/extra libraries:/Users/omidheda/Downloads/BlueJ 3.1.7/extra libraries/chnutil.jar:/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/Resources/Java/userlib/pi4j-core.jar:/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/Resources/Java/userlib/pi4j-device.jar:/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/Resources/Java/userlib/pi4j-gpio-extension.jar:/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/Resources/Java/userlib/pi4j-service.jar:/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4
 -d
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc
 -encoding
 UTF-8
 -charset
 UTF-8
 -docletpath
-/Applications/BlueJ.app/Contents/Resources/Java/bjdoclet.jar
+/Users/omidheda/Downloads/BlueJ 3.1.7/BlueJ.app/Contents/Resources/Java/bjdoclet.jar
 -doclet
 bluej.doclet.doclets.formats.html.HtmlDoclet
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java
 <---- end of javadoc command ---->
-Loading source file /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java...
+Loading source file /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java...
 Constructing Javadoc information...
 Standard Doclet version 1.8.0_66
 Building tree for all the packages and classes...
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/Player.html...
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:24: warning - Tag @author cannot be used in constructor documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:24: warning - @param argument "String" is not a parameter name.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:123: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:123: warning - @param argument "String" is not a parameter name.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:147: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:147: warning - @param argument "<code>Piece</code>" is not a parameter name.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:147: warning - @param argument "String" is not a parameter name.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:178: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:112: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:134: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:134: warning - @param argument "<code>AudioPlayer</code>" is not a parameter name.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:101: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:101: warning - @param argument "<code>Board</code>" is not a parameter name.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:89: warning - @Override is an unknown tag.
-/Users/omerhananya/Desktop/Connect4SeniorProject/connect4/Player.java:89: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/package-frame.html...
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/package-summary.html...
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/constant-values.html...
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/Piece.html...
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:37: warning - Tag @author cannot be used in constructor documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:37: warning - @param argument "int" is not a parameter name.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:37: warning - @param argument "int" is not a parameter name.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:37: warning - @param argument "<code>PlayingBoard</code>" is not a parameter name.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:37: warning - @param argument "<code>Board</code>" is not a parameter name.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:37: warning - @param argument "<code>AudioPlayer</code>" is not a parameter name.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:86: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:53: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:76: warning - @Override is an unknown tag.
+/Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/Piece.java:76: warning - Tag @author cannot be used in method documentation.  It can only be used in the following types of documentation: overview, package, class/interface.
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/package-frame.html...
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/package-summary.html...
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/constant-values.html...
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/serialized-form.html...
 Building index for all the packages and classes...
 Building index for all classes...
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/allclasses-frame.html...
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/allclasses-noframe.html...
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/index.html...
-Generating /Users/omerhananya/Desktop/Connect4SeniorProject/connect4/doc/stylesheet.css...
-15 warnings
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/allclasses-frame.html...
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/allclasses-noframe.html...
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/index.html...
+Generating /Users/omidheda/Documents/GitHub/Connect4SeniorProject/connect4/doc/stylesheet.css...
+10 warnings

@@ -5,7 +5,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import java.io.File;
 /**
- * <code>PlayerButton</code> is a modified JButton class with left and top insets, 
+ * class <code>PlayerButton</code> - a modified JButton class with left and top insets, 
  * as well as a name and imagepath
  * 
  * @author Sergei Levashov
@@ -18,7 +18,7 @@ public class playerButton extends JButton
     private Menu myMenu;
     private MediaPlayer pick;
     /**
-     * <code>PlayerButton</code> constructor adds a listener, assigns local variables,
+     * constructor <code>PlayerButton</code> - adds a listener, assigns local variables,
      * and sets bounds for the playerButton based on passed left and top offsets.
      * 
      * @param int left -- left bound for the <code>JButton</code>
@@ -46,7 +46,7 @@ public class playerButton extends JButton
     }
    
     /**
-     * <code>getPlayer()</code> returns a new <code>Player</code> object using the name
+     * <code>getPlayer()</code> <b>summary</b>: returns a new <code>Player</code> object using the name
      * 
      * @return <code>Player</code> object
      * @author Sergei Levashov
@@ -57,7 +57,7 @@ public class playerButton extends JButton
     }
     
     /**
-     * <code>playPick()</code> plays pick sound of player
+     * <code>playPick()</code> <b>summary</b>: plays pick sound of player
      * 
      * @author Sergei Levashov
      */
@@ -77,7 +77,7 @@ public class playerButton extends JButton
     }
     
     /**
-     * <code>addListener()</code> adds a listener for the playerButton click.
+     * <code>addListener()</code> <b>summary</b>: adds a listener for the playerButton click.
      * 
      * @author Sergei Levashov
      */
@@ -116,7 +116,7 @@ public class playerButton extends JButton
     }
     
     /**
-     * <code>getPName()<code> returns the name of thr player
+     * <code>getPName()<code> <b>summary</b>: returns the name of thr player
      * 
      * @return String myName -- name of player
      * @author Sergei Levashov

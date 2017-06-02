@@ -3,7 +3,7 @@ import javax.swing.SwingUtilities;
 import java.util.concurrent.CountDownLatch;
 import javafx.embed.swing.JFXPanel;
 /**
- * <code>Driver</code> class initializes JFX, then initializes and 
+ * class <code>Driver</code> - initializes JFX, then initializes and 
  * launches the menu @ 1000X800 size
  * 
  * Postconditions: Non-Resizable, EXIT_ON_CLOSE

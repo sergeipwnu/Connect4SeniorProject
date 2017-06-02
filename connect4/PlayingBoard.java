@@ -3,7 +3,7 @@
  * class <code>PlayingBoard</code> -- In this class we check whether or not one of the players won or not. 
  * This areFourConnnected method is called after every move.
  * 
- * @author Zachary, Omer, Sergei
+ * @author Zachary, Omer, Sergei, Omid
  * @version (1.0.0 --- June 2, 2017)
  */
 public class PlayingBoard 
@@ -17,7 +17,7 @@ public class PlayingBoard
     private int placeBelow = 0;//used in getDropOffset() to determine the row position of the last placed piece
     private int wins =0;
     /**
-     * <code>PlayingBoard</code> constructor will construct a board and winArray with the
+     * <code>PlayingBoard</code> constructor - constructs a board and winArray with the
      * size of the board, ROW x COL
      * 
      * @author Zach
@@ -29,7 +29,7 @@ public class PlayingBoard
     }
     
     /**
-     * <code>areFourConnected()</code> -- Called after every move. 
+     * <code>areFourConnected()</code> <b>summary</b>: Called after every move. 
      * Check for vertical, horizontal, and diagonal to see whether a person won. 
      * p is the position of the last piece put by the user. 
      * The horizontal, vertical, and diagonal method are called, if one is true, then it shortcircuits and returns true, 
@@ -149,7 +149,7 @@ public class PlayingBoard
     }
     
     /**
-     * <code>horizontal()</code> -- Checks every spot in then proper row. 
+     * <code>horizontal()</code> <b>summary</b>: Checks every spot in then proper row. 
      * Uses getDropOffset() to find the spot where the user placed their last piece. 
      * Uses a for loop to check every spot in the getDropOffset() row for four pieces in a row.
      *  
@@ -191,7 +191,7 @@ public class PlayingBoard
     }
     
     /**
-     * <code>vertical()</code> -- Checks for a vertical win in the column the user last placed their piece. 
+     * <code>vertical()</code> <b>summary</b>: Checks for a vertical win in the column the user last placed their piece. 
      * Does not use getDropOffset(), only use p.getX(). All that is needed is the place the player put
      * their piece so the column can be checked.
      * 
@@ -238,7 +238,7 @@ public class PlayingBoard
     }
     
     /**
-     * Checks upper right and lower left diagnol for four connected pieces.
+     * <code>diagnol()</code> <b>summary</b>: Checks upper right and lower left diagnol for four connected pieces.
      * Uses the location of the last placed piece. Uses an algoritm to search diagnolly for
      * both upper and lower diagonal.
      * 
@@ -354,7 +354,7 @@ public class PlayingBoard
     }
     
     /**
-     * <code>getWinArray()</code> -- Returns the winArray. 
+     * <code>getWinArray()</code> <b>summary</b>: Returns the winArray. 
      * the winArray stores the positions of the 4 winning pieces by the player.
      * 
      * @return int[][] winArray -- the win array
@@ -366,7 +366,7 @@ public class PlayingBoard
     }
     
     /**
-     * <code>PrintWinArray()</code> -- print the winArray
+     * <code>PrintWinArray()</code>  <b>summary</b>: print the winArray
      * FOR DEBUGGING PURPOSES ONLY
      * 
      * @author Omer
@@ -385,7 +385,7 @@ public class PlayingBoard
     }
     
     /**
-     *  <code>makeMove()</code> -- Attempts to make a move at the given Position. 
+     *  <code>makeMove()</code> <b>summary</b>: Attempts to make a move at the given Position. 
      *  If the move is possible, the move is made and <code>makeMove()</code> returns true. 
      *  If a move is not possible, <code>makeMove</code> returns false.
      *  
@@ -419,7 +419,7 @@ public class PlayingBoard
     }
     
     /**
-     * <code>printBoard()</code> -- prints the current state of the board whe called
+     * <code>printBoard()</code> <b>summary</b>: prints the current state of the board whe called
      * <b>FOR DEBUGGING PURPOSES ONLY!</b>
      * 
      * @author omer
@@ -438,7 +438,7 @@ public class PlayingBoard
         }    
     }
     /**
-     * <code>getNewWinArray()</code> returns new array with length 4, with linear positions of tokens.
+     * <code>getNewWinArray()</code> <b>summary</b>: returns new array with length 4, with linear positions of tokens.
      * 
      * @return int[] winArray
      * @author Sergei and  Omid
@@ -463,7 +463,7 @@ public class PlayingBoard
         return newWinArray;
     }
     /**
-     * <code>changePlayer()</code> -- Changes playerNum into 1 if 2, and 2 if 1. 
+     * <code>changePlayer()</code> <b>summary</b>: Changes playerNum into 1 if 2, and 2 if 1. 
      * Represents which players turn it is.
      * 
      * @author Omer
@@ -473,7 +473,7 @@ public class PlayingBoard
         playerNum = (playerNum % 2) + 1;
     }
     /**
-     * <code>getDropOffset()</code> will return placeBelow
+     * <code>getDropOffset()</code> <b>summary</b>: will return placeBelow
      * 
      * @return int placeBelow
      * @author Sergei
@@ -483,7 +483,7 @@ public class PlayingBoard
         return placeBelow;
     }
     /**
-     * <code>getPlayerNum</code> returns current playerNum
+     * <code>getPlayerNum</code> <b>summary</b>: returns current playerNum
      * 
      * @return int playerNum -- either 1 or 2
      * @author Sergei

@@ -6,7 +6,7 @@ import java.awt.Color;
 import chn.util.FileInput;
 import chn.util.FileOutput;
 /**
- * <code>Menu</code> class is the menu screen, a window which launches a new Board
+ * class <code>Menu</code> - is the menu screen, a window which launches a new Board
  * It extends <code>JFrame</code>  class
  * 
  * @see JFrame API
@@ -27,7 +27,7 @@ public class Menu extends JFrame
     JPanel playerIcons;
     private JLabel omid, sergei, omer, zach, warrick, lauren, catherines, kanika, tim, lants;
     /**
-     * <code>Menu()</code> constructor will creates isPC variable to 
+     * constructor <code>Menu()</code> - will creates isPC variable to 
      * calculate offsets later in Board.
      * Will also create and add all buttons to the JFrame, as well as player images
      * 
@@ -68,7 +68,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>initBoard()</code> initializes the board with the isPC variable
+     * <code>initBoard()</code> <b>summary</b>: initializes the board with the isPC variable
      * 
      * Postcondition: DISPOSE_ON_CLOSE,1000x800,non-resizable
      * 
@@ -87,7 +87,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>startGame()</code> starts the game by launching the local Board with both players
+     * <code>startGame()</code> <b>summary</b>: starts the game by launching the local Board with both players
      * @author Sergei
      */
     private void startGame()
@@ -96,7 +96,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>isPicked()</code> returns true if player 1 is already selected, false if not
+     * <code>isPicked()</code> <b>summary</b>: returns true if player 1 is already selected, false if not
      * 
      * @return true or false if player 1 is picked
      * @author Sergei Levashov
@@ -106,7 +106,7 @@ public class Menu extends JFrame
         return playerInstanceLoaded;
     }
      /**
-     * <code>setPicked</code> sets player 1 to be selected
+     * <code>setPicked()</code> <b>summary</b>: sets player 1 to be selected
      * 
      * @author Sergei Levashov
      */
@@ -115,7 +115,7 @@ public class Menu extends JFrame
         playerInstanceLoaded = true;
     }
     /**
-     * sets the player to the player passed from listener, as well as the their piece color
+     * <code> setPlayer()</code> <b>summary</b>: sets the player to the player passed from listener, as well as the their piece color
      * player1 is set to blue
      * Sergei Levashov
      */
@@ -126,7 +126,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * sets the player to the player passed from listener, as well as the their piece color
+     * <code> setPlayer2()</code> <b>summary</b>: sets the player to the player passed from listener, as well as the their piece color
      * player2 is set to red
      * Sergei Levashov
      */
@@ -137,9 +137,9 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>createButtons()</code> creates all player buttons and makes them <b>invisible</b>
+     * <code>createButtons()</code> <b>summary</b>: creates all player buttons and makes them <b>invisible</b>
      * 
-     * @author Sergei and Zachary
+     * @author Sergei and Zachary and Omid
      */
     private void createButtons()
     {
@@ -165,7 +165,7 @@ public class Menu extends JFrame
         add(makeButtonInvisible(new playerButton(745,340,"kanika",this)));
     }
     /**
-     * returns the passed playerButton as invisible
+     * <code>playerButton()</code> <b>summary</b>: returns the passed playerButton as invisible
      * 
      * @return <b>invisible</b> <code>playerButton</code>  
      * @param  <code>playerButton</code> to be made invisible
@@ -179,7 +179,7 @@ public class Menu extends JFrame
         return b;
     }
     /**
-     * <code>addPlayerImages()</code> adds all player images 
+     * <code>addPlayerImages()</code> <b>summary</b>: adds all player images 
      * to the JPanel over the <b>invisible</b> buttons
      * 
      * @author Sergei
@@ -237,7 +237,9 @@ public class Menu extends JFrame
     }
     
     /**
+     * <code>resetNeutral()</code> <b>summary</b>: Changes all player images to neutral version after end of the game
      * 
+     * @author Omid
      */
     public void resetNeutral()
     {
@@ -280,7 +282,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>changePlayerImage()</code> overlays pick image over passed player
+     * <code>changePlayerImage()</code> <b>summary</b>: overlays pick image over passed player
      * 
      * @param <code>enumPlayers</code> p -- enum representation of the player names
      * @author Omer
@@ -343,7 +345,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>loadFromFile()</code> will load win data from a file
+     * <code>loadFromFile()</code> <b>summary</b>: will load win data from a file
      * 
      * @author Omer
      */
@@ -354,10 +356,10 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>unlockTim()</code> method will unlock Tim the Enchanter and make
+     * <code>unlockTim()</code> <b>summary</b>: will unlock Tim the Enchanter and make
      * him into a playable character
      * 
-     * @author
+     * @author Omid
      */
     public void unlockTim()
     {
@@ -367,10 +369,10 @@ public class Menu extends JFrame
         repaint();
     }
     /**
-     * <code>unlockL()</code> method will unlock Mr. L and make
+     * <code>unlockL()</code> <b>summary</b>: will unlock Mr. L and make
      * him into a playable character
      * 
-     * @author
+     * @author Omid
      */
     public void unlockL()
     {
@@ -381,7 +383,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>addWin()</code> will add a win to the total win count
+     * <code>addWin()</code> <b>summary</b>: will add a win to the total win count
      * 
      * @authot omer
      */
@@ -392,7 +394,7 @@ public class Menu extends JFrame
     }
     
     /**
-     * <code>writeToFile</code> writes the data to a .txt file when programs closes 
+     * <code>writeToFile</code> <b>summary</b>: writes the data to a .txt file when programs closes 
      * 
      * @author Zach
      */

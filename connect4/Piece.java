@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 /**
-  * <code>Piece</code> is a modified JButton with X and Y coordinates added, 
+  * class <code>Piece</code> - a modified JButton with X and Y coordinates added, 
   * as well as a listener. It extends <code>JButton</code>
   * 
   * @see JButton API
@@ -24,7 +24,7 @@ public class Piece extends JButton
     {
     }
     /**
-     * <code>Piece</code> constructor sets local y, x, and local references to
+     * constructor <code>Piece</code> - sets local y, x, and local references to
      * PlayingBoard and Board
      * 
      * @param int y -- y coordinate
@@ -44,7 +44,7 @@ public class Piece extends JButton
         addListener();
     }
     /**
-     * <code>getPosition()</code> returns a new <code>Position</code> object with
+     * <code>getPosition()</code> <b>summary</b>: returns a new <code>Position</code> object with
      * the y and x coordinates
      * 
      * @return <code>Position</code> -- new coordinates
@@ -55,7 +55,7 @@ public class Piece extends JButton
         return new Position(myY,myX);
     }
      /**
-     * <code>returnThis()</code> returns this instance of Piece
+     * <code>returnThis()</code> <b>summary</b>: returns this instance of Piece
      * used for ActionListener calls to functions requiring the instance of 
      * the object that the action originated in
      * 
@@ -68,7 +68,7 @@ public class Piece extends JButton
     }
      /**
      * @Override
-     * <code>toString()</code> constructs a new string with the x and y coordinates 
+     * <code>toString()</code> <b>summary</b>: constructs a new string with the x and y coordinates 
      * 
      * @return String -- y and than x
      * @author Sergei Levashov
@@ -78,7 +78,7 @@ public class Piece extends JButton
         return myY + " " + myX;
     }
     /**
-     * <code>addListener()</code> adds a listener that changes int position y,x 
+     * <code>addListener()</code> <b>summary</b>: adds a listener that changes int position y,x 
      * in PlayingBoards board[][] array on click
      * 
      * @author Sergei Levashov

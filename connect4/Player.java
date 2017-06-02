@@ -1,10 +1,10 @@
 import javax.swing.ImageIcon; 
 import java.awt.event.*; 
 /**
- * <code>Player</code> object with the enum, image path, 
+ * class <code>Player</code> - object with the enum, image path, 
  * audioplayer, board, and name of the chosen players.
  * 
- * @author Sergei Levashov
+ * @author Sergei Levashov, Omer Hananya, Omid Hedayatnia
  * @version 1.0.0
  */
 public class Player
@@ -15,11 +15,11 @@ public class Player
     private AudioPlayer mySounds;
     private Board myBoard;
     /**
-     * <code>Player</code> constructor will make a new <code>Player</code>
+     * constructor <code>Player</code> - will make a new <code>Player</code>
      * object with the passed String.
      * 
      * @param String name -- name of player
-     * @author Sergei
+     * @author Sergei and Omid
      */
     public Player(String name)
     {
@@ -80,7 +80,7 @@ public class Player
     
     /**
      * @Override
-     * <code>toString()</code> will make a string representation 
+     * <code>toString()</code> <b>summary</b>: will make a string representation 
      * of the <code>Player</code> object
      * 
      * @return String name -- name of the player
@@ -92,7 +92,7 @@ public class Player
     }
     
     /**
-     * <code>setBoard()</code> will set the board with a passed
+     * <code>setBoard()</code> <b>summary</b>: will set the board with a passed
      * <code>Board</code> object
      * 
      * @param <code>Board</code> b -- <code>Board</code> object
@@ -104,7 +104,7 @@ public class Player
     }
     
     /**
-     * <code>getPath()</code> returns the image path
+     * <code>getPath()</code> <b>summary</b>: returns the image path
      * 
      * @return String myImage -- the image path
      * @author Sergei Levashov
@@ -115,7 +115,7 @@ public class Player
     }
      
     /**
-     * <code>addColorToPath()</code> adds a color to the imagepath 
+     * <code>addColorToPath()</code> <b>summary</b>: adds a color to the imagepath 
      * 
      * @param String color -- the name of the color "b" or "r"
      * @author Sergei Levashov
@@ -125,7 +125,7 @@ public class Player
         myImage = myImage.substring(0,myImage.indexOf(".png")) + color + ".png";
     }
     /**
-     * <code>setAudioPlayer()</code> sets local audioplayer with the
+     * <code>setAudioPlayer()</code> <b>summary</b>: sets local audioplayer with the
      * passed <code>AudioPlayer</code> object
      * 
      * @param <code>AudioPlayer</code> object 
@@ -137,7 +137,7 @@ public class Player
     }
     
     /**
-     * <code>addVoiceBoxListener</code< adds a listener to a specefied 
+     * <code>addVoiceBoxListener</code> <b>summary</b>: adds a listener to a specefied 
      * JButton and plays an audio file on click
      * 
      * @param <code>Piece</code> object
@@ -169,7 +169,7 @@ public class Player
     }
 
     /**
-     * <code>getEnum()</code> will return the enum representation 
+     * <code>getEnum()</code> <b>summary</b>: will return the enum representation 
      * of the player
      * 
      * @return enum myEnum

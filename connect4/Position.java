@@ -1,5 +1,5 @@
  /**
-  * <code>Position</code> is a custom class for storing an x and y coordinantes 
+  * class <code>Position</code> - a custom class for storing an x and y coordinantes 
   * that corresponds to the location of a piece on the board
   * 
   * @author Sergei Levashov
@@ -10,7 +10,7 @@ public class Position
     private int myX;
     private int myY;
     /**
-     * <code>Position</code> constructor initializes local y and x to passed variables
+     * constructor <code>Position</code> - initializes local y and x to passed variables
      * 
      * @param int y : y-value of the coordinate
      * @param int x : x-value of the coordinate
@@ -25,7 +25,7 @@ public class Position
     /**
      * @Override
      * 
-     * <code>toString()</code> will make a <code>String</code> with the coordinate notation
+     * <code>toString()</code> <b>summary</b>: will make a <code>String</code> with the coordinate notation
      * 
      * @return String -- (x, y)
      * @author Omer
@@ -36,7 +36,7 @@ public class Position
     }
     
     /**
-     * <code>getX()</code> will return the x-value of the coordinate
+     * <code>getX()</code> <b>summary</b>: will return the x-value of the coordinate
      * 
      * @return int myX
      * @author Sergei Levashov
@@ -47,7 +47,7 @@ public class Position
     }
     
     /**
-     * <code>getY()</code> will return the y-value of the coordinate
+     * <code>getY()</code> <b>summary</b>: will return the y-value of the coordinate
      * 
      * @return int myY
      * @author Sergei Levashov
